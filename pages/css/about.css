@@ -111,3 +111,145 @@ body {
     3% { transform: translate(0); }
     100% { transform: translate(0); }
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Hero Section Adjustments */
+    #hero-title {
+        font-size: 18vw !important;
+    }
+    
+    #hero-sub {
+        font-size: 1.5rem !important;
+    }
+    
+    #hero-desc {
+        font-size: 1rem !important;
+    }
+    
+    /* Hide side metadata on mobile */
+    #side-meta {
+        display: none !important;
+    }
+    
+    /* Company Profile Section */
+    .perspective-container {
+        perspective: none;
+    }
+    
+    .tilt-card {
+        transform: none !important;
+        transition: all 0.3s ease;
+    }
+    
+    .tilt-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    /* Timeline Section */
+    .timeline-year {
+        font-size: 4rem !important;
+    }
+    
+    /* Pithampur Core Section */
+    #parallax-title {
+        font-size: 3.5rem !important;
+    }
+    
+    /* Quality Audit Section */
+    h2.font-display.text-6xl {
+        font-size: 2.5rem !important;
+    }
+    
+    /* Hotspot adjustments for touch */
+    .hotspot-trigger {
+        cursor: pointer;
+    }
+    
+    .hotspot-content {
+        display: none;
+    }
+    
+    .hotspot-trigger:active .hotspot-content {
+        display: block;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra Small Devices */
+    body {
+        font-size: 14px;
+    }
+    
+    #hero-title {
+        font-size: 20vw !important;
+    }
+    
+    #hero-sub {
+        font-size: 1.2rem !important;
+    }
+    
+    #hero-desc {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Navigation */
+    nav.sticky {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Sections Padding */
+    section.py-32 {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+    
+    section.px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Grid Adjustments */
+    .grid.grid-cols-12 {
+        gap: 2rem !important;
+    }
+    
+    /* Card Spacing */
+    .tilt-card {
+        padding: 1.5rem !important;
+    }
+    
+    /* Timeline Adjustments */
+    .timeline-item {
+        flex-direction: column !important;
+    }
+    
+    .md\:w-5\/12 {
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .timeline-year {
+        font-size: 3rem !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Stats Cards */
+    .text-5xl {
+        font-size: 2.5rem !important;
+    }
+    
+    /* Certification Grid */
+    .grid.grid-cols-2.md\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Footer */
+    footer.pt-24 {
+        padding-top: 3rem !important;
+    }
+}

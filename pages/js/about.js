@@ -1,46 +1,51 @@
 // About Page JavaScript
 gsap.registerPlugin(ScrollTrigger);
 
-// 1. 3D Tilt Interaction
-document.querySelectorAll('.tilt-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        gsap.to(card, {
-            rotateX: rotateX,
-            rotateY: rotateY,
-            scale: 1.05,
-            duration: 0.3,
-            ease: 'power2.out'
+// 1. 3D Tilt Interaction - Disabled on Mobile
+if (window.innerWidth > 768) {
+    document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            gsap.to(card, {
+                rotateX: rotateX,
+                rotateY: rotateY,
+                scale: 1.05,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                rotateX: 0,
+                rotateY: 0,
+                scale: 1,
+                duration: 0.5,
+                ease: 'elastic.out(1, 0.3)'
+            });
         });
     });
-    card.addEventListener('mouseleave', () => {
-        gsap.to(card, {
-            rotateX: 0,
-            rotateY: 0,
-            scale: 1,
-            duration: 0.5,
-            ease: 'elastic.out(1, 0.3)'
-        });
-    });
-});
+}
 
-// 2. Kinetic Path-Drawing Timeline
-gsap.to('#timeline-path', {
-    strokeDashoffset: 0,
-    scrollTrigger: {
-        trigger: '.timeline-item',
-        start: 'top center',
-        endTrigger: '.timeline-item:last-child',
-        end: 'bottom center',
-        scrub: 1
-    }
-});
+// 2. Kinetic Path-Drawing Timeline - Simplified on Mobile
+const timelinePath = document.querySelector('#timeline-path');
+if (timelinePath && window.innerWidth > 768) {
+    gsap.to('#timeline-path', {
+        strokeDashoffset: 0,
+        scrollTrigger: {
+            trigger: '.timeline-item',
+            start: 'top center',
+            endTrigger: '.timeline-item:last-child',
+            end: 'bottom center',
+            scrub: 1
+        }
+    });
+}
 
 // Timeline Glitch into view
 document.querySelectorAll('.timeline-item').forEach(item => {
