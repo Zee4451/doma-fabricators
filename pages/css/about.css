@@ -132,6 +132,17 @@ body {
         display: none !important;
     }
     
+    /* Company Profile Section - Image Sizing */
+    .col-span-12.lg\:col-span-5 img {
+        max-height: 400px;
+        object-position: center top;
+    }
+    
+    .company-profile-image {
+        max-height: 400px;
+        aspect-ratio: 3/4;
+    }
+    
     /* Company Profile Section */
     .perspective-container {
         perspective: none;
@@ -216,6 +227,18 @@ body {
     /* Grid Adjustments */
     .grid.grid-cols-12 {
         gap: 2rem !important;
+    }
+    
+    /* Company Profile Image - Mobile Optimization */
+    .col-span-12.lg\:col-span-5 img {
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .company-profile-image {
+        max-height: 300px;
+        aspect-ratio: 3/4;
     }
     
     /* Card Spacing */
