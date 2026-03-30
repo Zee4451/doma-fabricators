@@ -1,0 +1,129 @@
+/* Industries Page Styles */
+:root {
+    --primary-hex: #982000;
+    --amber-glow: rgba(255, 191, 0, 0.2);
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #fff8f3;
+    color: #1d1b18;
+    overflow-x: hidden;
+}
+
+.font-display { font-family: 'Bebas Neue', cursive; }
+.font-technical { font-family: 'IBM Plex Sans', sans-serif; }
+.font-serif-italic { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+/* Interactive Technical Grid */
+#interactive-grid {
+    position: fixed;
+    inset: 0;
+    background-image: 
+        linear-gradient(to right, rgba(227, 190, 182, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(227, 190, 182, 0.15) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Liquid-Metal Text Distortion */
+.liquid-text {
+    background: linear-gradient(90deg, #1d1b18 0%, #982000 50%, #1d1b18 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s linear infinite;
+}
+.liquid-text-white {
+    background: linear-gradient(90deg, #ffffff 0%, #ffdfd7 50%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s linear infinite;
+}
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+/* Diagnostic Laser Scan */
+.scan-container {
+    position: relative;
+    overflow: hidden;
+}
+.laser-line {
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #ff4d00, transparent);
+    box-shadow: 0 0 15px #ff4d00;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0;
+}
+.sector-card:hover .laser-line {
+    animation: scan 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    opacity: 1;
+}
+@keyframes scan {
+    0% { left: -5%; }
+    100% { left: 105%; }
+}
+
+.breathing {
+    animation: breath 4s ease-in-out infinite;
+}
+@keyframes breath {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.text-outline-white {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+    color: transparent;
+}
+
+.draw-line {
+    transform-origin: left;
+    transform: scaleX(0);
+}
+.draw-line-v {
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+/* Heat Haze Distortion */
+.heat-haze {
+    filter: url(#wavy);
+}
+
+/* Amber Tint Overlay for Images */
+.amber-tint::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--amber-glow);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* Floating Tooltip Metadata */
+#cursor-meta {
+    position: fixed;
+    pointer-events: none;
+    z-index: 100;
+    padding: 8px 12px;
+    background: rgba(29, 27, 24, 0.9);
+    color: white;
+    font-size: 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-left: 2px solid #982000;
+    opacity: 0;
+    transform: translate(15px, 15px);
+    backdrop-filter: blur(4px);
+}

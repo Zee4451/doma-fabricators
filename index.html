@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DOMA FABRICATORS | Engineering Excellence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:wght@400;600&amp;family=IBM+Plex+Sans:wght@300;400;600&amp;family=Public+Sans:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<style>
+/* Force Material Symbols to render properly */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+</style>
+<!-- GSAP & Lenis -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#C0310A",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1A1815",
+                        "near-black": "#1A1815",
+                        "off-white": "#F7F5F2",
+                        "light-grey": "#EEEBE6",
+                        "mid-grey": "#C8C4BC",
+                        "dark-grey": "#4A4845",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"],
+                        "bebas": ["Bebas Neue", "cursive"],
+                        "cormorant": ["Cormorant Garamond", "serif"],
+                        "plex": ["IBM Plex Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
+        .clip-diagonal-reverse { clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%); }
+        .marquee { display: flex; overflow: hidden; user-select: none; gap: 4rem; }
+        .marquee-content { flex-shrink: 0; display: flex; justify-content: space-around; gap: 4rem; min-width: 100%; animation: scroll 40s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+        .hairline { border-width: 1px; }
+        .text-tiny-caps { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
+        .sharp-card:hover .card-border { width: 100%; }
+        .card-border { width: 0%; transition: width 0.4s ease; }
+
+        /* Custom Cursor */
+        #custom-cursor {
+            width: 20px; height: 20px; background: #C0310A; border-radius: 50%;
+            position: fixed; pointer-events: none; z-index: 9999;
+            mix-blend-mode: difference; transition: transform 0.1s ease-out;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Tech HUD follow cursor */
+        #cursor-hud {
+            position: fixed; pointer-events: none; z-index: 9998; font-family: 'IBM Plex Sans', monospace;
+            font-size: 10px; color: #C0310A; opacity: 0; transition: opacity 0.3s ease;
+        }
+
+        /* Lenis Smooth Scroll */
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto; }
+        .lenis.lenis-stopped { overflow: hidden; }
+
+        /* Reveal Masks */
+        .reveal-mask { display: block; overflow: hidden; }
+        .reveal-mask span { display: block; will-change: transform; }
+        .divider-draw { transform-origin: left; transform: scaleX(0); will-change: transform; }
+        .parallax-img { will-change: transform; }
+        
+        /* Prevent image gaps during parallax */
+        .service-card img.parallax-img {
+            object-position: center top;
+            transform-origin: center top;
+        }
+
+        /* Image Masking Reveal */
+        .mask-reveal-wrapper { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); will-change: clip-path; }
+
+        /* Technical Background Noise */
+        #bg-grid {
+            position: fixed; inset: 0; pointer-events: none; z-index: -1;
+            background-image: 
+                linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .dark #bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+        }
+
+        /* Liquid Distortion Filter */
+        svg.filter-defs { position: absolute; width: 0; height: 0; }
+        .liquid-target { transition: filter 0.5s ease; filter: url(#liquid-distort); }
+        .liquid-target:hover { filter: url(#liquid-distort-active); }
+
+        /* 3D Perspective Container */
+        .perspective-container { perspective: 1000px; }
+        .tilt-card { will-change: transform; transform-style: preserve-3d; }
+
+        #light-leak {
+            pointer-events: none; z-index: 40;
+            background: radial-gradient(circle, rgba(192, 49, 10, 0.15) 0%, rgba(255,255,255,0) 70%);
+            mix-blend-mode: screen; filter: blur(40px); will-change: transform;
+        }
+
+        #project-bg-preview {
+            position: fixed; inset: 0; z-index: 0; opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease; background-size: cover; background-position: center;
+        }
+
+        .hero-breathe { animation: breathe 8s ease-in-out infinite; display: inline-block; }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Hero Heading - Outlined Text Effect */
+        .hero-heading {
+            font-family: 'Anton', sans-serif;
+            color: #ffffff;
+            text-shadow: 
+                1px 1px 0px #cc1a1a,
+                2px 2px 0px #cc1a1a;
+            font-size: clamp(2rem, 8vw, 5.5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 0.02em;
+            padding: 0 1rem;
+        }
+
+        /* Mobile-specific hero text adjustments */
+        @media (max-width: 768px) {
+            .hero-heading {
+                font-size: clamp(1.8rem, 7vw, 3rem);
+                line-height: 1.15;
+                letter-spacing: 0.01em;
+            }
+            .slide-text p {
+                font-size: 0.9rem !important;
+                line-height: 1.5 !important;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-plex text-near-black dark:text-off-white overflow-x-hidden">
+<div id="bg-grid"></div>
+<div id="custom-cursor"></div>
+<div id="project-bg-preview"></div>
+<svg class="filter-defs">
+<defs>
+<filter id="liquid-distort">
+<feturbulence basefrequency="0.02" numoctaves="3" result="noise" seed="1" type="fractalNoise"></feturbulence>
+<fedisplacementmap in="SourceGraphic" in2="noise" scale="0"></fedisplacementmap>
+</filter>
+<filter id="liquid-distort-active">
+<feturbulence basefrequency="0.015" numoctaves="2" result="noise" seed="2" type="fractalNoise">
+<animate attributename="baseFrequency" dur="10s" repeatcount="indefinite" values="0.015; 0.02; 0.015"></animate>
+</feturbulence>
+<fedisplacementmap in="SourceGraphic" in2="noise" scale="15"></fedisplacementmap>
+</filter>
+</defs>
+</svg>
+<!-- 1. Navbar -->
+<nav class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-near-black/10 dark:border-white/10 px-6 lg:px-12 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2 cursor-pointer">
+<span class="font-bebas text-3xl tracking-tighter text-near-black dark:text-white">DOMA</span>
+<div class="h-8 w-[2px] bg-primary mx-1"></div>
+<span class="font-bebas text-3xl tracking-tighter text-near-black dark:text-white">FABRICATORS</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="index.html">Home</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="about.html">About Us</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="service.html">Services</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="industries.html">Industries</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="project.html">Projects</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a>
+<a class="px-6 py-2 border border-near-black dark:border-white text-tiny-caps hover:bg-primary hover:border-primary hover:text-white transition-all hover-trigger magnetic-btn" href="#catalogue">E-Catalogue</a>
+<a class="px-6 py-2 bg-primary text-white text-tiny-caps hover:bg-primary/90 transition-all hover-trigger magnetic-btn" href="index.html#contact">Contact Us</a>
+</div>
+<button class="md:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
+  <span class="material-symbols-outlined transition-all duration-300" id="hamburger-icon">menu</span>
+</button>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-near-black/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden" id="mobile-menu">
+  <div class="flex flex-col h-full px-6 py-8">
+    <!-- Mobile menu header -->
+    <div class="flex items-center justify-between mb-12">
+      <div class="flex items-center gap-2">
+        <span class="font-bebas text-3xl tracking-tighter text-white">DOMA</span>
+        <div class="h-8 w-[2px] bg-primary mx-1"></div>
+        <span class="font-bebas text-3xl tracking-tighter text-white">FABRICATORS</span>
+      </div>
+      <button class="hover-trigger" id="close-menu-btn" aria-label="Close menu">
+        <span class="material-symbols-outlined text-white text-3xl">close</span>
+      </button>
+    </div>
+    
+    <!-- Mobile navigation links -->
+    <nav class="flex flex-col gap-4 flex-1">
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="index.html">
+        <span class="inline-block transform transition-transform">Home</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="about.html">
+        <span class="inline-block transform transition-transform">About Us</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="service.html">
+        <span class="inline-block transform transition-transform">Services</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="industries.html">
+        <span class="inline-block transform transition-transform">Industries</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="project.html">
+        <span class="inline-block transform transition-transform">Projects</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="#resources">
+        <span class="inline-block transform transition-transform">Resources</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="#catalogue">
+        <span class="inline-block transform transition-transform">E-Catalogue</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="index.html#contact">
+        <span class="inline-block transform transition-transform">Contact Us</span>
+      </a>
+    </nav>
+    
+    <!-- Mobile footer info -->
+    <div class="mt-auto pt-8 border-t border-white/10">
+      <p class="text-white/50 text-sm font-light leading-relaxed">Precision Engineering & Industrial Fabrication</p>
+      <div class="flex gap-4 mt-4">
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white">share</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white">mail</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white">call</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 2. Hero Slider -->
+<section class="relative w-full h-screen overflow-hidden" id="home">
+  <!-- Slide 1 -->
+  <div class="slide absolute inset-0 w-full h-full" data-index="0">
+    <img alt="Industrial fabrication site" class="w-full h-full object-cover scale-[1.15]" src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg"/>
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+  
+  <!-- Slide 2 -->
+  <div class="slide absolute inset-0 w-full h-full" data-index="1">
+    <img alt="Manufacturing facility" class="w-full h-full object-cover scale-[1.15]" src="assets/istockphoto-1482979397-612x612.jpg.jpeg"/>
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+  
+  <!-- Slide 3 -->
+  <div class="slide absolute inset-0 w-full h-full" data-index="2">
+    <img alt="Construction site" class="w-full h-full object-cover scale-[1.15]" src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg"/>
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <!-- Text content containers - one per slide -->
+  <div class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-100" data-slide="0">
+    <h1 class="hero-heading mb-4 sm:mb-6">
+      ENGINEERING PAR<br class="hidden sm:block">
+      EXCELLENCE — DESIGN,<br class="hidden sm:block">
+      FABRICATION & ERECTION
+    </h1>
+    <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed">
+      Specializing in piping works, heavy structural fabrication, equipment erection, industrial maintenance, shed works, and roofing — delivering high-quality solutions for diverse industries.
+    </p>
+  </div>
+
+  <div class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-0" data-slide="1">
+    <h1 class="hero-heading mb-4 sm:mb-6">
+      DESIGN & ENGINEERING<br class="hidden sm:block">
+      EQUIPMENT SUPPLY<br class="hidden sm:block">
+      PROJECT WORKS
+    </h1>
+    <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed">
+      End-to-end support for new projects and plant expansions — heavy structure fabrication, precision piping, equipment erection, and roofing & shed construction.
+    </p>
+  </div>
+
+  <div class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-0" data-slide="2">
+    <h1 class="hero-heading mb-4 sm:mb-6">
+      14 YEARS OF EXCELLENCE<br class="hidden sm:block">
+      QUALITY & SAFETY<br class="hidden sm:block">
+      AT EVERY STEP
+    </h1>
+    <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed">
+      With 14+ years of expertise, our commitment to safety, quality, and client satisfaction has established us as a dependable partner for leading companies.
+    </p>
+  </div>
+
+  <!-- Decorative geometric shapes (left side) - hidden on mobile -->
+  <svg width="40" height="120" class="absolute left-3 top-[35%] z-20 opacity-80 hidden md:block">
+    <rect x="5" y="5" width="40" height="50" fill="none" stroke="#e05a2b" stroke-width="2" transform="rotate(-10, 25, 30)"/>
+    <rect x="10" y="65" width="35" height="45" fill="none" stroke="#e05a2b" stroke-width="2" transform="rotate(5, 25, 90)"/>
+    <rect x="3" y="118" width="42" height="38" fill="none" stroke="#e05a2b" stroke-width="2" transform="rotate(-6, 25, 137)"/>
+  </svg>
+
+  <!-- Scroll indicator (bottom-center) -->
+  <div class="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 sm:gap-2">
+    <span class="text-white text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
+    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-dashed border-white/60 flex items-center justify-center animate-bounce">
+      <svg width="16" height="16" class="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 16L6 10H18L12 16Z" fill="white"/>
+      </svg>
+    </div>
+  </div>
+</section>
+<!-- 4. About -->
+<section class="bg-off-white py-24" id="about">
+<div class="max-w-7xl mx-auto px-6">
+<div class="relative h-[500px] mb-16 overflow-hidden clip-diagonal parallax-section mask-reveal-wrapper">
+<img alt="Factory Floor" class="w-full h-full object-cover scale-110 parallax-img liquid-target" src="assets/dscf0853.jpg.jpeg"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-16 mb-24">
+<div>
+<h2 class="font-bebas text-5xl md:text-6xl text-near-black leading-tight reveal-mask">
+<span>PRECISION BORN FROM<br/><span class="text-primary">FOURTEEN YEARS</span> OF EXCELLENCE</span>
+</h2>
+</div>
+<div>
+<p class="text-dark-grey text-lg leading-relaxed mb-6 font-light">
+                        Doma Fabricators is a professionally managed industrial fabrication company with over 14 years of proven experience. We specialize in piping works, heavy structural fabrication, equipment erection, industrial maintenance, shed works, and roofing work.
+                    </p>
+<p class="text-dark-grey text-lg leading-relaxed font-light">
+                        With dedicated in-house fabrication facilities, we manufacture and assemble specialized industrial equipment such as tank farms, SS/MS tanks, EOT cranes, reactors, chimneys, silos and more — customized to client requirements.
+                    </p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 border-t border-near-black/10">
+<div class="p-8 border-r border-near-black/10">
+<p class="font-bebas text-6xl text-primary mb-2">14+</p>
+<p class="text-tiny-caps">Years Expertise</p>
+</div>
+<div class="p-8 border-r border-near-black/10">
+<p class="font-bebas text-6xl text-primary mb-2">500+</p>
+<p class="text-tiny-caps">Projects Done</p>
+</div>
+<div class="p-8 border-r md:border-r border-near-black/10">
+<p class="font-bebas text-6xl text-primary mb-2">120</p>
+<p class="text-tiny-caps">Engineers</p>
+</div>
+<div class="p-8">
+<p class="font-bebas text-6xl text-primary mb-2">0</p>
+<p class="text-tiny-caps">Safety Incidents</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Services - New Parallax Showcase -->
+<section class="relative overflow-hidden py-24 bg-white" id="services">
+
+  <!-- LEFT background parallax image -->
+  <div id="parallax-left" class="absolute left-0 top-0 w-[300px] h-full pointer-events-none z-0" style="transform: translateX(-65%)">
+    <img src="assets/crane1.png"
+         class="w-full h-full object-cover opacity-18" />
+  </div>
+
+  <!-- RIGHT background parallax image -->
+  <div id="parallax-right" class="absolute right-0 top-0 w-[300px] h-full pointer-events-none z-0" style="transform: translateX(65%)">
+    <img src="assets/crane2.png"
+         class="w-full h-full object-cover opacity-18" />
+  </div>
+
+  <!-- Main content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <!-- Centered header with icon -->
+    <div class="text-center mb-16">
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <span class="material-symbols-outlined text-primary text-3xl">engineering</span>
+        <span class="text-primary text-tiny-caps font-bold tracking-widest">— CORE CAPABILITIES —</span>
+      </div>
+      <h2 class="font-bebas text-6xl mt-4 reveal-mask">
+        <span>SPECIALIZED SERVICES</span>
+      </h2>
+      <p class="text-dark-grey text-lg leading-relaxed mt-6 max-w-3xl mx-auto font-light">
+        We provide high-quality mechanical solutions, from design to installation and 
+        maintenance, ensuring efficiency and reliability for your industrial operations.
+      </p>
+    </div>
+
+    <!-- 3 Cards with number badges -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
+        <!-- Number badge -->
+        <div class="absolute top-6 right-6 z-20">
+          <span class="font-bebas text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">01</span>
+        </div>
+        
+        <!-- Image container with overlay -->
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg" 
+               class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
+          
+          <!-- Icon overlay -->
+          <div class="absolute bottom-6 left-6 z-10">
+            <span class="material-symbols-outlined text-white text-4xl">factory</span>
+          </div>
+        </div>
+
+        <!-- Content area -->
+        <div class="p-8">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-[2px] bg-primary"></div>
+            <h3 class="font-bebas text-2xl text-near-black group-hover:text-primary transition-colors">PIPING WORKS</h3>
+          </div>
+          <p class="text-dark-grey font-light text-sm leading-relaxed mb-6">
+            Plant piping services manufactured from high-quality materials, highly suitable for diverse industrial applications.
+          </p>
+          
+          <!-- Animated arrow link -->
+          <div class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
+            <span>LEARN MORE</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
+        <!-- Number badge -->
+        <div class="absolute top-6 right-6 z-20">
+          <span class="font-bebas text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">02</span>
+        </div>
+        
+        <!-- Image container with overlay -->
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg" 
+               class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
+          
+          <!-- Icon overlay -->
+          <div class="absolute bottom-6 left-6 z-10">
+            <span class="material-symbols-outlined text-white text-4xl">storage</span>
+          </div>
+        </div>
+
+        <!-- Content area -->
+        <div class="p-8">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-[2px] bg-primary"></div>
+            <h3 class="font-bebas text-2xl text-near-black group-hover:text-primary transition-colors">SITE-TANK FABRICATION</h3>
+          </div>
+          <p class="text-dark-grey font-light text-sm leading-relaxed mb-6">
+            We have mastered the art of tank fabrication for a wide variety of industries — Tank Farms, SS/MS Tanks, FRP Lining and more.
+          </p>
+          
+          <!-- Animated arrow link -->
+          <div class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
+            <span>LEARN MORE</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
+        <!-- Number badge -->
+        <div class="absolute top-6 right-6 z-20">
+          <span class="font-bebas text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">03</span>
+        </div>
+        
+        <!-- Image container with overlay -->
+        <div class="relative h-64 overflow-hidden">
+          <img src="assets/arc-welding-of-a-steel-in-construction-site-photo.jpeg" 
+               class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
+          
+          <!-- Icon overlay -->
+          <div class="absolute bottom-6 left-6 z-10">
+            <span class="material-symbols-outlined text-white text-4xl">manufacturing</span>
+          </div>
+        </div>
+
+        <!-- Content area -->
+        <div class="p-8">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-[2px] bg-primary"></div>
+            <h3 class="font-bebas text-2xl text-near-black group-hover:text-primary transition-colors">EQUIPMENT ERECTION</h3>
+          </div>
+          <p class="text-dark-grey font-light text-sm leading-relaxed mb-6">
+            Precision placement and erection services customized to your requirements, delivered by skilled, experienced engineers at industry-leading prices.
+          </p>
+          
+          <!-- Animated arrow link -->
+          <div class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
+            <span>LEARN MORE</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- 6. Industries -->
+<section class="bg-white py-32 hud-trigger" id="industries">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="font-bebas text-6xl mb-16 reveal-mask"><span>INDUSTRIES WE ARE SPECIALISED IN</span></h2>
+<div class="grid md:grid-cols-2 gap-4 perspective-container">
+<div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
+<img alt="Pharma Industries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp"/>
+<div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
+<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PHARMA INDUSTRIES</h3></div>
+</div>
+<div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
+<img alt="Chemical Industries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/environmental-pollution-factory-exterior-night_23-2149057728.avif"/>
+<div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
+<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">CHEMICAL INDUSTRIES</h3></div>
+</div>
+<div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
+<img alt="Petroleum Refinery" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/industrial-night-lights-stockcake.webp"/>
+<div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
+<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PETROLEUM REFINERY</h3></div>
+</div>
+<div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
+<img alt="Painting Industries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg"/>
+<div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
+<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PAINTING INDUSTRIES</h3></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Clients -->
+<section class="bg-near-black py-32 clip-diagonal text-white parallax-section">
+<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+<div class="text-center mb-24">
+<p class="font-bebas text-[12rem] leading-none text-primary opacity-50 select-none reveal-mask"><span>14 YEARS</span></p>
+<h2 class="font-bebas text-5xl -mt-16 relative z-10 reveal-mask"><span>TRUSTED BY OUR CLIENTS</span></h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-x-20 gap-y-16 w-full">
+<div class="border-t border-white/20 pt-8 text-center hover-trigger">
+  <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
+</div>
+<div class="border-t border-white/20 pt-8 text-center hover-trigger">
+  <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
+</div>
+<div class="border-t border-white/20 pt-8 text-center hover-trigger">
+  <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
+</div>
+<div class="border-t border-white/20 pt-8 text-center hover-trigger">
+  <img src="assets/Relson logo.png" alt="Relson" class="h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
+</div>
+<div class="border-t border-white/20 pt-8 text-center hover-trigger">
+  <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
+</div>
+<div class="border-t border-white/20 pt-8 text-center hover-trigger">
+  <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
+</div>
+<div class="border-t border-white/20 pt-8 text-center hover-trigger">
+  <img src="assets/pensol_logo.png" alt="Pensol" class="h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
+</div>
+<div class="border-t border-white/20 pt-8 text-center hover-trigger">
+  <img src="assets/SRF-logo.png" alt="SRF" class="h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Projects -->
+<section class="bg-off-white py-32 relative hud-trigger" id="projects">
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="flex items-center gap-4 mb-20">
+<h2 class="font-bebas text-6xl reveal-mask"><span>FEATURED PROJECTS</span></h2>
+<div class="flex-1 h-[1px] bg-near-black/10 divider-draw"></div>
+</div>
+<div class="space-y-0 project-list">
+<div class="group border-b border-near-black/10 py-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white transition-colors px-4 hover-trigger project-row" data-bg="assets/dscf0853.jpg.jpeg">
+<span class="font-bebas text-8xl text-near-black/10 group-hover:text-primary transition-colors">01</span>
+<div class="flex-1">
+<h3 class="font-bebas text-4xl mb-2">Aarti Surfactant Pvt. Ltd</h3>
+<p class="text-tiny-caps text-primary font-bold">Project &amp; Maintenance • 2010–Till</p>
+<p class="text-dark-grey text-sm mt-2">Sector-03, Pithampur (DHAR)</p>
+</div>
+<div class="w-full md:w-64 h-40 overflow-hidden">
+<img alt="Aarti Surfactant Project" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 parallax-img" src="assets/dscf0853.jpg.jpeg"/>
+</div>
+</div>
+<div class="group border-b border-near-black/10 py-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white transition-colors px-4 hover-trigger project-row" data-bg="assets/istockphoto-1482979397-612x612.jpg.jpeg">
+<span class="font-bebas text-8xl text-near-black/10 group-hover:text-primary transition-colors">02</span>
+<div class="flex-1">
+<h3 class="font-bebas text-4xl mb-2">Ralson Tyres Limited</h3>
+<p class="text-tiny-caps text-primary font-bold">Project • 2021–2024</p>
+<p class="text-dark-grey text-sm mt-2">Smart Industrial Park, Pithampur</p>
+</div>
+<div class="w-full md:w-64 h-40 overflow-hidden">
+<img alt="Ralson Tyres Project" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 parallax-img" src="assets/istockphoto-1482979397-612x612.jpg.jpeg"/>
+</div>
+</div>
+<div class="group border-b border-near-black/10 py-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white transition-colors px-4 hover-trigger project-row" data-bg="assets/istockphoto-1486082802-612x612.jpg.jpeg">
+<span class="font-bebas text-8xl text-near-black/10 group-hover:text-primary transition-colors">03</span>
+<div class="flex-1">
+<h3 class="font-bebas text-4xl mb-2">Pensol Lubricants Limited</h3>
+<p class="text-tiny-caps text-primary font-bold">Project • 2021–Till</p>
+<p class="text-dark-grey text-sm mt-2">Sector-03, Pithampur (DHAR)</p>
+</div>
+<div class="w-full md:w-64 h-40 overflow-hidden">
+<img alt="Pensol Lubricants Project" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 parallax-img" src="assets/istockphoto-1486082802-612x612.jpg.jpeg"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. Safety -->
+<section class="bg-white py-32 overflow-hidden" id="safety">
+<div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20">
+<div class="w-full lg:w-1/2 relative h-[600px] overflow-hidden mask-reveal-wrapper">
+<img alt="Safety First" class="w-full h-full object-cover scale-110 parallax-img liquid-target" src="assets/safety-first-sign-illustration-free-vector.jpg.jpeg"/>
+<div class="absolute -bottom-10 -right-10 bg-primary p-12 text-white">
+<h4 class="font-bebas text-3xl">ISO 45001 CERTIFIED</h4>
+</div>
+</div>
+<div class="w-full lg:w-1/2 flex flex-col justify-center">
+<h2 class="font-bebas text-6xl mb-8 reveal-mask"><span>SAFETY WITHOUT COMPROMISE</span></h2>
+<p class="text-dark-grey text-lg mb-12 font-light">
+                    At Doma Fabricators, safety is our top priority. We maintain comprehensive safety management systems designed to prevent accidents, protect the environment, and ensure compliance with all relevant safety regulations.
+                </p>
+<div class="space-y-8">
+<div class="flex items-start gap-6 group">
+<span class="font-bebas text-3xl text-primary">01</span>
+<div>
+<h4 class="font-bold text-tiny-caps mb-2">— Risk Assessment & PPE Compliance</h4>
+<p class="text-mid-grey">Identifying and controlling hazards before work begins. Providing and enforcing the use of personal protective equipment at all times.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<span class="font-bebas text-3xl text-primary">02</span>
+<div>
+<h4 class="font-bold text-tiny-caps mb-2">— Training, Audits & Inspections</h4>
+<p class="text-mid-grey">Regular safety training, drills, and workshops for all employees. Routine checks to maintain strict safety standards across all operations.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<span class="font-bebas text-3xl text-primary">03</span>
+<div>
+<h4 class="font-bold text-tiny-caps mb-2">— Emergency Preparedness & Compliance</h4>
+<p class="text-mid-grey">Well-defined response plans, regular mock drills, full adherence to all safety laws, and continuous improvement aligned with best practices.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. Contact -->
+<section class="bg-light-grey py-32 clip-diagonal-reverse parallax-section" id="contact">
+<div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20">
+<div class="w-full lg:w-1/2">
+<h2 class="font-bebas text-6xl mb-12 reveal-mask"><span>REACH OUT</span></h2>
+<form class="space-y-12">
+<div class="relative group">
+<label class="text-tiny-caps text-primary font-bold block mb-2">Your Name</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger" placeholder="John Doe" type="text"/>
+</div>
+<div class="relative group">
+<label class="text-tiny-caps text-primary font-bold block mb-2">Email Address</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger" placeholder="j.doe@company.com" type="email"/>
+</div>
+<div class="relative group">
+<label class="text-tiny-caps text-primary font-bold block mb-2">Project Details</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger" placeholder="Describe your fabrication requirements..." rows="4"></textarea>
+</div>
+<button class="bg-near-black text-white px-12 py-5 text-tiny-caps hover:bg-primary transition-all hover-trigger magnetic-btn">Submit Request</button>
+</form>
+</div>
+<div class="w-full lg:w-1/2 flex flex-col justify-end space-y-12">
+<div class="border-l-2 border-primary pl-8 divider-draw">
+<h4 class="text-tiny-caps font-bold text-near-black mb-4">Office Address</h4>
+<p class="text-2xl font-bebas tracking-wider">Plot No. 1J, Kheda, Sagorekutti<br/>Pithampur Industrial Area, Sector-3<br/>Pithampur, Dhar (M.P) 454 775</p>
+</div>
+<div class="border-l-2 border-primary pl-8 divider-draw">
+<h4 class="text-tiny-caps font-bold text-near-black mb-4">Direct Contact</h4>
+<p class="text-2xl font-bebas tracking-wider">+91 9826051620<br/>+91 9098324240<br/>+91 9111887856<br/>domafabricators@gmail.com</p>
+</div>
+<div class="h-64 w-full bg-mid-grey overflow-hidden mask-reveal-wrapper">
+<div class="w-full h-full grayscale opacity-50 bg-cover bg-center parallax-img liquid-target" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJdZXGyE1O3ALvZNEtqPrGcr7If3gP3duYFigPo9hnFHT6YwZ42TF7luY0TtBKtCf_nxDKF2Upj2fqH4FrHxL3b-Wb_TXJC3LU1vBtaoG8Euw75Ip8FgMh6EXREpUWxRh5uXEahdWJzmA8n37_IyOujmW8SRDilad0zMZfvKyZafog_-tQRGWLizWCUQk6sfsHYKimS8RJLrky6UeD4xoAvG8pzbxfR2Aw5iv4daLRL6vt2CFsZinNfxvS7jt8jmfs06A45LsCgMU')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 11. Footer -->
+<footer class="bg-near-black text-white pt-24 pb-12">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-16 mb-24">
+<div>
+<div class="flex items-center gap-2 mb-8">
+<span class="font-bebas text-3xl tracking-tighter">DOMA</span>
+<div class="h-8 w-[2px] bg-primary mx-1"></div>
+<span class="font-bebas text-3xl tracking-tighter">FABRICATORS</span>
+</div>
+<p class="text-mid-grey font-light leading-relaxed">
+                        Redefining industrial standards through precision, safety, and 14 years of engineering dedication. Design & Engineering | Equipment's Supply | Project Works.
+                    </p>
+</div>
+<div>
+<h5 class="text-tiny-caps font-bold mb-8 text-primary">Quick Navigation</h5>
+<ul class="space-y-4 text-mid-grey font-light">
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#services">Our Services</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#safety">Safety Standards</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="project.html">Projects</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#contact">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-tiny-caps font-bold mb-8 text-primary">Contact Information</h5>
+<ul class="space-y-4 text-mid-grey font-light">
+<li>Plot No. 1J, Kheda, Sagorekutti</li>
+<li>Pithampur, Dhar (M.P) 454 775</li>
+<li>+91 9826051620</li>
+<li>domafabricators@gmail.com</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-dark-grey">
+<p>© 2024 Doma Fabricators. All Rights Reserved.</p>
+<p>Designed by Pixora</p>
+</div>
+</div>
+</footer>
+<script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Performance Check & cleanup
+        let activeAnimations = [];
+        const addToCleanup = (anim) => activeAnimations.push(anim);
+
+        // Hero Slider Logic
+        const slides = document.querySelectorAll('.slide');
+        const imgs = document.querySelectorAll('.slide img');
+        const texts = document.querySelectorAll('.slide-text');
+        let current = 0;
+        let total = slides.length;
+
+        // Set initial state: only first slide visible
+        gsap.set(slides, { opacity: 0, zIndex: 0 });
+        gsap.set(slides[0], { opacity: 1, zIndex: 1 });
+        gsap.set(imgs[0], { scale: 1.15 });
+        gsap.set(texts, { opacity: 0, zIndex: 0 });
+        gsap.set(texts[0], { opacity: 1, zIndex: 3 });
+
+        // Animate current image zooming out slowly
+        gsap.to(imgs[0], { scale: 1.0, duration: 5, ease: "none" });
+
+        function goToNext() {
+          const next = (current + 1) % total;
+          const tl = gsap.timeline();
+
+          // Set next slide behind, reset its image scale and text opacity
+          gsap.set(slides[next], { zIndex: 0, opacity: 0 });
+          gsap.set(imgs[next], { scale: 1.15 });
+          gsap.set(texts[next], { opacity: 0, zIndex: 0 });
+
+          // Bring next slide on top with synchronized animation
+          tl.set(slides[next], { zIndex: 2 })
+            .set(texts[next], { zIndex: 3 })
+            .to(slides[next], { opacity: 1, duration: 1.2, ease: "power2.inOut" }, 0)
+            .to(texts[next], { opacity: 1, duration: 1.2, ease: "power2.inOut" }, 0)
+            .to(imgs[next], { scale: 1.0, duration: 5, ease: "none" }, 0)
+            .to(slides[current], { opacity: 0, duration: 1.2, ease: "power2.inOut" }, 0)
+            .to(texts[current], { opacity: 0, duration: 1.2, ease: "power2.inOut" }, 0)
+            .set(slides[current], { zIndex: 0 })
+            .set(texts[current], { zIndex: 0 });
+
+          current = next;
+        }
+
+        setInterval(goToNext, 5000);
+
+        // 1. Lenis Smooth Scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            wheelMultiplier: 1.1,
+            smoothWheel: true,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Custom Cursor
+        const cursor = document.getElementById('custom-cursor');
+        
+        window.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+        });
+
+        // 3. Background Grid Interaction
+        window.addEventListener('scroll', () => {
+            const vel = lenis.velocity;
+            gsap.to('#bg-grid', {
+                y: vel * 0.1,
+                duration: 0.5,
+                ease: 'power2.out'
+            });
+        });
+
+        // 5. 3D Tilt Effect for Cards
+        const tiltCards = document.querySelectorAll('.tilt-card');
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const xc = rect.width / 2;
+                const yc = rect.height / 2;
+                const dx = x - xc;
+                const dy = y - yc;
+                
+                gsap.to(card, {
+                    rotateX: -dy / 20,
+                    rotateY: dx / 20,
+                    x: dx * 0.05,
+                    y: dy * 0.05,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { rotateX: 0, rotateY: 0, x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' });
+            });
+        });
+
+        // 6. Magnetic Elements
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                gsap.to(btn, { x: x * 0.4, y: y * 0.4, duration: 0.3, ease: 'power2.out' });
+            });
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.3)' });
+            });
+        });
+
+        // 7. Core Reveals
+        const maskWrappers = document.querySelectorAll('.mask-reveal-wrapper');
+        maskWrappers.forEach(wrapper => {
+            addToCleanup(gsap.to(wrapper, {
+                scrollTrigger: { trigger: wrapper, start: 'top 90%' },
+                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+                duration: 1.5,
+                ease: 'power4.inOut'
+            }));
+        });
+
+        document.querySelectorAll('.divider-draw').forEach(divider => {
+            addToCleanup(gsap.to(divider, {
+                scrollTrigger: { trigger: divider, start: 'top 90%' },
+                scaleX: 1,
+                duration: 1.5,
+                ease: 'power4.inOut'
+            }));
+        });
+
+        document.querySelectorAll('.reveal-mask span').forEach(reveal => {
+            addToCleanup(gsap.from(reveal, {
+                scrollTrigger: { trigger: reveal, start: 'top 95%' },
+                y: 100,
+                skewY: 5,
+                duration: 1.2,
+                ease: 'power4.out',
+            }));
+        });
+
+        // Project Hovers - GSAP animations
+        const projectRows = document.querySelectorAll('.project-row');
+        const projectBgPreview = document.getElementById('project-bg-preview');
+        projectRows.forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                projectBgPreview.style.backgroundImage = `url(${row.getAttribute('data-bg')})`;
+                gsap.to(projectBgPreview, { opacity: 0.05, duration: 0.5 });
+            });
+            row.addEventListener('mouseleave', () => gsap.to(projectBgPreview, { opacity: 0, duration: 0.5 }));
+        });
+
+        // Parallax - Reduced movement to prevent gaps
+        document.querySelectorAll('.parallax-img').forEach(img => {
+            addToCleanup(gsap.to(img, {
+                scrollTrigger: {
+                    trigger: img.parentElement,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                y: -20, // Reduced from -60 to -20 for subtle effect without gaps
+                ease: 'none'
+            }));
+        });
+
+        // Services Section Parallax - LEFT image slides IN from left
+        gsap.to("#parallax-left", {
+            x: "0%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#services",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.5,
+            }
+        });
+
+        // Services Section Parallax - RIGHT image slides IN from right
+        gsap.to("#parallax-right", {
+            x: "0%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#services",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.5,
+            }
+        });
+
+        // Service cards entrance animation with stagger
+        gsap.from(".service-card", {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".service-card",
+                start: "top 85%",
+            }
+        });
+
+        // Window resize handling
+        window.addEventListener('resize', () => {
+            ScrollTrigger.refresh();
+        });
+
+        // Hamburger Menu Functionality
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        // Toggle menu (open/close)
+        hamburgerBtn.addEventListener('click', () => {
+            if (isMenuOpen) {
+                closeMenu();
+            } else {
+                isMenuOpen = true;
+                mobileMenu.classList.remove('translate-x-full');
+                hamburgerIcon.textContent = 'close';
+                document.body.style.overflow = 'hidden';
+                
+                mobileLinks.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.style.opacity = '1';
+                        link.querySelector('span').style.transform = 'translateX(0)';
+                    }, 100 + (index * 50));
+                });
+            }
+        });
+
+        // Close menu
+        const closeMenu = () => {
+            isMenuOpen = false;
+            mobileMenu.classList.add('translate-x-full');
+            hamburgerIcon.textContent = 'menu';
+            document.body.style.overflow = '';
+            
+            // Reset links
+            mobileLinks.forEach(link => {
+                link.style.opacity = '0';
+                link.querySelector('span').style.transform = 'translateX(-20px)';
+            });
+        };
+
+        // Close menu when clicking close button (with stopPropagation)
+        closeMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent event from bubbling to overlay
+            closeMenu();
+        });
+
+        // Close menu when clicking on a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when clicking outside (on the overlay itself)
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
+        });
+
+        // Initialize mobile links state
+        mobileLinks.forEach(link => {
+            link.style.opacity = '0';
+            link.querySelector('span').style.transform = 'translateX(-20px)';
+            link.querySelector('span').style.transition = 'transform 0.3s ease-out';
+        });
+
+        // Cleanup on unmount (best practice)
+        window.addEventListener('beforeunload', () => {
+            activeAnimations.forEach(a => a.kill());
+            lenis.destroy();
+        });
+    </script>
+</body></html>

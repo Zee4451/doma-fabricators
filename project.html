@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=IBM+Plex+Sans:wght@300;400;600;700&amp;family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "tertiary-fixed": "#ffddb2",
+                "secondary-fixed": "#cfe5ff",
+                "surface-container-highest": "#e8e1dc",
+                "primary-container": "#c0310a",
+                "on-error": "#ffffff",
+                "tertiary": "#6c4700",
+                "surface": "#fff8f3",
+                "on-error-container": "#93000a",
+                "surface-variant": "#e8e1dc",
+                "surface-container": "#f3ede7",
+                "secondary-fixed-dim": "#9bcbfc",
+                "primary-fixed": "#ffdad2",
+                "on-secondary-fixed-variant": "#0f4a74",
+                "secondary-container": "#9eceff",
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#2f628d",
+                "inverse-primary": "#ffb4a2",
+                "outline-variant": "#e3beb6",
+                "on-tertiary-fixed": "#291800",
+                "primary-fixed-dim": "#ffb4a2",
+                "on-primary-fixed-variant": "#8a1c00",
+                "tertiary-fixed-dim": "#ffb94c",
+                "surface-container-low": "#f9f2ed",
+                "outline": "#8f7069",
+                "on-tertiary": "#ffffff",
+                "primary": "#982000",
+                "background": "#fff8f3",
+                "tertiary-container": "#8c5d00",
+                "on-secondary-fixed": "#001d33",
+                "on-secondary-container": "#235882",
+                "inverse-on-surface": "#f6f0ea",
+                "on-surface": "#1d1b18",
+                "error-container": "#ffdad6",
+                "surface-container-high": "#ede7e2",
+                "on-primary-container": "#ffdfd7",
+                "surface-dim": "#dfd9d4",
+                "on-surface-variant": "#5a413a",
+                "error": "#ba1a1a",
+                "inverse-surface": "#33302d",
+                "surface-tint": "#b42801",
+                "on-tertiary-container": "#ffe1bb",
+                "on-primary": "#ffffff",
+                "on-background": "#1d1b18",
+                "on-primary-fixed": "#3c0700",
+                "surface-bright": "#fff8f3",
+                "on-tertiary-fixed-variant": "#624000",
+                "on-secondary": "#ffffff"
+              },
+              fontFamily: {
+                "headline": ["Bebas Neue", "sans-serif"],
+                "body": ["IBM Plex Sans", "sans-serif"],
+                "label": ["IBM Plex Sans", "sans-serif"],
+                "display": ["Bebas Neue", "sans-serif"],
+                "serif-italic": ["Cormorant Garamond", "serif"],
+                "mono": ["IBM Plex Mono", "monospace"]
+              },
+              borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .heat-haze {
+            background: linear-gradient(45deg, rgba(192, 49, 10, 0.08), transparent);
+            backdrop-filter: contrast(1.1) brightness(1.1) saturate(1.2);
+            animation: haze-flow 8s ease-in-out infinite alternate;
+        }
+        @keyframes haze-flow {
+            0% { filter: blur(0px) brightness(1); transform: scale(1); }
+            50% { filter: blur(1.5px) brightness(1.1); transform: scale(1.05); }
+            100% { filter: blur(0px) brightness(1); transform: scale(1); }
+        }
+        .technical-grid-line {
+            background-color: rgba(29, 27, 24, 0.1);
+            width: 1px;
+            height: 100%;
+            transform-origin: top;
+            transform: scaleY(0);
+        }
+        .text-vertical {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        .char { display: inline-block; }
+        .breathing {
+            animation: breathe 4s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { letter-spacing: -0.05em; opacity: 1; }
+            50% { letter-spacing: -0.02em; opacity: 0.85; }
+        }
+        #custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(152, 32, 0, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #custom-cursor::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: #982000;
+            border-radius: 50%;
+        }
+        .cursor-active {
+            width: 60px !important;
+            height: 60px !important;
+            background: rgba(152, 32, 0, 0.1);
+            border-color: #982000 !important;
+        }
+        .project-card-mask {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .archive-row-line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 1px;
+            background-color: #ba1a1a;
+            transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .archive-row:hover .archive-row-line {
+            width: 100%;
+        }
+        .floating-meta {
+            position: fixed;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .tilt-container {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .tilt-inner {
+            transform: translateZ(20px);
+        }
+        .lenis.lenis-smooth { height: auto; }
+        .lenis.lenis-scrolling iframe { pointer-events: none; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary selection:text-white overflow-x-hidden">
+<!-- Custom Cursor -->
+<div id="custom-cursor"></div>
+<div class="floating-meta font-mono text-[10px] uppercase tracking-widest bg-white/90 backdrop-blur-md p-3 border border-primary/20 shadow-xl">
+<div id="meta-content"></div>
+</div>
+<!-- TopNavBar -->
+<style>
+.text-tiny-caps { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
+</style>
+<!-- 1. Navbar -->
+<nav class="sticky top-0 z-50 bg-white border-b border-[#1A1815]/10 px-6 lg:px-12 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2 cursor-pointer">
+<span class="font-bebas text-3xl tracking-tighter text-[#1A1815]" style="font-family: 'Bebas Neue', cursive;">DOMA</span>
+<div class="h-8 w-[2px] bg-primary mx-1"></div>
+<span class="font-bebas text-3xl tracking-tighter text-[#1A1815]" style="font-family: 'Bebas Neue', cursive;">FABRICATORS</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="index.html">Home</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="about.html">About Us</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="service.html">Services</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="industries.html">Industries</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="project.html">Projects</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a>
+<a class="px-6 py-2 border border-[#1A1815] text-[#1A1815] text-tiny-caps hover:bg-primary hover:border-primary hover:text-white transition-all hover-trigger magnetic-btn" href="#catalogue">E-Catalogue</a>
+<a class="px-6 py-2 bg-primary text-white text-tiny-caps hover:bg-primary/90 transition-all hover-trigger magnetic-btn" href="index.html#contact">Contact Us</a>
+</div>
+<button class="md:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
+  <span class="material-symbols-outlined transition-all duration-300 text-[#1A1815]" id="hamburger-icon">menu</span>
+</button>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-[#1A1815]/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden" id="mobile-menu" style="font-family: 'Bebas Neue', cursive;">
+  <div class="flex flex-col h-full px-6 py-8">
+    <div class="flex items-center justify-between mb-12">
+      <div class="flex items-center gap-2">
+        <span class="font-bebas text-3xl tracking-tighter text-white">DOMA</span>
+        <div class="h-8 w-[2px] bg-primary mx-1"></div>
+        <span class="font-bebas text-3xl tracking-tighter text-white">FABRICATORS</span>
+      </div>
+      <button class="hover-trigger" id="close-menu-btn" aria-label="Close menu">
+        <span class="material-symbols-outlined text-white text-3xl">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-4 flex-1">
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="index.html">
+        <span class="inline-block transform transition-transform">Home</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="about.html">
+        <span class="inline-block transform transition-transform">About Us</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="service.html">
+        <span class="inline-block transform transition-transform">Services</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="industries.html">
+        <span class="inline-block transform transition-transform">Industries</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="project.html">
+        <span class="inline-block transform transition-transform">Projects</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="#resources">
+        <span class="inline-block transform transition-transform">Resources</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="#catalogue">
+        <span class="inline-block transform transition-transform">E-Catalogue</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="index.html#contact">
+        <span class="inline-block transform transition-transform">Contact Us</span>
+      </a>
+    </nav>
+    <div class="mt-auto pt-8 border-t border-white/10" style="font-family:sans-serif;">
+      <p class="text-white/50 text-sm font-light leading-relaxed">Precision Engineering & Industrial Fabrication</p>
+      <div class="flex gap-4 mt-4">
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white">share</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white">mail</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white">call</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<main id="main-content">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110" data-alt="dramatic wide shot of a massive steel fabrication workshop" id="hero-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZTmIa1pWzf2ae49CSZ3ampjWADdxPx8MCSOIt7HPLB9e6E_kzzyxYAvgzIGXP_s_nvyTcSm6RyTskMsLUntqxkL87-kmGQbymzardMaOO6rE6otga9YtlalR6B8HdRsb_6DHjcLFsKed3ij6DEfIAz9aSQ2GncUfEjsFDgH4ir29sfSi5Fr2X3_ca2eoOzjO-vHWH6QKan0kgc6eOzeVWNiShi7ts4jkm-ATyDwup3n0oHyWO8l55B4Wb0SjAfYOuogtRMwnWBu4"/>
+<div class="absolute inset-0 heat-haze"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-6xl">
+<p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8" id="hero-sub">14 Years of Engineering Excellence</p>
+<h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-on-surface breathing" id="hero-title">
+<div class="reveal-text">OUR MAJOR</div>
+<div class="reveal-text text-primary-container">PROJECTS</div>
+</h1>
+<div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
+<div class="draw-line w-24 h-[1px] bg-on-surface mt-4 hidden md:block origin-left scale-x-0"></div>
+<p class="max-w-xl text-lg md:text-xl font-light text-on-surface-variant leading-relaxed opacity-0 translate-y-8" id="hero-desc">
+                            Since 2010, Doma Fabricators has successfully delivered complex projects across Pharma, Chemical, Petroleum Refinery, and Painting industries. Our projects are a testament to precision engineering and on-time delivery.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Side Metadata Overlay -->
+<div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-on-surface-variant/40" id="side-meta">
+<div class="flex items-center gap-4 reveal-meta">
+<span>COORD: 40.7128° N, 74.0060° W</span>
+<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+</div>
+<div class="flex items-center gap-4 reveal-meta">
+<span>REF_SYS: DOMA_INT_v4.2</span>
+<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+</div>
+<div class="flex items-center gap-4 reveal-meta">
+<span>TIMESTAMP: 2024.11.04</span>
+<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+</div>
+</div>
+</section>
+<!-- On-Going Projects Section -->
+<section class="py-32 bg-surface">
+<div class="container mx-auto px-8">
+<div class="flex justify-between items-end mb-24">
+<div>
+<span class="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Current Operations</span>
+<h2 class="font-display text-7xl uppercase">On-Going Projects</h2>
+</div>
+<div class="text-right hidden md:block">
+<p class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Active Projects: 8+</p>
+<p class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Location: Pithampur, M.P</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<!-- Project Card 1 -->
+<div class="project-card group relative bg-surface-container-low transition-all duration-700 hover:bg-surface-container-high overflow-hidden tilt-container" data-meta="Material: SS-316L&lt;br&gt;Tolerance: ±0.1mm&lt;br&gt;Location: Dusseldorf">
+<div class="project-card-mask aspect-[4/5] overflow-hidden translate-y-full opacity-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" data-alt="massive cylindrical steel chemical storage tank" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCToe3LJLfObc7lzy7VU9durwbCSqWcLSkKJnOUeHETItC1ySgqjLqL5KMVGCUEMvtztfoqIxwmXopm0gwEHDFvGnTCmJfKmuRmJMYS83i4VE8hVqGd0nFy2sy7temPSV74uzu7MdciuZlonZfzqmqgaO711MZRlyONee0n0ygqepwrddrpwW-zzxRmEOHJ0EmSrnS19ISaeV3SsWsfNDUtTWIQecoWMoYspsmyrQSrbqrGzd07W6W8tNa2Wdz1VmB8kogeJgwtCcQ"/>
+</div>
+<div class="p-10 relative tilt-inner">
+<div class="flex justify-between items-start mb-8">
+<h3 class="font-display text-4xl uppercase leading-none">ACG-Associated Capsule <br/>Pvt. Ltd</h3>
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform" data-icon="arrow_outward">arrow_outward</span>
+</div>
+<div class="grid grid-cols-3 border-t border-on-surface/10 pt-8 gap-4 opacity-60 group-hover:opacity-100 transition-opacity">
+<div class="relative px-2">
+<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Type</span>
+<span class="font-bold text-lg">MAINT. & PROJECT</span>
+<div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
+</div>
+<div class="relative px-2">
+<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Location</span>
+<span class="font-bold text-lg">PITHAMPUR</span>
+<div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
+</div>
+<div class="px-2">
+<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Duration</span>
+<span class="font-bold text-lg">2024–TILL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="project-card group relative bg-surface-container-low transition-all duration-700 hover:bg-surface-container-high overflow-hidden lg:mt-32 tilt-container" data-meta="Material: Grade 5 Ti&lt;br&gt;Precision: ±0.05mm&lt;br&gt;Phase: Final Testing">
+<div class="project-card-mask aspect-[4/5] overflow-hidden translate-y-full opacity-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" data-alt="industrial robot arm welding complex steel component" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9BuWXE1pSZTn8BZv9CsgelkR8F5DjK_BGMrdn8FuwMlkf8WmDTHjwDkn5IeiOPhbykFYrUAOu46V0vdmo3kpUIN2kMeYVG3rB2iqY8bEKEmTu5jsxVvlwu2F27wfp8ZC26cr-f0Qa1ZidfIlfLVOoumR0iJkx7hZnxcWqYdwjNvfQq2pV3QuXE8sxRmgUq22NInj9dNNQp50NiSbouh57eIZ5nuHqbxgcdqWMquELcLbxtALXdv7HtWRr3vs6z5L_6Dos1gRRnyo"/>
+</div>
+<div class="p-10 relative tilt-inner">
+<div class="flex justify-between items-start mb-8">
+<h3 class="font-display text-4xl uppercase leading-none">Unichem Laboratories <br/>Limited</h3>
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform" data-icon="arrow_outward">arrow_outward</span>
+</div>
+<div class="grid grid-cols-3 border-t border-on-surface/10 pt-8 gap-4 opacity-60 group-hover:opacity-100 transition-opacity">
+<div class="relative px-2">
+<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Type</span>
+<span class="font-bold text-lg">PROJECT</span>
+<div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
+</div>
+<div class="relative px-2">
+<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Location</span>
+<span class="font-bold text-lg">PITHAMPUR</span>
+<div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
+</div>
+<div class="px-2">
+<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Duration</span>
+<span class="font-bold text-lg">2024–TILL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Completed Projects Archive -->
+<section class="py-32 bg-surface-container-low">
+<div class="container mx-auto px-8">
+<div class="max-w-4xl mb-32">
+<h2 class="font-display text-9xl uppercase leading-[0.8] mb-8 overflow-hidden"><span class="reveal-up inline-block">THE ARCHIVE</span></h2>
+<p class="font-serif-italic text-2xl text-on-surface-variant max-w-xl opacity-0 translate-y-8 reveal-scroll">A testament to structural integrity and architectural vision spanning four decades.</p>
+</div>
+<!-- Archive Item 1 -->
+<div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+<div class="archive-row-line"></div>
+<div class="w-full md:w-1/2 relative">
+<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: AR-0931
+                        </div>
+<div class="overflow-hidden">
+<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" data-alt="modern steel skyscraper facade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4sYNDWTAoUBQpz_s4qPzGX6oQqM3ll8ZqYJWd9AmDrcdlHOt7t9vquwjuoGDkXsMlwBwkhcleN3DjsXenQFCZ9vc0mGYlwh1KLt9i3WEat8u6zQRM8qfyBE-UY2Aex-FKRSVjVu_FY8snzWzVyT490aMtuM67IdsA35Gc4Pj2oMEBRAPt6pLbRTmz3HFCczMzarAQ6I-lZrfmpMp8SEeTZV05WW0cWvx-RTRFWW2YKmkp84Tp2LWUFtI0gGeDJXivphuxMqBRgBA"/>
+</div>
+</div>
+<div class="w-full md:w-1/2 lg:pl-20">
+<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+<span class="glitch-num inline-block" data-value="2024">ONGOING SINCE 2010</span>
+</span>
+<h3 class="font-display text-6xl uppercase mb-6">Aarti Surfactant <br/>Pvt. Ltd</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Long-standing partnership providing comprehensive project and maintenance services at Sector-03, Pithampur. Continuous support since 2010 across fabrication, piping, and industrial maintenance.
+                        </p>
+<div class="flex gap-12">
+<div>
+<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+<p class="font-bold">PROJECT & MAINTENANCE</p>
+</div>
+<div>
+<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+<p class="font-bold">2010–TILL</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Archive Item 2 -->
+<div class="archive-row group flex flex-col md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
+<div class="archive-row-line"></div>
+<div class="w-full md:w-1/2 relative">
+<div class="absolute -right-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: MAR-442
+                        </div>
+<div class="overflow-hidden">
+<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" data-alt="night shot of a massive offshore oil rig" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBAmNyEGvZKp8q1ddRdOVKDCT-2gePWPxCz3ytBQ47ceyP188X5U_KH1s6fIhdGWjK5kmJGZvEr1AST2bJ19zVg0ME1p-AOtnRK9uBIEBfn3-LR7rebJuCGcYADXC2KjGeNoAoOteY298vX2DirquGl1EDj74tcsjiFp2DPwMpQVxSQIoxZ8JjQ3bAbdTpc_43yeNP8Wq0M2U24xaYFmWHXBUgO-Fki1jkJVyBI3fZtp5Vg-uejRCCBRo3ybCiWmnE1KiViTqzalM"/>
+</div>
+</div>
+<div class="w-full md:w-1/2 lg:pr-20 md:text-right flex flex-col md:items-end">
+<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+<span class="glitch-num inline-block" data-value="2024">COMPLETED 2024</span>
+</span>
+<h3 class="font-display text-6xl uppercase mb-6">Ralson Tyres <br/>Limited</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Major fabrication and erection project at Smart Industrial Park, Pithampur. Comprehensive structural steel and piping work delivered on schedule.
+                        </p>
+<div class="flex gap-12">
+<div>
+<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+<p class="font-bold">PROJECT</p>
+</div>
+<div>
+<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+<p class="font-bold">2021–2024</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-40 bg-on-surface text-surface overflow-hidden relative">
+<div class="absolute right-0 top-0 opacity-10 font-display text-[25vw] leading-none select-none -translate-y-1/4 translate-x-1/4" id="cta-bg-text">
+                DOMA
+            </div>
+<div class="container mx-auto px-8 relative z-10 text-center">
+<h2 class="font-display text-8xl md:text-9xl uppercase tracking-tighter mb-12">Get In Touch</h2>
+<div class="flex flex-col md:flex-row justify-center gap-8">
+<a href="mailto:domafabricators@gmail.com" class="nav-btn bg-primary text-white font-display text-2xl px-12 py-6 hover:bg-primary-container transition-colors">
+                        CONTACT US
+                    </a>
+<a href="tel:+919826051620" class="nav-btn border border-surface/20 text-surface font-display text-2xl px-12 py-6 hover:bg-surface/5 transition-colors">
+                        CALL NOW
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1A1815] text-white pt-24 pb-12">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-16 mb-24">
+<div>
+<div class="flex items-center gap-2 mb-8" style="font-family: 'Bebas Neue', cursive;">
+<span class="font-bebas text-3xl tracking-tighter">DOMA</span>
+<div class="h-8 w-[2px] bg-primary mx-1"></div>
+<span class="font-bebas text-3xl tracking-tighter">FABRICATORS</span>
+</div>
+<p class="text-[#C8C4BC] font-light leading-relaxed">
+                        Redefining industrial standards through precision, safety, and 14 years of engineering dedication. Design & Engineering | Equipment's Supply | Project Works.
+                    </p>
+</div>
+<div>
+<h5 class="text-tiny-caps font-bold mb-8 text-primary">Quick Navigation</h5>
+<ul class="space-y-4 text-[#C8C4BC] font-light">
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#services">Our Services</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#safety">Safety Standards</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="project.html">Projects</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#contact">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-tiny-caps font-bold mb-8 text-primary">Contact Information</h5>
+<ul class="space-y-4 text-[#C8C4BC] font-light">
+<li>Plot No. 1J, Kheda, Sagorekutti</li>
+<li>Pithampur, Dhar (M.P) 454 775</li>
+<li>+91 9826051620</li>
+<li>domafabricators@gmail.com</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-[#4A4845]">
+<p>© 2024 Doma Fabricators. All Rights Reserved.</p>
+<p>Designed by Pixora</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+        // Hamburger Menu Functionality
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    closeMenu();
+                } else {
+                    isMenuOpen = true;
+                    mobileMenu.classList.remove('translate-x-full');
+                    hamburgerIcon.textContent = 'close';
+                    document.body.style.overflow = 'hidden';
+                    
+                    mobileLinks.forEach((link, index) => {
+                        setTimeout(() => {
+                            link.style.opacity = '1';
+                            link.querySelector('span').style.transform = 'translateX(0)';
+                        }, 100 + (index * 50));
+                    });
+                }
+            });
+
+            const closeMenu = () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('translate-x-full');
+                hamburgerIcon.textContent = 'menu';
+                document.body.style.overflow = '';
+                mobileLinks.forEach(link => {
+                    link.style.opacity = '0';
+                    link.querySelector('span').style.transform = 'translateX(-20px)';
+                });
+            };
+
+            closeMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeMenu();
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) closeMenu();
+            });
+
+            mobileLinks.forEach(link => {
+                link.style.opacity = '0';
+                link.querySelector('span').style.transform = 'translateX(-20px)';
+                link.querySelector('span').style.transition = 'transform 0.3s ease-out';
+            });
+        }
+});
+</script>
+<script>
+        // Init Lenis Smooth Scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            wheelMultiplier: 1,
+            infinite: false,
+        })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+
+        // Custom Cursor
+        const cursor = document.getElementById('custom-cursor');
+        const meta = document.querySelector('.floating-meta');
+        const metaContent = document.getElementById('meta-content');
+        
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function updateCursor() {
+            // Smooth lag for cursor
+            cursorX += (mouseX - cursorX) * 0.2;
+            cursorY += (mouseY - cursorY) * 0.2;
+            cursor.style.left = `${cursorX - cursor.offsetWidth/2}px`;
+            cursor.style.top = `${cursorY - cursor.offsetHeight/2}px`;
+            
+            // Meta follows with more lag
+            gsap.to(meta, {
+                x: mouseX + 20,
+                y: mouseY + 20,
+                duration: 0.6,
+                ease: "power2.out"
+            });
+
+            requestAnimationFrame(updateCursor);
+        }
+        updateCursor();
+
+        // Cursor interactions
+        document.querySelectorAll('a, button, .project-card, .nav-btn').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
+        });
+
+        // Split Text for Hero
+        document.querySelectorAll('.reveal-text').forEach(text => {
+            const content = text.textContent;
+            text.innerHTML = '';
+            [...content].forEach(char => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char;
+                span.className = 'char opacity-0 translate-y-full';
+                text.appendChild(span);
+            });
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Reveal
+        const heroTl = gsap.timeline();
+        heroTl.to('#hero-bg', { scale: 1, opacity: 0.3, duration: 2, ease: "power2.out" })
+              .to('#hero-sub', { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=1.5")
+              .to('.reveal-text .char', { 
+                  opacity: 1, 
+                  y: 0, 
+                  duration: 0.8, 
+                  stagger: 0.02, 
+                  ease: "back.out(1.7)" 
+              }, "-=0.8")
+              .to('#hero-desc', { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+              .to('.draw-line', { scaleX: 1, duration: 1.5, stagger: 0.2, ease: "expo.inOut" }, "-=1");
+
+        // Scroll Draws (Lines)
+        document.querySelectorAll('.draw-line').forEach(line => {
+            gsap.to(line, {
+                scaleX: 1,
+                scrollTrigger: {
+                    trigger: line,
+                    start: "top 90%",
+                }
+            });
+        });
+
+        document.querySelectorAll('.draw-line-y').forEach(line => {
+            gsap.to(line, {
+                scaleY: 1,
+                scrollTrigger: {
+                    trigger: line,
+                    start: "top 90%",
+                }
+            });
+        });
+
+        // Project Cards Masks & Reveal
+        document.querySelectorAll('.project-card').forEach((card, i) => {
+            const mask = card.querySelector('.project-card-mask');
+            gsap.to(mask, {
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                }
+            });
+
+            // 3D Tilt Interaction
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const xc = rect.width / 2;
+                const yc = rect.height / 2;
+                const dx = x - xc;
+                const dy = y - yc;
+                
+                gsap.to(card, {
+                    rotationY: dx / 20,
+                    rotationX: -dy / 20,
+                    ease: "power2.out",
+                    duration: 0.5
+                });
+
+                // Show metadata
+                meta.style.opacity = '1';
+                metaContent.innerHTML = card.dataset.meta;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { rotationY: 0, rotationX: 0, duration: 0.5 });
+                meta.style.opacity = '0';
+            });
+        });
+
+        // Archive Reveal
+        gsap.from('.reveal-up', {
+            yPercent: 100,
+            duration: 1,
+            ease: "power4.out",
+            scrollTrigger: { trigger: '.reveal-up', start: "top 90%" }
+        });
+
+        document.querySelectorAll('.reveal-scroll').forEach(el => {
+            gsap.to(el, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        });
+
+        // Glitch Numbers
+        document.querySelectorAll('.glitch-num').forEach(el => {
+            const finalVal = el.dataset.value;
+            const textParts = el.innerText.split(' ');
+            const yearStr = textParts[textParts.length - 1];
+            
+            ScrollTrigger.create({
+                trigger: el,
+                start: "top 90%",
+                onEnter: () => {
+                    let obj = { val: 0 };
+                    gsap.to(obj, {
+                        val: finalVal,
+                        duration: 2,
+                        ease: "power2.out",
+                        onUpdate: () => {
+                            // Technical glitch feel: occasional random characters
+                            if (Math.random() > 0.9) {
+                                el.innerText = `COMPLETED X${Math.floor(Math.random()*9)}X${Math.floor(Math.random()*9)}`;
+                            } else {
+                                el.innerText = `COMPLETED ${Math.floor(obj.val)}`;
+                            }
+                        },
+                        onComplete: () => {
+                            el.innerText = `COMPLETED ${finalVal}`;
+                        }
+                    });
+                }
+            });
+        });
+
+        // CTA Parallax text
+        gsap.to('#cta-bg-text', {
+            x: -200,
+            scrollTrigger: {
+                trigger: '#cta-bg-text',
+                scrub: 1
+            }
+        });
+
+    </script>
+</body></html>

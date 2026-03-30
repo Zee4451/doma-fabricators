@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | DOMA FABRICATORS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&amp;family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="pages/css/about.css"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#ffdad2",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#cfe5ff",
+                        "primary-fixed-dim": "#ffb4a2",
+                        "surface-bright": "#fff8f3",
+                        "primary": "#982000",
+                        "on-tertiary-container": "#ffe1bb",
+                        "inverse-on-surface": "#f6f0ea",
+                        "on-background": "#1d1b18",
+                        "surface-tint": "#b42801",
+                        "on-primary-container": "#ffdfd7",
+                        "on-primary-fixed-variant": "#8a1c00",
+                        "on-secondary-fixed-variant": "#0f4a74",
+                        "outline": "#8f7069",
+                        "on-primary-fixed": "#3c0700",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#5a413a",
+                        "tertiary-fixed": "#ffddb2",
+                        "tertiary": "#6c4700",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#9eceff",
+                        "background": "#fff8f3",
+                        "outline-variant": "#e3beb6",
+                        "primary-container": "#c0310a",
+                        "on-secondary-fixed": "#001d33",
+                        "on-secondary-container": "#235882",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dfd9d4",
+                        "inverse-primary": "#ffb4a2",
+                        "on-surface": "#1d1b18",
+                        "tertiary-container": "#8c5d00",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f3ede7",
+                        "secondary": "#2f628d",
+                        "inverse-surface": "#33302d",
+                        "surface-container-low": "#f9f2ed",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "on-tertiary-fixed": "#291800",
+                        "surface-container-highest": "#e8e1dc",
+                        "tertiary-fixed-dim": "#ffb94c",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ede7e2",
+                        "surface": "#fff8f3",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#9bcbfc",
+                        "surface-variant": "#e8e1dc"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["IBM Plex Sans"],
+                        "label": ["IBM Plex Sans"],
+                        "display": ["Bebas Neue"],
+                        "serif": ["Cormorant Garamond"],
+                        "mono": ["IBM Plex Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+<!-- Custom Cursor -->
+<div id="custom-cursor"></div>
+<!-- SVG Filter for Heat Haze -->
+<svg style="display: none;">
+<filter id="hazeFilter">
+<feturbulence basefrequency="0.01 0.03" numoctaves="2" result="turbulence">
+<animate attributename="baseFrequency" dur="10s" repeatcount="indefinite" values="0.01 0.03;0.02 0.05;0.01 0.03"></animate>
+</feturbulence>
+<fedisplacementmap in="SourceGraphic" in2="turbulence" scale="5"></fedisplacementmap>
+</filter>
+</svg>
+<!-- TopNavBar -->
+<style>
+.text-tiny-caps { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
+.char { display: inline-block; }
+.breathing {
+    animation: breathe 4s ease-in-out infinite;
+}
+@keyframes breathe {
+    0%, 100% { letter-spacing: -0.05em; opacity: 1; }
+    50% { letter-spacing: -0.02em; opacity: 0.85; }
+}
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(152, 32, 0, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#custom-cursor::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: #982000;
+    border-radius: 50%;
+}
+.cursor-active {
+    width: 60px !important;
+    height: 60px !important;
+    background: rgba(152, 32, 0, 0.1);
+    border-color: #982000 !important;
+}
+</style>
+<!-- 1. Navbar -->
+<nav class="sticky top-0 z-50 bg-white border-b border-[#1A1815]/10 px-6 lg:px-12 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2 cursor-pointer">
+<span class="font-bebas text-3xl tracking-tighter text-[#1A1815]" style="font-family: 'Bebas Neue', cursive;">DOMA</span>
+<div class="h-8 w-[2px] bg-primary mx-1"></div>
+<span class="font-bebas text-3xl tracking-tighter text-[#1A1815]" style="font-family: 'Bebas Neue', cursive;">FABRICATORS</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="index.html">Home</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="about.html">About Us</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="service.html">Services</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="industries.html">Industries</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="project.html">Projects</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a>
+<a class="px-6 py-2 border border-[#1A1815] text-[#1A1815] text-tiny-caps hover:bg-primary hover:border-primary hover:text-white transition-all hover-trigger magnetic-btn" href="#catalogue">E-Catalogue</a>
+<a class="px-6 py-2 bg-primary text-white text-tiny-caps hover:bg-primary/90 transition-all hover-trigger magnetic-btn" href="index.html#contact">Contact Us</a>
+</div>
+<button class="md:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
+  <span class="material-symbols-outlined transition-all duration-300 text-[#1A1815]" id="hamburger-icon">menu</span>
+</button>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-[#1A1815]/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden" id="mobile-menu" style="font-family: 'Bebas Neue', cursive;">
+  <div class="flex flex-col h-full px-6 py-8">
+    <div class="flex items-center justify-between mb-12">
+      <div class="flex items-center gap-2">
+        <span class="font-bebas text-3xl tracking-tighter text-white">DOMA</span>
+        <div class="h-8 w-[2px] bg-primary mx-1"></div>
+        <span class="font-bebas text-3xl tracking-tighter text-white">FABRICATORS</span>
+      </div>
+      <button class="hover-trigger" id="close-menu-btn" aria-label="Close menu">
+        <span class="material-symbols-outlined text-white text-3xl">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-4 flex-1">
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="index.html">
+        <span class="inline-block transform transition-transform">Home</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="about.html">
+        <span class="inline-block transform transition-transform">About Us</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="service.html">
+        <span class="inline-block transform transition-transform">Services</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="industries.html">
+        <span class="inline-block transform transition-transform">Industries</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="project.html">
+        <span class="inline-block transform transition-transform">Projects</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="#resources">
+        <span class="inline-block transform transition-transform">Resources</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="#catalogue">
+        <span class="inline-block transform transition-transform">E-Catalogue</span>
+      </a>
+      <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="index.html#contact">
+        <span class="inline-block transform transition-transform">Contact Us</span>
+      </a>
+    </nav>
+    <div class="mt-auto pt-8 border-t border-white/10" style="font-family:sans-serif;">
+      <p class="text-white/50 text-sm font-light leading-relaxed">Precision Engineering & Industrial Fabrication</p>
+      <div class="flex gap-4 mt-4">
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white">share</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white">mail</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white">call</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<main id="main-content">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110" data-alt="dramatic wide angle shot of a massive industrial steel fabrication workshop" id="hero-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4NGPyjkl_nVMEv6mRvzYUGm8Ppn2OddD5zOGj1Y3GCTtS9jkIc_W_pfQ-dyaVWaupu94cnvOSwsDMmWhhPZHk_4qpo7OU2BpgDyg24GzGytwTql9FmiLqK-ef3Y6vCtaiXHWDzSi-88-0KiLVeHpmdEXK6Pj-GZFGdmz1i-7CLkygVDwiy3vOql_47TDBOFt6V9cSJtger19jwv6Jhpb1MthyuyHk6yCDRc1N3oOZ05ql-HhrfEopn-jHFAyFUzsCmPCX9RJoJS0"/>
+<div class="absolute inset-0 heat-haze"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-6xl">
+<p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8" id="hero-sub">Est. 2010 — 14 Years of Excellence</p>
+<h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-on-surface breathing" id="hero-title">
+<div class="reveal-text">OUR <span class="text-primary-container">LEGACY</span></div>
+</h1>
+<div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
+<div class="draw-line w-24 h-[1px] bg-on-surface mt-4 hidden md:block origin-left scale-x-0"></div>
+<p class="max-w-xl text-lg md:text-xl font-light text-on-surface-variant leading-relaxed opacity-0 translate-y-8" id="hero-desc">
+                            Doma Fabricators is a professionally managed industrial fabrication company with over 14 years of proven experience. We combine technical expertise, skilled manpower, and modern fabrication techniques to deliver solutions that create long-term value.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Side Metadata Overlay -->
+<div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-on-surface-variant/40" id="side-meta">
+<div class="flex items-center gap-4 reveal-meta">
+<span>COORD: 22.6133° N, 75.6823° E</span>
+<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+</div>
+<div class="flex items-center gap-4 reveal-meta">
+<span>REF_SYS: DOMA_ABOUT_v2.0</span>
+<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+</div>
+<div class="flex items-center gap-4 reveal-meta">
+<span>TIMESTAMP: 2024.11.04</span>
+<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+</div>
+</div>
+</section>
+<!-- Company Profile: Asymmetric Layout -->
+<section class="py-32 px-8 lg:px-20 bg-surface">
+<div class="grid grid-cols-12 gap-12 lg:gap-24">
+<div class="col-span-12 lg:col-span-5">
+<div class="relative group">
+<div class="absolute -top-6 -left-6 w-24 h-24 border-t-2 border-l-2 border-primary/20"></div>
+<img class="w-full aspect-[3/4] object-cover grayscale" data-alt="professional portrait of an experienced industrial leader Mr. Varghese K.A. in a boardroom setting with architectural drawings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh_LmtKIT0AwWPh7bQBHnMUTKsmu3BjLA-RqYAKLx9FaBN9ggOVeK9Lni0C8sNOoYHinyKd2mCl7F2T6C8Vj4YXLNNvQUtRT1yVGEsjUGKCG0Xu0S6dW2ZFCWvmlnMS6aAvARCg0kQkjG1fadjgN2perSr3qIskTZvFbtlVYc0QkIBscKCZ3sjZKZcwPPaxKsjH-7TcFOf7pTxQhxtmhjmARNCtn1KgaOCA9WOsI2qFgdXIuk3ipauNty5PV0CTmUUFaCqJwA4J3I"/>
+<div class="mt-8">
+<h3 class="font-display text-4xl mb-2">MR. VARGHESE K.A.</h3>
+<p class="font-serif italic text-lg text-primary">Visionary Leader & Proprietor</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-7 flex flex-col justify-center perspective-container">
+<h2 class="font-serif italic text-3xl lg:text-5xl leading-tight mb-12 text-on-surface">
+                    "With deep expertise in mechanical fabrication and an <span class="text-primary">unwavering commitment</span> to quality, we build strong, lasting client relationships."
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Value Card 1 -->
+<div class="bg-surface-container p-8 border border-outline-variant/10 group hover:bg-primary transition-all duration-500 cursor-pointer tilt-card" data-tilt="">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-6 text-4xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h4 class="font-display text-2xl mb-4 group-hover:text-white">PRECISION</h4>
+<p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-white/80">Micron-level accuracy in every weld and cut.</p>
+</div>
+<!-- Value Card 2 -->
+<div class="bg-surface-container p-8 border border-outline-variant/10 group hover:bg-primary transition-all duration-500 cursor-pointer tilt-card" data-tilt="">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-6 text-4xl" data-icon="verified">verified</span>
+<h4 class="font-display text-2xl mb-4 group-hover:text-white">INTEGRITY</h4>
+<p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-white/80">Structural honesty that withstands generations.</p>
+</div>
+<!-- Value Card 3 -->
+<div class="bg-surface-container p-8 border border-outline-variant/10 group hover:bg-primary transition-all duration-500 cursor-pointer tilt-card" data-tilt="">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-6 text-4xl" data-icon="architecture">architecture</span>
+<h4 class="font-display text-2xl mb-4 group-hover:text-white">INNOVATION</h4>
+<p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-white/80">Merging traditional values with modern practices.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- History: Kinetic Timeline -->
+<section class="bg-surface-container-low py-32 px-8 overflow-hidden relative">
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="mb-20">
+<p class="font-label uppercase tracking-widest text-xs text-primary font-bold mb-4">Evolutionary Path</p>
+<h2 class="font-display text-6xl uppercase leading-none">THE KINETIC TIMELINE</h2>
+</div>
+<div class="relative space-y-32">
+<!-- SVG Drawing Line -->
+<svg class="absolute left-1/2 -translate-x-1/2 top-0 h-full w-2 overflow-visible hidden md:block" preserveaspectratio="none">
+<path d="M 1,0 L 1,2000" fill="none" id="timeline-path" stroke="#982000" stroke-dasharray="2000" stroke-dashoffset="2000" stroke-width="2"></path>
+</svg>
+<!-- Milestone 1 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between group timeline-item">
+<div class="md:w-5/12 text-right hidden md:block">
+<p class="font-display text-8xl text-outline-variant/20 timeline-year">2010</p>
+</div>
+<div class="z-10 w-12 h-12 bg-primary flex items-center justify-center text-white font-bold my-8 md:my-0">
+                        01
+                    </div>
+<div class="md:w-5/12 bg-surface p-10 border-l-4 border-primary shadow-xl">
+<h3 class="font-display text-3xl mb-2 uppercase glitch-target">The Foundation</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-sm">Doma Fabricators was established in Pithampur Industrial Area, specializing in piping works, heavy structural fabrication, and equipment erection for the growing industrial corridor.</p>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between group timeline-item">
+<div class="md:w-5/12 text-left hidden md:block">
+<p class="font-display text-8xl text-outline-variant/20 timeline-year">2017</p>
+</div>
+<div class="z-10 w-12 h-12 bg-primary flex items-center justify-center text-white font-bold my-8 md:my-0">
+                        02
+                    </div>
+<div class="md:w-5/12 bg-surface p-10 border-r-4 border-primary text-right shadow-xl">
+<h3 class="font-display text-3xl mb-2 uppercase glitch-target">Growth & Expansion</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-sm">Expanding operations with dedicated in-house fabrication facilities to manufacture specialized industrial equipment — tank farms, SS/MS tanks, EOT cranes, reactors, chimneys, and silos.</p>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between group timeline-item">
+<div class="md:w-5/12 text-right hidden md:block">
+<p class="font-display text-8xl text-outline-variant/20 timeline-year">2024</p>
+</div>
+<div class="z-10 w-12 h-12 bg-primary flex items-center justify-center text-white font-bold my-8 md:my-0">
+                        03
+                    </div>
+<div class="md:w-5/12 bg-surface p-10 border-l-4 border-primary shadow-xl">
+<h3 class="font-display text-3xl mb-2 uppercase glitch-target">Industry Leadership</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-sm">Partnering with industry leaders like Panasonic Energy, SRF Limited, ACG, Unichem Laboratories, and Bio Innovation — delivering complex projects with modern fabrication techniques and strict quality standards.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Infrastructure & Facility (Pithampur Core) with Deep Parallax -->
+<section class="relative h-screen min-h-[800px] flex items-center justify-center text-white overflow-hidden bg-stone-900" id="pithampur-core">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-50 scale-125" data-alt="immense industrial factory hall" id="parallax-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo2bjMSZ0RAWEwXOi3HwAUG3M1tN5Ysak7J7SBSlr9uwczdKAwYAZuc3FrHhu6M6wB8LkEtXAXUO-7rN1R8MOM0Q0BdXgKB304nAQde052bLlYbEnIV3v-GW9NizY0YD6PvEd2mZB3MS0YNBI9ik2nhlfVXN1o8JmvfsBvZ0YS7M8n4oM5M8BaNx-C8WoC60kcK9HFq259VaIWj9DrQhxIhqY78od6c3r1Ta8x0j2sE2cwQDEkTWDhjncEzty4vRCWVeiUEi3CuMo"/>
+<div class="absolute inset-0 bg-black/40 backdrop-grayscale-[0.5]"></div>
+</div>
+<!-- Hotspots -->
+<div class="absolute top-1/4 left-1/4 z-20 hotspot-trigger cursor-crosshair">
+<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+</div>
+<div class="hotspot-content">
+<p class="font-display text-lg">EOT CRANE SYSTEM</p>
+<p class="font-mono text-[10px]">CAPACITY: 40 TONNE OVERHEAD</p>
+</div>
+</div>
+<div class="absolute bottom-1/3 right-1/4 z-20 hotspot-trigger cursor-crosshair">
+<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+</div>
+<div class="hotspot-content">
+<p class="font-display text-lg">WELDING STATION</p>
+<p class="font-mono text-[10px]">MIG / TIG / ARC WELDING CAPABILITY</p>
+</div>
+</div>
+<div class="relative z-10 max-w-5xl text-center px-8">
+<h2 class="font-display text-7xl lg:text-9xl tracking-tighter mb-12" id="parallax-title">PITHAMPUR <span class="text-primary">CORE</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="backdrop-blur-xl bg-white/5 border border-white/10 p-8 flex flex-col items-center hover:bg-white/10 transition-colors">
+<p class="text-primary font-display text-5xl mb-2">50K</p>
+<p class="font-label text-xs uppercase tracking-widest">SQ FT Workshop Area</p>
+<div class="technical-grid-line my-6"></div>
+<p class="text-xs opacity-60">Integrated Material Flow Control</p>
+</div>
+<div class="backdrop-blur-xl bg-white/5 border border-white/10 p-8 flex flex-col items-center hover:bg-white/10 transition-colors">
+<p class="text-primary font-display text-5xl mb-2">MIG/TIG</p>
+<p class="font-label text-xs uppercase tracking-widest">Welding Systems</p>
+<div class="technical-grid-line my-6"></div>
+<p class="text-xs opacity-60">Multi-Process Welding Capability</p>
+</div>
+<div class="backdrop-blur-xl bg-white/5 border border-white/10 p-8 flex flex-col items-center hover:bg-white/10 transition-colors">
+<p class="text-primary font-display text-5xl mb-2">40T</p>
+<p class="font-label text-xs uppercase tracking-widest">EOT Crane Capacity</p>
+<div class="technical-grid-line my-6"></div>
+<p class="text-xs opacity-60">Heavy Lifting Solutions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quality Assurance: Technical Metadata Grid with 3D Interaction -->
+<section class="py-32 px-8 lg:px-20 bg-surface heat-haze">
+<div class="grid grid-cols-12 gap-16">
+<div class="col-span-12 lg:col-span-4">
+<p class="font-label uppercase tracking-widest text-xs text-primary font-bold mb-4">Quality Control</p>
+<h2 class="font-display text-6xl uppercase leading-[0.9] mb-8">QUALITY AUDIT <br/>PROTOCOLS</h2>
+<p class="font-body text-on-surface-variant max-w-sm mb-12">
+                    At Doma Fabricators, quality is the cornerstone of our operations. We maintain rigorous QC processes to ensure every project meets the highest standards of excellence.
+                </p>
+<div class="space-y-4">
+<div class="flex items-center space-x-3 text-sm font-bold">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>ISO 9001:2015 CERTIFIED</span>
+</div>
+<div class="flex items-center space-x-3 text-sm font-bold">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>ASME SEC IX COMPLIANT</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-8 perspective-container">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- QA Detail -->
+<div class="bg-surface p-10 border border-outline-variant/20 hover:border-primary/40 transition-colors tilt-card" data-tilt="">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-[10px] uppercase opacity-40">Section 04.1</span>
+<span class="material-symbols-outlined text-primary" data-icon="radar">radar</span>
+</div>
+<h4 class="font-display text-2xl mb-4">MATERIAL INSPECTION</h4>
+<p class="text-sm text-on-surface-variant mb-6">All incoming materials are verified for compliance with client and industry standards before use.</p>
+<div class="font-mono text-[10px] grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
+<div><span class="opacity-40">PARAM:</span> NDT-702</div>
+<div><span class="opacity-40">FREQ:</span> 5MHZ</div>
+</div>
+</div>
+<!-- QA Detail -->
+<div class="bg-surface p-10 border border-outline-variant/20 hover:border-primary/40 transition-colors tilt-card" data-tilt="">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-[10px] uppercase opacity-40">Section 04.2</span>
+<span class="material-symbols-outlined text-primary" data-icon="straighten">straighten</span>
+</div>
+<h4 class="font-display text-2xl mb-4">IN-PROCESS INSPECTION</h4>
+<p class="text-sm text-on-surface-variant mb-6">Continuous monitoring during fabrication and erection ensures early detection and correction of issues.</p>
+<div class="font-mono text-[10px] grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
+<div><span class="opacity-40">ACC:</span> 0.001mm</div>
+<div><span class="opacity-40">METH:</span> LASER-3D</div>
+</div>
+</div>
+<!-- QA Detail -->
+<div class="bg-surface p-10 border border-outline-variant/20 hover:border-primary/40 transition-colors tilt-card" data-tilt="">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-[10px] uppercase opacity-40">Section 04.3</span>
+<span class="material-symbols-outlined text-primary" data-icon="weight">weight</span>
+</div>
+<h4 class="font-display text-2xl mb-4">FINAL INSPECTION</h4>
+<p class="text-sm text-on-surface-variant mb-6">Detailed checks on dimensions, welding, and finishes guarantee flawless project completion.</p>
+<div class="font-mono text-[10px] grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
+<div><span class="opacity-40">LIMIT:</span> 600KN</div>
+<div><span class="opacity-40">FACTOR:</span> 1.5S.F</div>
+</div>
+</div>
+<!-- QA Detail -->
+<div class="bg-surface p-10 border border-outline-variant/20 hover:border-primary/40 transition-colors tilt-card" data-tilt="">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-[10px] uppercase opacity-40">Section 04.4</span>
+<span class="material-symbols-outlined text-primary" data-icon="layers">layers</span>
+</div>
+<h4 class="font-display text-2xl mb-4">NDT & DESTRUCTIVE TESTING</h4>
+<p class="text-sm text-on-surface-variant mb-6">Radiographic, ultrasonic, pressure, and other tests validate the integrity of our work with complete traceable documentation.</p>
+<div class="font-mono text-[10px] grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
+<div><span class="opacity-40">COAT:</span> EPOXY-PU</div>
+<div><span class="opacity-40">THICK:</span> 150 MIC</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications: Structural Grid -->
+<section class="py-32 px-8 bg-surface-container">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-display text-5xl uppercase mb-4 tracking-tight">GLOBAL COMPLIANCE</h2>
+<div class="w-24 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-outline-variant/20 border border-outline-variant/20">
+<div class="bg-surface-container-lowest py-16 px-8 flex flex-col items-center group cursor-pointer hover:bg-surface-bright transition-all duration-300">
+<div class="w-20 h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-5xl text-stone-300 group-hover:text-primary" data-icon="license" style="font-variation-settings: 'FILL' 1;">license</span>
+</div>
+<p class="font-display text-xl">ISO 9001:2015</p>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-40">Quality Management</p>
+</div>
+<div class="bg-surface-container-lowest py-16 px-8 flex flex-col items-center group cursor-pointer hover:bg-surface-bright transition-all duration-300">
+<div class="w-20 h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-5xl text-stone-300 group-hover:text-primary" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<p class="font-display text-xl">ASME CODE</p>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-40">Pressure Vessels</p>
+</div>
+<div class="bg-surface-container-lowest py-16 px-8 flex flex-col items-center group cursor-pointer hover:bg-surface-bright transition-all duration-300">
+<div class="w-20 h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-5xl text-stone-300 group-hover:text-primary" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<p class="font-display text-xl">NSIC-D&amp;B</p>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-40">Government Registered</p>
+</div>
+<div class="bg-surface-container-lowest py-16 px-8 flex flex-col items-center group cursor-pointer hover:bg-surface-bright transition-all duration-300">
+<div class="w-20 h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-5xl text-stone-300 group-hover:text-primary" data-icon="engineering" style="font-variation-settings: 'FILL' 1;">engineering</span>
+</div>
+<p class="font-display text-xl">AWS CERTIFIED</p>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-40">Welding Excellence</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#1A1815] text-white pt-24 pb-12">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-16 mb-24">
+<div>
+<div class="flex items-center gap-2 mb-8" style="font-family: 'Bebas Neue', cursive;">
+<span class="font-bebas text-3xl tracking-tighter">DOMA</span>
+<div class="h-8 w-[2px] bg-primary mx-1"></div>
+<span class="font-bebas text-3xl tracking-tighter">FABRICATORS</span>
+</div>
+<p class="text-[#C8C4BC] font-light leading-relaxed">
+                        Redefining industrial standards through precision, safety, and 14 years of engineering dedication. Design & Engineering | Equipment's Supply | Project Works.
+                    </p>
+</div>
+<div>
+<h5 class="text-tiny-caps font-bold mb-8 text-primary">Quick Navigation</h5>
+<ul class="space-y-4 text-[#C8C4BC] font-light">
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#services">Our Services</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#safety">Safety Standards</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="project.html">Projects</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#contact">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-tiny-caps font-bold mb-8 text-primary">Contact Information</h5>
+<ul class="space-y-4 text-[#C8C4BC] font-light">
+<li>Plot No. 1J, Kheda, Sagorekutti</li>
+<li>Pithampur, Dhar (M.P) 454 775</li>
+<li>+91 9826051620</li>
+<li>domafabricators@gmail.com</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-[#4A4845]">
+<p>© 2024 Doma Fabricators. All Rights Reserved.</p>
+<p>Designed by Pixora</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+        // Hamburger Menu Functionality
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    closeMenu();
+                } else {
+                    isMenuOpen = true;
+                    mobileMenu.classList.remove('translate-x-full');
+                    hamburgerIcon.textContent = 'close';
+                    document.body.style.overflow = 'hidden';
+                    
+                    mobileLinks.forEach((link, index) => {
+                        setTimeout(() => {
+                            link.style.opacity = '1';
+                            link.querySelector('span').style.transform = 'translateX(0)';
+                        }, 100 + (index * 50));
+                    });
+                }
+            });
+
+            const closeMenu = () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('translate-x-full');
+                hamburgerIcon.textContent = 'menu';
+                document.body.style.overflow = '';
+                mobileLinks.forEach(link => {
+                    link.style.opacity = '0';
+                    link.querySelector('span').style.transform = 'translateX(-20px)';
+                });
+            };
+
+            closeMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeMenu();
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) closeMenu();
+            });
+
+            mobileLinks.forEach(link => {
+                link.style.opacity = '0';
+                link.querySelector('span').style.transform = 'translateX(-20px)';
+                link.querySelector('span').style.transition = 'transform 0.3s ease-out';
+            });
+        }
+});
+</script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Custom Cursor
+    const cursor = document.getElementById('custom-cursor');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function updateCursor() {
+        cursorX += (mouseX - cursorX) * 0.2;
+        cursorY += (mouseY - cursorY) * 0.2;
+        cursor.style.left = `${cursorX - cursor.offsetWidth/2}px`;
+        cursor.style.top = `${cursorY - cursor.offsetHeight/2}px`;
+        requestAnimationFrame(updateCursor);
+    }
+    updateCursor();
+
+    // Cursor interactions
+    document.querySelectorAll('a, button, .hover-trigger, .tilt-card').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
+    });
+
+    // Split Text for Hero
+    document.querySelectorAll('.reveal-text').forEach(text => {
+        const content = text.innerHTML;
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = content;
+        const plainText = tempDiv.textContent;
+        text.innerHTML = '';
+        [...plainText].forEach(char => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.className = 'char opacity-0 translate-y-full';
+            if (content.includes('text-primary-container') && char !== ' ') {
+                span.classList.add('text-primary-container');
+            }
+            text.appendChild(span);
+        });
+    });
+
+    // Hero Reveal Animation
+    const heroTl = gsap.timeline();
+    if (document.getElementById('hero-bg')) {
+        heroTl.to('#hero-bg', { scale: 1, opacity: 0.3, duration: 2, ease: "power2.out" });
+    }
+    heroTl.to('#hero-sub', { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=1.5")
+          .to('.reveal-text .char', { 
+              opacity: 1, 
+              y: 0, 
+              duration: 0.8, 
+              stagger: 0.02, 
+              ease: "back.out(1.7)" 
+          }, "-=0.8")
+          .to('#hero-desc', { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+          .to('.draw-line', { scaleX: 1, duration: 1.5, stagger: 0.2, ease: "expo.inOut" }, "-=1");
+
+    // Side Metadata Reveal
+    gsap.utils.toArray('.reveal-meta').forEach((meta, i) => {
+        gsap.to(meta, {
+            opacity: 1,
+            duration: 0.8,
+            delay: 2 + (i * 0.15),
+            ease: "power2.out"
+        });
+    });
+
+    // 1. 3D Tilt Interaction
+    document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            gsap.to(card, {
+                rotateX: rotateX,
+                rotateY: rotateY,
+                scale: 1.05,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                rotateX: 0,
+                rotateY: 0,
+                scale: 1,
+                duration: 0.5,
+                ease: 'elastic.out(1, 0.3)'
+            });
+        });
+    });
+
+    // 2. Kinetic Path-Drawing Timeline
+    gsap.to('#timeline-path', {
+        strokeDashoffset: 0,
+        scrollTrigger: {
+            trigger: '.timeline-item',
+            start: 'top center',
+            endTrigger: '.timeline-item:last-child',
+            end: 'bottom center',
+            scrub: 1
+        }
+    });
+
+    // Timeline Glitch into view
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        gsap.from(item.querySelector('.glitch-target'), {
+            opacity: 0,
+            x: -20,
+            duration: 0.5,
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 80%',
+                onEnter: () => {
+                    item.querySelector('.glitch-target').classList.add('glitch-text');
+                    setTimeout(() => item.querySelector('.glitch-target').classList.remove('glitch-text'), 1000);
+                }
+            }
+        });
+        gsap.from(item.querySelector('.timeline-year'), {
+            opacity: 0,
+            scale: 0.8,
+            duration: 1,
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 80%'
+            }
+        });
+    });
+
+    // 3. Deep-Map Parallax Workshop
+    gsap.to('#parallax-bg', {
+        yPercent: -20,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '#pithampur-core',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+        }
+    });
+
+    gsap.to('#parallax-title', {
+        y: 100,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '#pithampur-core',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+        }
+    });
+</script>
+
+<!-- Smooth Scroll Performance (Browser Native + Minimal Enhancements) -->
+<!-- Handled via scroll-smooth class on html -->
+<script src="pages/js/about.js"></script>
+</body></html>
