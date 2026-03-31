@@ -222,23 +222,23 @@
 </div>
 </section>
 <!-- Company Profile: Asymmetric Layout -->
-<section class="py-32 px-8 lg:px-20 bg-surface">
-<div class="grid grid-cols-12 gap-12 lg:gap-24">
-<div class="col-span-12 lg:col-span-5">
+<section class="py-32 px-4 sm:px-8 lg:px-20 bg-surface overflow-x-hidden">
+<div class="grid grid-cols-12 gap-12 lg:gap-24 max-w-full">
+<div class="col-span-12 lg:col-span-5 w-full max-w-full">
 <div class="relative group">
 <div class="absolute -top-6 -left-6 w-24 h-24 border-t-2 border-l-2 border-primary/20"></div>
 <img class="w-full aspect-[3/4] object-cover grayscale company-profile-image" data-alt="professional portrait of an experienced industrial leader Mr. Varghese K.A. in a boardroom setting with architectural drawings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh_LmtKIT0AwWPh7bQBHnMUTKsmu3BjLA-RqYAKLx9FaBN9ggOVeK9Lni0C8sNOoYHinyKd2mCl7F2T6C8Vj4YXLNNvQUtRT1yVGEsjUGKCG0Xu0S6dW2ZFCWvmlnMS6aAvARCg0kQkjG1fadjgN2perSr3qIskTZvFbtlVYc0QkIBscKCZ3sjZKZcwPPaxKsjH-7TcFOf7pTxQhxtmhjmARNCtn1KgaOCA9WOsI2qFgdXIuk3ipauNty5PV0CTmUUFaCqJwA4J3I"/>
 <div class="mt-8">
-<h3 class="font-display text-4xl mb-2">MR. VARGHESE K.A.</h3>
+<h3 class="font-display text-4xl mb-2 break-words">MR. VARGHESE K.A.</h3>
 <p class="font-serif italic text-lg text-primary">Visionary Leader & Proprietor</p>
 </div>
 </div>
 </div>
-<div class="col-span-12 lg:col-span-7 flex flex-col justify-center perspective-container">
-<h2 class="font-serif italic text-3xl lg:text-5xl leading-tight mb-12 text-on-surface">
+<div class="col-span-12 lg:col-span-7 flex flex-col justify-center perspective-container w-full max-w-full">
+<h2 class="font-serif italic text-3xl lg:text-5xl leading-tight mb-12 text-on-surface break-words">
                     "With deep expertise in mechanical fabrication and an <span class="text-primary">unwavering commitment</span> to quality, we build strong, lasting client relationships."
                 </h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
 <!-- Value Card 1 -->
 <div class="bg-surface-container p-8 border border-outline-variant/10 group hover:bg-primary transition-all duration-500 cursor-pointer tilt-card" data-tilt="">
 <span class="material-symbols-outlined text-primary group-hover:text-white mb-6 text-4xl" data-icon="precision_manufacturing">precision_manufacturing</span>
@@ -628,34 +628,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 1. 3D Tilt Interaction
-    document.querySelectorAll('.tilt-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-            gsap.to(card, {
-                rotateX: rotateX,
-                rotateY: rotateY,
-                scale: 1.05,
-                duration: 0.3,
-                ease: 'power2.out'
+    // 1. 3D Tilt Interaction - Disabled on mobile for performance
+    const isMobileDevice = window.innerWidth <= 768;
+    
+    if (!isMobileDevice) {
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                gsap.to(card, {
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    rotateX: 0,
+                    rotateY: 0,
+                    scale: 1,
+                    duration: 0.5,
+                    ease: 'elastic.out(1, 0.3)'
+                });
             });
         });
-        card.addEventListener('mouseleave', () => {
-            gsap.to(card, {
-                rotateX: 0,
-                rotateY: 0,
-                scale: 1,
-                duration: 0.5,
-                ease: 'elastic.out(1, 0.3)'
-            });
-        });
-    });
+    }
 
     // 2. Kinetic Path-Drawing Timeline
     gsap.to('#timeline-path', {

@@ -143,6 +143,18 @@ body {
         aspect-ratio: 3/4;
     }
     
+    /* Prevent horizontal overflow on mobile */
+    section.px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Grid container - prevent overflow */
+    .grid.grid-cols-12 {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
     /* Company Profile Section */
     .perspective-container {
         perspective: none;
@@ -239,11 +251,33 @@ body {
     .company-profile-image {
         max-height: 300px;
         aspect-ratio: 3/4;
+        width: 100%;
     }
     
-    /* Card Spacing */
+    /* Value Cards - Stack vertically and prevent overflow */
+    .grid.grid-cols-1.md\:grid-cols-3 {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Card spacing and text wrapping */
     .tilt-card {
         padding: 1.5rem !important;
+        min-width: 0; /* Prevent flex item from overflowing */
+    }
+    
+    .tilt-card h4 {
+        font-size: 1.5rem !important;
+        word-wrap: break-word;
+    }
+    
+    .tilt-card p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .tilt-card .material-symbols-outlined {
+        font-size: 2.5rem !important;
     }
     
     /* Timeline Adjustments */
