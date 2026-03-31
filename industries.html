@@ -42,10 +42,7 @@
     </script>
 </head>
 <body class="bg-surface selection:bg-primary-container selection:text-white overflow-x-hidden">
-<!-- Custom Cursor -->
-<div id="custom-cursor"></div>
 <div id="interactive-grid"></div>
-<div id="cursor-meta">TECHNICAL_SPECS: VERIFIED</div>
 <style>
 .text-tiny-caps { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
 .char { display: inline-block; }
@@ -55,32 +52,6 @@
 @keyframes breathe {
     0%, 100% { letter-spacing: -0.05em; opacity: 1; }
     50% { letter-spacing: -0.02em; opacity: 0.85; }
-}
-#custom-cursor {
-    width: 20px;
-    height: 20px;
-    border: 1px solid rgba(152, 32, 0, 0.5);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#custom-cursor::after {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: #982000;
-    border-radius: 50%;
-}
-.cursor-active {
-    width: 60px !important;
-    height: 60px !important;
-    background: rgba(152, 32, 0, 0.1);
-    border-color: #982000 !important;
 }
 </style>
 <!-- 1. Navbar -->
@@ -106,10 +77,10 @@
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 bg-[#1A1815]/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden" id="mobile-menu" style="font-family: 'Bebas Neue', cursive;">
+<div class="fixed inset-0 bg-[#1A1815]/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden" id="mobile-menu">
   <div class="flex flex-col h-full px-6 py-8">
     <div class="flex items-center justify-between mb-12">
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2" style="font-family: 'Bebas Neue', cursive;">
         <span class="font-bebas text-3xl tracking-tighter text-white">DOMA</span>
         <div class="h-8 w-[2px] bg-primary mx-1"></div>
         <span class="font-bebas text-3xl tracking-tighter text-white">FABRICATORS</span>
@@ -120,31 +91,31 @@
     </div>
     <nav class="flex flex-col gap-4 flex-1">
       <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="index.html">
-        <span class="inline-block transform transition-transform">Home</span>
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Home</span>
       </a>
       <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="about.html">
-        <span class="inline-block transform transition-transform">About Us</span>
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">About Us</span>
       </a>
       <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="service.html">
-        <span class="inline-block transform transition-transform">Services</span>
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Services</span>
       </a>
       <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="industries.html">
-        <span class="inline-block transform transform transition-transform">Industries</span>
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Industries</span>
       </a>
       <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="project.html">
-        <span class="inline-block transform transition-transform">Projects</span>
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Projects</span>
       </a>
       <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="#resources">
-        <span class="inline-block transform transition-transform">Resources</span>
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Resources</span>
       </a>
       <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="#catalogue">
-        <span class="inline-block transform transition-transform">E-Catalogue</span>
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
       </a>
       <a class="mobile-link text-2xl font-bebas text-white/70 hover:text-primary transition-colors py-4 border-b border-white/10 hover-trigger" href="index.html#contact">
-        <span class="inline-block transform transition-transform">Contact Us</span>
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Contact Us</span>
       </a>
     </nav>
-    <div class="mt-auto pt-8 border-t border-white/10" style="font-family:sans-serif;">
+    <div class="mt-auto pt-8 border-t border-white/10">
       <p class="text-white/50 text-sm font-light leading-relaxed">Precision Engineering & Industrial Fabrication</p>
       <div class="flex gap-4 mt-4">
         <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
@@ -417,31 +388,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <script>
     gsap.registerPlugin(ScrollTrigger);
-
-    // Custom Cursor
-    const cursor = document.getElementById('custom-cursor');
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    function updateCursor() {
-        cursorX += (mouseX - cursorX) * 0.2;
-        cursorY += (mouseY - cursorY) * 0.2;
-        cursor.style.left = `${cursorX - cursor.offsetWidth/2}px`;
-        cursor.style.top = `${cursorY - cursor.offsetHeight/2}px`;
-        requestAnimationFrame(updateCursor);
-    }
-    updateCursor();
-
-    // Cursor interactions
-    document.querySelectorAll('a, button, .hover-trigger, .sector-card').forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
-    });
 
     // Split Text for Hero
     document.querySelectorAll('.reveal-text').forEach(text => {
