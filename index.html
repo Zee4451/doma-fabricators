@@ -63,6 +63,20 @@
 <style>
         .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
         .clip-diagonal-reverse { clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%); }
+        
+        /* Fix for contact section clipping - ensure content is visible */
+        #contact > div {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Ensure contact section has enough padding to prevent clipping */
+        @media (min-width: 769px) {
+            #contact {
+                padding-top: 8rem !important;
+                padding-bottom: 8rem !important;
+            }
+        }
         .marquee { display: flex; overflow: hidden; user-select: none; gap: 4rem; }
         .marquee-content { flex-shrink: 0; display: flex; justify-content: space-around; gap: 4rem; min-width: 100%; animation: scroll 40s linear infinite; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
@@ -90,6 +104,18 @@
 
         /* Image Masking Reveal */
         .mask-reveal-wrapper { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); will-change: clip-path; }
+
+        /* Contact Form - Ensure visibility and accessibility */
+        #contact input,
+        #contact textarea,
+        #contact button {
+            position: relative;
+            z-index: 3;
+        }
+        #contact label {
+            position: relative;
+            z-index: 3;
+        }
 
         /* Technical Background Noise */
         #bg-grid {
@@ -733,8 +759,8 @@
 </div>
 </section>
 <!-- 10. Contact -->
-<section class="bg-light-grey py-32 clip-diagonal-reverse parallax-section relative z-10" id="contact">
-<div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20 relative z-10">
+<section class="bg-light-grey py-32 clip-diagonal-reverse parallax-section relative" id="contact" style="z-index: 10;">
+<div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20 relative" style="z-index: 2;">
 <div class="w-full lg:w-1/2">
 <h2 class="font-bebas text-6xl mb-12 reveal-mask"><span>REACH OUT</span></h2>
 <form class="space-y-12">
