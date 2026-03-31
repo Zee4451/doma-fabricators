@@ -159,6 +159,11 @@
                 line-height: 1.5 !important;
                 padding: 0 1rem;
             }
+            /* Hide parallax images on mobile to prevent overlap */
+            #parallax-left,
+            #parallax-right {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -927,29 +932,30 @@
             }));
         });
 
-        // Services Section Parallax - LEFT image slides IN from left
-        gsap.to("#parallax-left", {
-            x: "0%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#services",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1.5,
-            }
-        });
+        // Services Section Parallax - Desktop Only (disabled on mobile)
+        if (window.innerWidth > 768) {
+            gsap.to("#parallax-left", {
+                x: "0%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#services",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1.5,
+                }
+            });
 
-        // Services Section Parallax - RIGHT image slides IN from right
-        gsap.to("#parallax-right", {
-            x: "0%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#services",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1.5,
-            }
-        });
+            gsap.to("#parallax-right", {
+                x: "0%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#services",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1.5,
+                }
+            });
+        }
 
         // Service cards entrance animation with stagger
         gsap.from(".service-card", {
