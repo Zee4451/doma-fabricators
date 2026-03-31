@@ -159,10 +159,17 @@
                 line-height: 1.5 !important;
                 padding: 0 1rem;
             }
-            /* Hide parallax images on mobile to prevent overlap */
+            /* Mobile parallax adjustments - smaller, more transparent */
             #parallax-left,
             #parallax-right {
-                display: none !important;
+                width: 150px !important;
+                opacity: 0.08 !important;
+            }
+            #parallax-left {
+                left: -20px !important;
+            }
+            #parallax-right {
+                right: -20px !important;
             }
         }
     </style>
@@ -932,8 +939,11 @@
             }));
         });
 
-        // Services Section Parallax - Desktop Only (disabled on mobile)
-        if (window.innerWidth > 768) {
+        // Services Section Parallax - Enhanced for all screen sizes
+        const isMobile = window.innerWidth <= 768;
+        
+        if (!isMobile) {
+            // Desktop: Full parallax effect
             gsap.to("#parallax-left", {
                 x: "0%",
                 ease: "none",
@@ -953,6 +963,29 @@
                     start: "top bottom",
                     end: "bottom top",
                     scrub: 1.5,
+                }
+            });
+        } else {
+            // Mobile: Subtle parallax with reduced movement
+            gsap.to("#parallax-left", {
+                x: "20%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#services",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                }
+            });
+
+            gsap.to("#parallax-right", {
+                x: "-20%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#services",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
                 }
             });
         }
