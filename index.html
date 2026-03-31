@@ -171,6 +171,15 @@
             #parallax-right {
                 right: -20px !important;
             }
+            /* Performance: Disable GPU-intensive effects on mobile */
+            .tilt-card {
+                transform: none !important;
+                will-change: auto !important;
+            }
+            .liquid-target {
+                filter: none !important;
+                will-change: auto !important;
+            }
         }
     </style>
 </head>
@@ -845,39 +854,44 @@
             });
         });
 
-        // 5. 3D Tilt Effect for Cards
-        const tiltCards = document.querySelectorAll('.tilt-card');
-        tiltCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const xc = rect.width / 2;
-                const yc = rect.height / 2;
-                const dx = x - xc;
-                const dy = y - yc;
-                
-                gsap.to(card, {
-                    rotateX: -dy / 20,
-                    rotateY: dx / 20,
-                    x: dx * 0.05,
-                    y: dy * 0.05,
-                    duration: 0.5,
-                    ease: 'power2.out'
+        // 5. 3D Tilt Effect for Cards - Disabled on mobile for performance
+        const isMobileDevice = window.innerWidth <= 768;
+        
+        if (!isMobileDevice) {
+            const tiltCards = document.querySelectorAll('.tilt-card');
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const xc = rect.width / 2;
+                    const yc = rect.height / 2;
+                    const dx = x - xc;
+                    const dy = y - yc;
+                    
+                    gsap.to(card, {
+                        rotateX: -dy / 20,
+                        rotateY: dx / 20,
+                        x: dx * 0.05,
+                        y: dy * 0.05,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
+                });
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, { rotateX: 0, rotateY: 0, x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' });
                 });
             });
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, { rotateX: 0, rotateY: 0, x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' });
-            });
-        });
+        }
 
-        // 6. Magnetic Elements
+        // 6. Magnetic Elements - Reduced sensitivity on mobile
         document.querySelectorAll('.magnetic-btn').forEach(btn => {
             btn.addEventListener('mousemove', (e) => {
                 const rect = btn.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                gsap.to(btn, { x: x * 0.4, y: y * 0.4, duration: 0.3, ease: 'power2.out' });
+                const strength = isMobileDevice ? 0.2 : 0.4; // Reduced on mobile
+                gsap.to(btn, { x: x * strength, y: y * strength, duration: 0.3, ease: 'power2.out' });
             });
             btn.addEventListener('mouseleave', () => {
                 gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.3)' });
@@ -925,8 +939,14 @@
             row.addEventListener('mouseleave', () => gsap.to(projectBgPreview, { opacity: 0, duration: 0.5 }));
         });
 
-        // Parallax - Reduced movement to prevent gaps
-        document.querySelectorAll('.parallax-img').forEach(img => {
+        // Parallax - Optimized for mobile performance
+        const allParallaxImgs = document.querySelectorAll('.parallax-img');
+        allParallaxImgs.forEach(img => {
+            // Skip parallax on mobile for better performance, keep only essential ones
+            if (isMobileDevice && !img.closest('#about')) {
+                return; // Skip non-critical parallax on mobile
+            }
+            
             addToCleanup(gsap.to(img, {
                 scrollTrigger: {
                     trigger: img.parentElement,
@@ -934,7 +954,7 @@
                     end: 'bottom top',
                     scrub: true
                 },
-                y: -20, // Reduced from -60 to -20 for subtle effect without gaps
+                y: isMobileDevice ? -10 : -20, // Reduced movement on mobile
                 ease: 'none'
             }));
         });
