@@ -151,6 +151,69 @@
         line-height: 1.5 !important;
     }
 }
+
+/* Large Desktop Optimizations */
+@media (min-width: 1440px) {
+    #hero-title {
+        font-size: clamp(8rem, 10vw, 12rem) !important;
+        line-height: 0.85 !important;
+    }
+    #hero-sub {
+        font-size: clamp(2.5rem, 3vw, 4rem) !important;
+    }
+    #hero-desc {
+        font-size: clamp(1.25rem, 1.5vw, 1.75rem) !important;
+        max-width: 800px !important;
+    }
+    .font-display.text-6xl {
+        font-size: clamp(4rem, 5vw, 6rem) !important;
+    }
+    h2.font-display {
+        font-size: clamp(3.5rem, 4vw, 5rem) !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    #hero-title {
+        font-size: clamp(10rem, 12vw, 15rem) !important;
+    }
+    #hero-sub {
+        font-size: clamp(3rem, 4vw, 5rem) !important;
+    }
+    #hero-desc {
+        font-size: clamp(1.5rem, 2vw, 2rem) !important;
+        max-width: 900px !important;
+    }
+    .font-display.text-6xl {
+        font-size: clamp(5rem, 6vw, 7rem) !important;
+    }
+    h2.font-display {
+        font-size: clamp(4.5rem, 5vw, 7rem) !important;
+    }
+    .max-w-7xl {
+        max-width: 1800px !important;
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+    }
+}
+
+@media (min-width: 2560px) {
+    #hero-title {
+        font-size: clamp(12rem, 15vw, 18rem) !important;
+    }
+    #hero-sub {
+        font-size: clamp(4rem, 5vw, 6rem) !important;
+    }
+    #hero-desc {
+        font-size: clamp(1.75rem, 2.5vw, 2.5rem) !important;
+    }
+    .font-display.text-6xl {
+        font-size: clamp(6rem, 7vw, 9rem) !important;
+    }
+    h2.font-display {
+        font-size: clamp(5rem, 6vw, 8rem) !important;
+    }
+}
 </style>
 <!-- 1. Navbar -->
 <nav class="sticky top-0 z-50 bg-white border-b border-[#1A1815]/10 px-6 lg:px-12 py-4 flex items-center justify-between">

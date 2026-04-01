@@ -117,6 +117,60 @@
             z-index: 3;
         }
 
+        /* Large Desktop Layout Adjustments */
+        @media (min-width: 1440px) {
+            .max-w-7xl {
+                max-width: 1600px !important;
+                padding-left: 2rem !important;
+                padding-right: 2rem !important;
+            }
+            section.py-24 {
+                padding-top: 8rem !important;
+                padding-bottom: 8rem !important;
+            }
+            .grid.md\:grid-cols-3 > div {
+                min-height: auto;
+            }
+            .container.mx-auto {
+                padding-left: 3rem !important;
+                padding-right: 3rem !important;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .max-w-7xl {
+                max-width: 1800px !important;
+                padding-left: 4rem !important;
+                padding-right: 4rem !important;
+            }
+            section.py-24 {
+                padding-top: 10rem !important;
+                padding-bottom: 10rem !important;
+            }
+            .grid.md\:grid-cols-4 > div {
+                padding: 3rem !important;
+            }
+            p.text-tiny-caps {
+                font-size: 0.85rem !important;
+                letter-spacing: 0.25em !important;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            .max-w-7xl {
+                max-width: 2200px !important;
+                padding-left: 6rem !important;
+                padding-right: 6rem !important;
+            }
+            section.py-24 {
+                padding-top: 12rem !important;
+                padding-bottom: 12rem !important;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                line-height: 1.05 !important;
+            }
+        }
+
         /* Technical Background Noise */
         #bg-grid {
             position: fixed; inset: 0; pointer-events: none; z-index: -1;
@@ -164,13 +218,83 @@
             text-shadow: 
                 1px 1px 0px #cc1a1a,
                 2px 2px 0px #cc1a1a;
-            font-size: clamp(2rem, 8vw, 5.5rem);
+            font-size: clamp(2.5rem, 6vw, 7rem);
             font-weight: 400;
             line-height: 1.1;
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 0.02em;
             padding: 0 1rem;
+        }
+
+        /* Large Desktop Optimizations */
+        @media (min-width: 1440px) {
+            .hero-heading {
+                font-size: clamp(4rem, 8vw, 9rem);
+                line-height: 1.05;
+                letter-spacing: 0.03em;
+            }
+            .slide-text p {
+                font-size: clamp(1.25rem, 2vw, 2rem);
+                line-height: 1.7;
+                max-width: clamp(600px, 40vw, 900px);
+            }
+            h2.font-bebas {
+                font-size: clamp(3.5rem, 5vw, 7rem) !important;
+            }
+            .font-bebas.text-6xl {
+                font-size: clamp(4rem, 6vw, 8rem) !important;
+            }
+            p.text-lg {
+                font-size: clamp(1.125rem, 1.5vw, 1.5rem) !important;
+                line-height: 1.8 !important;
+            }
+            .service-card h3 {
+                font-size: clamp(1.75rem, 2.5vw, 3rem) !important;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .hero-heading {
+                font-size: clamp(5rem, 10vw, 11rem);
+            }
+            .slide-text p {
+                font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+                max-width: 1000px;
+            }
+            h2.font-bebas {
+                font-size: clamp(4.5rem, 6vw, 9rem) !important;
+            }
+            .font-bebas.text-6xl {
+                font-size: clamp(5rem, 7vw, 10rem) !important;
+            }
+            p.text-lg {
+                font-size: clamp(1.25rem, 2vw, 1.75rem) !important;
+            }
+            .service-card h3 {
+                font-size: clamp(2rem, 3vw, 3.5rem) !important;
+            }
+            .max-w-7xl {
+                max-width: clamp(1400px, 90vw, 1800px) !important;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            .hero-heading {
+                font-size: clamp(6rem, 12vw, 13rem);
+            }
+            .slide-text p {
+                font-size: clamp(1.75rem, 3vw, 3rem);
+            }
+            h2.font-bebas {
+                font-size: clamp(5rem, 7vw, 11rem) !important;
+            }
+            .font-bebas.text-6xl {
+                font-size: clamp(6rem, 8vw, 12rem) !important;
+            }
+            p.text-lg {
+                font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+            }
         }
 
         /* Mobile-specific hero text adjustments */
