@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=IBM+Plex+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#001d33",
+              "on-error": "#ffffff",
+              "tertiary-container": "#8c5d00",
+              "secondary-fixed-dim": "#9bcbfc",
+              "on-surface-variant": "#5a413a",
+              "on-primary-container": "#ffdfd7",
+              "surface-variant": "#e8e1dc",
+              "surface": "#fff8f3",
+              "surface-tint": "#b42801",
+              "secondary-fixed": "#cfe5ff",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#ffb4a2",
+              "outline": "#8f7069",
+              "on-surface": "#1d1b18",
+              "surface-container-high": "#ede7e2",
+              "secondary": "#2f628d",
+              "tertiary": "#6c4700",
+              "inverse-surface": "#33302d",
+              "inverse-on-surface": "#f6f0ea",
+              "background": "#fff8f3",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-container": "#ffe1bb",
+              "primary-fixed": "#ffdad2",
+              "secondary-container": "#9eceff",
+              "surface-container-highest": "#e8e1dc",
+              "outline-variant": "#e3beb6",
+              "tertiary-fixed": "#ffddb2",
+              "surface-container": "#f3ede7",
+              "on-secondary-fixed-variant": "#0f4a74",
+              "on-tertiary-fixed-variant": "#624000",
+              "primary-fixed-dim": "#ffb4a2",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f9f2ed",
+              "surface-bright": "#fff8f3",
+              "primary": "#982000",
+              "on-primary-fixed-variant": "#8a1c00",
+              "primary-container": "#c0310a",
+              "on-primary": "#ffffff",
+              "surface-dim": "#dfd9d4",
+              "on-secondary-container": "#235882",
+              "on-background": "#1d1b18",
+              "on-tertiary-fixed": "#291800",
+              "on-primary-fixed": "#3c0700",
+              "tertiary-fixed-dim": "#ffb94c",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Bebas Neue"],
+              "body": ["IBM Plex Sans"],
+              "label": ["IBM Plex Sans"],
+              "display": ["Bebas Neue"],
+              "accent": ["Cormorant Garamond"],
+              "technical": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .text-tiny-caps { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
+      .char { display: inline-block; }
+      .breathing {
+          animation: breathe 4s ease-in-out infinite;
+      }
+      @keyframes breathe {
+          0%, 100% { letter-spacing: -0.05em; opacity: 1; }
+          50% { letter-spacing: -0.02em; opacity: 0.85; }
+      }
+      
+      /* Mobile Hero Responsiveness */
+      @media (max-width: 768px) {
+          #hero-title {
+              font-size: 18vw !important;
+              line-height: 0.9 !important;
+          }
+          
+          #hero-sub {
+              font-size: 1.2rem !important;
+              padding: 0 1rem;
+          }
+          
+          #hero-desc {
+              font-size: 1rem !important;
+              padding: 0 1rem;
+              max-width: 100% !important;
+          }
+          
+          /* Hide side metadata on mobile */
+          #side-meta {
+              display: none !important;
+          }
+          
+          .container.mx-auto.px-8 {
+              padding-left: 1.5rem !important;
+              padding-right: 1.5rem !important;
+          }
+      }
+
+      @media (max-width: 480px) {
+          #hero-title {
+              font-size: 20vw !important;
+              line-height: 0.95 !important;
+          }
+          
+          #hero-sub {
+              font-size: 1rem !important;
+          }
+          
+          #hero-desc {
+              font-size: 0.9rem !important;
+              line-height: 1.5 !important;
+          }
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .blueprint-line {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        transition: stroke-dashoffset 2s ease-in-out;
+      }
+      .service-card:hover .blueprint-line {
+        stroke-dashoffset: 0;
+      }
+      .heat-haze {
+        filter: url(#wavy);
+      }
+      .parallax-layer {
+        will-change: transform;
+      }
+      ::selection {
+        background: #982000;
+        color: white;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-white antialiased overflow-x-hidden">
+<!-- 1. Navbar -->
+<nav class="sticky top-0 z-50 bg-white border-b border-[#1A1815]/10 px-6 lg:px-12 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2 cursor-pointer">
+<span class="font-bebas text-3xl tracking-tighter text-[#1A1815]" style="font-family: 'Bebas Neue', cursive;">DOMA</span>
+<div class="h-8 w-[2px] bg-primary mx-1"></div>
+<span class="font-bebas text-3xl tracking-tighter text-[#1A1815]" style="font-family: 'Bebas Neue', cursive;">FABRICATORS</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="index.html">Home</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="about.html">About Us</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="service.html">Services</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="industries.html">Industries</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="project.html">Projects</a>
+<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a>
+<a class="px-6 py-2 border border-[#1A1815] text-[#1A1815] text-tiny-caps hover:bg-primary hover:border-primary hover:text-white transition-all hover-trigger magnetic-btn" href="#catalogue">E-Catalogue</a>
+<a class="px-6 py-2 bg-primary text-white text-tiny-caps hover:bg-primary/90 transition-all hover-trigger magnetic-btn" href="index.html#contact">Contact Us</a>
+</div>
+<button class="md:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
+  <span class="material-symbols-outlined transition-all duration-300 text-[#1A1815]" id="hamburger-icon">menu</span>
+</button>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-[#1A1815]/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden overflow-y-auto" id="mobile-menu">
+  <div class="flex flex-col min-h-full px-6 py-6">
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center gap-2" style="font-family: 'Bebas Neue', cursive;">
+        <span class="font-bebas text-2xl tracking-tighter text-white">DOMA</span>
+        <div class="h-6 w-[2px] bg-primary mx-1"></div>
+        <span class="font-bebas text-2xl tracking-tighter text-white">FABRICATORS</span>
+      </div>
+      <button class="hover-trigger" id="close-menu-btn" aria-label="Close menu">
+        <span class="material-symbols-outlined text-white text-2xl">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-2 flex-1">
+      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="index.html">
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Home</span>
+      </a>
+      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="about.html">
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">About Us</span>
+      </a>
+      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="service.html">
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Services</span>
+      </a>
+      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="industries.html">
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Industries</span>
+      </a>
+      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="project.html">
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Projects</span>
+      </a>
+      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="#resources">
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Resources</span>
+      </a>
+      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="#catalogue">
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
+      </a>
+      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="index.html#contact">
+        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Contact Us</span>
+      </a>
+    </nav>
+    <div class="mt-auto pt-6 border-t border-white/10">
+      <p class="text-white/50 text-xs font-light leading-relaxed">Precision Engineering & Industrial Fabrication</p>
+      <div class="flex gap-3 mt-3">
+        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white text-sm">share</span>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white text-sm">mail</span>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-white text-sm">call</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- SVG Filter for Heat Haze -->
+<svg style="position: absolute; width: 0; height: 0;">
+<filter id="wavy">
+<feturbulence basefrequency="0.01" numoctaves="3" result="noise" type="fractalNoise"></feturbulence>
+<fedisplacementmap in="SourceGraphic" in2="noise" scale="5"></fedisplacementmap>
+</filter>
+</svg>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110" data-alt="dramatic wide shot of a massive steel fabrication workshop with advanced equipment and precision tools" id="hero-bg" src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg"/>
+<div class="absolute inset-0 heat-haze"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-6xl">
+<p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8" id="hero-sub">Precision Engineering & Industrial Excellence</p>
+<h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-on-surface" id="hero-title">
+<div class="reveal-text">OUR</div>
+<div class="reveal-text text-primary-container">SERVICES</div>
+</h1>
+<div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
+<div class="draw-line w-24 h-[1px] bg-on-surface mt-4 hidden md:block origin-left scale-x-0"></div>
+<p class="max-w-xl text-lg md:text-xl font-light text-on-surface-variant leading-relaxed opacity-0 translate-y-8" id="hero-desc">
+                    We deliver comprehensive industrial solutions from mechanical fabrication to heavy structural engineering. Each service is executed with surgical precision, adhering to ASME and ASTM standards for optimal performance and safety.
+                </p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Main Service Grid -->
+<main class="py-32 px-8 bg-surface">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex justify-between items-end mb-24 border-b border-outline-variant/20 pb-12">
+<div>
+<h2 class="font-display text-7xl uppercase text-on-surface">Capabilities Catalog</h2>
+</div>
+<div class="max-w-md">
+<p class="font-body text-sm text-on-surface-variant leading-loose">
+                        Our integrated approach combines heavy structural engineering with surgical precision. Each service is executed according to ASME and ASTM standards.
+                    </p>
+</div>
+</div>
+<!-- 3 Column Editorial Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-y-24 gap-x-12">
+<!-- Service 01: Mechanical Fabrication -->
+<div class="service-card group cursor-pointer relative">
+<div class="mb-6 flex justify-between items-center overflow-hidden">
+<div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
+</div>
+<div class="relative h-[500px] overflow-hidden mb-8">
+<img alt="close-up of industrial gears and precision mechanical parts with sparks in a dark factory" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up detailed view of heavy industrial mechanical fabrication with metallic reflections and intense backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDQC8AfstifLWH3yD7JVOjxsOSFRrhtRPkR-1w3KmRR87qC0HdxlgISFclkdsdemt8Sb63LDUiPM3o90S0T7QzmPFxn8Q9-fJvmWuvoS_OzC1Ci8sMJAS3ww-gwPHIMsdp_YdjuLOU0JlVjU7dSy8ndWyWIa6iywb9IJ29zvndfGo1TNhRkussheRBU3OTVoK2msAFjQKpBw5Ey5lDcGDTlCFdrJD-lFQaP9yBjPF3lbnL_RexIdODK9MPIGBwA3_Z4DqnSkLxKeU"/>
+<!-- Blueprint Overlay SVG -->
+<div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
+<svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path class="blueprint-line" d="M10,50 L90,50 M50,10 L50,90 M30,30 L70,70 M70,30 L30,70" stroke="#C0310A" stroke-width="0.5"></path>
+<circle class="blueprint-line" cx="50" cy="50" r="40" stroke="#C0310A" stroke-width="0.5"></circle>
+<circle class="blueprint-line" cx="50" cy="50" r="20" stroke="#C0310A" stroke-width="0.5"></circle>
+</svg>
+</div>
+<!-- Technical Specification Overlay -->
+<div class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
+<div class="space-y-4">
+<h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
+<div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Tolerance</p>
+<p class="text-white font-technical text-xs">+/- 0.005mm</p>
+</div>
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Material</p>
+<p class="text-white font-technical text-xs">High-Carbon Steel</p>
+</div>
+</div>
+<button class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View Specs</button>
+</div>
+</div>
+</div>
+<h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Mechanical Fabrication</h3>
+<p class="font-accent italic text-xl text-on-surface-variant">Bespoke component engineering for high-torque systems.</p>
+</div>
+<!-- Service 02: Heavy Structures -->
+<div class="service-card group cursor-pointer relative">
+<div class="mb-6 flex justify-between items-center overflow-hidden">
+<div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
+</div>
+<div class="relative h-[500px] overflow-hidden mb-8">
+<img alt="massive structural steel framework against a dramatic sunset sky" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Massive skeletal steel structure under construction with orange sunset light piercing through the grid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4z3PDduuhHoCpokv25-lPCC6CzFLHwCTNyOMBEJg9WR1liJRdpOsS7e9VnHx21h7_Fgk2oeaay9M-K8l-QDXw1DiTw5HoK3GBQMglN4xvDsjgNpQMig5UOiKXtjQmUyZoyy8ihr3ScqtKsmylUQjDNSI4iAJWmNutKm_oZ-BwExZ4rf2G_JY3nfJnqt4XDF2jGKgfouLJvi5OHdREXqSil9Qsa1nZTuxinhOJVLCWqHO7Wt16419jOujYf4odnZUqpDHMb3ForeY"/>
+<!-- Blueprint Overlay SVG -->
+<div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
+<svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect class="blueprint-line" height="80" stroke="#C0310A" stroke-width="0.5" width="80" x="10" y="10"></rect>
+<path class="blueprint-line" d="M10,10 L90,90 M90,10 L10,90" stroke="#C0310A" stroke-width="0.5"></path>
+</svg>
+</div>
+<!-- Technical Specification Overlay -->
+<div class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
+<div class="space-y-4">
+<h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
+<div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Load Cap</p>
+<p class="text-white font-technical text-xs">5000+ Tons</p>
+</div>
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Standard</p>
+<p class="text-white font-technical text-xs">AISC 360-16</p>
+</div>
+</div>
+<button class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View Specs</button>
+</div>
+</div>
+</div>
+<h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Heavy Structures</h3>
+<p class="font-accent italic text-xl text-on-surface-variant">The skeletal architecture of the modern industrial world.</p>
+</div>
+<!-- Service 03: Equipment Erection -->
+<div class="service-card group cursor-pointer relative">
+<div class="mb-6 flex justify-between items-center overflow-hidden">
+<div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
+</div>
+<div class="relative h-[500px] overflow-hidden mb-8">
+<img alt="heavy duty yellow crane lifting a large industrial component" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Heavy lifting operations at a maritime shipyard with specialized rigging and crane equipment in focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOCi5T_v1nWrhpDT0ZD3eB4ZUWl3I-LNvo13QRGCmHtOhXf_zhB-U11h09JNzmy_OEdqyzkOpdjK97TTahpKNsXRhjj0bV3AQ_wzE_Lk_uZBgpB46vQz9Ynvrr3e_XjaZku_Tp-STJxOJ3RPqLmdMUX-Wf4nE2HEulANIT0zFfdfO2wkd9UhsiMw24J8L2zlki-hbYInF_E2DI6PD5n4nZmv_AAoJzCieS2t06R2anv7bH4UWTZ0HG-f7ZoMybfQmhvCa_l-05t3o"/>
+<!-- Blueprint Overlay SVG -->
+<div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
+<svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path class="blueprint-line" d="M20,90 L50,10 L80,90 Z" stroke="#C0310A" stroke-width="0.5"></path>
+<circle class="blueprint-line" cx="50" cy="10" r="5" stroke="#C0310A" stroke-width="0.5"></circle>
+</svg>
+</div>
+<!-- Technical Specification Overlay -->
+<div class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
+<div class="space-y-4">
+<h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
+<div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Deployment</p>
+<p class="text-white font-technical text-xs">Hybrid On-Site</p>
+</div>
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Safety</p>
+<p class="text-white font-technical text-xs">Zero-Incident</p>
+</div>
+</div>
+<button class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View Specs</button>
+</div>
+</div>
+</div>
+<h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Equipment Erection</h3>
+<p class="font-accent italic text-xl text-on-surface-variant">Precision positioning and critical system initialization.</p>
+</div>
+<!-- Service 04: Large Scale Piping -->
+<div class="service-card group cursor-pointer relative">
+<div class="mb-6 flex justify-between items-center overflow-hidden">
+<div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
+</div>
+<div class="relative h-[500px] overflow-hidden mb-8">
+<img alt="complex network of stainless steel pipes in a refinery" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Complex industrial piping architecture with chrome reflections and high-pressure valves in a dense formation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiZQSwKqjgPgdLrXOmQSSdDyWOwFS__a1WnCGTh5Bl83kG2obaGzvJng148cP2V_s7S-ux-D-pO6P3KQSb-_ziaDVamr_LpA69p0QXxWzb9ih5rDOGnrhVX9lRGem1--jTMIgyOSsYyFX3nMun28q75VM2ePoaS0xv-3JL8CCLmdpc8bxWl5oNXL0DoaE_Ph3i-M16NepLSFz3sZpBLun5qWnYehHhdzzYznxtCTF1XB0-quN8PMrJJUa5JaVISRPOtFAkxcM2hm4"/>
+<!-- Blueprint Overlay SVG -->
+<div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
+<svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path class="blueprint-line" d="M10,20 Q50,20 50,50 T90,80" stroke="#C0310A" stroke-width="0.8"></path>
+<path class="blueprint-line" d="M10,30 Q50,30 50,60 T90,90" stroke="#C0310A" stroke-width="0.8"></path>
+</svg>
+</div>
+<!-- Technical Specification Overlay -->
+<div class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
+<div class="space-y-4">
+<h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
+<div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Pressure</p>
+<p class="text-white font-technical text-xs">5000 PSI Rating</p>
+</div>
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Code</p>
+<p class="text-white font-technical text-xs">ASME B31.3</p>
+</div>
+</div>
+<button class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View Specs</button>
+</div>
+</div>
+</div>
+<h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Large Scale Piping</h3>
+<p class="font-accent italic text-xl text-on-surface-variant">Vascular systems for fluid and vapor transmission.</p>
+</div>
+<!-- Service 05: Storage Tanks -->
+<div class="service-card group cursor-pointer relative">
+<div class="mb-6 flex justify-between items-center overflow-hidden">
+<div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
+</div>
+<div class="relative h-[500px] overflow-hidden mb-8">
+<img alt="giant spherical white storage tanks in an industrial park" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Massive white industrial storage tanks with geometric shadow patterns and high technical contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlc_zsgwBF3Kbi1t4MQap9lvNs4jim-Ap7fbAk6oUlhcDtr3e9dJW1_38hXLxVpI40V4rLTw6BpQMSO1H3S9G7b5lc7r7mzVtr1EdviCu0-nfJdWLw2QcMyfbJPuIl1ocfWerFsVARpiSXjMOQfQfeSOGwxMSY-wiUhTghzVvFKHj7ZkLo6NmTODZ75sCNX5hQTsYKxZPaQBoFPzOFjrd0KShFPacFmS8jRMeD0EJm-WI1uo3WB3Zy57NwDPIH9iBkwFEhubgq4w0"/>
+<!-- Blueprint Overlay SVG -->
+<div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
+<svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<circle class="blueprint-line" cx="50" cy="50" r="45" stroke="#C0310A" stroke-width="0.5"></circle>
+<rect class="blueprint-line" height="90" stroke="#C0310A" stroke-width="0.5" width="4" x="48" y="5"></rect>
+</svg>
+</div>
+<!-- Technical Specification Overlay -->
+<div class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
+<div class="space-y-4">
+<h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
+<div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Capacity</p>
+<p class="text-white font-technical text-xs">1M Gallon+ Units</p>
+</div>
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Compliance</p>
+<p class="text-white font-technical text-xs">API 650 Standards</p>
+</div>
+</div>
+<button class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View Specs</button>
+</div>
+</div>
+</div>
+<h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Storage Tanks</h3>
+<p class="font-accent italic text-xl text-on-surface-variant">Engineered containment for high-value strategic reserves.</p>
+</div>
+<!-- Service 06: Pressure Vessels -->
+<div class="service-card group cursor-pointer relative">
+<div class="mb-6 flex justify-between items-center overflow-hidden">
+<div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
+</div>
+<div class="relative h-[500px] overflow-hidden mb-8">
+<img alt="cylindrical pressure vessel being welded with bright sparks" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Technical close-up of a pressure vessel dome with precise welding seams and metallic finish under surgical lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArB8NxNB_57GhKXAva3C1zIpekCNpNn0rYxjOn1vBafEz1XdxESjry-nSQ0vZ9nVWez38UqkfZhKGZZtoy2VZezpmdMkBPJQt2hZRRVqCFrCUbtBNcXgiQOUgp-fHKb6t8pqcfyb1ZiBGnZ-B1yAB2OsCFCsOeVNIi3cFyqBj5DWfN9knW3FipW9WfnbhJIPvVPvOMx88KEivZXMI0kCO5rFF0XTsxayUSsPes5-bBjRE7ijHqWkOant55WhzoNUH_h0ITM9m-kA0"/>
+<!-- Blueprint Overlay SVG -->
+<div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
+<svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path class="blueprint-line" d="M10,30 A40,40 0 0,1 90,30 L90,70 A40,40 0 0,1 10,70 Z" stroke="#C0310A" stroke-width="0.5"></path>
+</svg>
+</div>
+<!-- Technical Specification Overlay -->
+<div class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
+<div class="space-y-4">
+<h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
+<div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Thermal</p>
+<p class="text-white font-technical text-xs">-40C to +400C</p>
+</div>
+<div>
+<p class="text-primary text-[8px] font-bold tracking-widest uppercase">Class</p>
+<p class="text-white font-technical text-xs">Section VIII Div 1</p>
+</div>
+</div>
+<button class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View Specs</button>
+</div>
+</div>
+</div>
+<h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Pressure Vessels</h3>
+<p class="font-accent italic text-xl text-on-surface-variant">High-tolerance vessels for volatile atmospheric states.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Project Inquiry Sticky Strip -->
+<section class="bg-primary py-20 overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<h2 class="text-white font-display text-[25vw] leading-none whitespace-nowrap -translate-x-1/4 select-none">PRECISION ENGINEERED</h2>
+</div>
+<div class="relative z-10 px-8 flex flex-col md:flex-row items-center justify-between max-w-screen-2xl mx-auto">
+<div>
+<span class="text-on-primary font-body text-xs font-bold tracking-[0.4em] uppercase mb-4 block">SPEC_ID: CTA_REQ_99</span>
+<h2 class="font-display text-6xl text-white uppercase">Initiate_Fabrication_Protocol</h2>
+</div>
+<div class="mt-12 md:mt-0">
+<button class="bg-white text-primary px-12 py-6 font-display text-2xl tracking-widest hover:bg-surface-container-highest transition-all transform hover:-translate-y-1 active:scale-95 group">
+                    GET QUOTE <span class="material-symbols-outlined align-middle ml-2 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#1A1815] text-white pt-24 pb-12 relative z-20">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-16 mb-24">
+<div>
+<div class="flex items-center gap-2 mb-8" style="font-family: 'Bebas Neue', cursive;">
+<span class="font-bebas text-3xl tracking-tighter">DOMA</span>
+<div class="h-8 w-[2px] bg-primary mx-1"></div>
+<span class="font-bebas text-3xl tracking-tighter">FABRICATORS</span>
+</div>
+<p class="text-[#C8C4BC] font-light leading-relaxed">
+                        Redefining industrial standards through precision, safety, and 14 years of engineering dedication. Design & Engineering | Equipment's Supply | Project Works.
+                    </p>
+</div>
+<div>
+<h5 class="text-tiny-caps font-bold mb-8 text-primary">Quick Navigation</h5>
+<ul class="space-y-4 text-[#C8C4BC] font-light">
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#services">Our Services</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#safety">Safety Standards</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="project.html">Projects</a></li>
+<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#contact">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-tiny-caps font-bold mb-8 text-primary">Contact Information</h5>
+<ul class="space-y-4 text-[#C8C4BC] font-light">
+<li>Plot No. 1J, Kheda, Sagorekutti</li>
+<li>Pithampur, Dhar (M.P) 454 775</li>
+<li>+91 9826051620</li>
+<li>domafabricators@gmail.com</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-[#4A4845]">
+<p>© 2024 Doma Fabricators. All Rights Reserved.</p>
+<p>Designed by Pixora</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+        // Hamburger Menu Functionality
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    closeMenu();
+                } else {
+                    isMenuOpen = true;
+                    mobileMenu.classList.remove('translate-x-full');
+                    hamburgerIcon.textContent = 'close';
+                    document.body.style.overflow = 'hidden';
+                    
+                    mobileLinks.forEach((link, index) => {
+                        setTimeout(() => {
+                            link.style.opacity = '1';
+                            link.querySelector('span').style.transform = 'translateX(0)';
+                        }, 100 + (index * 50));
+                    });
+                }
+            });
+
+            const closeMenu = () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('translate-x-full');
+                hamburgerIcon.textContent = 'menu';
+                document.body.style.overflow = '';
+                mobileLinks.forEach(link => {
+                    link.style.opacity = '0';
+                    link.querySelector('span').style.transform = 'translateX(-20px)';
+                });
+            };
+
+            closeMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeMenu();
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) closeMenu();
+            });
+
+            mobileLinks.forEach(link => {
+                link.style.opacity = '0';
+                link.querySelector('span').style.transform = 'translateX(-20px)';
+                link.querySelector('span').style.transition = 'transform 0.3s ease-out';
+            });
+        }
+});
+</script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Split Text for Hero
+    document.querySelectorAll('.reveal-text').forEach(text => {
+        const content = text.innerHTML;
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = content;
+        const plainText = tempDiv.textContent;
+        text.innerHTML = '';
+        [...plainText].forEach(char => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.className = 'char opacity-0 translate-y-full';
+            if (content.includes('text-primary-container') && char !== ' ') {
+                span.classList.add('text-primary-container');
+            }
+            text.appendChild(span);
+        });
+    });
+
+    // Hero Reveal Animation
+    const heroTl = gsap.timeline();
+    if (document.getElementById('hero-bg')) {
+        heroTl.to('#hero-bg', { scale: 1, opacity: 0.3, duration: 2, ease: "power2.out" });
+    }
+    heroTl.to('#hero-sub', { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=1.5")
+          .to('.reveal-text .char', { 
+              opacity: 1, 
+              y: 0, 
+              duration: 0.8, 
+              stagger: 0.02, 
+              ease: "back.out(1.7)" 
+          }, "-=0.8")
+          .to('#hero-desc', { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+          .to('.draw-line', { scaleX: 1, duration: 1.5, stagger: 0.2, ease: "expo.inOut" }, "-=1");
+
+    // Side Metadata Reveal
+    gsap.utils.toArray('.reveal-meta').forEach((meta, i) => {
+        gsap.to(meta, {
+            opacity: 1,
+            duration: 0.8,
+            delay: 2 + (i * 0.15),
+            ease: "power2.out"
+        });
+    });
+</script>
+</body></html>
