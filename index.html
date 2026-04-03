@@ -514,7 +514,7 @@
 
 <!-- Seamless Looping Image Divider -->
 <div class="relative w-full overflow-hidden" style="height: 30px;">
-  <di class="absolute inset-0 flex items-center" id="divider-track">
+  <div class="absolute inset-0 flex items-center divider-track" id="divider-track">
     <!-- Images with preserved aspect ratio -->
     <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
     <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
@@ -528,7 +528,13 @@
 </div>
 
 <style>
-/* Continuous looping animation */
+/* Continuous looping animation for divider */
+.divider-track {
+  display: flex;
+  animation: scroll-divider 15s linear infinite;
+  will-change: transform;
+}
+
 @keyframes scroll-divider {
   0% {
     transform: translateX(0);
@@ -538,7 +544,14 @@
   }
 }
 
-/* Continuous marquee animation */
+/* Continuous marquee animation for client logos */
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
@@ -548,14 +561,9 @@
   }
 }
 
-.marquee-track {
-  display: flex;
-  animation: marquee-scroll 30s linear infinite;
-  will-change: transform;
-}
-
 /* Pause on hover for better UX */
-.marquee-track:hover {
+.marquee-track:hover,
+.divider-track:hover {
   animation-play-state: paused;
 }
 
@@ -565,10 +573,14 @@
   padding-top: 0 !important;
 }
 
-/* Responsive height adjustments */
+/* Responsive duration adjustments */
 @media (max-width: 768px) {
-  #divider-track {
-    animation-duration: 15s;
+  .divider-track {
+    animation-duration: 10s;
+  }
+  
+  .marquee-track {
+    animation-duration: 20s;
   }
   
   /* Increase divider height on mobile */
