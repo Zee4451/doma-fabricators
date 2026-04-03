@@ -483,12 +483,12 @@
 
   <div class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-0" data-slide="2">
     <h1 class="hero-heading mb-4 sm:mb-6">
-      14 YEARS OF EXCELLENCE<br class="hidden sm:block">
+      25 YEARS OF EXCELLENCE<br class="hidden sm:block">
       QUALITY & SAFETY<br class="hidden sm:block">
       AT EVERY STEP
     </h1>
     <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed">
-      With 14+ years of expertise, our commitment to safety, quality, and client satisfaction has established us as a dependable partner for leading companies.
+      With 25+ years of expertise, our commitment to safety, quality, and client satisfaction has established us as a dependable partner for leading companies.
     </p>
   </div>
 
@@ -509,48 +509,123 @@
     </div>
   </div>
 </section>
+
+<!-- Seamless Looping Image Divider -->
+<div class="relative w-full overflow-hidden" style="height: 20px;">
+  <di class="absolute inset-0 flex items-center" id="divider-track">
+    <!-- Images with preserved aspect ratio -->
+    <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
+    <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
+    <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
+    <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
+    <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
+    <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
+    <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
+    <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
+  </div>
+</div>
+
+<style>
+/* Continuous looping animation */
+@keyframes scroll-divider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Continuous marquee animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover for better UX */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Remove border-top from logo items in marquee */
+.client-logo-item {
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+/* Responsive height adjustments */
+@media (max-width: 768px) {
+  #divider-track {
+    animation-duration: 15s;
+  }
+  
+  /* Increase divider height on mobile */
+  .relative.w-full.overflow-hidden[style*="height: 40px"] {
+    height: 60px !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  [style*="height: 120px"] {
+    height: 160px !important;
+  }
+}
+</style>
+
 <!-- 4. About -->
-<section class="bg-off-white py-24" id="about">
+<section class="py-24" id="about" style="background-color: #000000;">
 <div class="max-w-7xl mx-auto px-6">
 <div class="relative h-[500px] mb-16 overflow-hidden clip-diagonal parallax-section mask-reveal-wrapper">
-<img alt="Factory Floor" class="w-full h-full object-cover scale-110 parallax-img liquid-target" src="assets/dscf0853.jpg.jpeg"/>
-<div class="absolute inset-0 bg-primary/10"></div>
+<img alt="Factory Floor" class="w-full h-full object-cover scale-110 parallax-img liquid-target" src="assets/istockphoto-470309496-612x612.jpg.jpeg" style="object-position: center;"/>
+<div class="absolute inset-0" style="background-color: rgba(255, 25, 1, 0.15);"></div>
 </div>
 <div class="grid md:grid-cols-2 gap-16 mb-24">
 <div>
-<h2 class="font-bebas text-5xl md:text-6xl text-near-black leading-tight reveal-mask">
-<span>PRECISION BORN FROM<br/><span class="text-primary">FOURTEEN YEARS</span> OF EXCELLENCE</span>
+<h2 class="font-bebas text-5xl md:text-6xl leading-tight reveal-mask" style="color: #ffffff;">
+<span>PRECISION BORN FROM<br/><span style="color: #FF1901;">FOURTEEN YEARS</span> OF EXCELLENCE</span>
 </h2>
 </div>
 <div>
-<p class="text-dark-grey text-lg leading-relaxed mb-6 font-light">
-                        Doma Fabricators is a professionally managed industrial fabrication company with over 14 years of proven experience. We specialize in piping works, heavy structural fabrication, equipment erection, industrial maintenance, shed works, and roofing work.
+<p style="color: #ffffff; text-opacity: 0.85; font-size: 1.125rem; line-height: 1.75; margin-bottom: 1.5rem; font-weight: 300;">
+                        Doma Fabricators is a professionally managed industrial fabrication company with over 25 years of proven experience. We specialize in piping works, heavy structural fabrication, equipment erection, industrial maintenance, shed works, and roofing work.
                     </p>
-<p class="text-dark-grey text-lg leading-relaxed font-light">
+<p style="color: #ffffff; text-opacity: 0.85; font-size: 1.125rem; line-height: 1.75; font-weight: 300;">
                         With dedicated in-house fabrication facilities, we manufacture and assemble specialized industrial equipment such as tank farms, SS/MS tanks, EOT cranes, reactors, chimneys, silos and more — customized to client requirements.
                     </p>
 </div>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 border-t border-near-black/10">
-<div class="p-8 border-r border-near-black/10">
-<p class="font-bebas text-6xl text-primary mb-2">14+</p>
-<p class="text-tiny-caps">Years Expertise</p>
+<div class="grid grid-cols-2 md:grid-cols-4 border-t" style="border-color: rgba(255, 255, 255, 0.15);">
+<div class="p-8 border-r" style="border-color: rgba(255, 255, 255, 0.15);">
+<p class="font-bebas text-6xl mb-2" style="color: #FF1901;">25+</p>
+<p class="text-tiny-caps" style="color: #ffffff; opacity: 0.7;">Years Expertise</p>
 </div>
-<div class="p-8 border-r border-near-black/10">
-<p class="font-bebas text-6xl text-primary mb-2">500+</p>
-<p class="text-tiny-caps">Projects Done</p>
+<div class="p-8 border-r" style="border-color: rgba(255, 255, 255, 0.15);">
+<p class="font-bebas text-6xl mb-2" style="color: #FF1901;">500+</p>
+<p class="text-tiny-caps" style="color: #ffffff; opacity: 0.7;">Projects Done</p>
 </div>
-<div class="p-8 border-r md:border-r border-near-black/10">
-<p class="font-bebas text-6xl text-primary mb-2">120</p>
-<p class="text-tiny-caps">Engineers</p>
+<div class="p-8 border-r md:border-r" style="border-color: rgba(255, 255, 255, 0.15);">
+<p class="font-bebas text-6xl mb-2" style="color: #FF1901;">120</p>
+<p class="text-tiny-caps" style="color: #ffffff; opacity: 0.7;">Engineers</p>
 </div>
 <div class="p-8">
-<p class="font-bebas text-6xl text-primary mb-2">0</p>
-<p class="text-tiny-caps">Safety Incidents</p>
+<p class="font-bebas text-6xl mb-2" style="color: #FF1901;">0</p>
+<p class="text-tiny-caps" style="color: #ffffff; opacity: 0.7;">Safety Incidents</p>
 </div>
 </div>
 </div>
 </section>
+
+
 <!-- 5. Services - New Parallax Showcase -->
 <section class="relative overflow-hidden py-24 bg-white" id="services">
 
@@ -723,12 +798,12 @@
 <div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
 <img alt="Pharma Industries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp"/>
 <div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
-<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PHARMA INDUSTRIES</h3></div>
+<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PHARMA INDUSTRY</h3></div>
 </div>
 <div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
 <img alt="Chemical Industries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/environmental-pollution-factory-exterior-night_23-2149057728.avif"/>
 <div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
-<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">CHEMICAL INDUSTRIES</h3></div>
+<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">CHEMICAL INDUSTRY</h3></div>
 </div>
 <div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
 <img alt="Petroleum Refinery" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/industrial-night-lights-stockcake.webp"/>
@@ -736,46 +811,82 @@
 <div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PETROLEUM REFINERY</h3></div>
 </div>
 <div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
-<img alt="Painting Industries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg"/>
+<img alt="PaintIndustries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg"/>
 <div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
-<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PAINTING INDUSTRIES</h3></div>
+<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PAINT INDUSTRY</h3></div>
 </div>
 </div>
 </div>
 </section>
 <!-- 7. Clients -->
-<section class="bg-near-black py-20 md:py-32 clip-diagonal text-white parallax-section">
+<section class="bg-near-black py-20 md:py-32 clip-diagonal text-white parallax-section overflow-hidden">
 <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col items-center">
 <div class="text-center mb-16 md:mb-24 w-full overflow-hidden">
-<p class="font-bebas clients-section-title text-[12rem] md:text-[12rem] leading-none text-primary opacity-50 select-none reveal-mask"><span>14 YEARS</span></p>
+<p class="font-bebas clients-section-title text-[12rem] md:text-[12rem] leading-none text-primary opacity-50 select-none reveal-mask"><span>25 YEARS</span></p>
 <h2 class="font-bebas clients-section-subtitle text-3xl sm:text-4xl md:text-5xl -mt-12 md:-mt-16 relative z-10 px-4 reveal-mask"><span>TRUSTED BY OUR CLIENTS</span></h2>
 </div>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 sm:gap-x-12 md:gap-x-20 gap-y-12 sm:gap-y-16 w-full">
-<div class="border-t border-white/20 pt-6 md:pt-8 text-center hover-trigger client-logo-item">
-  <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-10 sm:h-11 md:h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
+
+<!-- Marquee Container -->
+<div class="w-full relative">
+  <div class="marquee-track flex gap-x-8 sm:gap-x-12 md:gap-x-20">
+    <!-- Original Set -->
+    <div class="flex gap-x-8 sm:gap-x-12 md:gap-x-20 flex-shrink-0">
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/Relson logo.png" alt="Relson" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/pensol_logo.png" alt="Pensol" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/SRF-logo.png" alt="SRF" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+    </div>
+    
+    <!-- Duplicate Set for Seamless Loop -->
+    <div class="flex gap-x-8 sm:gap-x-12 md:gap-x-20 flex-shrink-0" aria-hidden="true">
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/Relson logo.png" alt="Relson" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/pensol_logo.png" alt="Pensol" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+      <div class="hover-trigger client-logo-item">
+        <img src="assets/SRF-logo.png" alt="SRF" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="border-t border-white/20 pt-6 md:pt-8 text-center hover-trigger client-logo-item">
-  <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-10 sm:h-11 md:h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
-</div>
-<div class="border-t border-white/20 pt-6 md:pt-8 text-center hover-trigger client-logo-item">
-  <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-10 sm:h-11 md:h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
-</div>
-<div class="border-t border-white/20 pt-6 md:pt-8 text-center hover-trigger client-logo-item">
-  <img src="assets/Relson logo.png" alt="Relson" class="h-10 sm:h-11 md:h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
-</div>
-<div class="border-t border-white/20 pt-6 md:pt-8 text-center hover-trigger client-logo-item">
-  <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-10 sm:h-11 md:h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
-</div>
-<div class="border-t border-white/20 pt-6 md:pt-8 text-center hover-trigger client-logo-item">
-  <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-10 sm:h-11 md:h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
-</div>
-<div class="border-t border-white/20 pt-6 md:pt-8 text-center hover-trigger client-logo-item">
-  <img src="assets/pensol_logo.png" alt="Pensol" class="h-10 sm:h-11 md:h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
-</div>
-<div class="border-t border-white/20 pt-6 md:pt-8 text-center hover-trigger client-logo-item">
-  <img src="assets/SRF-logo.png" alt="SRF" class="h-10 sm:h-11 md:h-12 mx-auto opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"/>
-</div>
-</div>
+
 </div>
 </section>
 <!-- 8. Projects -->
@@ -895,8 +1006,8 @@
 <h4 class="text-tiny-caps font-bold text-near-black mb-4">Direct Contact</h4>
 <p class="text-2xl font-bebas tracking-wider">+91 9826051620<br/>+91 9098324240<br/>+91 9111887856<br/>domafabricators@gmail.com</p>
 </div>
-<div class="h-64 w-full bg-mid-grey overflow-hidden mask-reveal-wrapper">
-<div class="w-full h-full grayscale opacity-50 bg-cover bg-center parallax-img liquid-target" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJdZXGyE1O3ALvZNEtqPrGcr7If3gP3duYFigPo9hnFHT6YwZ42TF7luY0TtBKtCf_nxDKF2Upj2fqH4FrHxL3b-Wb_TXJC3LU1vBtaoG8Euw75Ip8FgMh6EXREpUWxRh5uXEahdWJzmA8n37_IyOujmW8SRDilad0zMZfvKyZafog_-tQRGWLizWCUQk6sfsHYKimS8RJLrky6UeD4xoAvG8pzbxfR2Aw5iv4daLRL6vt2CFsZinNfxvS7jt8jmfs06A45LsCgMU')"></div>
+<div class="h-64 w-full overflow-hidden mask-reveal-wrapper">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235699.1122697094!2d75.32329559326172!3d22.623993706284182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396251dfa8796f15%3A0x56998ae6bb558f08!2sDoma%20Fabricators!5e0!3m2!1sen!2sin!4v1775214647669!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 </div>
 </div>
@@ -912,7 +1023,7 @@
 <span class="font-bebas text-3xl tracking-tighter">FABRICATORS</span>
 </div>
 <p class="text-mid-grey font-light leading-relaxed">
-                        Redefining industrial standards through precision, safety, and 14 years of engineering dedication. Design & Engineering | Equipment's Supply | Project Works.
+                        Redefining industrial standards through precision, safety, and 25 years of engineering dedication. Design & Engineering | Equipment's Supply | Project Works.
                     </p>
 </div>
 <div>
