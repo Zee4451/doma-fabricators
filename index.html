@@ -513,7 +513,7 @@
 </section>
 
 <!-- Seamless Looping Image Divider -->
-<div class="relative w-full overflow-hidden" style="height: 30px;">
+<div class="relative w-full overflow-hidden" style="height: 60px;">
   <div class="absolute inset-0 flex items-center divider-track" id="divider-track">
     <!-- Images with preserved aspect ratio -->
     <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
@@ -583,15 +583,15 @@
     animation-duration: 20s;
   }
   
-  /* Increase divider height on mobile */
-  .relative.w-full.overflow-hidden[style*="height: 30px"] {
-    height: 50px !important;
+  /* Increase divider height on mobile - even larger */
+  .relative.w-full.overflow-hidden[style*="height: 60px"] {
+    height: 80px !important;
   }
 }
 
 @media (min-width: 1536px) {
-  [style*="height: 30px"] {
-    height: 80px !important;
+  [style*="height: 60px"] {
+    height: 100px !important;
   }
 }
 </style>
