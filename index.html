@@ -308,7 +308,8 @@
                     margin-top: -1rem !important;
                 }
                 .client-logo-item img {
-                    height: 2.5rem !important;
+                    height: auto !important;
+                    max-height: none !important;
                 }
             }
             
@@ -320,7 +321,8 @@
                     font-size: 1.5rem !important;
                 }
                 .client-logo-item img {
-                    height: 2rem !important;
+                    height: auto !important;
+                    max-height: none !important;
                 }
                 /* Extra small mobile hero adjustments - EXTRA LARGE FONT */
                 .hero-heading {
@@ -511,7 +513,7 @@
 </section>
 
 <!-- Seamless Looping Image Divider -->
-<div class="relative w-full overflow-hidden" style="height: 20px;">
+<div class="relative w-full overflow-hidden" style="height: 30px;">
   <di class="absolute inset-0 flex items-center" id="divider-track">
     <!-- Images with preserved aspect ratio -->
     <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-contain flex-shrink-0" />
@@ -570,14 +572,14 @@
   }
   
   /* Increase divider height on mobile */
-  .relative.w-full.overflow-hidden[style*="height: 40px"] {
-    height: 60px !important;
+  .relative.w-full.overflow-hidden[style*="height: 30px"] {
+    height: 50px !important;
   }
 }
 
 @media (min-width: 1536px) {
-  [style*="height: 120px"] {
-    height: 160px !important;
+  [style*="height: 30px"] {
+    height: 80px !important;
   }
 }
 </style>
@@ -832,56 +834,56 @@
     <!-- Original Set -->
     <div class="flex gap-x-8 sm:gap-x-12 md:gap-x-20 flex-shrink-0">
       <div class="hover-trigger client-logo-item">
-        <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/Relson logo.png" alt="Relson" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/Relson logo.png" alt="Relson" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/pensol_logo.png" alt="Pensol" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/pensol_logo.png" alt="Pensol" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/SRF-logo.png" alt="SRF" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/SRF-logo.png" alt="SRF" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
     </div>
     
     <!-- Duplicate Set for Seamless Loop -->
     <div class="flex gap-x-8 sm:gap-x-12 md:gap-x-20 flex-shrink-0" aria-hidden="true">
       <div class="hover-trigger client-logo-item">
-        <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/Relson logo.png" alt="Relson" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/Relson logo.png" alt="Relson" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/pensol_logo.png" alt="Pensol" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/pensol_logo.png" alt="Pensol" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
       <div class="hover-trigger client-logo-item">
-        <img src="assets/SRF-logo.png" alt="SRF" class="h-10 sm:h-11 md:h-12 mx-auto opacity-100 transition-all hover:scale-105"/>
+        <img src="assets/SRF-logo.png" alt="SRF" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
       </div>
     </div>
   </div>
@@ -937,8 +939,8 @@
 <section class="bg-white py-12 overflow-hidden" id="safety">
 <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20">
 <div class="w-full lg:w-1/2 relative">
-<div class="h-[500px] md:h-[600px] overflow-hidden mask-reveal-wrapper group">
-<img alt="Safety First" class="w-full h-full object-cover parallax-img liquid-target transition-transform duration-700 group-hover:scale-105" src="assets/safety-first-sign-illustration-free-vector.jpg.jpeg"/>
+<div class="h-[500px] md:h-[600px] overflow-hidden mask-reveal-wrapper group relative">
+<img alt="Safety First" class="w-full h-full object-contain parallax-img liquid-target transition-transform duration-700 group-hover:scale-105" src="assets/safety-first-sign-illustration-free-vector.jpg.jpeg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-near-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 </div>
 <div class="relative -mt-12 ml-auto w-fit bg-primary p-8 md:p-12 text-white shadow-2xl group-hover:shadow-primary/50 transition-shadow duration-500">
