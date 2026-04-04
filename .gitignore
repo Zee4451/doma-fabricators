@@ -24,3 +24,21 @@ build/
 .env
 .env.local
 .env.*.local
+
+# Credential files (NEVER commit these)
+*.key
+*.pem
+*.p12
+credentials.json
+service-account.json
+api-keys.json
+secrets/
+config/production.json
+tools/credentials.config.js
+
+# Security reports
+security-audit.md
+vulnerability-report.md
+
+# Documentation (optional - uncomment if you don't want docs in repo)
+# docs/

@@ -4,6 +4,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>DOMA FABRICATORS | Engineering Excellence</title>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>" rel="icon" type="image/svg+xml"/>
+
+<!-- Security Headers (Meta Tags) -->
+<!-- Content Security Policy - Restricts resource loading to trusted sources -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://api.emailjs.com;"/>
+<!-- Note: X-Frame-Options, X-Content-Type-Options, X-XSS-Protection must be set via HTTP headers on server -->
+<!-- Referrer policy for privacy -->
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:wght@400;600&amp;family=IBM+Plex+Sans:wght@300;400;600&amp;family=Public+Sans:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
@@ -25,7 +33,64 @@
   text-rendering: optimizeLegibility;
 }
 </style>
-<!-- GSAP & Lenis -->
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    // ============================================
+    // SECURE CREDENTIAL MANAGEMENT
+    // ============================================
+    // 
+    // SECURITY NOTE: EmailJS Public Keys are designed to be client-side.
+    // They can only SEND emails using your pre-configured templates.
+    // They CANNOT read emails or access your account.
+    //
+    // For production, consider:
+    // 1. Using environment variables with a build tool (Vite, Webpack)
+    // 2. Implementing a backend proxy for additional security
+    // 3. Setting up domain restrictions in EmailJS dashboard
+    //
+    // IMPORTANT: Never expose Private Keys or Service Account credentials!
+    // ============================================
+    
+    // Configuration object - Replace these values before deployment
+    const EMAIL_CONFIG = {
+        // Get your Public Key from: https://dashboard.emailjs.com/admin/account
+        publicKey: "YOUR_PUBLIC_KEY", // ← REPLACE THIS WITH YOUR ACTUAL KEY
+        
+        // Rate limiting configuration
+        rateLimit: {
+            id: "contact-form",
+            throttle: 10000 // 10 seconds between submissions
+        },
+        
+        // Security settings
+        security: {
+            blockHeadless: true, // Block automated bots
+            blockListed: true,   // Block known malicious IPs
+            requireUserInteraction: true // Require genuine user interaction
+        }
+    };
+    
+    // Initialize EmailJS with security features
+    (function() {
+        // Validate configuration before initialization
+        if (!EMAIL_CONFIG.publicKey || EMAIL_CONFIG.publicKey === "YOUR_PUBLIC_KEY") {
+            console.warn('%c⚠️ EmailJS Not Configured', 'color: orange; font-size: 16px; font-weight: bold;');
+            console.warn('Please update EMAIL_CONFIG.publicKey in index.html with your actual EmailJS Public Key.');
+            console.warn('Get your key from: https://dashboard.emailjs.com/admin/account');
+            return;
+        }
+        
+        emailjs.init({
+            publicKey: EMAIL_CONFIG.publicKey,
+            blockHeadless: EMAIL_CONFIG.security.blockHeadless,
+            blockListed: EMAIL_CONFIG.security.blockListed,
+            limitRate: EMAIL_CONFIG.rateLimit
+        });
+        
+        console.log('%c✓ EmailJS Initialized Successfully', 'color: green; font-weight: bold;');
+    })();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
@@ -227,6 +292,38 @@
         #contact label {
             position: relative;
             z-index: 3;
+        }
+        
+        /* Form Status Messages */
+        .form-status {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        .form-status.text-green-600 {
+            background-color: rgba(34, 197, 94, 0.1);
+            border-left: 3px solid rgb(34, 197, 94);
+        }
+        
+        .form-status.text-red-600 {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 3px solid rgb(239, 68, 68);
+        }
+        
+        /* Loading Spinner */
+        .loading-spinner {
+            display: inline-block;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        
+        /* Character Counter */
+        .char-counter {
+            text-align: right;
+            transition: color 0.3s ease;
         }
 
         /* Technical Background Noise */
@@ -923,19 +1020,31 @@ Precision is not a standard; it is our heritage.
   </div>
 </section>
 <!-- 6. Industries -->
-<section class="relative min-h-screen flex flex-col justify-center overflow-hidden py-20 bg-near-black" id="industries">
-<!-- Background Elements -->
-<div class="absolute inset-0 bg-gradient-to-b from-near-black via-transparent to-near-black pointer-events-none"></div>
+<section class="relative h-auto min-h-[85vh] flex flex-col justify-center overflow-hidden py-12 md:py-16 bg-near-black" id="industries">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Industrial Background" class="w-full h-full object-cover opacity-20" src="assets/csm_OilGas_Onshore_4d347230d6.webp"/>
+<div class="absolute inset-0 bg-gradient-to-b from-near-black/90 via-near-black/70 to-near-black/90"></div>
+</div>
 
 <!-- Header Content -->
-<header class="relative z-10 text-center mb-16 px-4">
-<div class="inline-flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full mb-6">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-<span class="text-[10px] uppercase tracking-widest font-bold text-white/70">Our Industries</span>
+<header class="relative z-10 text-center mb-8 md:mb-10 px-4">
+<div class="inline-flex items-center gap-3 px-5 py-2 border border-primary/30 rounded-lg mb-6 bg-primary/5 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[11px] uppercase tracking-[0.25em] font-semibold text-primary">Our Industries</span>
 </div>
-<h1 class="font-bebas text-5xl md:text-7xl lg:text-8xl leading-tight max-w-4xl mx-auto uppercase text-white reveal-mask">
-<span>Engineering Solutions<br/><span style="color: #FF1901;">That Power</span><br/>Your Industry</span>
+<h1 class="font-bebas text-4xl md:text-5xl lg:text-6xl leading-none max-w-5xl mx-auto uppercase reveal-mask">
+<span class="block text-white/95 tracking-wide">Engineering Solutions</span>
+<span class="block mt-2 relative">
+<span class="text-primary drop-shadow-[0_0_15px_rgba(192,49,10,0.5)]">That Power Your Industry</span>
+<span class="absolute -inset-x-4 -inset-y-2 bg-primary/5 blur-2xl rounded-full -z-10"></span>
+</span>
 </h1>
+<div class="mt-6 flex justify-center items-center gap-4">
+<div class="h-px w-16 bg-gradient-to-r from-transparent to-white/30"></div>
+<span class="text-[9px] uppercase tracking-[0.3em] text-white/40 font-mono">Precision • Safety • Excellence</span>
+<div class="h-px w-16 bg-gradient-to-l from-transparent to-white/30"></div>
+</div>
 </header>
 
 <!-- Industry Carousel -->
@@ -1267,20 +1376,39 @@ Precision is not a standard; it is our heritage.
 <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20 relative" style="z-index: 2;">
 <div class="w-full lg:w-1/2">
 <h2 class="font-bebas text-6xl mb-12 reveal-mask"><span>REACH OUT</span></h2>
-<form class="space-y-12">
+<form id="contact-form" class="space-y-12" novalidate>
+<!-- Honeypot field (hidden from users, catches bots) -->
+<div style="position: absolute; left: -9999px;" aria-hidden="true">
+<input type="text" name="website_url" tabindex="-1" autocomplete="off"/>
+</div>
+
+<!-- CSRF Token (generated dynamically) -->
+<input type="hidden" id="csrf-token" name="csrf_token"/>
+
+<!-- Timestamp for rate limiting -->
+<input type="hidden" id="form-timestamp" name="timestamp"/>
+
 <div class="relative group">
-<label class="text-tiny-caps text-primary font-bold block mb-2">Your Name</label>
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger" placeholder="John Doe" type="text"/>
+<label class="text-tiny-caps text-primary font-bold block mb-2" for="user-name">Your Name</label>
+<input id="user-name" name="from_name" class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger" placeholder="John Doe" type="text" required minlength="2" maxlength="100" pattern="^[a-zA-Z\s\-\'\.]+$" autocomplete="name"/>
+<div class="error-message text-red-500 text-xs mt-1 hidden" id="name-error"></div>
 </div>
 <div class="relative group">
-<label class="text-tiny-caps text-primary font-bold block mb-2">Email Address</label>
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger" placeholder="j.doe@company.com" type="email"/>
+<label class="text-tiny-caps text-primary font-bold block mb-2" for="user-email">Email Address</label>
+<input id="user-email" name="reply_to" class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger" placeholder="j.doe@company.com" type="email" required maxlength="254" autocomplete="email"/>
+<div class="error-message text-red-500 text-xs mt-1 hidden" id="email-error"></div>
 </div>
 <div class="relative group">
-<label class="text-tiny-caps text-primary font-bold block mb-2">Project Details</label>
-<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger" placeholder="Describe your fabrication requirements..." rows="4"></textarea>
+<label class="text-tiny-caps text-primary font-bold block mb-2" for="user-message">Project Details</label>
+<textarea id="user-message" name="message" class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger" placeholder="Describe your fabrication requirements..." rows="4" required minlength="10" maxlength="2000"></textarea>
+<div class="error-message text-red-500 text-xs mt-1 hidden" id="message-error"></div>
+<div class="char-counter text-xs text-mid-grey mt-1" id="char-counter">0 / 2000</div>
 </div>
-<button class="bg-near-black text-white px-12 py-5 text-tiny-caps hover:bg-primary transition-all hover-trigger magnetic-btn">Submit Request</button>
+<button type="submit" id="submit-btn" class="bg-near-black text-white px-12 py-5 text-tiny-caps hover:bg-primary transition-all hover-trigger magnetic-btn" disabled>
+<span id="btn-text">Submit Request</span>
+<span class="loading-spinner hidden" id="btn-spinner"></span>
+</button>
+<div class="form-status hidden" id="form-status"></div>
 </form>
 </div>
 <div class="w-full lg:w-1/2 flex flex-col justify-end space-y-12">
@@ -1293,7 +1421,7 @@ Precision is not a standard; it is our heritage.
 <p class="text-2xl font-bebas tracking-wider">+91 9826051620<br/>+91 9098324240<br/>+91 9111887856<br/>domafabricators@gmail.com</p>
 </div>
 <div class="h-64 w-full overflow-hidden mask-reveal-wrapper">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235699.1122697094!2d75.32329559326172!3d22.623993706284182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396251dfa8796f15%3A0x56998ae6bb558f08!2sDoma%20Fabricators!5e0!3m2!1sen!2sin!4v1775214647669!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235699.1122697094!2d75.32329559326172!3d22.623993706284182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396251dfa8796f15%3A0x56998ae6bb558f08!2sDoma%20Fabricators!5e0!3m2!1sen!2sin!4v1775214647669!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="DOMA Fabricators Location"></iframe>
 </div>
 </div>
 </div>
@@ -1670,6 +1798,15 @@ Precision is not a standard; it is our heritage.
                 const activeWidth = isMobile ? 320 : 450;
                 const margin = 24;
                 
+                // Kill all existing animations to prevent conflicts
+                gsap.killTweensOf('.active-card-overlay');
+                gsap.killTweensOf('.overlay-title');
+                gsap.killTweensOf('.overlay-details');
+                gsap.killTweensOf('.technical-svg');
+                gsap.killTweensOf('.card-title');
+                gsap.killTweensOf(carouselTrack);
+                gsap.killTweensOf(progressBar);
+                
                 industrialCards.forEach((card, index) => {
                     const overlay = card.querySelector('.active-card-overlay');
                     const title = card.querySelector('.overlay-title');
@@ -1679,44 +1816,71 @@ Precision is not a standard; it is our heritage.
                     const img = card.querySelector('img');
 
                     if (index === currentIndex) {
-                        card.classList.add('active');
+                        // Set dimensions first before animations
                         card.style.width = isMobile ? '320px' : '450px';
                         card.style.height = isMobile ? '450px' : '550px';
+                        card.classList.add('active');
                         
-                        // Animate overlay elements in
-                        gsap.to(overlay, { opacity: 1, duration: 0.5 });
-                        gsap.fromTo(title, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay: 0.2, overwrite: true });
-                        gsap.fromTo(details, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay: 0.3, overwrite: true });
-                        gsap.to(svg, { scale: 1, opacity: 0.2, duration: 0.8, delay: 0.1, overwrite: true });
-                        
-                        gsap.to(baseTitle, { opacity: 0, duration: 0.3 });
+                        // Remove grayscale immediately for active card
                         img.classList.remove('grayscale');
+                        
+                        // Hide base title immediately
+                        gsap.set(baseTitle, { opacity: 0 });
+                        
+                        // Animate overlay elements in with proper sequencing
+                        gsap.fromTo(overlay, 
+                            { opacity: 0 }, 
+                            { opacity: 1, duration: 0.4, ease: "power2.out" }
+                        );
+                        gsap.fromTo(title, 
+                            { y: 10, opacity: 0 }, 
+                            { y: 0, opacity: 1, duration: 0.5, delay: 0.15, ease: "power2.out" }
+                        );
+                        gsap.fromTo(details, 
+                            { y: 10, opacity: 0 }, 
+                            { y: 0, opacity: 1, duration: 0.5, delay: 0.25, ease: "power2.out" }
+                        );
+                        gsap.fromTo(svg, 
+                            { scale: 0.9, opacity: 0 }, 
+                            { scale: 1, opacity: 0.2, duration: 0.6, delay: 0.1, ease: "power2.out" }
+                        );
                     } else {
-                        card.classList.remove('active');
+                        // Set dimensions first
                         card.style.width = isMobile ? '256px' : '320px';
                         card.style.height = '450px';
+                        card.classList.remove('active');
+                        
+                        // Add grayscale immediately for inactive cards
+                        img.classList.add('grayscale');
+                        
+                        // Show base title immediately
+                        gsap.set(baseTitle, { opacity: 1 });
                         
                         // Fade out overlay elements
-                        gsap.to(overlay, { opacity: 0, duration: 0.4 });
-                        gsap.to([title, details], { opacity: 0, y: 10, duration: 0.3, overwrite: true });
-                        
-                        gsap.to(baseTitle, { opacity: 1, duration: 0.3 });
-                        img.classList.add('grayscale');
+                        gsap.to(overlay, { opacity: 0, duration: 0.3, ease: "power2.in" });
+                        gsap.to([title, details], { 
+                            opacity: 0, 
+                            y: 10, 
+                            duration: 0.3, 
+                            ease: "power2.in" 
+                        });
                     }
                 });
 
+                // Animate carousel track movement
                 const moveX = - (currentIndex * (cardWidth + margin));
                 gsap.to(carouselTrack, {
                     x: moveX,
-                    duration: 0.8,
+                    duration: 0.7,
                     ease: "power3.inOut"
                 });
 
+                // Update counter and progress bar
                 if (currentSlideEl) currentSlideEl.textContent = currentIndex + 1;
                 const progressPercent = ((currentIndex + 1) / totalSlides) * 100;
                 gsap.to(progressBar, {
                     width: `${progressPercent}%`,
-                    duration: 0.8,
+                    duration: 0.7,
                     ease: "power3.inOut"
                 });
             }
@@ -1754,5 +1918,416 @@ Precision is not a standard; it is our heritage.
             activeAnimations.forEach(a => a.kill());
             lenis.destroy();
         });
+
+        // ============================================
+        // SECURE CONTACT FORM WITH EMAILJS
+        // ============================================
+        
+        class SecureContactForm {
+            constructor() {
+                this.form = document.getElementById('contact-form');
+                this.submitBtn = document.getElementById('submit-btn');
+                this.btnText = document.getElementById('btn-text');
+                this.btnSpinner = document.getElementById('btn-spinner');
+                this.formStatus = document.getElementById('form-status');
+                this.charCounter = document.getElementById('char-counter');
+                
+                // Security configuration
+                this.config = {
+                    // Get these from EmailJS Dashboard
+                    serviceId: 'YOUR_SERVICE_ID',    // ← REPLACE WITH YOUR SERVICE ID
+                    templateId: 'YOUR_TEMPLATE_ID',  // ← REPLACE WITH YOUR TEMPLATE ID
+                    
+                    // Rate limiting & security
+                    maxAttempts: 3,
+                    rateLimitWindow: 60000, // 1 minute
+                    honeypotField: 'website_url',
+                    minSubmissionTime: 3000, // 3 seconds minimum (human behavior)
+                    formStartTime: Date.now(),
+                    
+                    // Additional security settings
+                    allowedDomains: window.location.hostname ? [window.location.hostname] : [],
+                    maxMessageLength: 2000,
+                    sanitizeInputs: true
+                };
+                
+                // Rate limiting storage
+                this.submissionHistory = [];
+                this.attemptCount = 0;
+                
+                this.init();
+            }
+            
+            init() {
+                if (!this.form) return;
+                
+                this.generateCSRFToken();
+                this.setupEventListeners();
+                this.updateCharCounter();
+                this.validateForm(); // Initial validation
+            }
+            
+            // Generate CSRF token for form protection
+            generateCSRFToken() {
+                const token = this.generateRandomToken(32);
+                const csrfInput = document.getElementById('csrf-token');
+                if (csrfInput) {
+                    csrfInput.value = token;
+                }
+                
+                // Store in sessionStorage for server-side verification
+                sessionStorage.setItem('csrf_token', token);
+            }
+            
+            generateRandomToken(length) {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                let token = '';
+                const array = new Uint32Array(length);
+                crypto.getRandomValues(array);
+                
+                for (let i = 0; i < length; i++) {
+                    token += chars[array[i] % chars.length];
+                }
+                
+                return token;
+            }
+            
+            setupEventListeners() {
+                // Real-time validation
+                const inputs = this.form.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    input.addEventListener('input', () => {
+                        this.validateField(input);
+                        this.validateForm();
+                        this.updateCharCounter();
+                    });
+                    
+                    input.addEventListener('blur', () => {
+                        this.validateField(input);
+                    });
+                });
+                
+                // Form submission
+                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+            }
+            
+            updateCharCounter() {
+                const messageField = document.getElementById('user-message');
+                if (messageField && this.charCounter) {
+                    const currentLength = messageField.value.length;
+                    this.charCounter.textContent = `${currentLength} / 2000`;
+                    
+                    // Visual feedback
+                    if (currentLength > 1800) {
+                        this.charCounter.classList.add('text-red-500');
+                    } else {
+                        this.charCounter.classList.remove('text-red-500');
+                    }
+                }
+            }
+            
+            validateField(field) {
+                const errorElement = document.getElementById(`${field.id.replace('user-', '')}-error`);
+                if (!errorElement) return true;
+                
+                let isValid = true;
+                let errorMessage = '';
+                
+                // Required field check
+                if (field.hasAttribute('required') && !field.value.trim()) {
+                    isValid = false;
+                    errorMessage = 'This field is required';
+                }
+                // Pattern validation
+                else if (field.pattern && field.value) {
+                    const pattern = new RegExp(field.pattern);
+                    if (!pattern.test(field.value)) {
+                        isValid = false;
+                        errorMessage = this.getPatternErrorMessage(field);
+                    }
+                }
+                // Length validation
+                else if (field.minLength && field.value.length < parseInt(field.minLength)) {
+                    isValid = false;
+                    errorMessage = `Minimum ${field.minLength} characters required`;
+                }
+                else if (field.maxLength && field.value.length > parseInt(field.maxLength)) {
+                    isValid = false;
+                    errorMessage = `Maximum ${field.maxLength} characters allowed`;
+                }
+                // Email validation
+                else if (field.type === 'email' && field.value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid email address';
+                    }
+                }
+                
+                // XSS prevention - sanitize input
+                if (field.value) {
+                    field.value = this.sanitizeInput(field.value);
+                }
+                
+                // Display error
+                if (!isValid) {
+                    errorElement.textContent = errorMessage;
+                    errorElement.classList.remove('hidden');
+                    field.classList.add('border-red-500');
+                    field.classList.remove('border-near-black/20', 'focus:border-primary');
+                } else {
+                    errorElement.classList.add('hidden');
+                    field.classList.remove('border-red-500');
+                    field.classList.add('border-near-black/20', 'focus:border-primary');
+                }
+                
+                return isValid;
+            }
+            
+            getPatternErrorMessage(field) {
+                if (field.pattern && field.pattern.includes('a-zA-Z')) {
+                    return 'Only letters, spaces, hyphens, apostrophes, and periods are allowed';
+                }
+                return 'Invalid format';
+            }
+            
+            sanitizeInput(input) {
+                if (!this.config.sanitizeInputs || !input) return input;
+                
+                // Create a temporary element to encode HTML entities
+                const div = document.createElement('div');
+                div.textContent = input;
+                let sanitized = div.innerHTML;
+                
+                // Remove potentially dangerous patterns
+                sanitized = sanitized
+                    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '') // Remove script tags
+                    .replace(/javascript:/gi, '') // Remove javascript: protocol
+                    .replace(/on\w+=/gi, '') // Remove event handlers (onclick, onerror, etc.)
+                    .replace(/eval\(/gi, '') // Remove eval()
+                    .replace(/expression\(/gi, '') // Remove CSS expressions
+                    .replace(/url\(/gi, '') // Remove CSS url()
+                    .trim();
+                
+                return sanitized;
+            }
+            
+            validateForm() {
+                const fields = ['user-name', 'user-email', 'user-message'];
+                let allValid = true;
+                
+                fields.forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    if (field && !this.validateField(field)) {
+                        allValid = false;
+                    }
+                });
+                
+                // Enable/disable submit button
+                if (this.submitBtn) {
+                    this.submitBtn.disabled = !allValid;
+                    this.submitBtn.style.opacity = allValid ? '1' : '0.5';
+                    this.submitBtn.style.cursor = allValid ? 'pointer' : 'not-allowed';
+                }
+                
+                return allValid;
+            }
+            
+            // Security checks before submission
+            performSecurityChecks() {
+                // 1. Honeypot check (bot detection)
+                const honeypot = this.form.querySelector(`[name="${this.config.honeypotField}"]`);
+                if (honeypot && honeypot.value) {
+                    console.warn('Bot detected via honeypot');
+                    return false;
+                }
+                
+                // 2. Minimum time check (prevent automated submissions)
+                const timeSpent = Date.now() - this.config.formStartTime;
+                if (timeSpent < this.config.minSubmissionTime) {
+                    console.warn('Submission too fast - possible bot');
+                    this.showStatus('Please take your time to fill out the form', 'error');
+                    return false;
+                }
+                
+                // 3. Rate limiting
+                if (!this.checkRateLimit()) {
+                    return false;
+                }
+                
+                // 4. CSRF token validation
+                const csrfToken = document.getElementById('csrf-token')?.value;
+                const storedToken = sessionStorage.getItem('csrf_token');
+                if (!csrfToken || csrfToken !== storedToken) {
+                    console.warn('CSRF token mismatch');
+                    return false;
+                }
+                
+                // 5. Check for repeated submissions
+                if (this.attemptCount >= this.config.maxAttempts) {
+                    this.showStatus('Too many attempts. Please try again later.', 'error');
+                    return false;
+                }
+                
+                // 6. Domain validation (if configured)
+                if (this.config.allowedDomains.length > 0) {
+                    const currentDomain = window.location.hostname;
+                    if (!this.config.allowedDomains.includes(currentDomain)) {
+                        console.warn('Unauthorized domain:', currentDomain);
+                        return false;
+                    }
+                }
+                
+                // 7. Validate configuration is set
+                if (this.config.serviceId === 'YOUR_SERVICE_ID' || this.config.templateId === 'YOUR_TEMPLATE_ID') {
+                    console.error('EmailJS configuration incomplete. Please update serviceId and templateId.');
+                    this.showStatus('Configuration error. Please contact the administrator.', 'error');
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            checkRateLimit() {
+                const now = Date.now();
+                
+                // Remove old entries outside the rate limit window
+                this.submissionHistory = this.submissionHistory.filter(
+                    timestamp => now - timestamp < this.config.rateLimitWindow
+                );
+                
+                // Check if within rate limit
+                if (this.submissionHistory.length >= this.config.maxAttempts) {
+                    const oldestAttempt = this.submissionHistory[0];
+                    const waitTime = Math.ceil((this.config.rateLimitWindow - (now - oldestAttempt)) / 1000);
+                    this.showStatus(`Please wait ${waitTime} seconds before trying again`, 'error');
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                // Perform security checks
+                if (!this.performSecurityChecks()) {
+                    this.attemptCount++;
+                    return;
+                }
+                
+                // Final validation
+                if (!this.validateForm()) {
+                    return;
+                }
+                
+                // Show loading state
+                this.setLoadingState(true);
+                
+                try {
+                    // Record submission attempt
+                    this.submissionHistory.push(Date.now());
+                    
+                    // Prepare form data
+                    const formData = {
+                        from_name: this.sanitizeInput(document.getElementById('user-name').value.trim()),
+                        reply_to: this.sanitizeInput(document.getElementById('user-email').value.trim().toLowerCase()),
+                        message: this.sanitizeInput(document.getElementById('user-message').value.trim()),
+                        timestamp: new Date().toISOString(),
+                        user_agent: navigator.userAgent.substring(0, 100), // Truncate for privacy
+                        csrf_token: document.getElementById('csrf-token').value
+                    };
+                    
+                    // Send email via EmailJS
+                    const response = await emailjs.send(
+                        this.config.serviceId,
+                        this.config.templateId,
+                        formData
+                    );
+                    
+                    if (response.status === 200) {
+                        this.showStatus('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
+                        this.resetForm();
+                        this.attemptCount = 0; // Reset on success
+                    } else {
+                        throw new Error('Unexpected response status');
+                    }
+                    
+                } catch (error) {
+                    console.error('Email sending failed:', error);
+                    
+                    // Don't expose technical details to users
+                    this.showStatus(
+                        'Sorry, there was an error sending your message. Please try again or contact us directly.',
+                        'error'
+                    );
+                    
+                    this.attemptCount++;
+                } finally {
+                    this.setLoadingState(false);
+                }
+            }
+            
+            setLoadingState(isLoading) {
+                if (isLoading) {
+                    this.submitBtn.disabled = true;
+                    this.btnText.textContent = 'Sending...';
+                    this.btnSpinner.classList.remove('hidden');
+                    this.btnSpinner.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+                } else {
+                    this.submitBtn.disabled = false;
+                    this.btnText.textContent = 'Submit Request';
+                    this.btnSpinner.classList.add('hidden');
+                    this.btnSpinner.innerHTML = '';
+                    this.validateForm(); // Re-validate to update button state
+                }
+            }
+            
+            showStatus(message, type) {
+                if (!this.formStatus) return;
+                
+                this.formStatus.textContent = message;
+                this.formStatus.classList.remove('hidden', 'text-green-600', 'text-red-600');
+                
+                if (type === 'success') {
+                    this.formStatus.classList.add('text-green-600');
+                } else {
+                    this.formStatus.classList.add('text-red-600');
+                }
+                
+                // Auto-hide after 5 seconds
+                setTimeout(() => {
+                    this.formStatus.classList.add('hidden');
+                }, 5000);
+            }
+            
+            resetForm() {
+                this.form.reset();
+                this.updateCharCounter();
+                
+                // Clear all error states
+                const errorElements = this.form.querySelectorAll('.error-message');
+                errorElements.forEach(el => el.classList.add('hidden'));
+                
+                const inputs = this.form.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    input.classList.remove('border-red-500');
+                    input.classList.add('border-near-black/20');
+                });
+                
+                // Regenerate CSRF token for next submission
+                this.generateCSRFToken();
+                this.config.formStartTime = Date.now();
+            }
+        }
+        
+        // Initialize secure contact form when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                new SecureContactForm();
+            });
+        } else {
+            new SecureContactForm();
+        }
     </script>
 </body></html>
