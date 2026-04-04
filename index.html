@@ -35,14 +35,35 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#C0310A",
-                        "background-light": "#f8f6f6",
-                        "background-dark": "#1A1815",
-                        "near-black": "#1A1815",
-                        "off-white": "#F7F5F2",
-                        "light-grey": "#EEEBE6",
-                        "mid-grey": "#C8C4BC",
-                        "dark-grey": "#4A4845",
+                        // Primary accent color
+                        "primary": "#FF1901",
+                        
+                        // Dark theme colors
+                        "background-light": "#F7F7F8",
+                        "background-dark": "#131518",
+                        "near-black": "#131518",
+                        "dark-1": "#2A2C38",
+                        "dark-2": "#1A1E23",
+                        "dark-3": "#212529",
+                        "dark-4": "#222526",
+                        "dark-5": "#313435",
+                        "dark-6": "#2E3233",
+                        
+                        // Light/Gray theme colors
+                        "off-white": "#FFFAFA",
+                        "light-grey": "#F7F7F7",
+                        "mid-grey": "#C5C5C5",
+                        "dark-grey": "#656565",
+                        "gray-1": "#201B1B",
+                        "gray-2": "#000000",
+                        "gray-3": "#101010",
+                        "gray-4": "#3D3D3D",
+                        "gray-5": "#444444",
+                        "gray-6": "#464646",
+                        "gray-7": "#878787",
+                        "gray-8": "#8C8C8C",
+                        "gray-9": "#DDDDDD",
+                        "white": "#FFFFFF",
                     },
                     fontFamily: {
                         "display": ["Public Sans", "sans-serif"],
@@ -233,7 +254,7 @@
 
         #light-leak {
             pointer-events: none; z-index: 40;
-            background: radial-gradient(circle, rgba(192, 49, 10, 0.15) 0%, rgba(255,255,255,0) 70%);
+            background: radial-gradient(circle, rgba(255, 25, 1, 0.15) 0%, rgba(255,255,255,0) 70%);
             mix-blend-mode: screen; filter: blur(40px); will-change: transform;
         }
 
@@ -253,8 +274,8 @@
             font-family: 'Anton', sans-serif;
             color: #ffffff;
             text-shadow: 
-                1px 1px 0px #cc1a1a,
-                2px 2px 0px #cc1a1a;
+                1px 1px 0px #FF1901,
+                2px 2px 0px #FF1901;
             font-size: clamp(2rem, 8vw, 5.5rem);
             font-weight: 400;
             line-height: 1.1;
@@ -330,8 +351,8 @@
                     line-height: 1.1 !important;
                     letter-spacing: 0.015em !important;
                     text-shadow: 
-                        1.5px 1.5px 0px #cc1a1a,
-                        3px 3px 0px #cc1a1a;
+                        1.5px 1.5px 0px #FF1901,
+                        3px 3px 0px #FF1901;
                 }
                 .slide-text p {
                     font-size: 0.95rem !important;
