@@ -1206,55 +1206,55 @@
         // 7. Core Reveals - Bidirectional animations
         const maskWrappers = document.querySelectorAll('.mask-reveal-wrapper');
         maskWrappers.forEach(wrapper => {
-            addToCleanup(gsap.fromTo(wrapper, 
-                { clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' },
-                {
-                    scrollTrigger: { 
-                        trigger: wrapper, 
-                        start: 'top 90%',
-                        end: 'bottom 60%',
-                        toggleActions: 'play reverse play reverse'
-                    },
-                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-                    duration: 1.5,
-                    ease: 'power4.inOut'
-                }
-            ));
+            // Set initial state
+            gsap.set(wrapper, { clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' });
+            
+            addToCleanup(gsap.to(wrapper, {
+                scrollTrigger: { 
+                    trigger: wrapper, 
+                    start: 'top 90%',
+                    end: 'bottom 60%',
+                    toggleActions: 'play reverse play reverse'
+                },
+                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+                duration: 1.5,
+                ease: 'power4.inOut'
+            }));
         });
 
         document.querySelectorAll('.divider-draw').forEach(divider => {
-            addToCleanup(gsap.fromTo(divider,
-                { scaleX: 0 },
-                {
-                    scrollTrigger: { 
-                        trigger: divider, 
-                        start: 'top 90%',
-                        end: 'bottom 60%',
-                        toggleActions: 'play reverse play reverse'
-                    },
-                    scaleX: 1,
-                    duration: 1.5,
-                    ease: 'power4.inOut'
-                }
-            ));
+            // Set initial state
+            gsap.set(divider, { scaleX: 0 });
+            
+            addToCleanup(gsap.to(divider, {
+                scrollTrigger: { 
+                    trigger: divider, 
+                    start: 'top 90%',
+                    end: 'bottom 60%',
+                    toggleActions: 'play reverse play reverse'
+                },
+                scaleX: 1,
+                duration: 1.5,
+                ease: 'power4.inOut'
+            }));
         });
 
         document.querySelectorAll('.reveal-mask span').forEach(reveal => {
-            addToCleanup(gsap.fromTo(reveal,
-                { y: 100, skewY: 5 },
-                {
-                    scrollTrigger: { 
-                        trigger: reveal, 
-                        start: 'top 95%',
-                        end: 'bottom 65%',
-                        toggleActions: 'play reverse play reverse'
-                    },
-                    y: 0,
-                    skewY: 0,
-                    duration: 1.2,
-                    ease: 'power4.out',
-                }
-            ));
+            // Set initial state
+            gsap.set(reveal, { y: 100, skewY: 5 });
+            
+            addToCleanup(gsap.to(reveal, {
+                scrollTrigger: { 
+                    trigger: reveal, 
+                    start: 'top 95%',
+                    end: 'bottom 65%',
+                    toggleActions: 'play reverse play reverse'
+                },
+                y: 0,
+                skewY: 0,
+                duration: 1.2,
+                ease: 'power4.out',
+            }));
         });
 
         // Project Hovers - GSAP animations
@@ -1340,22 +1340,21 @@
         }
 
         // Service cards entrance animation with stagger - Bidirectional
-        gsap.fromTo(".service-card", 
-            { y: 50, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".service-card",
-                    start: "top 85%",
-                    end: "bottom 60%",
-                    toggleActions: "play reverse play reverse"
-                }
+        gsap.set(".service-card", { y: 50, opacity: 0 });
+        
+        gsap.to(".service-card", {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".service-card",
+                start: "top 85%",
+                end: "bottom 60%",
+                toggleActions: "play reverse play reverse"
             }
-        );
+        });
 
         // Window resize handling
         window.addEventListener('resize', () => {
