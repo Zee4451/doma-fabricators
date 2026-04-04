@@ -89,21 +89,21 @@
         }
     </script>
 <style>
-        /* Fluid Typography for Large Screens - Jobby Engineers Inspired */
+        /* Fluid Typography for Large Screens */
         :root {
-            /* Hero Headings - Bold, large (48-96px like Jobby) */
-            --hero-heading-size: clamp(3rem, 6vw + 1rem, 6rem);
+            /* Hero Headings - scale from 48px to 96px */
+            --hero-heading-size: clamp(2.5rem, 5vw + 1rem, 6rem);
             
-            /* Section Headings - Professional scale (36-72px) */
-            --section-heading-size: clamp(2.25rem, 4.5vw + 0.5rem, 4.5rem);
+            /* Section Headings - scale from 36px to 72px */
+            --section-heading-size: clamp(2rem, 4vw + 0.5rem, 4.5rem);
             
-            /* Subheadings - Clear hierarchy (24-40px) */
+            /* Subheadings - scale from 24px to 40px */
             --subheading-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
             
-            /* Body Text - Readable (16-20px like Jobby) */
+            /* Body Text - scale from 16px to 20px */
             --body-text-size: clamp(1rem, 0.5vw + 0.75rem, 1.25rem);
             
-            /* Small Text - Labels/captions (14-18px) */
+            /* Small Text - scale from 14px to 18px */
             --small-text-size: clamp(0.875rem, 0.25vw + 0.75rem, 1.125rem);
         }
         
@@ -166,10 +166,10 @@
                 font-size: clamp(4rem, 8vw, 8rem);
             }
             
-            /* Ensure generous spacing on large screens (Jobby-style 80-120px) */
+            /* Ensure proper spacing on large screens */
             section {
-                padding-top: clamp(5rem, 10vw, 8rem) !important;
-                padding-bottom: clamp(5rem, 10vw, 8rem) !important;
+                padding-top: clamp(4rem, 8vw, 8rem) !important;
+                padding-bottom: clamp(4rem, 8vw, 8rem) !important;
             }
         }
         
@@ -617,69 +617,44 @@
 }
 </style>
 
-<!-- Trust Signals Bar - Jobby Engineers Inspired -->
-<section class="py-16 bg-white border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div class="group">
-        <p class="text-5xl md:text-6xl font-bold text-primary mb-2 transition-transform group-hover:scale-105">25+</p>
-        <p class="text-sm uppercase tracking-widest text-gray-600 font-semibold">Years Experience</p>
-      </div>
-      <div class="group">
-        <p class="text-5xl md:text-6xl font-bold text-primary mb-2 transition-transform group-hover:scale-105">ISO</p>
-        <p class="text-sm uppercase tracking-widest text-gray-600 font-semibold">Certified Quality</p>
-      </div>
-      <div class="group">
-        <p class="text-5xl md:text-6xl font-bold text-primary mb-2 transition-transform group-hover:scale-105">500+</p>
-        <p class="text-sm uppercase tracking-widest text-gray-600 font-semibold">Projects Completed</p>
-      </div>
-      <div class="group">
-        <p class="text-5xl md:text-6xl font-bold text-primary mb-2 transition-transform group-hover:scale-105">100%</p>
-        <p class="text-sm uppercase tracking-widest text-gray-600 font-semibold">Safety Record</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. About - Cleaner Design -->
-<section class="py-20 md:py-32 bg-white" id="about">
+<!-- 4. About -->
+<section class="py-24" id="about" style="background-color: #000000;">
 <div class="max-w-7xl mx-auto px-6">
-<!-- Clean hero image with subtle overlay -->
-<div class="relative h-[400px] md:h-[500px] mb-16 overflow-hidden group">
-<img alt="Factory Floor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/istockphoto-470309496-612x612.jpg.jpeg" style="object-position: center;"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="relative h-[500px] mb-16 overflow-hidden clip-diagonal parallax-section mask-reveal-wrapper">
+<img alt="Factory Floor" class="w-full h-full object-cover scale-110 parallax-img liquid-target" src="assets/istockphoto-470309496-612x612.jpg.jpeg" style="object-position: center;"/>
+<div class="absolute inset-0" style="background-color: rgba(255, 25, 1, 0.15);"></div>
 </div>
 <div class="grid md:grid-cols-2 gap-16 mb-24">
 <div>
-<h2 class="font-bebas text-5xl md:text-7xl leading-tight tracking-tight text-gray-900">
-PRECISION BORN FROM<br/><span class="text-primary">FOURTEEN YEARS</span> OF EXCELLENCE
+<h2 class="font-bebas text-5xl md:text-6xl leading-tight reveal-mask" style="color: #ffffff;">
+<span>PRECISION BORN FROM<br/><span style="color: #FF1901;">FOURTEEN YEARS</span> OF EXCELLENCE</span>
 </h2>
 </div>
 <div>
-<p class="text-gray-700 text-lg md:text-xl leading-relaxed mb-6 font-light">
+<p style="color: #ffffff; text-opacity: 0.85; font-size: 1.125rem; line-height: 1.75; margin-bottom: 1.5rem; font-weight: 300;">
                         Doma Fabricators is a professionally managed industrial fabrication company with over 25 years of proven experience. We specialize in piping works, heavy structural fabrication, equipment erection, industrial maintenance, shed works, and roofing work.
                     </p>
-<p class="text-gray-700 text-lg md:text-xl leading-relaxed font-light">
+<p style="color: #ffffff; text-opacity: 0.85; font-size: 1.125rem; line-height: 1.75; font-weight: 300;">
                         With dedicated in-house fabrication facilities, we manufacture and assemble specialized industrial equipment such as tank farms, SS/MS tanks, EOT cranes, reactors, chimneys, silos and more — customized to client requirements.
                     </p>
 </div>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 border-t border-gray-200">
-<div class="p-8 border-r border-gray-200 text-center group hover:bg-gray-50 transition-colors">
-<p class="font-bebas text-6xl mb-2 text-primary group-hover:scale-110 transition-transform">25+</p>
-<p class="text-tiny-caps text-gray-600 font-semibold uppercase tracking-wider">Years Expertise</p>
+<div class="grid grid-cols-2 md:grid-cols-4 border-t" style="border-color: rgba(255, 255, 255, 0.15);">
+<div class="p-8 border-r" style="border-color: rgba(255, 255, 255, 0.15);">
+<p class="font-bebas text-6xl mb-2" style="color: #FF1901;">25+</p>
+<p class="text-tiny-caps" style="color: #ffffff; opacity: 0.7;">Years Expertise</p>
 </div>
-<div class="p-8 border-r border-gray-200 text-center group hover:bg-gray-50 transition-colors">
-<p class="font-bebas text-6xl mb-2 text-primary group-hover:scale-110 transition-transform">500+</p>
-<p class="text-tiny-caps text-gray-600 font-semibold uppercase tracking-wider">Projects Done</p>
+<div class="p-8 border-r" style="border-color: rgba(255, 255, 255, 0.15);">
+<p class="font-bebas text-6xl mb-2" style="color: #FF1901;">500+</p>
+<p class="text-tiny-caps" style="color: #ffffff; opacity: 0.7;">Projects Done</p>
 </div>
-<div class="p-8 border-r border-gray-200 md:border-r text-center group hover:bg-gray-50 transition-colors">
-<p class="font-bebas text-6xl mb-2 text-primary group-hover:scale-110 transition-transform">120</p>
-<p class="text-tiny-caps text-gray-600 font-semibold uppercase tracking-wider">Engineers</p>
+<div class="p-8 border-r md:border-r" style="border-color: rgba(255, 255, 255, 0.15);">
+<p class="font-bebas text-6xl mb-2" style="color: #FF1901;">120</p>
+<p class="text-tiny-caps" style="color: #ffffff; opacity: 0.7;">Engineers</p>
 </div>
-<div class="p-8 text-center group hover:bg-gray-50 transition-colors">
-<p class="font-bebas text-6xl mb-2 text-primary group-hover:scale-110 transition-transform">0</p>
-<p class="text-tiny-caps text-gray-600 font-semibold uppercase tracking-wider">Safety Incidents</p>
+<div class="p-8">
+<p class="font-bebas text-6xl mb-2" style="color: #FF1901;">0</p>
+<p class="text-tiny-caps" style="color: #ffffff; opacity: 0.7;">Safety Incidents</p>
 </div>
 </div>
 </div>
