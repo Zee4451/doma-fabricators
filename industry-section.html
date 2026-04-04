@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doma Fabricators - Our Industry Section</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Bebas Neue & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<!-- GSAP for Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .font-bebas {
+      font-family: 'Bebas Neue', cursive;
+      letter-spacing: 0.05em;
+    }
+    .text-accent {
+      color: #C0310A;
+    }
+    .bg-accent {
+      background-color: #C0310A;
+    }
+  </style>
+<style data-purpose="layout-and-effects">/* Heat haze / Amber tint distortion simulation */
+.industrial-card img {
+    filter: sepia(0.2) saturate(1.2) contrast(1.1);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)
+    }
+.industrial-card:hover img {
+    transform: scale(1.05)
+    }
+/* Active State Overlay */
+.active-card-overlay {
+    background: linear-gradient(0deg, rgba(192, 49, 10, 0.95) 0%, rgba(192, 49, 10, 0.6) 100%);
+    opacity: 0;
+    pointer-events: none;
+    }
+.industrial-card.active .active-card-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Section Background Image with Overlay */
+.section-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://lh3.googleusercontent.com/aida/ADBb0ugjr5B9mH6jrpca_lDnnHdoyi4VKsdI4DloFr4Pv4lCPi4A3RtGTU9ID-IHv2TJB6PAKDAS4EprWyNgbN8rvZV0gq5Tl_iZwsoRhLN-6b1OIaD-_s3-uwrivsg2TIilJeGzW3UYK3VB5wZ09amK8m6iI4sFk6sjJGXp-LFrgAxT3o5mQAHdEMCpPiok45UOb1QZ1pyQOQl1ndyBUB82CX5MCrlJdck7wPpmU9S-iMrANwN00OPqnLPZQOWErITy9lOsab-z0XJH4w);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: grayscale(100%);
+    z-index: -1
+    }
+/* Hairlines */
+.hairline {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3)
+    }
+/* Carousel Container */
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+    align-items: flex-end;
+    padding-left: calc(50vw - 160px); /* Center the active card (assuming 320px width) */
+}
+@media (min-width: 768px) {
+    .carousel-wrapper {
+        padding-left: calc(50vw - 225px); /* Center active card (450px width) */
+    }
+}
+/* Digital Counter */
+.digital-counter {
+    font-variant-numeric: tabular-nums
+    }</style>
+</head>
+<body class="bg-black antialiased">
+<!-- BEGIN: Industry Section -->
+<section class="relative min-h-screen flex flex-col justify-center overflow-hidden py-20" data-purpose="industry-showcase" id="industry-section">
+<!-- Background Elements -->
+<div class="section-bg-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none"></div>
+<!-- BEGIN: Header Content -->
+<header class="relative z-10 text-center mb-16 px-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full mb-6" data-purpose="badge">
+<span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Our Industry</span>
+</div>
+<h1 class="font-bebas text-5xl md:text-7xl lg:text-8xl leading-tight max-w-4xl mx-auto uppercase" id="main-headline">
+        Engineering Solutions<br/>
+<span class="text-accent">That Power</span><br/>
+        Your Industry
+      </h1>
+</header>
+<!-- END: Header Content -->
+<!-- BEGIN: Industry Carousel -->
+<main class="relative z-10 w-full overflow-hidden" data-purpose="horizontal-carousel">
+<div class="carousel-wrapper" id="carousel-track">
+<!-- Cards will be injected/managed via JS for easier state control but hardcoded initially for structure -->
+<!-- Slide 1: Oil & Gas -->
+<article class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3" data-index="0">
+<img alt="Oil and Gas Facility" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvo-Sdsd0Xb6gj8CcmnJzuCn4NjRgiHVWtRG7KevKT8P_fWey-0R4AotR8ZO3X_UQlULlV4MuDljFOYA_R4WaIQOstaqS8FqWnLLhVgkLfXHGr7BtDXwcZeL96TyzXggTPt2NYq1C2EUBkw3KNCv71WaoTxD_T1aIcowyq4oRMgeKHhASBc9aVQ5SAufCYIY3RL3BtqX1w0PFQGI_Pc_BZl59T8PKuVaK3CqFAsDHKZLUgvlq2Dqwq7uLDrPBAb2bXS8K4oaq8gME"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
+<h3 class="font-bebas text-3xl uppercase">Oil &amp; Gas</h3>
+</div>
+<div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+<div class="absolute top-8 right-8 opacity-20 technical-svg">
+<svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+<circle cx="50" cy="50" r="40"></circle>
+<path d="M50 10 L50 90 M10 50 L90 50"></path>
+<rect height="40" width="40" x="30" y="30"></rect>
+</svg>
+</div>
+<h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title">Oil &amp; Gas</h3>
+<div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Capability</span>
+<span class="text-sm font-bold val-cap">Upstream Assets</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Certification</span>
+<span class="text-sm font-bold val-cert">API 6A / 16A</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Tolerances</span>
+<span class="text-sm font-bold val-tol">+/- 0.1mm critical</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Slide 2: Chemical Industry -->
+<article class="industrial-card active relative flex-shrink-0 w-80 md:w-[450px] h-[550px] overflow-hidden shadow-2xl transition-all duration-700 mx-3" data-index="1">
+<img alt="Chemical Industry" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFTCKj34V70_LwK4fGzRHgAwP0Sh7sAl7wyZXpSQczHF6LSVbWAwSyimxaEznIpb1TgGz839ZjuEPvqn71GOMHVzJWGzGRclCRoyocyBqjeKAEDaensNXIvVuDYWGxC5qYlNrtYOE0yw3LEp6pkTWZt0qT808aur3uK_fFHLLrzH3i5J6OvYgzQyrfmxXVPHww4Eb4fuG4QK6OI54-Smz-9OqjXikDObu24jF-UKU1In4CYTRhxhOu8cpsZG4awA6LklMKvsHPAds"/>
+<div class="absolute bottom-6 left-6 transition-opacity duration-500 opacity-0 card-title">
+<h3 class="font-bebas text-3xl uppercase">Chemical</h3>
+</div>
+<div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+<div class="absolute top-8 right-8 opacity-20 technical-svg">
+<svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+<circle cx="50" cy="50" r="40"></circle>
+<path d="M50 10 L50 90 M10 50 L90 50"></path>
+<rect height="40" width="40" x="30" y="30"></rect>
+</svg>
+</div>
+<h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title">Chemical<br/>Industry</h3>
+<div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Capability</span>
+<span class="text-sm font-bold val-cap">Refinery Fabrication</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Certification</span>
+<span class="text-sm font-bold val-cert">ASME VIII DIV 1 &amp; 2</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Tolerances</span>
+<span class="text-sm font-bold val-tol">+/- 0.5mm precision</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Slide 3: Manufacturing -->
+<article class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3" data-index="2">
+<img alt="Manufacturing Facility" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtNj-F8nvW5AdwfHua94c3cYUSoNfb3CM0EsFLzyr7xU6FZ3W3E7uo9RIinjS7odtGkZ6QMJPU99nlAw-zqeXU0M0OOO0yDqOs_uG3HPRnEp21i1IHua6J-vzn3gaPyJt1hiZMCEwtiWzQ8x2tPlj9P3qqbnT6NHs6uqyepSKYy4e7hxNguTznQ5kcYZ43VlSD0T2TIX5NnSts5sQbkDjiuRKe3ahYFnw7nSroBTTbMmqm68hc9k2AlS9IfgOzw3QuLhqM0UlZr24"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
+<h3 class="font-bebas text-3xl uppercase">Manufacturing</h3>
+</div>
+<div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+<div class="absolute top-8 right-8 opacity-20 technical-svg">
+<svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+<circle cx="50" cy="50" r="40"></circle>
+<path d="M50 10 L50 90 M10 50 L90 50"></path>
+<rect height="40" width="40" x="30" y="30"></rect>
+</svg>
+</div>
+<h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title">Manufacturing</h3>
+<div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Capability</span>
+<span class="text-sm font-bold val-cap">Heavy Machining</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Certification</span>
+<span class="text-sm font-bold val-cert">ISO 9001:2015</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Tolerances</span>
+<span class="text-sm font-bold val-tol">+/- 0.05mm micron</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Slide 4: Renewables -->
+<article class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3" data-index="3">
+<img alt="Renewable Energy" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATHU-JNeHfaNMirA3ghwCrJa9AeC2seqQjYZg5ZIyhAGPjtWKJILH2n21QM4woDkkd8ONsxS4EbjU7Nt_BHBQ3EWiW6tCn8RfEnduIVHouPxR21T5OKH3oA2gK_1C-ID80lbu1kU-N3lMnWJoFwI4NJtDYvJDam2ahoaRYofjms_CiD5zVeGGLqGk7QZE__PL9xvBcHorqe1YBv9rC2ujlba7AOqqN3GxVg6cfpp1QvCD0PxL6xBO1VXjdojGFcPXyrbWtI-rBMn0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
+<h3 class="font-bebas text-3xl uppercase">Renewables</h3>
+</div>
+<div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+<div class="absolute top-8 right-8 opacity-20 technical-svg">
+<svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+<circle cx="50" cy="50" r="40"></circle>
+<path d="M50 10 L50 90 M10 50 L90 50"></path>
+<rect height="40" width="40" x="30" y="30"></rect>
+</svg>
+</div>
+<h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title">Renewables</h3>
+<div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Capability</span>
+<span class="text-sm font-bold val-cap">Wind Tower Fab</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Certification</span>
+<span class="text-sm font-bold val-cert">DNV-ST-0126</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70">Tolerances</span>
+<span class="text-sm font-bold val-tol">High Dynamic Load</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- END: Industry Carousel -->
+<!-- BEGIN: UI Controls -->
+<footer class="relative z-10 w-full max-w-7xl mx-auto px-8 mt-12 flex items-center justify-between" data-purpose="carousel-controls">
+<!-- Slide Counter and Progress -->
+<div class="flex items-center gap-8">
+<div class="digital-counter font-bold text-xl">
+<span class="text-accent" id="current-slide">2</span> <span class="text-white/40 text-sm">/ <span id="total-slides">4</span></span>
+</div>
+<div class="relative w-48 md:w-96 h-[2px] bg-white/10 overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-accent transition-all duration-700" id="progress-bar" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Navigation Arrows -->
+<div class="flex gap-4">
+<button aria-label="Previous Slide" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300" id="prev-btn">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+<button aria-label="Next Slide" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300" id="next-btn">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+</div>
+</footer>
+<!-- END: UI Controls -->
+</section>
+<!-- END: Industry Section -->
+<script data-purpose="gsap-animations">document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('carousel-track');
+      const cards = Array.from(document.querySelectorAll('.industrial-card'));
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const currentSlideEl = document.getElementById('current-slide');
+      const totalSlidesEl = document.getElementById('total-slides');
+      const progressBar = document.getElementById('progress-bar');
+      
+      let currentIndex = 1; // Start at Chemical (Index 1)
+      const totalSlides = cards.length;
+      totalSlidesEl.textContent = totalSlides;
+
+      function updateCarousel() {
+        const isMobile = window.innerWidth < 768;
+        const cardWidth = isMobile ? 256 : 320; 
+        const activeWidth = isMobile ? 320 : 450;
+        const margin = 24;
+        
+        cards.forEach((card, index) => {
+            const overlay = card.querySelector('.active-card-overlay');
+            const title = card.querySelector('.overlay-title');
+            const details = card.querySelector('.overlay-details');
+            const svg = card.querySelector('.technical-svg');
+            const baseTitle = card.querySelector('.card-title');
+            const img = card.querySelector('img');
+
+            if (index === currentIndex) {
+                card.classList.add('active');
+                card.style.width = isMobile ? '320px' : '450px';
+                card.style.height = isMobile ? '450px' : '550px';
+                
+                // Animate overlay elements in
+                gsap.to(overlay, { opacity: 1, duration: 0.5 });
+                gsap.fromTo(title, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay: 0.2, overwrite: true });
+                gsap.fromTo(details, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay: 0.3, overwrite: true });
+                gsap.to(svg, { scale: 1, opacity: 0.2, duration: 0.8, delay: 0.1, overwrite: true });
+                
+                gsap.to(baseTitle, { opacity: 0, duration: 0.3 });
+                img.classList.remove('grayscale');
+            } else {
+                card.classList.remove('active');
+                card.style.width = isMobile ? '256px' : '320px';
+                card.style.height = '450px';
+                
+                // Fade out overlay elements
+                gsap.to(overlay, { opacity: 0, duration: 0.4 });
+                gsap.to([title, details], { opacity: 0, y: 10, duration: 0.3, overwrite: true });
+                
+                gsap.to(baseTitle, { opacity: 1, duration: 0.3 });
+                img.classList.add('grayscale');
+            }
+        });
+
+        const moveX = - (currentIndex * (cardWidth + margin));
+        gsap.to(track, {
+            x: moveX,
+            duration: 0.8,
+            ease: "power3.inOut"
+        });
+
+        currentSlideEl.textContent = currentIndex + 1;
+        const progressPercent = ((currentIndex + 1) / totalSlides) * 100;
+        gsap.to(progressBar, {
+            width: `${progressPercent}%`,
+            duration: 0.8,
+            ease: "power3.inOut"
+        });
+      }
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
+
+      cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            if (currentIndex !== index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+        });
+      });
+
+      gsap.from("#main-headline", {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        ease: "power4.out"
+      });
+
+      updateCarousel();
+      window.addEventListener('resize', updateCarousel);
+    });</script>
+</body></html>

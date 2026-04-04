@@ -309,6 +309,42 @@
             pointer-events: none;
         }
 
+        /* Industries Carousel Styles */
+        .industrial-card img {
+            filter: sepia(0.2) saturate(1.2) contrast(1.1);
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .industrial-card:hover img {
+            transform: scale(1.05);
+        }
+        .active-card-overlay {
+            background: linear-gradient(0deg, rgba(255, 25, 1, 0.95) 0%, rgba(255, 25, 1, 0.6) 100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .industrial-card.active .active-card-overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .hairline {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+            align-items: flex-end;
+            padding-left: calc(50vw - 160px);
+        }
+        @media (min-width: 768px) {
+            .carousel-wrapper {
+                padding-left: calc(50vw - 225px);
+            }
+        }
+        .digital-counter {
+            font-variant-numeric: tabular-nums;
+        }
+
         /* Mobile-specific hero text adjustments */
         @media (max-width: 768px) {
             .hero-heading {
@@ -887,32 +923,186 @@ Precision is not a standard; it is our heritage.
   </div>
 </section>
 <!-- 6. Industries -->
-<section class="bg-white py-32 hud-trigger" id="industries">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="font-bebas text-6xl mb-16 reveal-mask"><span>INDUSTRIES WE ARE SPECIALISED IN</span></h2>
-<div class="grid md:grid-cols-2 gap-4 perspective-container">
-<div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
-<img alt="Pharma Industries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp"/>
-<div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
-<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PHARMA INDUSTRY</h3></div>
+<section class="relative min-h-screen flex flex-col justify-center overflow-hidden py-20 bg-near-black" id="industries">
+<!-- Background Elements -->
+<div class="absolute inset-0 bg-gradient-to-b from-near-black via-transparent to-near-black pointer-events-none"></div>
+
+<!-- Header Content -->
+<header class="relative z-10 text-center mb-16 px-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-white/70">Our Industries</span>
 </div>
-<div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
-<img alt="Chemical Industries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/environmental-pollution-factory-exterior-night_23-2149057728.avif"/>
-<div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
-<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">CHEMICAL INDUSTRY</h3></div>
+<h1 class="font-bebas text-5xl md:text-7xl lg:text-8xl leading-tight max-w-4xl mx-auto uppercase text-white reveal-mask">
+<span>Engineering Solutions<br/><span style="color: #FF1901;">That Power</span><br/>Your Industry</span>
+</h1>
+</header>
+
+<!-- Industry Carousel -->
+<main class="relative z-10 w-full overflow-hidden" data-purpose="horizontal-carousel">
+<div class="carousel-wrapper" id="carousel-track">
+<!-- Slide 1: Oil & Gas -->
+<article class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3" data-index="0">
+<img alt="Oil and Gas Facility" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0" src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
+<h3 class="font-bebas text-3xl uppercase text-white">Oil &amp; Gas</h3>
 </div>
-<div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
-<img alt="Petroleum Refinery" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/industrial-night-lights-stockcake.webp"/>
-<div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
-<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PETROLEUM REFINERY</h3></div>
+<div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+<div class="absolute top-8 right-8 opacity-20 technical-svg">
+<svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+<circle cx="50" cy="50" r="40"></circle>
+<path d="M50 10 L50 90 M10 50 L90 50"></path>
+<rect height="40" width="40" x="30" y="30"></rect>
+</svg>
 </div>
-<div class="relative group h-[400px] overflow-hidden mask-reveal-wrapper tilt-card">
-<img alt="PaintIndustries" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 scale-110 parallax-img liquid-target" src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg"/>
-<div class="absolute inset-0 bg-near-black/40 group-hover:bg-near-black/20 transition-all"></div>
-<div class="absolute bottom-10 left-10"><h3 class="font-bebas text-5xl text-white">PAINT INDUSTRY</h3></div>
+<h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Oil &amp; Gas</h3>
+<div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
+<span class="text-sm font-bold val-cap text-white">Piping Works</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
+<span class="text-sm font-bold val-cert text-white">ISO 45001</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Experience</span>
+<span class="text-sm font-bold val-tol text-white">25+ Years</span>
 </div>
 </div>
 </div>
+</article>
+
+<!-- Slide 2: Chemical Industry (Active by default) -->
+<article class="industrial-card active relative flex-shrink-0 w-80 md:w-[450px] h-[550px] overflow-hidden shadow-2xl transition-all duration-700 mx-3" data-index="1">
+<img alt="Chemical Industry" class="absolute inset-0 w-full h-full object-cover" src="assets/environmental-pollution-factory-exterior-night_23-2149057728.avif"/>
+<div class="absolute bottom-6 left-6 transition-opacity duration-500 opacity-0 card-title">
+<h3 class="font-bebas text-3xl uppercase text-white">Chemical</h3>
+</div>
+<div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+<div class="absolute top-8 right-8 opacity-20 technical-svg">
+<svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+<circle cx="50" cy="50" r="40"></circle>
+<path d="M50 10 L50 90 M10 50 L90 50"></path>
+<rect height="40" width="40" x="30" y="30"></rect>
+</svg>
+</div>
+<h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Chemical<br/>Industry</h3>
+<div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
+<span class="text-sm font-bold val-cap text-white">Tank Fabrication</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
+<span class="text-sm font-bold val-cert text-white">ASME Standards</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Projects</span>
+<span class="text-sm font-bold val-tol text-white">500+ Done</span>
+</div>
+</div>
+</div>
+</article>
+
+<!-- Slide 3: Petroleum Refinery -->
+<article class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3" data-index="2">
+<img alt="Petroleum Refinery" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0" src="assets/industrial-night-lights-stockcake.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
+<h3 class="font-bebas text-3xl uppercase text-white">Petroleum</h3>
+</div>
+<div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+<div class="absolute top-8 right-8 opacity-20 technical-svg">
+<svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+<circle cx="50" cy="50" r="40"></circle>
+<path d="M50 10 L50 90 M10 50 L90 50"></path>
+<rect height="40" width="40" x="30" y="30"></rect>
+</svg>
+</div>
+<h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Petroleum<br/>Refinery</h3>
+<div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
+<span class="text-sm font-bold val-cap text-white">Equipment Erection</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
+<span class="text-sm font-bold val-cert text-white">Safety First</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Engineers</span>
+<span class="text-sm font-bold val-tol text-white">120+ Team</span>
+</div>
+</div>
+</div>
+</article>
+
+<!-- Slide 4: Paint Industry -->
+<article class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3" data-index="3">
+<img alt="Paint Industry" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0" src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
+<h3 class="font-bebas text-3xl uppercase text-white">Paint Industry</h3>
+</div>
+<div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+<div class="absolute top-8 right-8 opacity-20 technical-svg">
+<svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+<circle cx="50" cy="50" r="40"></circle>
+<path d="M50 10 L50 90 M10 50 L90 50"></path>
+<rect height="40" width="40" x="30" y="30"></rect>
+</svg>
+</div>
+<h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Paint<br/>Industry</h3>
+<div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
+<span class="text-sm font-bold val-cap text-white">Shed & Roofing</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
+<span class="text-sm font-bold val-cert text-white">Quality Assured</span>
+</div>
+<div class="hairline"></div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Safety</span>
+<span class="text-sm font-bold val-tol text-white">0 Incidents</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+
+<!-- UI Controls -->
+<footer class="relative z-10 w-full max-w-7xl mx-auto px-8 mt-12 flex items-center justify-between" data-purpose="carousel-controls">
+<!-- Slide Counter and Progress -->
+<div class="flex items-center gap-8">
+<div class="digital-counter font-bold text-xl text-white">
+<span class="text-primary" id="current-slide">2</span> <span class="text-white/40 text-sm">/ <span id="total-slides">4</span></span>
+</div>
+<div class="relative w-48 md:w-96 h-[2px] bg-white/10 overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-primary transition-all duration-700" id="progress-bar" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Navigation Arrows -->
+<div class="flex gap-4">
+<button aria-label="Previous Slide" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-near-black transition-colors duration-300 text-white" id="prev-btn">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+<button aria-label="Next Slide" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-near-black transition-colors duration-300 text-white" id="next-btn">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+</div>
+</footer>
 </section>
 <!-- 7. Clients -->
 <section class="bg-near-black py-20 md:py-32 clip-diagonal text-white parallax-section overflow-hidden">
@@ -1459,6 +1649,105 @@ Precision is not a standard; it is our heritage.
             link.querySelector('span').style.transform = 'translateX(-20px)';
             link.querySelector('span').style.transition = 'transform 0.3s ease-out';
         });
+
+        // Industries Carousel Functionality
+        const carouselTrack = document.getElementById('carousel-track');
+        if (carouselTrack) {
+            const industrialCards = Array.from(document.querySelectorAll('.industrial-card'));
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const currentSlideEl = document.getElementById('current-slide');
+            const totalSlidesEl = document.getElementById('total-slides');
+            const progressBar = document.getElementById('progress-bar');
+            
+            let currentIndex = 1; // Start at Chemical Industry (Index 1)
+            const totalSlides = industrialCards.length;
+            if (totalSlidesEl) totalSlidesEl.textContent = totalSlides;
+
+            function updateCarousel() {
+                const isMobile = window.innerWidth < 768;
+                const cardWidth = isMobile ? 256 : 320; 
+                const activeWidth = isMobile ? 320 : 450;
+                const margin = 24;
+                
+                industrialCards.forEach((card, index) => {
+                    const overlay = card.querySelector('.active-card-overlay');
+                    const title = card.querySelector('.overlay-title');
+                    const details = card.querySelector('.overlay-details');
+                    const svg = card.querySelector('.technical-svg');
+                    const baseTitle = card.querySelector('.card-title');
+                    const img = card.querySelector('img');
+
+                    if (index === currentIndex) {
+                        card.classList.add('active');
+                        card.style.width = isMobile ? '320px' : '450px';
+                        card.style.height = isMobile ? '450px' : '550px';
+                        
+                        // Animate overlay elements in
+                        gsap.to(overlay, { opacity: 1, duration: 0.5 });
+                        gsap.fromTo(title, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay: 0.2, overwrite: true });
+                        gsap.fromTo(details, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay: 0.3, overwrite: true });
+                        gsap.to(svg, { scale: 1, opacity: 0.2, duration: 0.8, delay: 0.1, overwrite: true });
+                        
+                        gsap.to(baseTitle, { opacity: 0, duration: 0.3 });
+                        img.classList.remove('grayscale');
+                    } else {
+                        card.classList.remove('active');
+                        card.style.width = isMobile ? '256px' : '320px';
+                        card.style.height = '450px';
+                        
+                        // Fade out overlay elements
+                        gsap.to(overlay, { opacity: 0, duration: 0.4 });
+                        gsap.to([title, details], { opacity: 0, y: 10, duration: 0.3, overwrite: true });
+                        
+                        gsap.to(baseTitle, { opacity: 1, duration: 0.3 });
+                        img.classList.add('grayscale');
+                    }
+                });
+
+                const moveX = - (currentIndex * (cardWidth + margin));
+                gsap.to(carouselTrack, {
+                    x: moveX,
+                    duration: 0.8,
+                    ease: "power3.inOut"
+                });
+
+                if (currentSlideEl) currentSlideEl.textContent = currentIndex + 1;
+                const progressPercent = ((currentIndex + 1) / totalSlides) * 100;
+                gsap.to(progressBar, {
+                    width: `${progressPercent}%`,
+                    duration: 0.8,
+                    ease: "power3.inOut"
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateCarousel();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateCarousel();
+                });
+            }
+
+            industrialCards.forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    if (currentIndex !== index) {
+                        currentIndex = index;
+                        updateCarousel();
+                    }
+                });
+            });
+
+            // Initialize carousel
+            updateCarousel();
+            window.addEventListener('resize', updateCarousel);
+        }
 
         // Cleanup on unmount (best practice)
         window.addEventListener('beforeunload', () => {
