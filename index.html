@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>DOMA FABRICATORS | Engineering Excellence</title>
@@ -263,15 +263,15 @@
         .card-border { width: 0%; transition: width 0.4s ease; }
 
         /* Lenis Smooth Scroll */
-        html.lenis { height: auto; }
-        .lenis.lenis-smooth { scroll-behavior: auto; }
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
         .lenis.lenis-stopped { overflow: hidden; }
 
         /* Reveal Masks */
         .reveal-mask { display: block; overflow: hidden; }
-        .reveal-mask span { display: block; will-change: transform; }
-        .divider-draw { transform-origin: left; transform: scaleX(0); will-change: transform; }
-        .parallax-img { will-change: transform; }
+        .reveal-mask span { display: block; }
+        .divider-draw { transform-origin: left; transform: scaleX(0); }
         
         /* Prevent image gaps during parallax */
         .service-card img.parallax-img {
@@ -280,7 +280,7 @@
         }
 
         /* Image Masking Reveal */
-        .mask-reveal-wrapper { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); will-change: clip-path; }
+        .mask-reveal-wrapper { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
 
         /* Contact Form - Ensure visibility and accessibility */
         #contact input,
@@ -347,12 +347,12 @@
 
         /* 3D Perspective Container */
         .perspective-container { perspective: 1000px; }
-        .tilt-card { will-change: transform; transform-style: preserve-3d; }
+        .tilt-card { transform-style: preserve-3d; }
 
         #light-leak {
             pointer-events: none; z-index: 40;
             background: radial-gradient(circle, rgba(255, 25, 1, 0.15) 0%, rgba(255,255,255,0) 70%);
-            mix-blend-mode: screen; filter: blur(40px); will-change: transform;
+            mix-blend-mode: screen; filter: blur(40px);
         }
 
         #project-bg-preview {
@@ -1514,29 +1514,34 @@ Precision is not a standard; it is our heritage.
 
         setInterval(goToNext, 5000);
 
-        // 1. Lenis Smooth Scroll
+        // 1. Lenis Smooth Scroll — synced with GSAP ticker
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            wheelMultiplier: 1.1,
+            wheelMultiplier: 1.0,
             smoothWheel: true,
+            autoRaf: false, // We drive raf manually via GSAP
         });
 
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
+        // Sync Lenis scroll position with GSAP ScrollTrigger
+        lenis.on('scroll', ScrollTrigger.update);
 
-        // 3. Background Grid Interaction
-        window.addEventListener('scroll', () => {
-            const vel = lenis.velocity;
-            gsap.to('#bg-grid', {
-                y: vel * 0.1,
-                duration: 0.5,
-                ease: 'power2.out'
+        // Drive Lenis from GSAP's single ticker (eliminates double-rAF)
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000); // GSAP ticker time is in seconds
+        });
+        gsap.ticker.lagSmoothing(0); // Prevent GSAP from throttling on lag
+
+        // 3. Background Grid — lightweight velocity-based offset (no per-frame tween creation)
+        let bgGridY = 0;
+        const bgGrid = document.getElementById('bg-grid');
+        if (bgGrid) {
+            gsap.ticker.add(() => {
+                const target = lenis.velocity * 0.1;
+                bgGridY += (target - bgGridY) * 0.1; // simple lerp
+                bgGrid.style.transform = `translateY(${bgGridY}px)`;
             });
-        });
+        }
 
         // 5. 3D Tilt Effect for Cards - Disabled on mobile for performance
         const isMobileDevice = window.innerWidth <= 768;
@@ -1544,41 +1549,54 @@ Precision is not a standard; it is our heritage.
         if (!isMobileDevice) {
             const tiltCards = document.querySelectorAll('.tilt-card');
             tiltCards.forEach(card => {
+                let tiltRAF = null;
+                let tiltX = 0, tiltY = 0;
                 card.addEventListener('mousemove', (e) => {
+                    // Cache mouse position but only animate on next tick
                     const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const xc = rect.width / 2;
-                    const yc = rect.height / 2;
-                    const dx = x - xc;
-                    const dy = y - yc;
-                    
-                    gsap.to(card, {
-                        rotateX: -dy / 20,
-                        rotateY: dx / 20,
-                        x: dx * 0.05,
-                        y: dy * 0.05,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
+                    tiltX = e.clientX - rect.left - rect.width / 2;
+                    tiltY = e.clientY - rect.top - rect.height / 2;
+                    if (!tiltRAF) {
+                        tiltRAF = requestAnimationFrame(() => {
+                            gsap.to(card, {
+                                rotateX: -tiltY / 20,
+                                rotateY: tiltX / 20,
+                                x: tiltX * 0.05,
+                                y: tiltY * 0.05,
+                                duration: 0.5,
+                                ease: 'power2.out',
+                                overwrite: 'auto'
+                            });
+                            tiltRAF = null;
+                        });
+                    }
                 });
                 card.addEventListener('mouseleave', () => {
-                    gsap.to(card, { rotateX: 0, rotateY: 0, x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' });
+                    if (tiltRAF) { cancelAnimationFrame(tiltRAF); tiltRAF = null; }
+                    gsap.to(card, { rotateX: 0, rotateY: 0, x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)', overwrite: 'auto' });
                 });
             });
         }
 
         // 6. Magnetic Elements - Reduced sensitivity on mobile
         document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            let magRAF = null;
+            let magX = 0, magY = 0;
             btn.addEventListener('mousemove', (e) => {
                 const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                const strength = isMobileDevice ? 0.2 : 0.4; // Reduced on mobile
-                gsap.to(btn, { x: x * strength, y: y * strength, duration: 0.3, ease: 'power2.out' });
+                magX = e.clientX - rect.left - rect.width / 2;
+                magY = e.clientY - rect.top - rect.height / 2;
+                if (!magRAF) {
+                    magRAF = requestAnimationFrame(() => {
+                        const strength = 0.4;
+                        gsap.to(btn, { x: magX * strength, y: magY * strength, duration: 0.3, ease: 'power2.out', overwrite: 'auto' });
+                        magRAF = null;
+                    });
+                }
             });
             btn.addEventListener('mouseleave', () => {
-                gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.3)' });
+                if (magRAF) { cancelAnimationFrame(magRAF); magRAF = null; }
+                gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.3)', overwrite: 'auto' });
             });
         });
 
@@ -1636,7 +1654,7 @@ Precision is not a standard; it is our heritage.
                     trigger: img.parentElement,
                     start: 'top bottom',
                     end: 'bottom top',
-                    scrub: true
+                    scrub: 0.5 // Smooth scrub instead of raw pixel-lock
                 },
                 y: isMobileDevice ? -10 : -20, // Reduced movement on mobile
                 ease: 'none'
@@ -1707,9 +1725,11 @@ Precision is not a standard; it is our heritage.
             }
         });
 
-        // Window resize handling
+        // Window resize handling — debounced
+        let resizeTimer;
         window.addEventListener('resize', () => {
-            ScrollTrigger.refresh();
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => ScrollTrigger.refresh(), 250);
         });
 
         // Hamburger Menu Functionality
