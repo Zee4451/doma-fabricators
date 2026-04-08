@@ -17,83 +17,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:wght@400;600&amp;family=IBM+Plex+Sans:wght@300;400;600&amp;family=Public+Sans:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
-<style>
-/* Force Material Symbols to render properly */
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined' !important;
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-</style>
+<link rel="stylesheet" href="pages/css/index.css"/>
 <!-- EmailJS SDK -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-    // ============================================
-    // SECURE CREDENTIAL MANAGEMENT
-    // ============================================
-    // 
-    // SECURITY NOTE: EmailJS Public Keys are designed to be client-side.
-    // They can only SEND emails using your pre-configured templates.
-    // They CANNOT read emails or access your account.
-    //
-    // For production, consider:
-    // 1. Using environment variables with a build tool (Vite, Webpack)
-    // 2. Implementing a backend proxy for additional security
-    // 3. Setting up domain restrictions in EmailJS dashboard
-    //
-    // IMPORTANT: Never expose Private Keys or Service Account credentials!
-    // ============================================
-    
-    // Configuration object - Replace these values before deployment
-    const EMAIL_CONFIG = {
-        // Get your Public Key from: https://dashboard.emailjs.com/admin/account
-        publicKey: "YOUR_PUBLIC_KEY", // ← REPLACE THIS WITH YOUR ACTUAL KEY
-        
-        // Rate limiting configuration
-        rateLimit: {
-            id: "contact-form",
-            throttle: 10000 // 10 seconds between submissions
-        },
-        
-        // Security settings
-        security: {
-            blockHeadless: true, // Block automated bots
-            blockListed: true,   // Block known malicious IPs
-            requireUserInteraction: true // Require genuine user interaction
-        }
-    };
-    
-    // Initialize EmailJS with security features
-    (function() {
-        // Validate configuration before initialization
-        if (!EMAIL_CONFIG.publicKey || EMAIL_CONFIG.publicKey === "YOUR_PUBLIC_KEY") {
-            console.warn('%c⚠️ EmailJS Not Configured', 'color: orange; font-size: 16px; font-weight: bold;');
-            console.warn('Please update EMAIL_CONFIG.publicKey in index.html with your actual EmailJS Public Key.');
-            console.warn('Get your key from: https://dashboard.emailjs.com/admin/account');
-            return;
-        }
-        
-        emailjs.init({
-            publicKey: EMAIL_CONFIG.publicKey,
-            blockHeadless: EMAIL_CONFIG.security.blockHeadless,
-            blockListed: EMAIL_CONFIG.security.blockListed,
-            limitRate: EMAIL_CONFIG.rateLimit
-        });
-        
-        console.log('%c✓ EmailJS Initialized Successfully', 'color: green; font-weight: bold;');
-    })();
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+<script src="pages/js/index.js"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -153,383 +83,6 @@
             },
         }
     </script>
-<style>
-        /* Fluid Typography for Large Screens */
-        :root {
-            /* Hero Headings - scale from 48px to 96px */
-            --hero-heading-size: clamp(2.5rem, 5vw + 1rem, 6rem);
-            
-            /* Section Headings - scale from 36px to 72px */
-            --section-heading-size: clamp(2rem, 4vw + 0.5rem, 4.5rem);
-            
-            /* Subheadings - scale from 24px to 40px */
-            --subheading-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
-            
-            /* Body Text - scale from 16px to 20px */
-            --body-text-size: clamp(1rem, 0.5vw + 0.75rem, 1.25rem);
-            
-            /* Small Text - scale from 14px to 18px */
-            --small-text-size: clamp(0.875rem, 0.25vw + 0.75rem, 1.125rem);
-        }
-        
-        .hero-heading {
-            font-size: var(--hero-heading-size);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-        
-        .section-heading {
-            font-size: var(--section-heading-size);
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-        }
-        
-        .subheading {
-            font-size: var(--subheading-size);
-            line-height: 1.3;
-        }
-        
-        .body-text {
-            font-size: var(--body-text-size);
-            line-height: 1.6;
-        }
-        
-        .small-text {
-            font-size: var(--small-text-size);
-            line-height: 1.5;
-        }
-        
-        /* Large Desktop Optimizations */
-        @media (min-width: 1280px) {
-            .container,
-            .max-w-7xl {
-                max-width: 1400px !important;
-            }
-            
-            .px-6 {
-                padding-left: 3rem !important;
-                padding-right: 3rem !important;
-            }
-            
-            .px-8 {
-                padding-left: 4rem !important;
-                padding-right: 4rem !important;
-            }
-        }
-        
-        @media (min-width: 1536px) {
-            body {
-                font-size: 18px;
-            }
-            
-            .container {
-                max-width: 1600px !important;
-            }
-            
-            /* Increase hero text on ultra-wide screens */
-            .hero-heading {
-                font-size: clamp(4rem, 8vw, 8rem);
-            }
-            
-            /* Ensure proper spacing on large screens */
-            section {
-                padding-top: clamp(4rem, 8vw, 8rem) !important;
-                padding-bottom: clamp(4rem, 8vw, 8rem) !important;
-            }
-        }
-        
-        .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
-        .clip-diagonal-reverse { clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%); }
-        
-        /* Fix for contact section clipping - ensure content is visible */
-        #contact > div {
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Ensure contact section has enough padding to prevent clipping */
-        @media (min-width: 769px) {
-            #contact {
-                padding-top: 8rem !important;
-                padding-bottom: 8rem !important;
-            }
-        }
-        .marquee { display: flex; overflow: hidden; user-select: none; gap: 4rem; }
-        .marquee-content { flex-shrink: 0; display: flex; justify-content: space-around; gap: 4rem; min-width: 100%; animation: scroll 40s linear infinite; }
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
-        .hairline { border-width: 1px; }
-        .text-tiny-caps { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
-        .sharp-card:hover .card-border { width: 100%; }
-        .card-border { width: 0%; transition: width 0.4s ease; }
-
-        /* Lenis Smooth Scroll */
-        html.lenis, html.lenis body { height: auto; }
-        .lenis.lenis-smooth { scroll-behavior: auto !important; }
-        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-        .lenis.lenis-stopped { overflow: hidden; }
-
-        /* Reveal Masks */
-        .reveal-mask { display: block; overflow: hidden; }
-        .reveal-mask span { display: block; }
-        .divider-draw { transform-origin: left; transform: scaleX(0); }
-        
-        /* Prevent image gaps during parallax */
-        .service-card img.parallax-img {
-            object-position: center top;
-            transform-origin: center top;
-        }
-
-        /* Image Masking Reveal */
-        .mask-reveal-wrapper { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
-
-        /* Contact Form - Ensure visibility and accessibility */
-        #contact input,
-        #contact textarea,
-        #contact button {
-            position: relative;
-            z-index: 3;
-        }
-        #contact label {
-            position: relative;
-            z-index: 3;
-        }
-        
-        /* Form Status Messages */
-        .form-status {
-            margin-top: 1rem;
-            padding: 0.75rem 1rem;
-            border-radius: 0.375rem;
-            font-size: 0.875rem;
-            line-height: 1.5;
-        }
-        
-        .form-status.text-green-600 {
-            background-color: rgba(34, 197, 94, 0.1);
-            border-left: 3px solid rgb(34, 197, 94);
-        }
-        
-        .form-status.text-red-600 {
-            background-color: rgba(239, 68, 68, 0.1);
-            border-left: 3px solid rgb(239, 68, 68);
-        }
-        
-        /* Loading Spinner */
-        .loading-spinner {
-            display: inline-block;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }
-        
-        /* Character Counter */
-        .char-counter {
-            text-align: right;
-            transition: color 0.3s ease;
-        }
-
-        /* Technical Background Noise */
-        #bg-grid {
-            position: fixed; inset: 0; pointer-events: none; z-index: -1;
-            background-image: 
-                linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .dark #bg-grid {
-            background-image: 
-                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-        }
-
-        /* Liquid Distortion Filter */
-        svg.filter-defs { position: absolute; width: 0; height: 0; }
-        .liquid-target { transition: filter 0.5s ease; filter: url(#liquid-distort); }
-        .liquid-target:hover { filter: url(#liquid-distort-active); }
-
-        /* 3D Perspective Container */
-        .perspective-container { perspective: 1000px; }
-        .tilt-card { transform-style: preserve-3d; }
-
-        #light-leak {
-            pointer-events: none; z-index: 40;
-            background: radial-gradient(circle, rgba(255, 25, 1, 0.15) 0%, rgba(255,255,255,0) 70%);
-            mix-blend-mode: screen; filter: blur(40px);
-        }
-
-        #project-bg-preview {
-            position: fixed; inset: 0; z-index: 0; opacity: 0; pointer-events: none;
-            transition: opacity 0.5s ease; background-size: cover; background-position: center;
-        }
-
-        .hero-breathe { animation: breathe 8s ease-in-out infinite; display: inline-block; }
-        @keyframes breathe {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        /* Hero Heading - Outlined Text Effect */
-        .hero-heading {
-            font-family: 'Anton', sans-serif;
-            color: #ffffff;
-            text-shadow: 
-                1px 1px 0px #FF1901,
-                2px 2px 0px #FF1901;
-            font-size: clamp(2rem, 8vw, 5.5rem);
-            font-weight: 400;
-            line-height: 1.1;
-            text-transform: uppercase;
-            text-align: center;
-            letter-spacing: 0.02em;
-            padding: 0 1rem;
-        }
-
-        /* About Section - Arch Frame & Heat Haze Effects */
-        .arch-frame {
-            border-top-left-radius: 500px;
-            border-top-right-radius: 500px;
-            overflow: hidden;
-        }
-        .dotted-line {
-            background-image: linear-gradient(to right, #fff 40%, rgba(255, 255, 255, 0) 0%);
-            background-position: bottom;
-            background-size: 8px 1px;
-            background-repeat: repeat-x;
-        }
-        .heat-haze {
-            position: relative;
-            overflow: hidden;
-        }
-        .heat-haze::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(rgba(255, 25, 1, 0.05), transparent);
-            pointer-events: none;
-        }
-
-        /* Industries Carousel Styles */
-        .industrial-card img {
-            filter: sepia(0.2) saturate(1.2) contrast(1.1);
-            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .industrial-card:hover img {
-            transform: scale(1.05);
-        }
-        .active-card-overlay {
-            background: linear-gradient(0deg, rgba(255, 25, 1, 0.95) 0%, rgba(255, 25, 1, 0.6) 100%);
-            opacity: 0;
-            pointer-events: none;
-        }
-        .industrial-card.active .active-card-overlay {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .hairline {
-            height: 1px;
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-        .carousel-wrapper {
-            display: flex;
-            transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-            align-items: flex-end;
-            padding-left: calc(50vw - 160px);
-        }
-        @media (min-width: 768px) {
-            .carousel-wrapper {
-                padding-left: calc(50vw - 225px);
-            }
-        }
-        .digital-counter {
-            font-variant-numeric: tabular-nums;
-        }
-
-        /* Mobile-specific hero text adjustments */
-        @media (max-width: 768px) {
-            .hero-heading {
-                font-size: clamp(3rem, 12vw, 5rem) !important;
-                line-height: 1.05 !important;
-                letter-spacing: 0.02em !important;
-            }
-            .slide-text p {
-                font-size: 1rem !important;
-                line-height: 1.6 !important;
-                padding: 0 1rem;
-            }
-            /* Mobile parallax adjustments - smaller, more transparent */
-            #parallax-left,
-            #parallax-right {
-                width: 150px !important;
-                /* opacity: 0.08 !important; */
-            }
-            #parallax-left {
-                left: -20px !important;
-            }
-            #parallax-right {
-                right: -20px !important;
-            }
-            /* Performance: Disable GPU-intensive effects on mobile */
-            .tilt-card {
-                transform: none !important;
-                will-change: auto !important;
-            }
-            .liquid-target {
-                filter: none !important;
-                will-change: auto !important;
-            }
-            /* Responsive Clients Section */
-            @media (max-width: 768px) {
-                .clients-section-title {
-                    font-size: 4rem !important;
-                    line-height: 1 !important;
-                }
-                .clients-section-subtitle {
-                    font-size: 2rem !important;
-                    margin-top: -1rem !important;
-                }
-                .client-logo-item img {
-                    height: auto !important;
-                    max-height: none !important;
-                }
-                /* About Section Mobile Adjustments */
-                #about .arch-frame {
-                    width: 280px !important;
-                    height: 380px !important;
-                }
-                #about h1 {
-                    font-size: 3rem !important;
-                }
-                #about .grid-cols-2.md\:grid-cols-4 > div {
-                    border-right: none !important;
-                    padding-bottom: 1rem;
-                }
-            }
-            
-            @media (max-width: 480px) {
-                .clients-section-title {
-                    font-size: 3rem !important;
-                }
-                .clients-section-subtitle {
-                    font-size: 1.5rem !important;
-                }
-                .client-logo-item img {
-                    height: auto !important;
-                    max-height: none !important;
-                }
-                /* Extra small mobile hero adjustments - EXTRA LARGE FONT */
-                .hero-heading {
-                    font-size: clamp(2.8rem, 11vw, 4.5rem) !important;
-                    line-height: 1.1 !important;
-                    letter-spacing: 0.015em !important;
-                    text-shadow: 
-                        1.5px 1.5px 0px #FF1901,
-                        3px 3px 0px #FF1901;
-                }
-                .slide-text p {
-                    font-size: 0.95rem !important;
-                    max-width: 100% !important;
-                }
-            }
-        }
-    </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-plex text-near-black dark:text-off-white overflow-x-hidden">
 <div id="bg-grid"></div>
@@ -548,6 +101,31 @@
 </filter>
 </defs>
 </svg>
+<!-- Top Contact Bar -->
+<header class="w-full" id="top-info-bar">
+  <div class="info-bar-container flex items-center justify-end px-4 sm:px-8 md:px-12 sm:py-0 py-1">
+    <div class="flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 sm:space-x-6 md:space-x-8 text-white info-bar-text">
+      <!-- Email -->
+      <div class="flex items-center space-x-2">
+        <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path>
+        </svg>
+        <a class="hover:text-gray-300 transition-colors duration-200" href="mailto:domafabricators@gmail.com">
+          domafabricators@gmail.com
+        </a>
+      </div>
+      <!-- Phone -->
+      <div class="flex items-center space-x-2">
+        <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.509-8.958 0 0 1.926-1.012 1.932-1.017l-3.535-6.862-.013.006c-4.114 2.012-6.297 10.373-1.05 18.423 5.344 8.196 11.455 10.158 14.542 10.158 1.156 0 2.222-.269 3.218-.967l.012-.01z"></path>
+        </svg>
+        <a class="hover:text-gray-300 transition-colors duration-200 font-semibold whitespace-nowrap" href="tel:+919826051620">
+          +91 9826051620
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
 <!-- 1. Navbar -->
 <nav class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-near-black/10 dark:border-white/10 px-6 lg:px-12 py-4 flex items-center justify-between">
 <div class="flex items-center gap-2 cursor-pointer">
@@ -555,23 +133,23 @@
 <div class="h-8 w-[2px] bg-primary mx-1"></div>
 <span class="font-bebas text-3xl tracking-tighter text-near-black dark:text-white">FABRICATORS</span>
 </div>
-<div class="hidden md:flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-6">
 <a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="index.html">Home</a>
 <a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="about.html">About Us</a>
 <a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="service.html">Services</a>
 <a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="industries.html">Industries</a>
 <a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="project.html">Projects</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a>
-<a class="px-6 py-2 border border-near-black dark:border-white text-tiny-caps hover:bg-primary hover:border-primary hover:text-white transition-all hover-trigger magnetic-btn" href="#catalogue">E-Catalogue</a>
-<a class="px-6 py-2 bg-primary text-white text-tiny-caps hover:bg-primary/90 transition-all hover-trigger magnetic-btn" href="index.html#contact">Contact Us</a>
+<!-- <a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a> -->
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#catalogue">E-Catalogue</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="index.html#contact">Contact Us</a>
 </div>
-<button class="md:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
+<button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
   <span class="material-symbols-outlined transition-all duration-300" id="hamburger-icon">menu</span>
 </button>
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 bg-near-black/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden overflow-y-auto" id="mobile-menu">
+<div class="fixed inset-0 bg-near-black/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden overflow-y-auto" id="mobile-menu">
   <div class="flex flex-col min-h-full px-6 py-6">
     <!-- Mobile menu header -->
     <div class="flex items-center justify-between mb-8">
@@ -602,9 +180,9 @@
       <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="project.html">
         <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Projects</span>
       </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="#resources">
+      <!-- <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="#resources">
         <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Resources</span>
-      </a>
+      </a> -->
       <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="#catalogue">
         <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
       </a>
@@ -663,7 +241,7 @@
   </div>
 
   <div class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-0" data-slide="1">
-    <h1 class="hero-heading mb-4 sm:mb-6">
+    <h1 class="hero-heading mb-4 sm:mb-6 font-bebas uppercase text-white">
       DESIGN & ENGINEERING<br class="hidden sm:block">
       EQUIPMENT SUPPLY<br class="hidden sm:block">
       PROJECT WORKS
@@ -674,7 +252,7 @@
   </div>
 
   <div class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-0" data-slide="2">
-    <h1 class="hero-heading mb-4 sm:mb-6">
+    <h1 class="hero-heading mb-4 sm:mb-6 font-bebas uppercase text-white">
       25 YEARS OF EXCELLENCE<br class="hidden sm:block">
       QUALITY & SAFETY<br class="hidden sm:block">
       AT EVERY STEP
@@ -683,13 +261,6 @@
       With 25+ years of expertise, our commitment to safety, quality, and client satisfaction has established us as a dependable partner for leading companies.
     </p>
   </div>
-
-  <!-- Decorative geometric shapes (left side) - hidden on mobile -->
-  <svg width="40" height="120" class="absolute left-3 top-[35%] z-20 opacity-80 hidden md:block">
-    <rect x="5" y="5" width="40" height="50" fill="none" stroke="#e05a2b" stroke-width="2" transform="rotate(-10, 25, 30)"/>
-    <rect x="10" y="65" width="35" height="45" fill="none" stroke="#e05a2b" stroke-width="2" transform="rotate(5, 25, 90)"/>
-    <rect x="3" y="118" width="42" height="38" fill="none" stroke="#e05a2b" stroke-width="2" transform="rotate(-6, 25, 137)"/>
-  </svg>
 
   <!-- Scroll indicator (bottom-center) -->
   <div class="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 sm:gap-2">
@@ -703,7 +274,7 @@
 </section>
 
 <!-- Seamless Looping Image Divider -->
-<div class="relative w-full overflow-hidden" style="height: 60px;">
+<div class="relative w-full overflow-hidden" style="height: 35px;">
   <div class="absolute inset-0 flex items-center divider-track" id="divider-track">
     <!-- Images stretched to fill container height -->
     <img src="assets/divider.jpg" alt="Industrial divider pattern" class="h-full w-auto object-fill flex-shrink-0" />
@@ -734,53 +305,139 @@
   }
 }
 
-/* Continuous marquee animation for client logos */
-.marquee-track {
-  display: flex;
-  gap: 2rem;
-  animation: marquee-scroll 30s linear infinite;
-  will-change: transform;
+/* Client Logo Marquee Styles */
+.marquee-item {
+    border: 1px solid #7e7a7a79;
+    min-width: 400px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 3rem;
+    margin-right: 16px;
 }
 
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.marquee-container {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
 }
 
-/* Pause on hover for better UX */
-.marquee-track:hover,
-.divider-track:hover {
-  animation-play-state: paused;
+.client-logo {
+    filter: none !important;
+    -webkit-filter: none !important;
+    transition: none !important;
 }
 
-/* Remove border-top from logo items in marquee */
-.client-logo-item {
-  border-top: none !important;
-  padding-top: 0 !important;
-}
-
-/* Responsive duration adjustments */
+/* Responsive adjustments for clients section */
 @media (max-width: 768px) {
-  .divider-track {
-    animation-duration: 10s;
-  }
-  
-  .marquee-track {
-    animation-duration: 20s;
-  }
-  
-  /* Increase divider height on mobile - optimized size */
-  .relative.w-full.overflow-hidden[style*="height: 60px"] {
-    height: 30px !important;
+    /* Section padding */
+    #clients-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    /* Section header adjustments */
+    #clients-section .text-center {
+        margin-bottom: 2.5rem;
+    }
+    
+    #clients-section p.font-bebas {
+        font-size: 4rem !important;
+        line-height: 1;
+    }
+    
+    #clients-section h2.font-bebas {
+        font-size: 1.75rem !important;
+        margin-top: -2rem !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Accent rule */
+    #clients-section .w-24 {
+        width: 4rem;
+        margin-top: 1rem;
+    }
+    
+    /* Marquee container */
+    .marquee-container {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Marquee items */
+    .marquee-item {
+        min-width: 240px;
+        height: 160px;
+        padding: 1.25rem 1.5rem;
+        margin-right: 12px;
+        border: 1px solid #000000;
+    }
+    
+    /* Client logos */
+    .client-logo {
+        max-height: 4rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    #clients-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    
+    #clients-section .text-center {
+        margin-bottom: 2rem;
+    }
+    
+    #clients-section p.font-bebas {
+        font-size: 3rem !important;
+    }
+    
+    #clients-section h2.font-bebas {
+        font-size: 1.5rem !important;
+        margin-top: -1.5rem !important;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        letter-spacing: 0.05em;
+    }
+    
+    #clients-section .w-24 {
+        width: 3rem;
+        height: 0.15rem;
+        margin-top: 0.75rem;
+    }
+    
+    .marquee-item {
+        min-width: 200px;
+        height: 140px;
+        padding: 1rem 1.25rem;
+        margin-right: 10px;
+        border: 1px solid #000000;
+    }
+    
+    .client-logo {
+        max-height: 3.5rem !important;
+    }
+}
+
+/* Laptop screens - thinner divider */
+@media (min-width: 1024px) and (max-width: 1535px) {
+  [style*="height: 35px"] {
+    height: 25px !important;
   }
 }
 
+/* Ultra-wide screens - larger divider */
 @media (min-width: 1536px) {
-  [style*="height: 60px"] {
+  [style*="height: 35px"] {
     height: 100px !important;
   }
 }
@@ -866,7 +523,7 @@ Precision is not a standard; it is our heritage.
 
   <!-- RIGHT background parallax image -->
   <div id="parallax-right" class="absolute right-0 top-0 w-[300px] h-full pointer-events-none z-0" style="transform: translateX(65%)">
-    <img src="assets/crane1.png" class="w-full h-full object-cover opacity-18" />
+    <img src="assets/crane2.png" class="w-full h-full object-cover opacity-18" />
 
   </div>
 
@@ -1214,75 +871,43 @@ Precision is not a standard; it is our heritage.
 </footer>
 </section>
 <!-- 7. Clients -->
-<section class="bg-near-black py-20 md:py-32 clip-diagonal text-white parallax-section overflow-hidden">
-<div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col items-center">
-<div class="text-center mb-16 md:mb-24 w-full overflow-hidden">
-<p class="font-bebas clients-section-title text-[12rem] md:text-[12rem] leading-none text-primary opacity-50 select-none reveal-mask"><span>25 YEARS</span></p>
-<h2 class="font-bebas clients-section-subtitle text-3xl sm:text-4xl md:text-5xl -mt-12 md:-mt-16 relative z-10 px-4 reveal-mask"><span>TRUSTED BY OUR CLIENTS</span></h2>
-</div>
-
-<!-- Marquee Container -->
-<div class="w-full relative">
-  <div class="marquee-track flex gap-x-8 sm:gap-x-12 md:gap-x-20">
-    <!-- Original Set -->
-    <div class="flex gap-x-8 sm:gap-x-12 md:gap-x-20 flex-shrink-0">
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/Relson logo.png" alt="Relson" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/pensol_logo.png" alt="Pensol" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/SRF-logo.png" alt="SRF" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
+<section class="py-24 bg-white" data-purpose="clients-section" id="clients-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16" data-purpose="section-header">
+            <p class="font-bebas text-[8rem] md:text-[10rem] leading-none text-primary opacity-60 select-none">25 YEARS</p>
+            <h2 class="font-bebas text-3xl sm:text-4xl md:text-5xl tracking-wider text-near-black -mt-8 md:-mt-12 relative z-10 px-4">
+                TRUSTED BY OUR CLIENTS
+            </h2>
+            <!-- Thin red accent rule -->
+            <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+        
+        <!-- Marquee Wrapper -->
+        <div class="relative overflow-hidden marquee-container">
+            <div class="flex whitespace-nowrap" id="marquee-track">
+                <!-- Set 1 of logos -->
+                <div class="marquee-item"><img alt="Aarti Surfactants" class="client-logo max-h-36 object-contain" src="assets/Aarti surfactants logo.png" /></div>
+                <div class="marquee-item"><img alt="Advance Enzyme" class="client-logo max-h-36 object-contain" src="assets/Advance enzyme-logo.png" /></div>
+                <div class="marquee-item"><img alt="Piyanshu Chemicals" class="client-logo max-h-36 object-contain" src="assets/Piyanshu chemicals logo.png" /></div>
+                <div class="marquee-item"><img alt="Relson" class="client-logo max-h-36 object-contain" src="assets/Relson logo.png" /></div>
+                <div class="marquee-item"><img alt="BioInnovation India" class="client-logo max-h-36 object-contain" src="assets/bioinnovation-india-logo.png" /></div>
+                <div class="marquee-item"><img alt="Unichem" class="client-logo max-h-36 object-contain" src="assets/unichem-logo (1).png" /></div>
+                <div class="marquee-item"><img alt="Pensol" class="client-logo max-h-36 object-contain" src="assets/pensol_logo.png" /></div>
+                <div class="marquee-item"><img alt="SRF" class="client-logo max-h-36 object-contain" src="assets/SRF-logo.png" /></div>
+                
+                <!-- Duplicate set for infinite loop -->
+                <div class="marquee-item"><img alt="Aarti Surfactants" class="client-logo max-h-36 object-contain" src="assets/Aarti surfactants logo.png" /></div>
+                <div class="marquee-item"><img alt="Advance Enzyme" class="client-logo max-h-36 object-contain" src="assets/Advance enzyme-logo.png" /></div>
+                <div class="marquee-item"><img alt="Piyanshu Chemicals" class="client-logo max-h-36 object-contain" src="assets/Piyanshu chemicals logo.png" /></div>
+                <div class="marquee-item"><img alt="Relson" class="client-logo max-h-36 object-contain" src="assets/Relson logo.png" /></div>
+                <div class="marquee-item"><img alt="BioInnovation India" class="client-logo max-h-36 object-contain" src="assets/bioinnovation-india-logo.png" /></div>
+                <div class="marquee-item"><img alt="Unichem" class="client-logo max-h-36 object-contain" src="assets/unichem-logo (1).png" /></div>
+                <div class="marquee-item"><img alt="Pensol" class="client-logo max-h-36 object-contain" src="assets/pensol_logo.png" /></div>
+                <div class="marquee-item"><img alt="SRF" class="client-logo max-h-36 object-contain" src="assets/SRF-logo.png" /></div>
+            </div>
+        </div>
     </div>
-    
-    <!-- Duplicate Set for Seamless Loop -->
-    <div class="flex gap-x-8 sm:gap-x-12 md:gap-x-20 flex-shrink-0" aria-hidden="true">
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/Aarti surfactants logo.png" alt="Aarti Surfactants" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/Advance enzyme-logo.png" alt="Advance Enzyme" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/Piyanshu chemicals logo.png" alt="Piyanshu Chemicals" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/Relson logo.png" alt="Relson" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/bioinnovation-india-logo.png" alt="BioInnovation India" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/unichem-logo (1).png" alt="Unichem" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/pensol_logo.png" alt="Pensol" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-      <div class="hover-trigger client-logo-item">
-        <img src="assets/SRF-logo.png" alt="SRF" class="h-24 sm:h-28 md:h-32 lg:h-40 mx-auto opacity-100 transition-all hover:scale-105"/>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
 </section>
 <!-- 8. Projects -->
 <section class="bg-off-white py-32 relative hud-trigger" id="projects">
@@ -1465,889 +1090,5 @@ Precision is not a standard; it is our heritage.
 </div>
 </div>
 </footer>
-<script>
-        gsap.registerPlugin(ScrollTrigger);
 
-        // Performance Check & cleanup
-        let activeAnimations = [];
-        const addToCleanup = (anim) => activeAnimations.push(anim);
-
-        // Hero Slider Logic
-        const slides = document.querySelectorAll('.slide');
-        const imgs = document.querySelectorAll('.slide img');
-        const texts = document.querySelectorAll('.slide-text');
-        let current = 0;
-        let total = slides.length;
-
-        // Set initial state: only first slide visible
-        gsap.set(slides, { opacity: 0, zIndex: 0 });
-        gsap.set(slides[0], { opacity: 1, zIndex: 1 });
-        gsap.set(imgs[0], { scale: 1.15 });
-        gsap.set(texts, { opacity: 0, zIndex: 0 });
-        gsap.set(texts[0], { opacity: 1, zIndex: 3 });
-
-        // Animate current image zooming out slowly
-        gsap.to(imgs[0], { scale: 1.0, duration: 5, ease: "none" });
-
-        function goToNext() {
-          const next = (current + 1) % total;
-          const tl = gsap.timeline();
-
-          // Set next slide behind, reset its image scale and text opacity
-          gsap.set(slides[next], { zIndex: 0, opacity: 0 });
-          gsap.set(imgs[next], { scale: 1.15 });
-          gsap.set(texts[next], { opacity: 0, zIndex: 0 });
-
-          // Bring next slide on top with synchronized animation
-          tl.set(slides[next], { zIndex: 2 })
-            .set(texts[next], { zIndex: 3 })
-            .to(slides[next], { opacity: 1, duration: 1.2, ease: "power2.inOut" }, 0)
-            .to(texts[next], { opacity: 1, duration: 1.2, ease: "power2.inOut" }, 0)
-            .to(imgs[next], { scale: 1.0, duration: 5, ease: "none" }, 0)
-            .to(slides[current], { opacity: 0, duration: 1.2, ease: "power2.inOut" }, 0)
-            .to(texts[current], { opacity: 0, duration: 1.2, ease: "power2.inOut" }, 0)
-            .set(slides[current], { zIndex: 0 })
-            .set(texts[current], { zIndex: 0 });
-
-          current = next;
-        }
-
-        setInterval(goToNext, 5000);
-
-        // 1. Lenis Smooth Scroll — synced with GSAP ticker
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            wheelMultiplier: 1.0,
-            smoothWheel: true,
-            autoRaf: false, // We drive raf manually via GSAP
-        });
-
-        // Sync Lenis scroll position with GSAP ScrollTrigger
-        lenis.on('scroll', ScrollTrigger.update);
-
-        // Drive Lenis from GSAP's single ticker (eliminates double-rAF)
-        gsap.ticker.add((time) => {
-            lenis.raf(time * 1000); // GSAP ticker time is in seconds
-        });
-        gsap.ticker.lagSmoothing(0); // Prevent GSAP from throttling on lag
-
-        // 3. Background Grid — lightweight velocity-based offset (no per-frame tween creation)
-        let bgGridY = 0;
-        const bgGrid = document.getElementById('bg-grid');
-        if (bgGrid) {
-            gsap.ticker.add(() => {
-                const target = lenis.velocity * 0.1;
-                bgGridY += (target - bgGridY) * 0.1; // simple lerp
-                bgGrid.style.transform = `translateY(${bgGridY}px)`;
-            });
-        }
-
-        // 5. 3D Tilt Effect for Cards - Disabled on mobile for performance
-        const isMobileDevice = window.innerWidth <= 768;
-        
-        if (!isMobileDevice) {
-            const tiltCards = document.querySelectorAll('.tilt-card');
-            tiltCards.forEach(card => {
-                let tiltRAF = null;
-                let tiltX = 0, tiltY = 0;
-                card.addEventListener('mousemove', (e) => {
-                    // Cache mouse position but only animate on next tick
-                    const rect = card.getBoundingClientRect();
-                    tiltX = e.clientX - rect.left - rect.width / 2;
-                    tiltY = e.clientY - rect.top - rect.height / 2;
-                    if (!tiltRAF) {
-                        tiltRAF = requestAnimationFrame(() => {
-                            gsap.to(card, {
-                                rotateX: -tiltY / 20,
-                                rotateY: tiltX / 20,
-                                x: tiltX * 0.05,
-                                y: tiltY * 0.05,
-                                duration: 0.5,
-                                ease: 'power2.out',
-                                overwrite: 'auto'
-                            });
-                            tiltRAF = null;
-                        });
-                    }
-                });
-                card.addEventListener('mouseleave', () => {
-                    if (tiltRAF) { cancelAnimationFrame(tiltRAF); tiltRAF = null; }
-                    gsap.to(card, { rotateX: 0, rotateY: 0, x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)', overwrite: 'auto' });
-                });
-            });
-        }
-
-        // 6. Magnetic Elements - Reduced sensitivity on mobile
-        document.querySelectorAll('.magnetic-btn').forEach(btn => {
-            let magRAF = null;
-            let magX = 0, magY = 0;
-            btn.addEventListener('mousemove', (e) => {
-                const rect = btn.getBoundingClientRect();
-                magX = e.clientX - rect.left - rect.width / 2;
-                magY = e.clientY - rect.top - rect.height / 2;
-                if (!magRAF) {
-                    magRAF = requestAnimationFrame(() => {
-                        const strength = 0.4;
-                        gsap.to(btn, { x: magX * strength, y: magY * strength, duration: 0.3, ease: 'power2.out', overwrite: 'auto' });
-                        magRAF = null;
-                    });
-                }
-            });
-            btn.addEventListener('mouseleave', () => {
-                if (magRAF) { cancelAnimationFrame(magRAF); magRAF = null; }
-                gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.3)', overwrite: 'auto' });
-            });
-        });
-
-        // 7. Core Reveals
-        const maskWrappers = document.querySelectorAll('.mask-reveal-wrapper');
-        maskWrappers.forEach(wrapper => {
-            addToCleanup(gsap.to(wrapper, {
-                scrollTrigger: { trigger: wrapper, start: 'top 90%' },
-                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-                duration: 1.5,
-                ease: 'power4.inOut'
-            }));
-        });
-
-        document.querySelectorAll('.divider-draw').forEach(divider => {
-            addToCleanup(gsap.to(divider, {
-                scrollTrigger: { trigger: divider, start: 'top 90%' },
-                scaleX: 1,
-                duration: 1.5,
-                ease: 'power4.inOut'
-            }));
-        });
-
-        document.querySelectorAll('.reveal-mask span').forEach(reveal => {
-            addToCleanup(gsap.from(reveal, {
-                scrollTrigger: { trigger: reveal, start: 'top 95%' },
-                y: 100,
-                skewY: 5,
-                duration: 1.2,
-                ease: 'power4.out',
-            }));
-        });
-
-        // Project Hovers - GSAP animations
-        const projectRows = document.querySelectorAll('.project-row');
-        const projectBgPreview = document.getElementById('project-bg-preview');
-        projectRows.forEach(row => {
-            row.addEventListener('mouseenter', () => {
-                projectBgPreview.style.backgroundImage = `url(${row.getAttribute('data-bg')})`;
-                gsap.to(projectBgPreview, { opacity: 0.05, duration: 0.5 });
-            });
-            row.addEventListener('mouseleave', () => gsap.to(projectBgPreview, { opacity: 0, duration: 0.5 }));
-        });
-
-        // Parallax - Optimized for mobile performance
-        const allParallaxImgs = document.querySelectorAll('.parallax-img');
-        allParallaxImgs.forEach(img => {
-            // Skip parallax on mobile for better performance, keep only essential ones
-            if (isMobileDevice && !img.closest('#about')) {
-                return; // Skip non-critical parallax on mobile
-            }
-            
-            addToCleanup(gsap.to(img, {
-                scrollTrigger: {
-                    trigger: img.parentElement,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 0.5 // Smooth scrub instead of raw pixel-lock
-                },
-                y: isMobileDevice ? -10 : -20, // Reduced movement on mobile
-                ease: 'none'
-            }));
-        });
-
-        // Services Section Parallax - Enhanced for all screen sizes
-        const isMobile = window.innerWidth <= 768;
-        
-        if (!isMobile) {
-            // Desktop: Full parallax effect
-            gsap.to("#parallax-left", {
-                x: "0%",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: "#services",
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: 1.5,
-                }
-            });
-
-            gsap.to("#parallax-right", {
-                x: "0%",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: "#services",
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: 1.5,
-                }
-            });
-        } else {
-            // Mobile: Subtle parallax with reduced movement
-            gsap.to("#parallax-left", {
-                x: "20%",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: "#services",
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: true,
-                }
-            });
-
-            gsap.to("#parallax-right", {
-                x: "-20%",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: "#services",
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: true,
-                }
-            });
-        }
-
-        // Service cards entrance animation with stagger
-        gsap.from(".service-card", {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".service-card",
-                start: "top 85%",
-            }
-        });
-
-        // Window resize handling — debounced
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => ScrollTrigger.refresh(), 250);
-        });
-
-        // Hamburger Menu Functionality
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        let isMenuOpen = false;
-
-        // Toggle menu (open/close)
-        hamburgerBtn.addEventListener('click', () => {
-            if (isMenuOpen) {
-                closeMenu();
-            } else {
-                isMenuOpen = true;
-                mobileMenu.classList.remove('translate-x-full');
-                hamburgerIcon.textContent = 'close';
-                document.body.style.overflow = 'hidden';
-                
-                mobileLinks.forEach((link, index) => {
-                    setTimeout(() => {
-                        link.style.opacity = '1';
-                        link.querySelector('span').style.transform = 'translateX(0)';
-                    }, 100 + (index * 50));
-                });
-            }
-        });
-
-        // Close menu
-        const closeMenu = () => {
-            isMenuOpen = false;
-            mobileMenu.classList.add('translate-x-full');
-            hamburgerIcon.textContent = 'menu';
-            document.body.style.overflow = '';
-            
-            // Reset links
-            mobileLinks.forEach(link => {
-                link.style.opacity = '0';
-                link.querySelector('span').style.transform = 'translateX(-20px)';
-            });
-        };
-
-        // Close menu when clicking close button (with stopPropagation)
-        closeMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent event from bubbling to overlay
-            closeMenu();
-        });
-
-        // Close menu when clicking on a link
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Close menu when clicking outside (on the overlay itself)
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) {
-                closeMenu();
-            }
-        });
-
-        // Initialize mobile links state
-        mobileLinks.forEach(link => {
-            link.style.opacity = '0';
-            link.querySelector('span').style.transform = 'translateX(-20px)';
-            link.querySelector('span').style.transition = 'transform 0.3s ease-out';
-        });
-
-        // Industries Carousel Functionality
-        const carouselTrack = document.getElementById('carousel-track');
-        if (carouselTrack) {
-            const industrialCards = Array.from(document.querySelectorAll('.industrial-card'));
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const currentSlideEl = document.getElementById('current-slide');
-            const totalSlidesEl = document.getElementById('total-slides');
-            const progressBar = document.getElementById('progress-bar');
-            
-            let currentIndex = 1; // Start at Chemical Industry (Index 1)
-            const totalSlides = industrialCards.length;
-            if (totalSlidesEl) totalSlidesEl.textContent = totalSlides;
-
-            function updateCarousel() {
-                const isMobile = window.innerWidth < 768;
-                const cardWidth = isMobile ? 256 : 320; 
-                const activeWidth = isMobile ? 320 : 450;
-                const margin = 24;
-                
-                // Kill all existing animations to prevent conflicts
-                gsap.killTweensOf('.active-card-overlay');
-                gsap.killTweensOf('.overlay-title');
-                gsap.killTweensOf('.overlay-details');
-                gsap.killTweensOf('.technical-svg');
-                gsap.killTweensOf('.card-title');
-                gsap.killTweensOf(carouselTrack);
-                gsap.killTweensOf(progressBar);
-                
-                industrialCards.forEach((card, index) => {
-                    const overlay = card.querySelector('.active-card-overlay');
-                    const title = card.querySelector('.overlay-title');
-                    const details = card.querySelector('.overlay-details');
-                    const svg = card.querySelector('.technical-svg');
-                    const baseTitle = card.querySelector('.card-title');
-                    const img = card.querySelector('img');
-
-                    if (index === currentIndex) {
-                        // Set dimensions first before animations
-                        card.style.width = isMobile ? '320px' : '450px';
-                        card.style.height = isMobile ? '450px' : '550px';
-                        card.classList.add('active');
-                        
-                        // Remove grayscale immediately for active card
-                        img.classList.remove('grayscale');
-                        
-                        // Hide base title immediately
-                        gsap.set(baseTitle, { opacity: 0 });
-                        
-                        // Animate overlay elements in with proper sequencing
-                        gsap.fromTo(overlay, 
-                            { opacity: 0 }, 
-                            { opacity: 1, duration: 0.4, ease: "power2.out" }
-                        );
-                        gsap.fromTo(title, 
-                            { y: 10, opacity: 0 }, 
-                            { y: 0, opacity: 1, duration: 0.5, delay: 0.15, ease: "power2.out" }
-                        );
-                        gsap.fromTo(details, 
-                            { y: 10, opacity: 0 }, 
-                            { y: 0, opacity: 1, duration: 0.5, delay: 0.25, ease: "power2.out" }
-                        );
-                        gsap.fromTo(svg, 
-                            { scale: 0.9, opacity: 0 }, 
-                            { scale: 1, opacity: 0.2, duration: 0.6, delay: 0.1, ease: "power2.out" }
-                        );
-                    } else {
-                        // Set dimensions first
-                        card.style.width = isMobile ? '256px' : '320px';
-                        card.style.height = '450px';
-                        card.classList.remove('active');
-                        
-                        // Add grayscale immediately for inactive cards
-                        img.classList.add('grayscale');
-                        
-                        // Show base title immediately
-                        gsap.set(baseTitle, { opacity: 1 });
-                        
-                        // Fade out overlay elements
-                        gsap.to(overlay, { opacity: 0, duration: 0.3, ease: "power2.in" });
-                        gsap.to([title, details], { 
-                            opacity: 0, 
-                            y: 10, 
-                            duration: 0.3, 
-                            ease: "power2.in" 
-                        });
-                    }
-                });
-
-                // Animate carousel track movement
-                const moveX = - (currentIndex * (cardWidth + margin));
-                gsap.to(carouselTrack, {
-                    x: moveX,
-                    duration: 0.7,
-                    ease: "power3.inOut"
-                });
-
-                // Update counter and progress bar
-                if (currentSlideEl) currentSlideEl.textContent = currentIndex + 1;
-                const progressPercent = ((currentIndex + 1) / totalSlides) * 100;
-                gsap.to(progressBar, {
-                    width: `${progressPercent}%`,
-                    duration: 0.7,
-                    ease: "power3.inOut"
-                });
-            }
-
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    updateCarousel();
-                });
-            }
-
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                    updateCarousel();
-                });
-            }
-
-            industrialCards.forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    if (currentIndex !== index) {
-                        currentIndex = index;
-                        updateCarousel();
-                    }
-                });
-            });
-
-            // Initialize carousel
-            updateCarousel();
-            window.addEventListener('resize', updateCarousel);
-        }
-
-        // Cleanup on unmount (best practice)
-        window.addEventListener('beforeunload', () => {
-            activeAnimations.forEach(a => a.kill());
-            lenis.destroy();
-        });
-
-        // ============================================
-        // SECURE CONTACT FORM WITH EMAILJS
-        // ============================================
-        
-        class SecureContactForm {
-            constructor() {
-                this.form = document.getElementById('contact-form');
-                this.submitBtn = document.getElementById('submit-btn');
-                this.btnText = document.getElementById('btn-text');
-                this.btnSpinner = document.getElementById('btn-spinner');
-                this.formStatus = document.getElementById('form-status');
-                this.charCounter = document.getElementById('char-counter');
-                
-                // Security configuration
-                this.config = {
-                    // Get these from EmailJS Dashboard
-                    serviceId: 'YOUR_SERVICE_ID',    // ← REPLACE WITH YOUR SERVICE ID
-                    templateId: 'YOUR_TEMPLATE_ID',  // ← REPLACE WITH YOUR TEMPLATE ID
-                    
-                    // Rate limiting & security
-                    maxAttempts: 3,
-                    rateLimitWindow: 60000, // 1 minute
-                    honeypotField: 'website_url',
-                    minSubmissionTime: 3000, // 3 seconds minimum (human behavior)
-                    formStartTime: Date.now(),
-                    
-                    // Additional security settings
-                    allowedDomains: window.location.hostname ? [window.location.hostname] : [],
-                    maxMessageLength: 2000,
-                    sanitizeInputs: true
-                };
-                
-                // Rate limiting storage
-                this.submissionHistory = [];
-                this.attemptCount = 0;
-                
-                this.init();
-            }
-            
-            init() {
-                if (!this.form) return;
-                
-                this.generateCSRFToken();
-                this.setupEventListeners();
-                this.updateCharCounter();
-                this.validateForm(); // Initial validation
-            }
-            
-            // Generate CSRF token for form protection
-            generateCSRFToken() {
-                const token = this.generateRandomToken(32);
-                const csrfInput = document.getElementById('csrf-token');
-                if (csrfInput) {
-                    csrfInput.value = token;
-                }
-                
-                // Store in sessionStorage for server-side verification
-                sessionStorage.setItem('csrf_token', token);
-            }
-            
-            generateRandomToken(length) {
-                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-                let token = '';
-                const array = new Uint32Array(length);
-                crypto.getRandomValues(array);
-                
-                for (let i = 0; i < length; i++) {
-                    token += chars[array[i] % chars.length];
-                }
-                
-                return token;
-            }
-            
-            setupEventListeners() {
-                // Real-time validation
-                const inputs = this.form.querySelectorAll('input, textarea');
-                inputs.forEach(input => {
-                    input.addEventListener('input', () => {
-                        this.validateField(input);
-                        this.validateForm();
-                        this.updateCharCounter();
-                    });
-                    
-                    input.addEventListener('blur', () => {
-                        this.validateField(input);
-                    });
-                });
-                
-                // Form submission
-                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-            }
-            
-            updateCharCounter() {
-                const messageField = document.getElementById('user-message');
-                if (messageField && this.charCounter) {
-                    const currentLength = messageField.value.length;
-                    this.charCounter.textContent = `${currentLength} / 2000`;
-                    
-                    // Visual feedback
-                    if (currentLength > 1800) {
-                        this.charCounter.classList.add('text-red-500');
-                    } else {
-                        this.charCounter.classList.remove('text-red-500');
-                    }
-                }
-            }
-            
-            validateField(field) {
-                const errorElement = document.getElementById(`${field.id.replace('user-', '')}-error`);
-                if (!errorElement) return true;
-                
-                let isValid = true;
-                let errorMessage = '';
-                
-                // Required field check
-                if (field.hasAttribute('required') && !field.value.trim()) {
-                    isValid = false;
-                    errorMessage = 'This field is required';
-                }
-                // Pattern validation
-                else if (field.pattern && field.value) {
-                    const pattern = new RegExp(field.pattern);
-                    if (!pattern.test(field.value)) {
-                        isValid = false;
-                        errorMessage = this.getPatternErrorMessage(field);
-                    }
-                }
-                // Length validation
-                else if (field.minLength && field.value.length < parseInt(field.minLength)) {
-                    isValid = false;
-                    errorMessage = `Minimum ${field.minLength} characters required`;
-                }
-                else if (field.maxLength && field.value.length > parseInt(field.maxLength)) {
-                    isValid = false;
-                    errorMessage = `Maximum ${field.maxLength} characters allowed`;
-                }
-                // Email validation
-                else if (field.type === 'email' && field.value) {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(field.value)) {
-                        isValid = false;
-                        errorMessage = 'Please enter a valid email address';
-                    }
-                }
-                
-                // XSS prevention - sanitize input
-                if (field.value) {
-                    field.value = this.sanitizeInput(field.value);
-                }
-                
-                // Display error
-                if (!isValid) {
-                    errorElement.textContent = errorMessage;
-                    errorElement.classList.remove('hidden');
-                    field.classList.add('border-red-500');
-                    field.classList.remove('border-near-black/20', 'focus:border-primary');
-                } else {
-                    errorElement.classList.add('hidden');
-                    field.classList.remove('border-red-500');
-                    field.classList.add('border-near-black/20', 'focus:border-primary');
-                }
-                
-                return isValid;
-            }
-            
-            getPatternErrorMessage(field) {
-                if (field.pattern && field.pattern.includes('a-zA-Z')) {
-                    return 'Only letters, spaces, hyphens, apostrophes, and periods are allowed';
-                }
-                return 'Invalid format';
-            }
-            
-            sanitizeInput(input) {
-                if (!this.config.sanitizeInputs || !input) return input;
-                
-                // Create a temporary element to encode HTML entities
-                const div = document.createElement('div');
-                div.textContent = input;
-                let sanitized = div.innerHTML;
-                
-                // Remove potentially dangerous patterns
-                sanitized = sanitized
-                    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '') // Remove script tags
-                    .replace(/javascript:/gi, '') // Remove javascript: protocol
-                    .replace(/on\w+=/gi, '') // Remove event handlers (onclick, onerror, etc.)
-                    .replace(/eval\(/gi, '') // Remove eval()
-                    .replace(/expression\(/gi, '') // Remove CSS expressions
-                    .replace(/url\(/gi, '') // Remove CSS url()
-                    .trim();
-                
-                return sanitized;
-            }
-            
-            validateForm() {
-                const fields = ['user-name', 'user-email', 'user-message'];
-                let allValid = true;
-                
-                fields.forEach(fieldId => {
-                    const field = document.getElementById(fieldId);
-                    if (field && !this.validateField(field)) {
-                        allValid = false;
-                    }
-                });
-                
-                // Enable/disable submit button
-                if (this.submitBtn) {
-                    this.submitBtn.disabled = !allValid;
-                    this.submitBtn.style.opacity = allValid ? '1' : '0.5';
-                    this.submitBtn.style.cursor = allValid ? 'pointer' : 'not-allowed';
-                }
-                
-                return allValid;
-            }
-            
-            // Security checks before submission
-            performSecurityChecks() {
-                // 1. Honeypot check (bot detection)
-                const honeypot = this.form.querySelector(`[name="${this.config.honeypotField}"]`);
-                if (honeypot && honeypot.value) {
-                    console.warn('Bot detected via honeypot');
-                    return false;
-                }
-                
-                // 2. Minimum time check (prevent automated submissions)
-                const timeSpent = Date.now() - this.config.formStartTime;
-                if (timeSpent < this.config.minSubmissionTime) {
-                    console.warn('Submission too fast - possible bot');
-                    this.showStatus('Please take your time to fill out the form', 'error');
-                    return false;
-                }
-                
-                // 3. Rate limiting
-                if (!this.checkRateLimit()) {
-                    return false;
-                }
-                
-                // 4. CSRF token validation
-                const csrfToken = document.getElementById('csrf-token')?.value;
-                const storedToken = sessionStorage.getItem('csrf_token');
-                if (!csrfToken || csrfToken !== storedToken) {
-                    console.warn('CSRF token mismatch');
-                    return false;
-                }
-                
-                // 5. Check for repeated submissions
-                if (this.attemptCount >= this.config.maxAttempts) {
-                    this.showStatus('Too many attempts. Please try again later.', 'error');
-                    return false;
-                }
-                
-                // 6. Domain validation (if configured)
-                if (this.config.allowedDomains.length > 0) {
-                    const currentDomain = window.location.hostname;
-                    if (!this.config.allowedDomains.includes(currentDomain)) {
-                        console.warn('Unauthorized domain:', currentDomain);
-                        return false;
-                    }
-                }
-                
-                // 7. Validate configuration is set
-                if (this.config.serviceId === 'YOUR_SERVICE_ID' || this.config.templateId === 'YOUR_TEMPLATE_ID') {
-                    console.error('EmailJS configuration incomplete. Please update serviceId and templateId.');
-                    this.showStatus('Configuration error. Please contact the administrator.', 'error');
-                    return false;
-                }
-                
-                return true;
-            }
-            
-            checkRateLimit() {
-                const now = Date.now();
-                
-                // Remove old entries outside the rate limit window
-                this.submissionHistory = this.submissionHistory.filter(
-                    timestamp => now - timestamp < this.config.rateLimitWindow
-                );
-                
-                // Check if within rate limit
-                if (this.submissionHistory.length >= this.config.maxAttempts) {
-                    const oldestAttempt = this.submissionHistory[0];
-                    const waitTime = Math.ceil((this.config.rateLimitWindow - (now - oldestAttempt)) / 1000);
-                    this.showStatus(`Please wait ${waitTime} seconds before trying again`, 'error');
-                    return false;
-                }
-                
-                return true;
-            }
-            
-            async handleSubmit(e) {
-                e.preventDefault();
-                
-                // Perform security checks
-                if (!this.performSecurityChecks()) {
-                    this.attemptCount++;
-                    return;
-                }
-                
-                // Final validation
-                if (!this.validateForm()) {
-                    return;
-                }
-                
-                // Show loading state
-                this.setLoadingState(true);
-                
-                try {
-                    // Record submission attempt
-                    this.submissionHistory.push(Date.now());
-                    
-                    // Prepare form data
-                    const formData = {
-                        from_name: this.sanitizeInput(document.getElementById('user-name').value.trim()),
-                        reply_to: this.sanitizeInput(document.getElementById('user-email').value.trim().toLowerCase()),
-                        message: this.sanitizeInput(document.getElementById('user-message').value.trim()),
-                        timestamp: new Date().toISOString(),
-                        user_agent: navigator.userAgent.substring(0, 100), // Truncate for privacy
-                        csrf_token: document.getElementById('csrf-token').value
-                    };
-                    
-                    // Send email via EmailJS
-                    const response = await emailjs.send(
-                        this.config.serviceId,
-                        this.config.templateId,
-                        formData
-                    );
-                    
-                    if (response.status === 200) {
-                        this.showStatus('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
-                        this.resetForm();
-                        this.attemptCount = 0; // Reset on success
-                    } else {
-                        throw new Error('Unexpected response status');
-                    }
-                    
-                } catch (error) {
-                    console.error('Email sending failed:', error);
-                    
-                    // Don't expose technical details to users
-                    this.showStatus(
-                        'Sorry, there was an error sending your message. Please try again or contact us directly.',
-                        'error'
-                    );
-                    
-                    this.attemptCount++;
-                } finally {
-                    this.setLoadingState(false);
-                }
-            }
-            
-            setLoadingState(isLoading) {
-                if (isLoading) {
-                    this.submitBtn.disabled = true;
-                    this.btnText.textContent = 'Sending...';
-                    this.btnSpinner.classList.remove('hidden');
-                    this.btnSpinner.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
-                } else {
-                    this.submitBtn.disabled = false;
-                    this.btnText.textContent = 'Submit Request';
-                    this.btnSpinner.classList.add('hidden');
-                    this.btnSpinner.innerHTML = '';
-                    this.validateForm(); // Re-validate to update button state
-                }
-            }
-            
-            showStatus(message, type) {
-                if (!this.formStatus) return;
-                
-                this.formStatus.textContent = message;
-                this.formStatus.classList.remove('hidden', 'text-green-600', 'text-red-600');
-                
-                if (type === 'success') {
-                    this.formStatus.classList.add('text-green-600');
-                } else {
-                    this.formStatus.classList.add('text-red-600');
-                }
-                
-                // Auto-hide after 5 seconds
-                setTimeout(() => {
-                    this.formStatus.classList.add('hidden');
-                }, 5000);
-            }
-            
-            resetForm() {
-                this.form.reset();
-                this.updateCharCounter();
-                
-                // Clear all error states
-                const errorElements = this.form.querySelectorAll('.error-message');
-                errorElements.forEach(el => el.classList.add('hidden'));
-                
-                const inputs = this.form.querySelectorAll('input, textarea');
-                inputs.forEach(input => {
-                    input.classList.remove('border-red-500');
-                    input.classList.add('border-near-black/20');
-                });
-                
-                // Regenerate CSRF token for next submission
-                this.generateCSRFToken();
-                this.config.formStartTime = Date.now();
-            }
-        }
-        
-        // Initialize secure contact form when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                new SecureContactForm();
-            });
-        } else {
-            new SecureContactForm();
-        }
-    </script>
 </body></html>

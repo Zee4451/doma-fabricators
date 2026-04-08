@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doma Fabricators - Info Bar</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: IBM Plex Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="typography">
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .info-bar-text {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    @media (min-width: 640px) {
+      .info-bar-text {
+        font-size: 11px;
+      }
+    }
+  </style>
+<style data-purpose="industrial-layout">
+    /* 
+       The info bar uses a black background with a responsive custom clip-path 
+    */
+    .info-bar-container {
+      min-height: 28px;
+      background-color: #000000;
+      /* 
+         On mobile (default), the cutout is smaller to preserve space.
+         On larger screens, it regains the deeper architectural angle.
+      */
+      clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 5% 100%);
+    }
+
+    @media (min-width: 768px) {
+      .info-bar-container {
+        clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 12% 100%);
+      }
+    }
+
+    /* Icon color override to Industrial Red */
+    .icon-industrial-red {
+      color: #C0310A;
+    }
+  </style>
+</head>
+<body class="bg-white">
+<!-- BEGIN: TopInfoBar -->
+<header class="w-full" data-purpose="site-header-info" id="top-info-bar">
+<div class="info-bar-container flex items-center justify-end px-4 sm:px-8 md:px-12 sm:py-0 py-1">
+<!-- Contact Information Wrapper -->
+<div class="flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 sm:space-x-6 md:space-x-8 text-white info-bar-text">
+<!-- Email Section -->
+<div class="flex items-center space-x-2" data-purpose="contact-email">
+<!-- SVG Envelope Icon -->
+<svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path>
+</svg>
+<a class="hover:text-gray-300 transition-colors duration-200" href="mailto:info@jobbyengineers.com">
+            info@jobbyengineers.com
+          </a>
+</div>
+<!-- Phone Section -->
+<div class="flex items-center space-x-2" data-purpose="contact-phone">
+<!-- SVG Phone Icon -->
+<svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.509-8.958 0 0 1.926-1.012 1.932-1.017l-3.535-6.862-.013.006c-4.114 2.012-6.297 10.373-1.05 18.423 5.344 8.196 11.455 10.158 14.542 10.158 1.156 0 2.222-.269 3.218-.967l.012-.01z"></path>
+</svg>
+<a class="hover:text-gray-300 transition-colors duration-200 font-semibold whitespace-nowrap" href="tel:02262715100">
+            022-62715100
+          </a>
+</div>
+</div>
+</div>
+</header>
+<!-- END: TopInfoBar -->
+</body></html>

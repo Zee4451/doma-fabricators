@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&amp;family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@300;400&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="pages/css/about.css"/>
+<link rel="stylesheet" href="pages/css/index.css"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -233,30 +234,55 @@
     }
 }
 </style>
+<!-- Top Contact Bar -->
+<header class="w-full" id="top-info-bar">
+  <div class="info-bar-container flex items-center justify-end px-4 sm:px-8 md:px-12 sm:py-0 py-1">
+    <div class="flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 sm:space-x-6 md:space-x-8 text-white info-bar-text">
+      <!-- Email -->
+      <div class="flex items-center space-x-2">
+        <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path>
+        </svg>
+        <a class="hover:text-gray-300 transition-colors duration-200" href="mailto:domafabricators@gmail.com">
+          domafabricators@gmail.com
+        </a>
+      </div>
+      <!-- Phone -->
+      <div class="flex items-center space-x-2">
+        <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.509-8.958 0 0 1.926-1.012 1.932-1.017l-3.535-6.862-.013.006c-4.114 2.012-6.297 10.373-1.05 18.423 5.344 8.196 11.455 10.158 14.542 10.158 1.156 0 2.222-.269 3.218-.967l.012-.01z"></path>
+        </svg>
+        <a class="hover:text-gray-300 transition-colors duration-200 font-semibold whitespace-nowrap" href="tel:+919826051620">
+          +91 9826051620
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
 <!-- 1. Navbar -->
-<nav class="sticky top-0 z-50 bg-white border-b border-[#1A1815]/10 px-6 lg:px-12 py-4 flex items-center justify-between">
+<nav class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-[#1A1815]/10 dark:border-white/10 px-6 lg:px-12 py-4 flex items-center justify-between">
 <div class="flex items-center gap-2 cursor-pointer">
-<span class="font-bebas text-3xl tracking-tighter text-[#1A1815]" style="font-family: 'Bebas Neue', cursive;">DOMA</span>
+<span class="font-bebas text-3xl tracking-tighter text-[#1A1815] dark:text-white" style="font-family: 'Bebas Neue', cursive;">DOMA</span>
 <div class="h-8 w-[2px] bg-primary mx-1"></div>
-<span class="font-bebas text-3xl tracking-tighter text-[#1A1815]" style="font-family: 'Bebas Neue', cursive;">FABRICATORS</span>
+<span class="font-bebas text-3xl tracking-tighter text-[#1A1815] dark:text-white" style="font-family: 'Bebas Neue', cursive;">FABRICATORS</span>
 </div>
-<div class="hidden md:flex items-center gap-6">
-<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="index.html">Home</a>
-<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="about.html">About Us</a>
-<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="service.html">Services</a>
-<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="industries.html">Industries</a>
-<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="project.html">Projects</a>
-<a class="text-tiny-caps text-[#1A1815] hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a>
-<a class="px-6 py-2 border border-[#1A1815] text-[#1A1815] text-tiny-caps hover:bg-primary hover:border-primary hover:text-white transition-all hover-trigger magnetic-btn" href="#catalogue">E-Catalogue</a>
-<a class="px-6 py-2 bg-primary text-white text-tiny-caps hover:bg-primary/90 transition-all hover-trigger magnetic-btn" href="index.html#contact">Contact Us</a>
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="index.html">Home</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="about.html">About Us</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="service.html">Services</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="industries.html">Industries</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="project.html">Projects</a>
+<!-- <a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a> -->
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#catalogue">E-Catalogue</a>
+<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="index.html#contact">Contact Us</a>
 </div>
-<button class="md:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
-  <span class="material-symbols-outlined transition-all duration-300 text-[#1A1815]" id="hamburger-icon">menu</span>
+<button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
+  <span class="material-symbols-outlined transition-all duration-300 text-[#1A1815] dark:text-white" id="hamburger-icon">menu</span>
 </button>
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 bg-[#1A1815]/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden overflow-y-auto" id="mobile-menu">
+<div class="fixed inset-0 bg-[#1A1815]/95 z-40 transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden overflow-y-auto" id="mobile-menu">
   <div class="flex flex-col min-h-full px-6 py-6">
     <div class="flex items-center justify-between mb-8">
       <div class="flex items-center gap-2" style="font-family: 'Bebas Neue', cursive;">
@@ -608,22 +634,22 @@
 </div>
 </section>
 </main>
-<footer class="bg-[#1A1815] text-white pt-24 pb-12">
+<footer class="bg-near-black text-white pt-24 pb-12">
 <div class="max-w-7xl mx-auto px-6">
 <div class="grid md:grid-cols-3 gap-16 mb-24">
 <div>
-<div class="flex items-center gap-2 mb-8" style="font-family: 'Bebas Neue', cursive;">
+<div class="flex items-center gap-2 mb-8">
 <span class="font-bebas text-3xl tracking-tighter">DOMA</span>
 <div class="h-8 w-[2px] bg-primary mx-1"></div>
 <span class="font-bebas text-3xl tracking-tighter">FABRICATORS</span>
 </div>
-<p class="text-[#C8C4BC] font-light leading-relaxed">
+<p class="text-mid-grey font-light leading-relaxed">
                         Redefining industrial standards through precision, safety, and 14 years of engineering dedication. Design & Engineering | Equipment's Supply | Project Works.
                     </p>
 </div>
 <div>
 <h5 class="text-tiny-caps font-bold mb-8 text-primary">Quick Navigation</h5>
-<ul class="space-y-4 text-[#C8C4BC] font-light">
+<ul class="space-y-4 text-mid-grey font-light">
 <li><a class="hover:text-white transition-colors hover-trigger" href="index.html#services">Our Services</a></li>
 <li><a class="hover:text-white transition-colors hover-trigger" href="index.html#safety">Safety Standards</a></li>
 <li><a class="hover:text-white transition-colors hover-trigger" href="project.html">Projects</a></li>
@@ -632,7 +658,7 @@
 </div>
 <div>
 <h5 class="text-tiny-caps font-bold mb-8 text-primary">Contact Information</h5>
-<ul class="space-y-4 text-[#C8C4BC] font-light">
+<ul class="space-y-4 text-mid-grey font-light">
 <li>Plot No. 1J, Kheda, Sagorekutti</li>
 <li>Pithampur, Dhar (M.P) 454 775</li>
 <li>+91 9826051620</li>
@@ -640,7 +666,7 @@
 </ul>
 </div>
 </div>
-<div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-[#4A4845]">
+<div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-dark-grey">
 <p>© 2024 Doma Fabricators. All Rights Reserved.</p>
 <p>Designed by Pixora</p>
 </div>
