@@ -1,7 +1,7 @@
 /* About Page Styles */
 body { 
     font-family: 'IBM Plex Sans', sans-serif; 
-    background-color: #fff8f3; 
+    background-color: #F7F7F8; 
     overflow-x: hidden; 
 }
 
@@ -24,14 +24,14 @@ body {
     pointer-events: none;
     transition: all 0.3s ease;
     background: rgba(0,0,0,0.8);
-    border: 1px solid #982000;
+    border: 1px solid #FF1901;
     padding: 8px 12px;
     white-space: nowrap;
     z-index: 20;
 }
 
 .liquid-metal-text {
-    background: linear-gradient(to right, #982000 20%, #ffdfd7 40%, #c0310a 60%, #982000 80%);
+    background: linear-gradient(to right, #FF1901 20%, #ffdfd7 40%, #FF1901 60%, #FF1901 80%);
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
@@ -54,7 +54,7 @@ body {
     content: "";
     position: absolute;
     inset: -10%;
-    background: linear-gradient(45deg, rgba(192, 49, 10, 0.08), transparent);
+    background: linear-gradient(45deg, rgba(255, 25, 1, 0.08), transparent);
     filter: url(#hazeFilter);
     z-index: 1;
     pointer-events: none;
@@ -80,7 +80,7 @@ body {
     left: -100%; 
     width: 100%; 
     height: 100%;
-    background: #c0310a; 
+    background: #FF1901; 
     transition: all 0.3s ease; 
     z-index: -1;
 }
@@ -295,6 +295,21 @@ body {
         margin-bottom: 0.5rem;
     }
     
+    /* Additional timeline spacing for very small screens */
+    .timeline-path-container {
+        left: 16px;
+    }
+    
+    .timeline-node {
+        left: 16px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    [data-purpose^="milestone-"] {
+        padding-left: 40px !important;
+    }
+    
     /* Stats Cards */
     .text-5xl {
         font-size: 2.5rem !important;
@@ -308,5 +323,189 @@ body {
     /* Footer */
     footer.pt-24 {
         padding-top: 3rem !important;
+    }
+}
+
+/* ============================================
+   COMPETENCY SECTION GRID OVERLAY
+   ============================================ */
+
+.grid-overlay {
+    background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+}
+
+/* ============================================
+   MISSION & VISION SECTION
+   ============================================ */
+
+.mission-card {
+    background: white;
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.mission-card:hover {
+    box-shadow: 0 20px 40px rgba(255, 25, 1, 0.1);
+}
+
+/* Heat haze container for images */
+.heat-haze-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient overlay for images */
+.gradient-overlay {
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,25,1,0.05) 100%);
+}
+
+/* ============================================
+   HISTORY TIMELINE SECTION
+   ============================================ */
+
+/* Timeline central line container */
+.timeline-path-container {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    transform: translateX(-50%);
+    background: #e2e8f0;
+    z-index: 10;
+}
+
+.timeline-progress-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #C0310A;
+}
+
+/* Pulsating timeline nodes */
+.timeline-node {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background: #F7F5F2;
+    border: 2px solid #C0310A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: background-color 0.3s ease;
+}
+
+.node-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #C0310A;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Milestone cards reveal effect */
+.milestone-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 4px solid #C0310A;
+}
+
+.milestone-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 1px Hairlines */
+.hairline-y {
+    width: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+.hairline-x {
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+/* Responsive timeline adjustments */
+@media (max-width: 768px) {
+    /* Timeline Section Mobile Fix */
+    .timeline-path-container {
+        left: 24px; /* Move line to the left side */
+        transform: none; /* Remove centering transform */
+    }
+    
+    .timeline-node {
+        left: 24px; /* Align nodes with the line */
+        transform: translate(-50%, -50%); /* Keep vertical centering */
+        width: 36px;
+        height: 36px;
+    }
+    
+    /* Ensure milestone sections have proper spacing */
+    [data-purpose^="milestone-"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-left: 48px !important; /* Space for the line */
+        margin-bottom: 3rem !important; /* Reduced from mb-48 */
+    }
+    
+    /* Hide the desktop year display on mobile (already hidden via md:hidden in HTML) */
+    .hidden.md\:block {
+        display: none !important;
+    }
+    
+    /* Adjust milestone card spacing */
+    .milestone-card {
+        margin-top: 16px;
+    }
+    
+    /* Ensure proper text alignment on mobile */
+    [data-purpose^="milestone-"] .text-right {
+        text-align: left !important;
+    }
+    
+    /* Mobile timeline content adjustments */
+    [data-purpose^="milestone-"] > div:last-child {
+        width: 100% !important;
+        padding-left: 0 !important;
+        margin-top: 16px;
+    }
+    
+    /* Hide desktop-only year on mobile */
+    [data-purpose^="milestone-"] > div:first-child {
+        display: none !important;
+    }
+    
+    /* Ensure milestone cards don't overflow */
+    .milestone-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Timeline section container */
+    #history-timeline-section {
+        overflow-x: hidden;
+    }
+    
+    .node-pulse {
+        border-width: 1px;
     }
 }
