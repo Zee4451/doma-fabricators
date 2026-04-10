@@ -452,7 +452,7 @@ body {
     }
     
     .timeline-node {
-        left: 24px; /* Align nodes with the line */
+        left: 10px; /* Align nodes with the line */
         transform: translate(-50%, -50%); /* Keep vertical centering */
         width: 36px;
         height: 36px;

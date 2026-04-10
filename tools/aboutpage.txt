@@ -1,0 +1,259 @@
+<!-- Company Profile: Asymmetric Layout -->
+<section class="py-32 px-4 sm:px-8 lg:px-20 bg-light-grey overflow-x-hidden">
+<div class="grid grid-cols-12 gap-12 lg:gap-24 max-w-full">
+<div class="col-span-12 lg:col-span-5 w-full max-w-full">
+<div class="relative group">
+<div class="absolute -top-6 -left-6 w-24 h-24 border-t-2 border-l-2 border-primary/20"></div>
+<img class="w-full aspect-[3/4] object-cover grayscale company-profile-image" data-alt="professional portrait of an experienced industrial leader Mr. Varghese K.A. in a boardroom setting with architectural drawings" src="assets/istockphoto-1486082802-612x612.jpg.jpeg"/>
+<div class="mt-8">
+<h3 class="font-display text-4xl mb-2 break-words">MR. VARGHESE K.A.</h3>
+<p class="font-serif italic text-lg text-primary">Visionary Leader & Proprietor</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-7 flex flex-col justify-center perspective-container w-full max-w-full">
+<h2 class="font-serif italic text-3xl lg:text-5xl leading-tight mb-12 text-near-black break-words">
+                    "With deep expertise in mechanical fabrication and an <span class="text-primary">unwavering commitment</span> to quality, we build strong, lasting client relationships."
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+<!-- Value Card 1 -->
+<div class="bg-white p-8 border border-near-black/10 group hover:bg-primary transition-all duration-500 cursor-pointer tilt-card" data-tilt="">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-6 text-4xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h4 class="font-display text-2xl mb-4 group-hover:text-white">PRECISION</h4>
+<p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-white/80">Micron-level accuracy in every weld and cut.</p>
+</div>
+<!-- Value Card 2 -->
+<div class="bg-white p-8 border border-near-black/10 group hover:bg-primary transition-all duration-500 cursor-pointer tilt-card" data-tilt="">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-6 text-4xl" data-icon="verified">verified</span>
+<h4 class="font-display text-2xl mb-4 group-hover:text-white">INTEGRITY</h4>
+<p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-white/80">Structural honesty that withstands generations.</p>
+</div>
+<!-- Value Card 3 -->
+<div class="bg-white p-8 border border-near-black/10 group hover:bg-primary transition-all duration-500 cursor-pointer tilt-card" data-tilt="">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-6 text-4xl" data-icon="architecture">architecture</span>
+<h4 class="font-display text-2xl mb-4 group-hover:text-white">INNOVATION</h4>
+<p class="text-[10px] uppercase tracking-widest opacity-60 group-hover:text-white/80">Merging traditional values with modern practices.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- History: Kinetic Timeline -->
+<section class="bg-white py-32 px-8 overflow-hidden relative">
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="mb-20">
+<p class="font-label uppercase tracking-widest text-xs text-primary font-bold mb-4">Evolutionary Path</p>
+<h2 class="font-display text-6xl uppercase leading-none">THE KINETIC TIMELINE</h2>
+</div>
+<div class="relative space-y-32">
+<!-- SVG Drawing Line -->
+<svg class="absolute left-1/2 -translate-x-1/2 top-0 h-full w-2 overflow-visible hidden md:block" preserveaspectratio="none">
+<path d="M 1,0 L 1,2000" fill="none" id="timeline-path" stroke="#FF1901" stroke-dasharray="2000" stroke-dashoffset="2000" stroke-width="2"></path>
+</svg>
+<!-- Milestone 1 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between group timeline-item">
+<div class="md:w-5/12 text-right hidden md:block">
+<p class="font-display text-8xl text-mid-grey/20 timeline-year">2010</p>
+</div>
+<div class="z-10 w-12 h-12 bg-primary flex items-center justify-center text-white font-bold my-8 md:my-0">
+                        01
+                    </div>
+<div class="md:w-5/12 bg-white p-10 border-l-4 border-primary shadow-xl">
+<h3 class="font-display text-3xl mb-2 uppercase glitch-target">The Foundation</h3>
+<p class="font-body text-dark-grey leading-relaxed text-sm">Doma Fabricators was established in Pithampur Industrial Area, specializing in piping works, heavy structural fabrication, and equipment erection for the growing industrial corridor.</p>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between group timeline-item">
+<div class="md:w-5/12 text-left hidden md:block">
+<p class="font-display text-8xl text-mid-grey/20 timeline-year">2017</p>
+</div>
+<div class="z-10 w-12 h-12 bg-primary flex items-center justify-center text-white font-bold my-8 md:my-0">
+                        02
+                    </div>
+<div class="md:w-5/12 bg-white p-10 border-r-4 border-primary text-right shadow-xl">
+<h3 class="font-display text-3xl mb-2 uppercase glitch-target">Growth & Expansion</h3>
+<p class="font-body text-dark-grey leading-relaxed text-sm">Expanding operations with dedicated in-house fabrication facilities to manufacture specialized industrial equipment — tank farms, SS/MS tanks, EOT cranes, reactors, chimneys, and silos.</p>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between group timeline-item">
+<div class="md:w-5/12 text-right hidden md:block">
+<p class="font-display text-8xl text-mid-grey/20 timeline-year">2024</p>
+</div>
+<div class="z-10 w-12 h-12 bg-primary flex items-center justify-center text-white font-bold my-8 md:my-0">
+                        03
+                    </div>
+<div class="md:w-5/12 bg-white p-10 border-l-4 border-primary shadow-xl">
+<h3 class="font-display text-3xl mb-2 uppercase glitch-target">Industry Leadership</h3>
+<p class="font-body text-dark-grey leading-relaxed text-sm">Partnering with industry leaders like Panasonic Energy, SRF Limited, ACG, Unichem Laboratories, and Bio Innovation — delivering complex projects with modern fabrication techniques and strict quality standards.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Infrastructure & Facility (Pithampur Core) with Deep Parallax -->
+<section class="relative h-screen min-h-[800px] flex items-center justify-center text-white overflow-hidden bg-stone-900" id="pithampur-core">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-50 scale-125" data-alt="immense industrial factory hall" id="parallax-bg" src="assets/dscf0853.jpg.jpeg"/>
+<div class="absolute inset-0 bg-black/40 backdrop-grayscale-[0.5]"></div>
+</div>
+<!-- Hotspots -->
+<div class="absolute top-1/4 left-1/4 z-20 hotspot-trigger cursor-crosshair">
+<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+</div>
+<div class="hotspot-content">
+<p class="font-display text-lg">EOT CRANE SYSTEM</p>
+<p class="font-mono text-[10px]">CAPACITY: 40 TONNE OVERHEAD</p>
+</div>
+</div>
+<div class="absolute bottom-1/3 right-1/4 z-20 hotspot-trigger cursor-crosshair">
+<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+</div>
+<div class="hotspot-content">
+<p class="font-display text-lg">WELDING STATION</p>
+<p class="font-mono text-[10px]">MIG / TIG / ARC WELDING CAPABILITY</p>
+</div>
+</div>
+<div class="relative z-10 max-w-5xl text-center px-8">
+<h2 class="font-display text-7xl lg:text-9xl tracking-tighter mb-12" id="parallax-title">PITHAMPUR <span class="text-primary">CORE</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="backdrop-blur-xl bg-white/5 border border-white/10 p-8 flex flex-col items-center hover:bg-white/10 transition-colors">
+<p class="text-primary font-display text-5xl mb-2">50K</p>
+<p class="font-label text-xs uppercase tracking-widest">SQ FT Workshop Area</p>
+<div class="technical-grid-line my-6"></div>
+<p class="text-xs opacity-60">Integrated Material Flow Control</p>
+</div>
+<div class="backdrop-blur-xl bg-white/5 border border-white/10 p-8 flex flex-col items-center hover:bg-white/10 transition-colors">
+<p class="text-primary font-display text-5xl mb-2">MIG/TIG</p>
+<p class="font-label text-xs uppercase tracking-widest">Welding Systems</p>
+<div class="technical-grid-line my-6"></div>
+<p class="text-xs opacity-60">Multi-Process Welding Capability</p>
+</div>
+<div class="backdrop-blur-xl bg-white/5 border border-white/10 p-8 flex flex-col items-center hover:bg-white/10 transition-colors">
+<p class="text-primary font-display text-5xl mb-2">40T</p>
+<p class="font-label text-xs uppercase tracking-widest">EOT Crane Capacity</p>
+<div class="technical-grid-line my-6"></div>
+<p class="text-xs opacity-60">Heavy Lifting Solutions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quality Assurance: Technical Metadata Grid with 3D Interaction -->
+<section class="py-32 px-8 lg:px-20 bg-light-grey heat-haze">
+<div class="grid grid-cols-12 gap-16">
+<div class="col-span-12 lg:col-span-4">
+<p class="font-label uppercase tracking-widest text-xs text-primary font-bold mb-4">Quality Control</p>
+<h2 class="font-display text-6xl uppercase leading-[0.9] mb-8">QUALITY AUDIT <br/>PROTOCOLS</h2>
+<p class="font-body text-dark-grey max-w-sm mb-12">
+                    At Doma Fabricators, quality is the cornerstone of our operations. We maintain rigorous QC processes to ensure every project meets the highest standards of excellence.
+                </p>
+<div class="space-y-4">
+<div class="flex items-center space-x-3 text-sm font-bold">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>ISO 9001:2015 CERTIFIED</span>
+</div>
+<div class="flex items-center space-x-3 text-sm font-bold">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>ASME SEC IX COMPLIANT</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-8 perspective-container">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- QA Detail -->
+<div class="bg-white p-10 border border-near-black/10 hover:border-primary/40 transition-colors tilt-card" data-tilt="">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-[10px] uppercase opacity-40">Section 04.1</span>
+<span class="material-symbols-outlined text-primary" data-icon="radar">radar</span>
+</div>
+<h4 class="font-display text-2xl mb-4">MATERIAL INSPECTION</h4>
+<p class="text-sm text-dark-grey mb-6">All incoming materials are verified for compliance with client and industry standards before use.</p>
+<div class="font-mono text-[10px] grid grid-cols-2 gap-4 border-t border-near-black/5 pt-4">
+<div><span class="opacity-40">PARAM:</span> NDT-702</div>
+<div><span class="opacity-40">FREQ:</span> 5MHZ</div>
+</div>
+</div>
+<!-- QA Detail -->
+<div class="bg-white p-10 border border-near-black/10 hover:border-primary/40 transition-colors tilt-card" data-tilt="">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-[10px] uppercase opacity-40">Section 04.2</span>
+<span class="material-symbols-outlined text-primary" data-icon="straighten">straighten</span>
+</div>
+<h4 class="font-display text-2xl mb-4">IN-PROCESS INSPECTION</h4>
+<p class="text-sm text-dark-grey mb-6">Continuous monitoring during fabrication and erection ensures early detection and correction of issues.</p>
+<div class="font-mono text-[10px] grid grid-cols-2 gap-4 border-t border-near-black/5 pt-4">
+<div><span class="opacity-40">ACC:</span> 0.001mm</div>
+<div><span class="opacity-40">METH:</span> LASER-3D</div>
+</div>
+</div>
+<!-- QA Detail -->
+<div class="bg-white p-10 border border-near-black/10 hover:border-primary/40 transition-colors tilt-card" data-tilt="">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-[10px] uppercase opacity-40">Section 04.3</span>
+<span class="material-symbols-outlined text-primary" data-icon="weight">weight</span>
+</div>
+<h4 class="font-display text-2xl mb-4">FINAL INSPECTION</h4>
+<p class="text-sm text-dark-grey mb-6">Detailed checks on dimensions, welding, and finishes guarantee flawless project completion.</p>
+<div class="font-mono text-[10px] grid grid-cols-2 gap-4 border-t border-near-black/5 pt-4">
+<div><span class="opacity-40">LIMIT:</span> 600KN</div>
+<div><span class="opacity-40">FACTOR:</span> 1.5S.F</div>
+</div>
+</div>
+<!-- QA Detail -->
+<div class="bg-white p-10 border border-near-black/10 hover:border-primary/40 transition-colors tilt-card" data-tilt="">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-[10px] uppercase opacity-40">Section 04.4</span>
+<span class="material-symbols-outlined text-primary" data-icon="layers">layers</span>
+</div>
+<h4 class="font-display text-2xl mb-4">NDT & DESTRUCTIVE TESTING</h4>
+<p class="text-sm text-dark-grey mb-6">Radiographic, ultrasonic, pressure, and other tests validate the integrity of our work with complete traceable documentation.</p>
+<div class="font-mono text-[10px] grid grid-cols-2 gap-4 border-t border-near-black/5 pt-4">
+<div><span class="opacity-40">COAT:</span> EPOXY-PU</div>
+<div><span class="opacity-40">THICK:</span> 150 MIC</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications: Structural Grid -->
+<section class="py-32 px-8 bg-light-grey">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-display text-5xl uppercase mb-4 tracking-tight">GLOBAL COMPLIANCE</h2>
+<div class="w-24 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-near-black/10 border border-near-black/10">
+<div class="bg-white py-16 px-8 flex flex-col items-center group cursor-pointer hover:bg-light-grey transition-all duration-300">
+<div class="w-20 h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-5xl text-mid-grey group-hover:text-primary" data-icon="license" style="font-variation-settings: 'FILL' 1;">license</span>
+</div>
+<p class="font-display text-xl">ISO 9001:2015</p>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-40">Quality Management</p>
+</div>
+<div class="bg-white py-16 px-8 flex flex-col items-center group cursor-pointer hover:bg-light-grey transition-all duration-300">
+<div class="w-20 h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-5xl text-mid-grey group-hover:text-primary" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<p class="font-display text-xl">ASME CODE</p>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-40">Pressure Vessels</p>
+</div>
+<div class="bg-white py-16 px-8 flex flex-col items-center group cursor-pointer hover:bg-light-grey transition-all duration-300">
+<div class="w-20 h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-5xl text-mid-grey group-hover:text-primary" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<p class="font-display text-xl">NSIC-D&amp;B</p>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-40">Government Registered</p>
+</div>
+<div class="bg-white py-16 px-8 flex flex-col items-center group cursor-pointer hover:bg-light-grey transition-all duration-300">
+<div class="w-20 h-20 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-5xl text-mid-grey group-hover:text-primary" data-icon="engineering" style="font-variation-settings: 'FILL' 1;">engineering</span>
+</div>
+<p class="font-display text-xl">AWS CERTIFIED</p>
+<p class="font-label text-[10px] uppercase tracking-widest opacity-40">Welding Excellence</p>
+</div>
+</div>
+</div>
+</section>
