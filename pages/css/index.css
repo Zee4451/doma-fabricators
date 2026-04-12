@@ -90,8 +90,9 @@
         font-size: 18px;
     }
     
-    .container {
-        max-width: 1600px !important;
+    .container,
+    .max-w-7xl {
+        max-width: 1800px !important;
     }
     
     /* Increase hero text on ultra-wide screens */
@@ -112,6 +113,268 @@
     section {
         padding-top: clamp(4rem, 8vw, 8rem) !important;
         padding-bottom: clamp(4rem, 8vw, 8rem) !important;
+    }
+}
+
+/* ============================================
+   4K RESPONSIVENESS (2560px and above)
+   ============================================ */
+
+@media (min-width: 2560px) {
+    /* Container Width Expansion */
+    .max-w-7xl {
+        max-width: 2400px !important;
+    }
+    
+    .max-w-5xl {
+        max-width: 2000px !important;
+    }
+    
+    .max-w-4xl {
+        max-width: 1800px !important;
+    }
+    
+    .max-w-3xl {
+        max-width: 1600px !important;
+    }
+    
+    /* Horizontal Padding Scaling */
+    .px-6 {
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+    }
+    
+    .px-12 {
+        padding-left: 8rem !important;
+        padding-right: 8rem !important;
+    }
+    
+    /* Hero Section Enhancement */
+    .hero-heading {
+        font-size: clamp(6rem, 10vw, 12rem) !important;
+        -webkit-text-stroke: 3px #FF1901 !important;
+        text-shadow: 
+            0 0 2px #FF1901,
+            0 0 4px #FF1901,
+            2px 2px 0px #FF1901,
+            4px 4px 0px #FF1901,
+            6px 6px 0px #FF1901 !important;
+    }
+    
+    .slide-text p {
+        max-width: 1200px !important;
+        font-size: clamp(1.25rem, 1.5vw, 2rem) !important;
+    }
+    
+    /* Scroll Indicator Scaling */
+    #home .absolute.bottom-4,
+    #home .absolute.bottom-8 {
+        bottom: 4rem !important;
+    }
+    
+    #home .absolute.bottom-8 .w-10 {
+        width: 4rem !important;
+        height: 4rem !important;
+    }
+    
+    #home .absolute.bottom-8 svg {
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+    
+    /* About Section Scaling */
+    #about .arch-frame {
+        width: 600px !important;
+        height: 800px !important;
+    }
+    
+    #about .h-\[600px\] {
+        height: 900px !important;
+    }
+    
+    #about .w-72 {
+        width: 400px !important;
+        height: 400px !important;
+    }
+    
+    #about .w-64 {
+        width: 360px !important;
+        height: 500px !important;
+    }
+    
+    #about h1.font-bebas {
+        font-size: clamp(4rem, 6vw, 8rem) !important;
+    }
+    
+    #about p.font-plex {
+        font-size: clamp(1.5rem, 2vw, 2.5rem) !important;
+        max-width: 800px !important;
+    }
+    
+    #about .font-bebas.text-5xl {
+        font-size: clamp(3rem, 4vw, 5rem) !important;
+    }
+    
+    /* Services Section Cards */
+    .service-card .h-64 {
+        height: 500px !important;
+    }
+    
+    .service-card .p-8 {
+        padding: 3rem !important;
+    }
+    
+    .service-card h3.font-bebas {
+        font-size: clamp(2rem, 3vw, 3.5rem) !important;
+    }
+    
+    .service-card p.text-dark-grey {
+        font-size: clamp(1rem, 1.5vw, 1.5rem) !important;
+    }
+    
+    /* Industries Carousel */
+    .industrial-card.w-64 {
+        width: 500px !important;
+    }
+    
+    .industrial-card.w-80 {
+        width: 650px !important;
+    }
+    
+    .industrial-card.md\:w-\[450px\] {
+        width: 800px !important;
+    }
+    
+    .industrial-card.h-\[450px\] {
+        height: 700px !important;
+    }
+    
+    .industrial-card.h-\[550px\] {
+        height: 850px !important;
+    }
+    
+    .industrial-card h3.font-bebas {
+        font-size: clamp(3rem, 4vw, 5rem) !important;
+    }
+    
+    /* Clients Marquee Section */
+    .marquee-item {
+        min-width: 700px !important;
+        height: 400px !important;
+        padding: 3rem 4rem !important;
+    }
+    
+    .client-logo {
+        max-height: 10rem !important;
+    }
+    
+    /* Projects Section */
+    .project-row .font-bebas.text-8xl {
+        font-size: clamp(6rem, 10vw, 12rem) !important;
+    }
+    
+    .project-row h3.font-bebas {
+        font-size: clamp(3rem, 4vw, 5rem) !important;
+    }
+    
+    .project-row .h-40 {
+        height: 300px !important;
+        width: 500px !important;
+    }
+    
+    /* Contact & Footer Sections */
+    #contact h2.font-bebas {
+        font-size: clamp(4rem, 6vw, 7rem) !important;
+    }
+    
+    #contact input,
+    #contact textarea {
+        font-size: clamp(1.25rem, 1.5vw, 1.75rem) !important;
+        padding: 1.5rem 0 !important;
+    }
+    
+    #contact p.text-2xl {
+        font-size: clamp(2rem, 3vw, 3.5rem) !important;
+    }
+    
+    footer .text-mid-grey {
+        font-size: clamp(1rem, 1.5vw, 1.5rem) !important;
+    }
+    
+    footer .text-tiny-caps {
+        font-size: clamp(0.75rem, 1vw, 1rem) !important;
+    }
+    
+    footer img.h-12 {
+        height: 5rem !important;
+    }
+    
+    /* Navigation & Top Bar */
+    nav .text-tiny-caps {
+        font-size: clamp(0.85rem, 1vw, 1.25rem) !important;
+        letter-spacing: 0.2em !important;
+    }
+    
+    nav img.h-10 {
+        height: 4rem !important;
+    }
+    
+    .info-bar-text {
+        font-size: clamp(0.85rem, 0.9vw, 1.15rem) !important;
+        letter-spacing: 0.15em !important;
+    }
+    
+    .info-bar-container {
+        min-height: 52px !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    #top-info-bar .h-3\.5,
+    #top-info-bar .sm\:h-4 {
+        height: 1.25rem !important;
+        width: 1.25rem !important;
+    }
+    
+    #top-info-bar .space-x-2 > * + * {
+        margin-left: 0.75rem !important;
+    }
+    
+    #top-info-bar .sm\:space-x-6 > * + *,
+    #top-info-bar .md\:space-x-8 > * + * {
+        margin-left: 1.5rem !important;
+    }
+    
+    /* Hamburger menu button */
+    #hamburger-btn .material-symbols-outlined {
+        font-size: clamp(2rem, 2.5vw, 2.5rem) !important;
+    }
+    
+    /* Services section parallax backgrounds */
+    #parallax-left,
+    #parallax-right {
+        width: 500px !important;
+        /* opacity: 0.12 !important; */
+    }
+    
+    /* Client logo marquee heading */
+    #clients-section p.font-bebas {
+        font-size: clamp(8rem, 14vw, 16rem) !important;
+    }
+    
+    #clients-section h2.font-bebas {
+        font-size: clamp(3rem, 5vw, 5rem) !important;
+    }
+    
+    /* Global Section Padding */
+    section {
+        padding-top: clamp(6rem, 12vw, 14rem) !important;
+        padding-bottom: clamp(6rem, 12vw, 14rem) !important;
+    }
+    
+    /* Body Font Size */
+    body {
+        font-size: 20px;
     }
 }
 
