@@ -378,6 +378,96 @@
     }
 }
 
+/* High-DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ============================================
+   ULTRA-WIDE MONITORS (3440px and above)
+   ============================================ */
+
+@media (min-width: 3440px) {
+    /* Even larger containers */
+    .max-w-7xl { max-width: 3200px !important; }
+    .max-w-6xl { max-width: 3000px !important; }
+    .max-w-5xl { max-width: 2800px !important; }
+    
+    /* Larger base font */
+    body { font-size: 24px !important; line-height: 1.8 !important; }
+    
+    /* Increased spacing */
+    section {
+        padding-top: 10rem !important;
+        padding-bottom: 10rem !important;
+    }
+    
+    /* Hero even bigger */
+    .hero-heading {
+        font-size: clamp(8rem, 12vw, 18rem) !important;
+        -webkit-text-stroke: 4px #FF1901 !important;
+    }
+    
+    /* Section headings */
+    .section-heading {
+        font-size: clamp(5rem, 8vw, 10rem) !important;
+    }
+    
+    /* Navigation */
+    nav a.text-tiny-caps {
+        font-size: 1.5rem !important;
+        letter-spacing: 0.2em !important;
+    }
+    
+    /* Logo scaling */
+    nav img.h-10 { height: 4rem !important; }
+    nav img.h-12 { height: 5rem !important; }
+    
+    /* Navigation logo text */
+    nav .logo-brand span {
+        font-size: clamp(2.2rem, 2.5vw, 2.8rem) !important;
+    }
+    
+    /* Footer logo */
+    footer .logo-brand span {
+        font-size: clamp(2.5rem, 3vw, 3.2rem) !important;
+    }
+    
+    /* Container padding */
+    .container { padding-left: 8rem !important; padding-right: 8rem !important; }
+    .px-6 { padding-left: 7rem !important; padding-right: 7rem !important; }
+    .px-12 { padding-left: 12rem !important; padding-right: 12rem !important; }
+    
+    /* Cards and components */
+    .service-card { min-height: 700px !important; }
+    
+    /* Grid gaps */
+    .gap-16 { gap: 8rem !important; }
+    .gap-20 { gap: 10rem !important; }
+    
+    /* Marquee items */
+    .marquee-item {
+        min-width: 800px !important;
+        height: 450px !important;
+    }
+    
+    /* Contact form */
+    #contact input,
+    #contact textarea {
+        font-size: clamp(1.5rem, 1.8vw, 2rem) !important;
+        padding: 2rem 2.5rem !important;
+    }
+    
+    /* Buttons */
+    button, .nav-btn {
+        font-size: clamp(1.3rem, 1.6vw, 1.8rem) !important;
+        padding: 1.5rem 4rem !important;
+    }
+}
+
 .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
 .clip-diagonal-reverse { clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%); }
 
@@ -474,6 +564,43 @@ html.lenis, html.lenis body { height: auto; }
     text-transform: uppercase;
 }
 
+/* Keep email in lowercase */
+.info-bar-text a[href^="mailto:"] {
+    text-transform: lowercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* ============================================
+   NAVIGATION LINKS - Improved Visibility
+   ============================================ */
+
+nav a.text-tiny-caps {
+    font-size: 0.85rem !important;      /* Increased from 0.65rem */
+    font-weight: 700 !important;         /* Keep bold */
+    letter-spacing: 0.15em !important;   /* Slightly reduced for readability */
+    text-transform: uppercase;
+}
+
+/* Desktop navigation specific enhancements */
+@media (min-width: 1024px) {
+    nav a.text-tiny-caps {
+        font-size: 0.9rem !important;    /* Slightly larger on desktop */
+        letter-spacing: 0.12em !important;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1280px) {
+    nav a.text-tiny-caps {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* Hover state improvement */
+nav a.text-tiny-caps:hover {
+    font-weight: 800 !important;         /* Extra bold on hover */
+}
+
 @media (min-width: 640px) {
     .info-bar-text {
         font-size: 11px;
@@ -500,6 +627,60 @@ html.lenis, html.lenis body { height: auto; }
 
 #top-info-bar {
     background-color: #FFFFFF;
+}
+
+/* ============================================
+   CONTACT INFO BLOCK - Proper Line Spacing
+   ============================================ */
+
+.contact-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Consistent spacing between lines */
+}
+
+.contact-info-block p {
+  line-height: 1.6 !important; /* Prevent overlapping on all screens */
+  margin: 0 !important; /* Remove default paragraph margins */
+}
+
+/* Larger screens need more spacing */
+@media (min-width: 1280px) {
+  .contact-info-block {
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .contact-info-block {
+    gap: 1rem;
+  }
+  
+  .contact-info-block p {
+    line-height: 1.7 !important;
+  }
+}
+
+/* 4K displays */
+@media (min-width: 2560px) {
+  .contact-info-block {
+    gap: 1.25rem;
+  }
+  
+  .contact-info-block p {
+    line-height: 1.8 !important;
+  }
+}
+
+/* Ultra-wide displays */
+@media (min-width: 3440px) {
+  .contact-info-block {
+    gap: 1.5rem;
+  }
+  
+  .contact-info-block p {
+    line-height: 1.9 !important;
+  }
 }
 
 /* Reveal Masks */
