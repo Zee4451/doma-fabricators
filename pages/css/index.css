@@ -1,34 +1,38 @@
 /* Force Material Symbols to render properly */
 .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined' !important;
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+    font-family: 'Material Symbols Outlined' !important;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* Fluid Typography for Large Screens */
 :root {
     /* Hero Headings - scale from 48px to 96px */
     --hero-heading-size: clamp(2.5rem, 5vw + 1rem, 6rem);
-    
+
     /* Section Headings - scale from 36px to 72px */
     --section-heading-size: clamp(2rem, 4vw + 0.5rem, 4.5rem);
-    
+
     /* Subheadings - scale from 24px to 40px */
     --subheading-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
-    
+
     /* Body Text - scale from 16px to 20px */
     --body-text-size: clamp(1rem, 0.5vw + 0.75rem, 1.25rem);
-    
+
     /* Small Text - scale from 14px to 18px */
     --small-text-size: clamp(0.875rem, 0.25vw + 0.75rem, 1.125rem);
+}
+
+.cus-font {
+    font-family: 'Bebas Neue' !important;
 }
 
 .hero-heading {
@@ -36,7 +40,7 @@
     line-height: 1.1;
     letter-spacing: -0.02em;
     font-weight: 900;
-    text-shadow: 
+    text-shadow:
         0 0 1px #FF1901,
         0 0 2px #FF1901,
         1px 1px 0px #FF1901,
@@ -69,16 +73,17 @@
 
 /* Large Desktop Optimizations */
 @media (min-width: 1280px) {
+
     .container,
     .max-w-7xl {
         max-width: 1400px !important;
     }
-    
+
     .px-6 {
         padding-left: 3rem !important;
         padding-right: 3rem !important;
     }
-    
+
     .px-8 {
         padding-left: 4rem !important;
         padding-right: 4rem !important;
@@ -89,17 +94,17 @@
     body {
         font-size: 18px;
     }
-    
+
     .container,
     .max-w-7xl {
         max-width: 1800px !important;
     }
-    
+
     /* Increase hero text on ultra-wide screens */
     .hero-heading {
         font-size: clamp(4rem, 8vw, 8rem);
         font-weight: 900;
-        text-shadow: 
+        text-shadow:
             0 0 1px #FF1901,
             0 0 2px #FF1901,
             1px 1px 0px #FF1901,
@@ -108,7 +113,7 @@
         -webkit-text-stroke: 2px #FF1901;
         paint-order: stroke fill;
     }
-    
+
     /* Ensure proper spacing on large screens */
     section {
         padding-top: clamp(4rem, 8vw, 8rem) !important;
@@ -121,257 +126,259 @@
    ============================================ */
 
 @media (min-width: 2560px) {
+
     /* Container Width Expansion */
     .max-w-7xl {
         max-width: 2400px !important;
     }
-    
+
     .max-w-5xl {
         max-width: 2000px !important;
     }
-    
+
     .max-w-4xl {
         max-width: 1800px !important;
     }
-    
+
     .max-w-3xl {
         max-width: 1600px !important;
     }
-    
+
     /* Horizontal Padding Scaling */
     .px-6 {
         padding-left: 5rem !important;
         padding-right: 5rem !important;
     }
-    
+
     .px-12 {
         padding-left: 8rem !important;
         padding-right: 8rem !important;
     }
-    
+
     /* Hero Section Enhancement */
     .hero-heading {
         font-size: clamp(6rem, 10vw, 12rem) !important;
         -webkit-text-stroke: 3px #FF1901 !important;
-        text-shadow: 
+        text-shadow:
             0 0 2px #FF1901,
             0 0 4px #FF1901,
             2px 2px 0px #FF1901,
             4px 4px 0px #FF1901,
             6px 6px 0px #FF1901 !important;
     }
-    
+
     .slide-text p {
         max-width: 1200px !important;
         font-size: clamp(1.25rem, 1.5vw, 2rem) !important;
     }
-    
+
     /* Scroll Indicator Scaling */
     #home .absolute.bottom-4,
     #home .absolute.bottom-8 {
         bottom: 4rem !important;
     }
-    
+
     #home .absolute.bottom-8 .w-10 {
         width: 4rem !important;
         height: 4rem !important;
     }
-    
+
     #home .absolute.bottom-8 svg {
         width: 2rem !important;
         height: 2rem !important;
     }
-    
+
     /* About Section Scaling */
     #about .arch-frame {
         width: 600px !important;
         height: 800px !important;
     }
-    
+
     #about .h-\[600px\] {
         height: 900px !important;
     }
-    
+
     #about .w-72 {
         width: 400px !important;
         height: 400px !important;
     }
-    
+
     #about .w-64 {
         width: 360px !important;
         height: 500px !important;
     }
-    
+
     #about h1.font-bebas {
         font-size: clamp(4rem, 6vw, 8rem) !important;
     }
-    
+
     #about p.font-plex {
         font-size: clamp(1.5rem, 2vw, 2.5rem) !important;
         max-width: 800px !important;
     }
-    
+
     #about .font-bebas.text-5xl {
         font-size: clamp(3rem, 4vw, 5rem) !important;
     }
-    
+
     /* Services Section Cards */
     .service-card .h-64 {
         height: 500px !important;
     }
-    
+
     .service-card .p-8 {
         padding: 3rem !important;
     }
-    
+
     .service-card h3.font-bebas {
         font-size: clamp(2rem, 3vw, 3.5rem) !important;
     }
-    
+
     .service-card p.text-dark-grey {
         font-size: clamp(1rem, 1.5vw, 1.5rem) !important;
     }
-    
+
     /* Industries Carousel */
     .industrial-card.w-64 {
         width: 500px !important;
     }
-    
+
     .industrial-card.w-80 {
         width: 650px !important;
     }
-    
+
     .industrial-card.md\:w-\[450px\] {
         width: 800px !important;
     }
-    
+
     .industrial-card.h-\[450px\] {
         height: 700px !important;
     }
-    
+
     .industrial-card.h-\[550px\] {
         height: 850px !important;
     }
-    
+
     .industrial-card h3.font-bebas {
         font-size: clamp(3rem, 4vw, 5rem) !important;
     }
-    
+
     /* Clients Marquee Section */
     .marquee-item {
         min-width: 700px !important;
         height: 400px !important;
         padding: 3rem 4rem !important;
     }
-    
+
     .client-logo {
         max-height: 10rem !important;
     }
-    
+
     /* Projects Section */
     .project-row .font-bebas.text-8xl {
         font-size: clamp(6rem, 10vw, 12rem) !important;
     }
-    
+
     .project-row h3.font-bebas {
         font-size: clamp(3rem, 4vw, 5rem) !important;
     }
-    
+
     .project-row .h-40 {
         height: 300px !important;
         width: 500px !important;
     }
-    
+
     /* Contact & Footer Sections */
     #contact h2.font-bebas {
         font-size: clamp(4rem, 6vw, 7rem) !important;
     }
-    
+
     #contact input,
     #contact textarea {
         font-size: clamp(1.25rem, 1.5vw, 1.75rem) !important;
         padding: 1.5rem 0 !important;
     }
-    
+
     #contact p.text-2xl {
         font-size: clamp(2rem, 3vw, 3.5rem) !important;
     }
-    
+
     footer .text-mid-grey {
         font-size: clamp(1rem, 1.5vw, 1.5rem) !important;
     }
-    
+
     footer .text-tiny-caps {
         font-size: clamp(0.75rem, 1vw, 1rem) !important;
     }
-    
+
     footer img.h-12 {
         height: 5rem !important;
     }
-    
+
     /* Navigation & Top Bar */
     nav .text-tiny-caps {
         font-size: clamp(0.85rem, 1vw, 1.25rem) !important;
         letter-spacing: 0.2em !important;
     }
-    
+
     nav img.h-10 {
         height: 4rem !important;
     }
-    
+
     .info-bar-text {
         font-size: clamp(0.85rem, 0.9vw, 1.15rem) !important;
         letter-spacing: 0.15em !important;
     }
-    
+
     .info-bar-container {
-        min-height: 52px !important;
+        min-height: 62px !important;
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
+        padding-left: 8rem !important;
     }
-    
+
     #top-info-bar .h-3\.5,
     #top-info-bar .sm\:h-4 {
         height: 1.25rem !important;
         width: 1.25rem !important;
     }
-    
-    #top-info-bar .space-x-2 > * + * {
+
+    #top-info-bar .space-x-2>*+* {
         margin-left: 0.75rem !important;
     }
-    
-    #top-info-bar .sm\:space-x-6 > * + *,
-    #top-info-bar .md\:space-x-8 > * + * {
+
+    #top-info-bar .sm\:space-x-6>*+*,
+    #top-info-bar .md\:space-x-8>*+* {
         margin-left: 1.5rem !important;
     }
-    
+
     /* Hamburger menu button */
     #hamburger-btn .material-symbols-outlined {
         font-size: clamp(2rem, 2.5vw, 2.5rem) !important;
     }
-    
+
     /* Services section parallax backgrounds */
     #parallax-left,
     #parallax-right {
         width: 500px !important;
         /* opacity: 0.12 !important; */
     }
-    
+
     /* Client logo marquee heading */
     #clients-section p.font-bebas {
         font-size: clamp(8rem, 14vw, 16rem) !important;
     }
-    
+
     #clients-section h2.font-bebas {
         font-size: clamp(3rem, 5vw, 5rem) !important;
     }
-    
+
     /* Global Section Padding */
     section {
         padding-top: clamp(6rem, 12vw, 14rem) !important;
         padding-bottom: clamp(6rem, 12vw, 14rem) !important;
     }
-    
+
     /* Body Font Size */
     body {
         font-size: 20px;
@@ -379,7 +386,8 @@
 }
 
 /* High-DPI display optimizations */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
     img {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
@@ -391,88 +399,129 @@
    ============================================ */
 
 @media (min-width: 3440px) {
+
     /* Even larger containers */
-    .max-w-7xl { max-width: 3200px !important; }
-    .max-w-6xl { max-width: 3000px !important; }
-    .max-w-5xl { max-width: 2800px !important; }
-    
+    .max-w-7xl {
+        max-width: 3200px !important;
+    }
+
+    .max-w-6xl {
+        max-width: 3000px !important;
+    }
+
+    .max-w-5xl {
+        max-width: 2800px !important;
+    }
+
     /* Larger base font */
-    body { font-size: 24px !important; line-height: 1.8 !important; }
-    
+    body {
+        font-size: 24px !important;
+        line-height: 1.8 !important;
+    }
+
     /* Increased spacing */
     section {
         padding-top: 10rem !important;
         padding-bottom: 10rem !important;
     }
-    
+
     /* Hero even bigger */
     .hero-heading {
         font-size: clamp(8rem, 12vw, 18rem) !important;
         -webkit-text-stroke: 4px #FF1901 !important;
     }
-    
+
     /* Section headings */
     .section-heading {
         font-size: clamp(5rem, 8vw, 10rem) !important;
     }
-    
+
     /* Navigation */
     nav a.text-tiny-caps {
         font-size: 1.5rem !important;
         letter-spacing: 0.2em !important;
     }
-    
+
     /* Logo scaling */
-    nav img.h-10 { height: 4rem !important; }
-    nav img.h-12 { height: 5rem !important; }
-    
+    nav img.h-10 {
+        height: 4rem !important;
+    }
+
+    nav img.h-12 {
+        height: 5rem !important;
+    }
+
     /* Navigation logo text */
     nav .logo-brand span {
         font-size: clamp(2.2rem, 2.5vw, 2.8rem) !important;
     }
-    
+
     /* Footer logo */
     footer .logo-brand span {
         font-size: clamp(2.5rem, 3vw, 3.2rem) !important;
     }
-    
+
     /* Container padding */
-    .container { padding-left: 8rem !important; padding-right: 8rem !important; }
-    .px-6 { padding-left: 7rem !important; padding-right: 7rem !important; }
-    .px-12 { padding-left: 12rem !important; padding-right: 12rem !important; }
-    
+    .container {
+        padding-left: 8rem !important;
+        padding-right: 8rem !important;
+    }
+
+    .px-6 {
+        padding-left: 7rem !important;
+        padding-right: 7rem !important;
+    }
+
+    .px-12 {
+        padding-left: 12rem !important;
+        padding-right: 12rem !important;
+    }
+
     /* Cards and components */
-    .service-card { min-height: 700px !important; }
-    
+    .service-card {
+        min-height: 700px !important;
+    }
+
     /* Grid gaps */
-    .gap-16 { gap: 8rem !important; }
-    .gap-20 { gap: 10rem !important; }
-    
+    .gap-16 {
+        gap: 8rem !important;
+    }
+
+    .gap-20 {
+        gap: 10rem !important;
+    }
+
     /* Marquee items */
     .marquee-item {
         min-width: 800px !important;
         height: 450px !important;
     }
-    
+
     /* Contact form */
     #contact input,
     #contact textarea {
         font-size: clamp(1.5rem, 1.8vw, 2rem) !important;
         padding: 2rem 2.5rem !important;
     }
-    
+
     /* Buttons */
-    button, .nav-btn {
+    button,
+    .nav-btn {
         font-size: clamp(1.3rem, 1.6vw, 1.8rem) !important;
         padding: 1.5rem 4rem !important;
     }
 }
 
-.clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
-.clip-diagonal-reverse { clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%); }
+.clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+.clip-diagonal-reverse {
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+}
 
 /* Fix for contact section clipping - ensure content is visible */
-#contact > div {
+#contact>div {
     position: relative;
     z-index: 2;
 }
@@ -484,26 +533,77 @@
         padding-bottom: 8rem !important;
     }
 }
-.marquee { display: flex; overflow: hidden; user-select: none; gap: 4rem; }
-.marquee-content { flex-shrink: 0; display: flex; justify-content: space-around; gap: 4rem; min-width: 100%; animation: scroll 40s linear infinite; }
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
-.hairline { border-width: 1px; }
-.text-tiny-caps { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
+
+.marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 4rem;
+}
+
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 4rem;
+    min-width: 100%;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.hairline {
+    border-width: 1px;
+}
+
+.text-tiny-caps {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+}
 
 /* Desktop Navigation - Larger, more readable links */
 nav .hidden.md\:flex a {
     font-size: 0.8rem !important;
-    letter-spacing: 0.15em !important; /* Slightly tighter spacing for larger text */
+    letter-spacing: 0.15em !important;
+    /* Slightly tighter spacing for larger text */
 }
 
-.sharp-card:hover .card-border { width: 100%; }
-.card-border { width: 0%; transition: width 0.4s ease; }
+.sharp-card:hover .card-border {
+    width: 100%;
+}
+
+.card-border {
+    width: 0%;
+    transition: width 0.4s ease;
+}
 
 /* Lenis Smooth Scroll */
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-stopped { overflow: hidden; }
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
 
 /* ============================================
    CUSTOM THIN SCROLLBAR (White & Orange)
@@ -511,18 +611,19 @@ html.lenis, html.lenis body { height: auto; }
 
 /* WebKit browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: 4px !important;
+    /* Made thinner */
+    height: 4px !important;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.9);
+    background: transparent !important;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #FF1901;
     border-radius: 9999px;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -533,12 +634,45 @@ html.lenis, html.lenis body { height: auto; }
 /* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #FF1901 rgba(255, 255, 255, 0.9);
+    scrollbar-color: #FF1901 transparent !important;
 }
 
 /* Dark theme scrollbar */
 .dark ::-webkit-scrollbar-track {
-    background: rgba(19, 21, 24, 0.9);
+    background: transparent !important;
+}
+
+/* ============================================
+   GLOBAL LOGO AND NAVIGATION STYLES
+   ============================================ */
+.brand-logo-nav {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+    .brand-logo-nav {
+        height: 60px;
+    }
+}
+
+.nav-item {
+    font-size: 1rem;
+    font-weight: 500;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-item:focus,
+.nav-item.active {
+    color: #FF1901 !important;
+}
+
+.nav-item.active {
+    font-weight: 700;
 }
 
 .dark ::-webkit-scrollbar-thumb {
@@ -559,7 +693,7 @@ html.lenis, html.lenis body { height: auto; }
    ============================================ */
 
 .info-bar-text {
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -575,36 +709,17 @@ html.lenis, html.lenis body { height: auto; }
    ============================================ */
 
 nav a.text-tiny-caps {
-    font-size: 0.85rem !important;      /* Increased from 0.65rem */
-    font-weight: 700 !important;         /* Keep bold */
-    letter-spacing: 0.15em !important;   /* Slightly reduced for readability */
+    font-size: clamp(0.75rem, 1vw, 0.95rem) !important;
+    font-weight: 700 !important;
+    /* Keep bold */
+    letter-spacing: clamp(0.12em, 0.2vw, 0.15em) !important;
     text-transform: uppercase;
-}
-
-/* Desktop navigation specific enhancements */
-@media (min-width: 1024px) {
-    nav a.text-tiny-caps {
-        font-size: 0.9rem !important;    /* Slightly larger on desktop */
-        letter-spacing: 0.12em !important;
-    }
-}
-
-/* Large screens */
-@media (min-width: 1280px) {
-    nav a.text-tiny-caps {
-        font-size: 0.95rem !important;
-    }
 }
 
 /* Hover state improvement */
 nav a.text-tiny-caps:hover {
-    font-weight: 800 !important;         /* Extra bold on hover */
-}
-
-@media (min-width: 640px) {
-    .info-bar-text {
-        font-size: 11px;
-    }
+    font-weight: 800 !important;
+    /* Extra bold on hover */
 }
 
 .info-bar-container {
@@ -634,59 +749,72 @@ nav a.text-tiny-caps:hover {
    ============================================ */
 
 .contact-info-block {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem; /* Consistent spacing between lines */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* Consistent spacing between lines */
 }
 
 .contact-info-block p {
-  line-height: 1.6 !important; /* Prevent overlapping on all screens */
-  margin: 0 !important; /* Remove default paragraph margins */
+    line-height: 1.6 !important;
+    /* Prevent overlapping on all screens */
+    margin: 0 !important;
+    /* Remove default paragraph margins */
 }
 
 /* Larger screens need more spacing */
 @media (min-width: 1280px) {
-  .contact-info-block {
-    gap: 0.75rem;
-  }
+    .contact-info-block {
+        gap: 0.75rem;
+    }
 }
 
 @media (min-width: 1536px) {
-  .contact-info-block {
-    gap: 1rem;
-  }
-  
-  .contact-info-block p {
-    line-height: 1.7 !important;
-  }
+    .contact-info-block {
+        gap: 1rem;
+    }
+
+    .contact-info-block p {
+        line-height: 1.7 !important;
+    }
 }
 
 /* 4K displays */
 @media (min-width: 2560px) {
-  .contact-info-block {
-    gap: 1.25rem;
-  }
-  
-  .contact-info-block p {
-    line-height: 1.8 !important;
-  }
+    .contact-info-block {
+        gap: 1.25rem;
+    }
+
+    .contact-info-block p {
+        line-height: 1.8 !important;
+    }
 }
 
 /* Ultra-wide displays */
 @media (min-width: 3440px) {
-  .contact-info-block {
-    gap: 1.5rem;
-  }
-  
-  .contact-info-block p {
-    line-height: 1.9 !important;
-  }
+    .contact-info-block {
+        gap: 1.5rem;
+    }
+
+    .contact-info-block p {
+        line-height: 1.9 !important;
+    }
 }
 
 /* Reveal Masks */
-.reveal-mask { display: block; overflow: hidden; }
-.reveal-mask span { display: block; }
-.divider-draw { transform-origin: left; transform: scaleX(0); }
+.reveal-mask {
+    display: block;
+    overflow: hidden;
+}
+
+.reveal-mask span {
+    display: block;
+}
+
+.divider-draw {
+    transform-origin: left;
+    transform: scaleX(0);
+}
 
 /* Prevent image gaps during parallax */
 .service-card img.parallax-img {
@@ -695,7 +823,9 @@ nav a.text-tiny-caps:hover {
 }
 
 /* Image Masking Reveal */
-.mask-reveal-wrapper { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
+.mask-reveal-wrapper {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
 
 /* Contact Form - Ensure visibility and accessibility */
 #contact input,
@@ -704,6 +834,7 @@ nav a.text-tiny-caps:hover {
     position: relative;
     z-index: 3;
 }
+
 #contact label {
     position: relative;
     z-index: 3;
@@ -743,49 +874,88 @@ nav a.text-tiny-caps:hover {
 
 /* Technical Background Noise */
 #bg-grid {
-    position: fixed; inset: 0; pointer-events: none; z-index: -1;
-    background-image: 
-        linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
 }
+
 .dark #bg-grid {
-    background-image: 
-        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 /* Liquid Distortion Filter */
-svg.filter-defs { position: absolute; width: 0; height: 0; }
-.liquid-target { transition: filter 0.5s ease; filter: url(#liquid-distort); }
-.liquid-target:hover { filter: url(#liquid-distort-active); }
+svg.filter-defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.liquid-target {
+    transition: filter 0.5s ease;
+    filter: url(#liquid-distort);
+}
+
+.liquid-target:hover {
+    filter: url(#liquid-distort-active);
+}
 
 /* 3D Perspective Container */
-.perspective-container { perspective: 1000px; }
-.tilt-card { transform-style: preserve-3d; }
+.perspective-container {
+    perspective: 1000px;
+}
+
+.tilt-card {
+    transform-style: preserve-3d;
+}
 
 #light-leak {
-    pointer-events: none; z-index: 40;
-    background: radial-gradient(circle, rgba(255, 25, 1, 0.15) 0%, rgba(255,255,255,0) 70%);
-    mix-blend-mode: screen; filter: blur(40px);
+    pointer-events: none;
+    z-index: 40;
+    background: radial-gradient(circle, rgba(255, 25, 1, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+    mix-blend-mode: screen;
+    filter: blur(40px);
 }
 
 #project-bg-preview {
-    position: fixed; inset: 0; z-index: 0; opacity: 0; pointer-events: none;
-    transition: opacity 0.5s ease; background-size: cover; background-position: center;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    background-size: cover;
+    background-position: center;
 }
 
-.hero-breathe { animation: breathe 8s ease-in-out infinite; display: inline-block; }
+.hero-breathe {
+    animation: breathe 8s ease-in-out infinite;
+    display: inline-block;
+}
+
 @keyframes breathe {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
 }
 
 /* Hero Heading - Outlined Text Effect */
 .hero-heading {
     font-family: 'Anton', sans-serif;
     color: #ffffff;
-    text-shadow: 
+    text-shadow:
         0 0 1px #FF1901,
         0 0 2px #FF1901,
         1px 1px 0px #FF1901,
@@ -808,20 +978,26 @@ svg.filter-defs { position: absolute; width: 0; height: 0; }
     border-top-right-radius: 500px;
     overflow: hidden;
 }
+
 .dotted-line {
     background-image: linear-gradient(to right, #fff 40%, rgba(255, 255, 255, 0) 0%);
     background-position: bottom;
     background-size: 8px 1px;
     background-repeat: repeat-x;
 }
+
 .heat-haze {
     position: relative;
     overflow: hidden;
 }
+
 .heat-haze::after {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(rgba(255, 25, 1, 0.05), transparent);
     pointer-events: none;
 }
@@ -831,33 +1007,40 @@ svg.filter-defs { position: absolute; width: 0; height: 0; }
     filter: sepia(0.2) saturate(1.2) contrast(1.1);
     transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 .industrial-card:hover img {
     transform: scale(1.05);
 }
+
 .active-card-overlay {
     background: linear-gradient(0deg, rgba(255, 25, 1, 0.95) 0%, rgba(255, 25, 1, 0.6) 100%);
     opacity: 0;
     pointer-events: none;
 }
+
 .industrial-card.active .active-card-overlay {
     opacity: 1;
     pointer-events: auto;
 }
+
 .hairline {
     height: 1px;
     background-color: rgba(255, 255, 255, 0.3);
 }
+
 .carousel-wrapper {
     display: flex;
     transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
     align-items: flex-end;
     padding-left: calc(50vw - 160px);
 }
+
 @media (min-width: 768px) {
     .carousel-wrapper {
         padding-left: calc(50vw - 225px);
     }
 }
+
 .digital-counter {
     font-variant-numeric: tabular-nums;
 }
@@ -869,7 +1052,7 @@ svg.filter-defs { position: absolute; width: 0; height: 0; }
         line-height: 1.05 !important;
         letter-spacing: 0.02em !important;
         font-weight: 900 !important;
-        text-shadow: 
+        text-shadow:
             0 0 1px #FF1901,
             0 0 2px #FF1901,
             1px 1px 0px #FF1901,
@@ -878,55 +1061,66 @@ svg.filter-defs { position: absolute; width: 0; height: 0; }
         -webkit-text-stroke: 1.5px #FF1901 !important;
         paint-order: stroke fill;
     }
+
     .slide-text p {
         font-size: 1rem !important;
         line-height: 1.6 !important;
         padding: 0 1rem;
     }
+
     /* Mobile parallax adjustments - smaller, more transparent */
     #parallax-left,
     #parallax-right {
         width: 150px !important;
         /* opacity: 0.08 !important; */
     }
+
     #parallax-left {
         left: -20px !important;
     }
+
     #parallax-right {
         right: -20px !important;
     }
+
     /* Performance: Disable GPU-intensive effects on mobile */
     .tilt-card {
         transform: none !important;
         will-change: auto !important;
     }
+
     .liquid-target {
         filter: none !important;
         will-change: auto !important;
     }
+
     /* Responsive Clients Section */
     @media (max-width: 768px) {
+
         /* About Section Mobile Adjustments */
         #about .arch-frame {
             width: 280px !important;
             height: 380px !important;
         }
+
         #about h1 {
             font-size: 3rem !important;
         }
-        #about .grid-cols-2.md\:grid-cols-4 > div {
+
+        #about .grid-cols-2.md\:grid-cols-4>div {
             border-right: none !important;
             padding-bottom: 1rem;
         }
     }
-    
+
     @media (max-width: 480px) {
+
         /* Extra small mobile hero adjustments - EXTRA LARGE FONT */
         .hero-heading {
             font-size: clamp(2.8rem, 11vw, 4.5rem) !important;
             line-height: 1.1 !important;
             letter-spacing: 0.015em !important;
-            text-shadow: 
+            text-shadow:
                 0 0 1px #FF1901,
                 0 0 2px #FF1901,
                 1.5px 1.5px 0px #FF1901,
@@ -935,6 +1129,7 @@ svg.filter-defs { position: absolute; width: 0; height: 0; }
             -webkit-text-stroke: 2px #FF1901 !important;
             paint-order: stroke fill;
         }
+
         .slide-text p {
             font-size: 0.95rem !important;
             max-width: 100% !important;
@@ -948,7 +1143,7 @@ svg.filter-defs { position: absolute; width: 0; height: 0; }
 
 footer {
     position: relative;
-    background-image: 
+    background-image:
         linear-gradient(to bottom, rgba(19, 21, 24, 0.75), rgba(19, 21, 24, 0.85)),
         url('../../assets/industrial-night-lights-stockcake.webp') !important;
     background-size: cover !important;
@@ -959,7 +1154,7 @@ footer {
 }
 
 /* Ensure footer content stays above background */
-footer > div {
+footer>div {
     position: relative;
     z-index: 2;
 }
@@ -967,9 +1162,50 @@ footer > div {
 /* Mobile optimization - darker overlay for better readability */
 @media (max-width: 768px) {
     footer {
-        background-image: 
+        background-image:
             linear-gradient(to bottom, rgba(19, 21, 24, 0.85), rgba(19, 21, 24, 0.92)),
             url('../../assets/industrial-night-lights-stockcake.webp') !important;
-        background-attachment: scroll !important; /* Better performance on mobile */
+        background-attachment: scroll !important;
+        /* Better performance on mobile */
     }
+}
+
+/* ============================================
+   NAVIGATION LINKS
+   Adjust font size, style, and hover color here!
+   ============================================ */
+.nav-item {
+    font-size: clamp(0.75rem, 1vw, 0.85rem) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    color: inherit;
+    transition: color 0.3s ease !important;
+}
+
+.nav-item:hover {
+    color: #FF1901 !important;
+    /* Doma primary red */
+}
+
+/* ============================================
+   BRAND LOGO SIZING
+   Adjust these values to resize the logo across all pages!
+   ============================================ */
+.brand-logo-nav {
+    height: clamp(3rem, 4.5vw, 4rem) !important;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-logo-mobile {
+    height: clamp(2.5rem, 3vw, 3rem) !important;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-logo-footer {
+    height: clamp(3.5rem, 5vw, 4.5rem) !important;
+    width: auto;
+    object-fit: contain;
 }

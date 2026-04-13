@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
-<title>About | DOMA FABRICATORS</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&amp;family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@300;400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="pages/css/about.css"/>
-<link rel="stylesheet" href="pages/css/index.css"/>
-<script id="tailwind-config">
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport" />
+    <title>About | DOMA FABRICATORS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&amp;family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@300;400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="pages/css/about.css" />
+    <link rel="stylesheet" href="pages/css/index.css" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -19,7 +25,7 @@
                     colors: {
                         // Primary accent color
                         "primary": "#FF1901",
-                        
+
                         // Dark theme colors
                         "background-light": "#F7F7F8",
                         "background-dark": "#131518",
@@ -30,7 +36,7 @@
                         "dark-4": "#222526",
                         "dark-5": "#313435",
                         "dark-6": "#2E3233",
-                        
+
                         // Light/Gray theme colors
                         "off-white": "#FFFAFA",
                         "light-grey": "#F7F7F7",
@@ -70,1272 +76,1556 @@
         }
     </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-plex text-near-black dark:text-off-white overflow-x-hidden selection:bg-primary selection:text-white">
-<!-- SVG Filter for Heat Haze -->
-<svg style="display: none;">
-<filter id="hazeFilter">
-<feturbulence basefrequency="0.01 0.03" numoctaves="2" result="turbulence">
-<animate attributename="baseFrequency" dur="10s" repeatcount="indefinite" values="0.01 0.03;0.02 0.05;0.01 0.03"></animate>
-</feturbulence>
-<fedisplacementmap in="SourceGraphic" in2="turbulence" scale="5"></fedisplacementmap>
-</filter>
 
-</svg>
-<!-- TopNavBar -->
-<style>
-/* Fluid Typography for Large Screens */
-:root {
-    --hero-heading-size: clamp(2.5rem, 5vw + 1rem, 6rem);
-    --section-heading-size: clamp(2rem, 4vw + 0.5rem, 4.5rem);
-    --subheading-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
-    --body-text-size: clamp(1rem, 0.5vw + 0.75rem, 1.25rem);
-}
+<body
+    class="bg-background-light dark:bg-background-dark font-plex text-near-black dark:text-off-white overflow-x-hidden selection:bg-primary selection:text-white">
+    <!-- SVG Filter for Heat Haze -->
+    <svg style="display: none;">
+        <filter id="hazeFilter">
+            <feturbulence basefrequency="0.01 0.03" numoctaves="2" result="turbulence">
+                <animate attributename="baseFrequency" dur="10s" repeatcount="indefinite"
+                    values="0.01 0.03;0.02 0.05;0.01 0.03"></animate>
+            </feturbulence>
+            <fedisplacementmap in="SourceGraphic" in2="turbulence" scale="5"></fedisplacementmap>
+        </filter>
 
-.hero-heading {
-    font-size: var(--hero-heading-size);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-}
+    </svg>
+    <!-- TopNavBar -->
+    <style>
+        /* Fluid Typography for Large Screens */
+        :root {
+            --hero-heading-size: clamp(2.5rem, 5vw + 1rem, 6rem);
+            --section-heading-size: clamp(2rem, 4vw + 0.5rem, 4.5rem);
+            --subheading-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
+            --body-text-size: clamp(1rem, 0.5vw + 0.75rem, 1.25rem);
+        }
 
-.section-heading {
-    font-size: var(--section-heading-size);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-}
+        .hero-heading {
+            font-size: var(--hero-heading-size);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
 
-/* Large Desktop Optimizations */
-@media (min-width: 1280px) {
-    .container,
-    .max-w-7xl {
-        max-width: 1400px !important;
-    }
-    
-    .px-8 {
-        padding-left: 4rem !important;
-        padding-right: 4rem !important;
-    }
-}
+        .section-heading {
+            font-size: var(--section-heading-size);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
 
-@media (min-width: 1536px) {
-    body {
-        font-size: 18px;
-    }
-    
-    .container {
-        max-width: 1600px !important;
-    }
-    
-    #hero-title {
-        font-size: clamp(6rem, 10vw, 10rem) !important;
-    }
-    
-    section {
-        padding-top: clamp(4rem, 8vw, 8rem) !important;
-        padding-bottom: clamp(4rem, 8vw, 8rem) !important;
-    }
-}
+        /* Large Desktop Optimizations */
+        @media (min-width: 1280px) {
 
-/* 4K Responsiveness */
-@media (min-width: 2560px) {
-    .max-w-7xl {
-        max-width: 2400px !important;
-    }
-    
-    #hero-title {
-        font-size: clamp(8rem, 12vw, 14rem) !important;
-    }
-    
-    section {
-        padding-top: clamp(6rem, 12vw, 14rem) !important;
-        padding-bottom: clamp(6rem, 12vw, 14rem) !important;
-    }
-    
-    body {
-        font-size: 20px;
-    }
-    
-    .text-tiny-caps {
-        font-size: clamp(0.85rem, 1vw, 1.25rem) !important;
-    }
-}
+            .container,
+            .max-w-7xl {
+                max-width: 1400px !important;
+            }
 
-.text-tiny-caps { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
-.char { display: inline-block; }
-.breathing {
-    animation: breathe 4s ease-in-out infinite;
-}
-@keyframes breathe {
-    0%, 100% { letter-spacing: -0.05em; opacity: 1; }
-    50% { letter-spacing: -0.02em; opacity: 0.85; }
-}
+            .px-8 {
+                padding-left: 4rem !important;
+                padding-right: 4rem !important;
+            }
+        }
 
-/* Mobile Hero Responsiveness */
-@media (max-width: 768px) {
-    #hero-title {
-        font-size: 18vw !important;
-        line-height: 0.9 !important;
-    }
-    
-    #hero-sub {
-        font-size: 1.2rem !important;
-        padding: 0 1rem;
-    }
-    
-    #hero-desc {
-        font-size: 1rem !important;
-        padding: 0 1rem;
-        max-width: 100% !important;
-    }
-    
-    /* Hide side metadata on mobile */
-    #side-meta {
-        display: none !important;
-    }
-    
-    .container.mx-auto.px-8 {
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
-    }
-}
+        @media (min-width: 1536px) {
+            body {
+                font-size: 18px;
+            }
 
-@media (max-width: 480px) {
-    #hero-title {
-        font-size: 20vw !important;
-        line-height: 0.95 !important;
-    }
-    
-    #hero-sub {
-        font-size: 1rem !important;
-    }
-    
-    #hero-desc {
-        font-size: 0.9rem !important;
-        line-height: 1.5 !important;
-    }
-}
+            .container {
+                max-width: 1600px !important;
+            }
 
-/* Equipment Inventory Table Styles */
-.technical-label {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: #C0310A;
-}
-.table-hairline {
-    border-bottom: 1px solid rgba(26, 24, 21, 0.1);
-}
+            #hero-title {
+                font-size: clamp(6rem, 10vw, 10rem) !important;
+            }
 
+            section {
+                padding-top: clamp(4rem, 8vw, 8rem) !important;
+                padding-bottom: clamp(4rem, 8vw, 8rem) !important;
+            }
+        }
 
-</style>
-<!-- Top Contact Bar -->
-<header class="w-full" id="top-info-bar">
-  <div class="info-bar-container flex items-center justify-end px-4 sm:px-8 md:px-12 sm:py-0 py-1">
-    <div class="flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 sm:space-x-6 md:space-x-8 text-white info-bar-text">
-      <!-- Email -->
-      <div class="flex items-center space-x-2">
-        <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path>
-        </svg>
-        <a class="hover:text-gray-300 transition-colors duration-200" href="mailto:domafabricators@gmail.com">
-          domafabricators@gmail.com
-        </a>
-      </div>
-      <!-- Phone -->
-      <div class="flex items-center space-x-2">
-        <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.509-8.958 0 0 1.926-1.012 1.932-1.017l-3.535-6.862-.013.006c-4.114 2.012-6.297 10.373-1.05 18.423 5.344 8.196 11.455 10.158 14.542 10.158 1.156 0 2.222-.269 3.218-.967l.012-.01z"></path>
-        </svg>
-        <a class="hover:text-gray-300 transition-colors duration-200 font-semibold whitespace-nowrap" href="tel:+919826051620">
-          +91 9826051620
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
-<!-- 1. Navbar -->
-<nav class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-[#1A1815]/10 dark:border-white/10 px-6 lg:px-12 py-4 flex items-center justify-between">
-<a href="index.html" class="flex items-center cursor-pointer">
-<img src="assets/doma fabricator logo.png" alt="D" class="h-10 w-auto object-contain"/>
-<span class="text-xl font-display text-on-surface tracking-wide hidden sm:inline">oma Fabricators</span>
-</a>
-<div class="hidden lg:flex items-center gap-6">
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="index.html">Home</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="about.html">About Us</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="service.html">Services</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="industries.html">Industries</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="project.html">Projects</a>
-<!-- <a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a> -->
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#catalogue">E-Catalogue</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="index.html#contact">Contact Us</a>
-</div>
-<button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
-  <span class="material-symbols-outlined transition-all duration-300 text-[#1A1815] dark:text-white" id="hamburger-icon">menu</span>
-</button>
-</nav>
+        /* 4K Responsiveness */
+        @media (min-width: 2560px) {
+            .max-w-7xl {
+                max-width: 2400px !important;
+            }
 
-<!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 bg-[#1A1815]/95 z-[60] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden overflow-y-auto" id="mobile-menu">
-  <div class="flex flex-col min-h-full px-6 py-6">
-    <div class="flex items-center justify-between mb-8">
-      <div>
-        <div class="flex items-center">
-          <img src="assets/doma fabricator logo.png" alt="D" class="h-10 w-auto object-contain brightness-0 invert"/>
-          <span class="text-xl font-display text-white tracking-wide">oma Fabricators</span>
-        </div>
-      </div>
-      <button class="hover-trigger" id="close-menu-btn" aria-label="Close menu">
-        <span class="material-symbols-outlined text-white text-2xl">close</span>
-      </button>
-    </div>
-    <nav class="flex flex-col gap-2 flex-1">
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="index.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Home</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="about.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">About Us</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="service.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Services</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="industries.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Industries</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="project.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Projects</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="#resources">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Resources</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="#catalogue">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="index.html#contact">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Contact Us</span>
-      </a>
-    </nav>
-    <div class="mt-auto pt-6 border-t border-white/10">
-      <p class="text-white/50 text-xs font-light leading-relaxed">Precision Engineering & Industrial Fabrication</p>
-      <div class="flex gap-3 mt-3">
-        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
-          <span class="material-symbols-outlined text-white text-sm">share</span>
-        </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
-          <span class="material-symbols-outlined text-white text-sm">mail</span>
-        </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
-          <span class="material-symbols-outlined text-white text-sm">call</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-<main id="main-content">
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center overflow-hidden bg-white">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110" data-alt="dramatic wide angle shot of a massive industrial steel fabrication workshop" id="hero-bg" src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg"/>
-<div class="absolute inset-0 heat-haze"></div>
-</div>
-<div class="container mx-auto px-8 relative z-10">
-<div class="max-w-6xl">
-<p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8" id="hero-sub">Est. 2010 — 14 Years of Excellence</p>
-<h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-near-black" id="hero-title">
-<div class="reveal-text">OUR <span class="text-primary">LEGACY</span></div>
-</h1>
-<div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
-<div class="draw-line w-24 h-[1px] bg-near-black mt-4 hidden md:block origin-left scale-x-0"></div>
-<p class="max-w-xl text-lg md:text-xl font-light text-dark-grey leading-relaxed opacity-0 translate-y-8" id="hero-desc">
-                            Doma Fabricators is a professionally managed industrial fabrication company with over 25 years of proven experience. We specialize in piping works, heavy structural fabrication, equipment erection, industrial maintenance, shed works, and roofing work, delivering high-quality solutions to meet the diverse needs of industries.
-                        </p>
-</div>
-</div>
-</div>
-<!-- Side Metadata Overlay -->
-<div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-dark-grey/40" id="side-meta">
-<div class="flex items-center gap-4 reveal-meta">
-<span>COORD: 22.6133° N, 75.6823° E</span>
-<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
-</div>
-<div class="flex items-center gap-4 reveal-meta">
-<span>REF_SYS: DOMA_ABOUT_v2.0</span>
-<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
-</div>
-<div class="flex items-center gap-4 reveal-meta">
-<span>TIMESTAMP: 2024.11.04</span>
-<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
-</div>
-</div>
-</section>
-<!-- Our Competency Section -->
-<section class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-near-black">
-<!-- Background Image with Parallax -->
-<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/7-Essential-Safety-Tips-for-Steel-Erection-Projects-2.jpg.jpeg'); background-attachment: fixed;"></div>
-<!-- Dark Overlay -->
-<div class="absolute inset-0 bg-near-black/80"></div>
-<!-- Content Container -->
-<div class="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 w-full">
-<!-- Header Group -->
-<div class="mb-16 md:mb-24 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
-<div class="max-w-2xl">
-<div class="flex items-center gap-4 mb-2">
-<div class="w-1.5 h-16 bg-primary"></div>
-<h1 class="text-7xl md:text-9xl font-industrial leading-none tracking-tight text-white">
-                            OUR COMPETENCY
-                        </h1>
-</div>
-<p class="font-technical text-sm md:text-base text-white/60 tracking-[0.2em] uppercase leading-relaxed max-w-xl">
-                        LEVERAGING 14+ YEARS OF INDUSTRIAL EXPERTISE THROUGH RIGOROUS ENGINEERING STANDARDS AND ADVANCED FABRICATION SOLUTIONS.
-                    </p>
-</div>
-<!-- Secondary technical detail -->
-<div class="hidden md:block text-right">
-<span class="block font-technical text-xs text-white/30 tracking-widest uppercase mb-1">Structural Framework</span>
-<span class="block font-headline font-bold text-primary text-xl tracking-tighter">DOMA_COMP_v1.0</span>
-</div>
-</div>
-<!-- Competency Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/10">
-<!-- Card 1: Engineering -->
-<div class="group bg-white p-8 min-h-[400px] flex flex-col justify-between border-r border-b border-near-black/10 hover:bg-near-black hover:shadow-2xl transition-all duration-500 ease-in-out">
-<div>
-<div class="flex justify-between items-start mb-12">
-<span class="material-symbols-outlined text-primary text-5xl" data-icon="architecture">architecture</span>
-<span class="font-technical text-[10px] text-near-black/40 group-hover:text-white/60 tracking-widest uppercase border border-near-black/10 group-hover:border-white/20 px-2 py-1 transition-colors duration-500">CODE: ENG-01</span>
-</div>
-<h3 class="font-industrial text-3xl text-near-black group-hover:text-white mb-4 tracking-wide transition-colors duration-500">ENGINEERING</h3>
-<p class="font-body text-sm text-dark-grey group-hover:text-white/80 leading-relaxed transition-colors duration-500">
-                            Advanced structural analysis and CAD optimization. We utilize parametric modeling to ensure integrity across large-scale industrial frameworks.
-                        </p>
-</div>
-<div class="flex justify-end pt-8">
-<span class="material-symbols-outlined text-near-black/20 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
-<!-- Card 2: Construction -->
-<div class="group bg-white p-8 min-h-[400px] flex flex-col justify-between border-r border-b border-near-black/10 hover:bg-near-black hover:shadow-2xl transition-all duration-500 ease-in-out">
-<div>
-<div class="flex justify-between items-start mb-12">
-<span class="material-symbols-outlined text-primary text-5xl" data-icon="construction">construction</span>
-<span class="font-technical text-[10px] text-near-black/40 group-hover:text-white/60 tracking-widest uppercase border border-near-black/10 group-hover:border-white/20 px-2 py-1 transition-colors duration-500">CODE: CST-02</span>
-</div>
-<h3 class="font-industrial text-3xl text-near-black group-hover:text-white mb-4 tracking-wide transition-colors duration-500">CONSTRUCTION</h3>
-<p class="font-body text-sm text-dark-grey group-hover:text-white/80 leading-relaxed transition-colors duration-500">
-                            On-site implementation and heavy-duty fabrication. Precision lifting operations and modular assembly for rapid deployment in complex environments.
-                        </p>
-</div>
-<div class="flex justify-end pt-8">
-<span class="material-symbols-outlined text-near-black/20 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
-<!-- Card 3: Management -->
-<div class="group bg-white p-8 min-h-[400px] flex flex-col justify-between border-r border-b border-near-black/10 hover:bg-near-black hover:shadow-2xl transition-all duration-500 ease-in-out">
-<div>
-<div class="flex justify-between items-start mb-12">
-<span class="material-symbols-outlined text-primary text-5xl" data-icon="settings_suggest">settings_suggest</span>
-<span class="font-technical text-[10px] text-near-black/40 group-hover:text-white/60 tracking-widest uppercase border border-near-black/10 group-hover:border-white/20 px-2 py-1 transition-colors duration-500">CODE: MGM-03</span>
-</div>
-<h3 class="font-industrial text-3xl text-near-black group-hover:text-white mb-4 tracking-wide transition-colors duration-500">MANAGEMENT</h3>
-<p class="font-body text-sm text-dark-grey group-hover:text-white/80 leading-relaxed transition-colors duration-500">
-                            Full lifecycle oversight utilizing Lean Six Sigma methodologies. Streamlining supply chains and maintaining stringent project timelines.
-                        </p>
-</div>
-<div class="flex justify-end pt-8">
-<span class="material-symbols-outlined text-near-black/20 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
-<!-- Card 4: HSE Protocol -->
-<div class="group bg-white p-8 min-h-[400px] flex flex-col justify-between border-b border-near-black/10 hover:bg-near-black hover:shadow-2xl transition-all duration-500 ease-in-out">
-<div>
-<div class="flex justify-between items-start mb-12">
-<span class="material-symbols-outlined text-primary text-5xl" data-icon="health_and_safety">health_and_safety</span>
-<span class="font-technical text-[10px] text-near-black/40 group-hover:text-white/60 tracking-widest uppercase border border-near-black/10 group-hover:border-white/20 px-2 py-1 transition-colors duration-500">CODE: HSE-04</span>
-</div>
-<h3 class="font-industrial text-3xl text-near-black group-hover:text-white mb-4 tracking-wide transition-colors duration-500">HSE PROTOCOL</h3>
-<p class="font-body text-sm text-dark-grey group-hover:text-white/80 leading-relaxed transition-colors duration-500">
-                            Zero-incident culture adhering to ISO 45001. Rigorous safety auditing and environmental mitigation strategies for sustainable operations.
-                        </p>
-</div>
-<div class="flex justify-end pt-8">
-<span class="material-symbols-outlined text-near-black/20 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
-</div>
-<!-- Bottom decorative line and branding -->
-<div class="mt-16 flex items-center justify-between">
-<div class="flex gap-2">
-<div class="w-8 h-[1px] bg-white/20"></div>
-<div class="w-2 h-[1px] bg-primary"></div>
-</div>
-<div class="font-technical text-[10px] text-white/20 tracking-[0.5em] uppercase">
-                    Doma Fabricators © MMXXIV
+            #hero-title {
+                font-size: clamp(8rem, 12vw, 14rem) !important;
+            }
+
+            section {
+                padding-top: clamp(6rem, 12vw, 14rem) !important;
+                padding-bottom: clamp(6rem, 12vw, 14rem) !important;
+            }
+
+            body {
+                font-size: 20px;
+            }
+
+            .text-tiny-caps {
+                font-size: clamp(0.85rem, 1vw, 1.25rem) !important;
+            }
+        }
+
+        .text-tiny-caps {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+
+        .char {
+            display: inline-block;
+        }
+
+        .breathing {
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                letter-spacing: -0.05em;
+                opacity: 1;
+            }
+
+            50% {
+                letter-spacing: -0.02em;
+                opacity: 0.85;
+            }
+        }
+
+        /* Mobile Hero Responsiveness */
+        @media (max-width: 768px) {
+            #hero-title {
+                font-size: 18vw !important;
+                line-height: 0.9 !important;
+            }
+
+            #hero-sub {
+                font-size: 1.2rem !important;
+                padding: 0 1rem;
+            }
+
+            #hero-desc {
+                font-size: 1rem !important;
+                padding: 0 1rem;
+                max-width: 100% !important;
+            }
+
+            /* Hide side metadata on mobile */
+            #side-meta {
+                display: none !important;
+            }
+
+            .container.mx-auto.px-8 {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero-title {
+                font-size: 20vw !important;
+                line-height: 0.95 !important;
+            }
+
+            #hero-sub {
+                font-size: 1rem !important;
+            }
+
+            #hero-desc {
+                font-size: 0.9rem !important;
+                line-height: 1.5 !important;
+            }
+        }
+
+        /* Equipment Inventory Table Styles */
+        .technical-label {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #C0310A;
+        }
+
+        .table-hairline {
+            border-bottom: 1px solid rgba(26, 24, 21, 0.1);
+        }
+
+        .info-bar-container {
+            min-height: 62px !important;
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+            padding-left: 8rem !important;
+        }
+    </style>
+    <!-- Top Contact Bar -->
+    <header class="w-full" id="top-info-bar">
+        <div
+            class="info-bar-container flex items-center justify-end px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 sm:py-0 py-1">
+            <div
+                class="flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 sm:space-x-6 md:space-x-8 text-white info-bar-text">
+                <!-- Email -->
+                <div class="flex items-center space-x-2">
+                    <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z">
+                        </path>
+                    </svg>
+                    <a class="hover:text-gray-300 transition-colors duration-200 text-sm sm:text-base md:text-[0.95rem]"
+                        href="mailto:domafabricators@gmail.com">
+                        domafabricators@gmail.com
+                    </a>
                 </div>
-</div>
-</div>
-<!-- Large watermark back -->
-<div class="absolute bottom-0 right-0 transform translate-x-1/4 translate-y-1/4 opacity-[0.02] pointer-events-none">
-<span class="font-industrial text-[40rem] leading-none text-white select-none">DOMA</span>
-</div>
-</section>
-<!-- Leadership Section -->
-<section class="py-32 px-6 md:px-12 bg-white">
-<div class="max-w-7xl mx-auto">
-<h2 class="font-display text-6xl md:text-8xl text-near-black uppercase mb-16">Leadership</h2>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-<div>
-<h3 class="font-industrial text-4xl text-near-black mb-6">Mr. Varghese K. A.</h3>
-<p class="text-primary font-technical font-bold uppercase tracking-widest text-sm mb-8">Proprietor & Visionary Leader</p>
-<p class="text-lg text-dark-grey leading-relaxed">
-With 14+ years of experience in the mechanical engineering and fabrication industry, he has been instrumental in shaping the company's legacy and steering its steady growth. Known for his deep expertise in mechanical fabrication, precision engineering, and an unwavering commitment to quality, Varghese K. A. has built strong, lasting client relationships and driven Doma Fabricators to excel.
-</p>
-</div>
-<div class="space-y-6 text-dark-grey/80">
-<p class="leading-relaxed">
-Under his leadership, the company has successfully delivered complex projects, merging traditional values with innovative practices to meet the evolving demands of the industry.
-</p>
-<p class="leading-relaxed">
-His hands-on approach, mentorship of the team, and relentless focus on process improvement and adoption of new technologies are central to Doma Fabricators' reputation for reliability, technical excellence, and client satisfaction.
-</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Mission & Vision Section -->
-<section class="min-h-screen flex flex-col items-center justify-center py-32 px-6 lg:px-12 bg-white" id="mission-vision-section">
-<div class="max-w-7xl mx-auto w-full">
-<!-- Section Header -->
-<div class="w-full mb-16 text-center lg:text-left overflow-hidden">
-<h1 class="font-display text-6xl md:text-8xl lg:text-9xl text-near-black uppercase tracking-tighter" id="main-heading">
-        Our Mission & Vision
-      </h1>
-</div>
-<!-- Cards Container -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-<!-- Card 1: Mission -->
-<article class="mission-card bg-white border-l-4 border-primary rounded-lg shadow-lg p-8 flex flex-col h-full stagger-reveal" data-purpose="mission-card">
-<div class="mb-6">
-<h2 class="text-2xl font-bold text-near-black uppercase mb-4 leading-tight">Our Commitment to Excellence</h2>
-<p class="text-dark-grey leading-relaxed text-sm lg:text-base">
-            To Deliver High-Quality Engineering Solutions with Innovation, Reliability, and Safety, Exceeding Client Expectations across Diverse Industries.
-          </p>
-</div>
-<div class="rounded-lg flex-grow mb-8 aspect-video overflow-hidden relative">
-<img alt="Industrial fabrication processes" class="w-full h-full object-cover" src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg"/>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none"></div>
-</div>
-<div class="mt-auto pt-4 border-t border-near-black/10">
-<a class="inline-flex items-center text-primary font-bold hover:gap-2 transition-all duration-300" href="service.html">
-            EXPLORE CAPABILITIES <span class="ml-2">→</span>
-</a>
-</div>
-</article>
-<!-- Card 2: Vision -->
-<article class="mission-card bg-white border border-near-black/10 rounded-lg shadow-lg p-8 flex flex-col h-full stagger-reveal" data-purpose="vision-card">
-<div class="mb-6">
-<h2 class="text-2xl font-bold text-near-black uppercase mb-4 leading-tight">Shaping the Future of Engineering</h2>
-<p class="text-dark-grey leading-relaxed text-sm lg:text-base">
-            To be a Global Leader in Engineering Services, Driving Progress and Excellence through Sustainable Practices and Cutting-Edge Technologies.
-          </p>
-</div>
-<div class="rounded-lg flex-grow mb-8 aspect-video overflow-hidden relative">
-<img alt="Steel fabrication and erection" class="w-full h-full object-cover" src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg"/>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none"></div>
-</div>
-<div class="mt-auto pt-4 border-t border-near-black/10">
-<a class="inline-flex items-center text-primary font-bold hover:gap-2 transition-all duration-300" href="project.html">
-            VIEW FUTURE ROADMAP <span class="ml-2">→</span>
-</a>
-</div>
-</article>
-</div>
-</div>
-</section>
-<!-- History Timeline Section -->
-<section class="relative min-h-screen py-32 px-4 md:px-0 bg-light-grey" id="history-timeline-section">
-<!-- Central Progress Line -->
-<div class="timeline-path-container" id="timeline-path-container">
-<div class="timeline-progress-line" id="timeline-progress-line"></div>
-</div>
-<div class="max-w-6xl mx-auto relative">
-<!-- 2025 Milestone -->
-<section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-2025">
-<div class="hidden md:block w-1/2 text-right pr-16">
-<span class="font-display text-7xl text-domaRed leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2025</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2025</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl">
-<p class="text-lg leading-relaxed text-dark-grey">
-              A new Workshop Facility for Pressure Vessel Fabrication was set up, Enabling the Company to further strengthen its Expertise in Manufacturing and Delivering High-Quality Pressure Vessels for Critical Applications.
-            </p>
-</div>
-</div>
-</section>
-<!-- 2024 Milestone -->
-<section class="flex flex-col md:flex-row-reverse items-center mb-48 relative" data-purpose="milestone-2024">
-<div class="hidden md:block w-1/2 text-left pl-16">
-<span class="font-display text-7xl leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2024</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2024</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl" style="border-left:0; border-right: 4px solid #C0310A;">
-<p class="text-lg leading-relaxed text-dark-grey">
-              To meet Growing Demand and Support continued Expansion, Jobby Engineers expanded its Fabrication Workshop in Dahej, Increasing Production Capabilities for Large-Scale Projects.
-            </p>
-</div>
-</div>
-</section>
-<!-- 2020 Milestone -->
-<section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-2020">
-<div class="hidden md:block w-1/2 text-right pr-16">
-<span class="font-display text-7xl leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2020</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2020</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl">
-<p class="text-lg leading-relaxed text-dark-grey">
-              Jobby Engineers launched the Tankages & Pressure Vessel Division, Specializing in the Design, Fabrication, and Installation of Pressure Vessels and Tankage Systems for various Industries.
-            </p>
-</div>
-</div>
-</section>
-<!-- 2017 Milestone -->
-<section class="flex flex-col md:flex-row-reverse items-center mb-48 relative" data-purpose="milestone-2017">
-<div class="hidden md:block w-1/2 text-left pl-16">
-<span class="font-display text-7xl leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2017</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2017</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl" style="border-left:0; border-right: 4px solid #C0310A;">
-<p class="text-lg leading-relaxed text-dark-grey">
-              The Company opened its second Fabrication Unit in Dahej, Gujarat, Further Enhancing its Production Capacity to cater to its Expanding Client Base and Larger Projects.
-            </p>
-</div>
-</div>
-</section>
-<!-- 2013 Milestone -->
-<section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-2013">
-<div class="hidden md:block w-1/2 text-right pr-16">
-<span class="font-display text-7xl leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2013</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2013</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl">
-<p class="text-lg leading-relaxed text-dark-grey">
-              Jobby Engineers established its First Fabrication Unit in Ankleshwar, Gujarat, to meet the Growing demand for Fabricated Components and Services. This Facility helped Strengthen their Manufacturing Capabilities.
-            </p>
-</div>
-</div>
-</section>
-<!-- 2006 Milestone -->
-<section class="flex flex-col md:flex-row-reverse items-center mb-48 relative" data-purpose="milestone-2006">
-<div class="hidden md:block w-1/2 text-left pl-16">
-<span class="font-display text-7xl leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2006</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2006</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl" style="border-left:0; border-right: 4px solid #C0310A;">
-<p class="text-lg leading-relaxed text-dark-grey">
-              The Company Expanded into the Refinery Sector, Focusing on Mechanical Works. This Step Broadened its Expertise in Handling Large-Scale, High-Quality Industrial Projects within the Energy Sector.
-            </p>
-</div>
-</div>
-</section>
-<!-- 2004 Milestone -->
-<section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-2004">
-<div class="hidden md:block w-1/2 text-right pr-16">
-<span class="font-display text-7xl leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2004</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2004</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl">
-<p class="text-lg leading-relaxed text-dark-grey">
-              Jobby Engineers entered the Nuclear Piping and Mechanical Works Sector, Marking a Significant Milestone in its Diversification and Capability to handle Complex and Specialized Projects.
-            </p>
-</div>
-</div>
-</section>
-<!-- 1997 Milestone -->
-<section class="flex flex-col md:flex-row-reverse items-center mb-48 relative" data-purpose="milestone-1997">
-<div class="hidden md:block w-1/2 text-left pl-16">
-<span class="font-display text-7xl leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1997</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1997</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl" style="border-left:0; border-right: 4px solid #C0310A;">
-<p class="text-lg leading-relaxed text-dark-grey">
-              Jobby Enterprise was renamed to Jobby Engineers Pvt. Ltd., Reflecting its Growth and Expansion into a more Diversified Range of Engineering Services.
-            </p>
-</div>
-</div>
-</section>
-<!-- 1987 Milestone -->
-<section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-1987">
-<div class="hidden md:block w-1/2 text-right pr-16">
-<span class="font-display text-7xl leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1987</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1987</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl">
-<p class="text-lg leading-relaxed text-dark-grey">
-              The Company was taken over by Mr. Benny John Nangani and Mr. Benno John Nangani, the Sons of the Late Founder, Who Continued to Expand and Evolve the Company's Presence in the Industry.
-            </p>
-</div>
-</div>
-</section>
-<!-- 1970 Milestone -->
-<section class="flex flex-col md:flex-row-reverse items-center mb-12 relative" data-purpose="milestone-1970">
-<div class="hidden md:block w-1/2 text-left pl-16">
-<span class="font-display text-7xl leading-none milestone-year" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1970</span>
-</div>
-<div class="timeline-node" style="top: 50%;">
-<div class="node-pulse"></div>
-<svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
-<div class="md:hidden mb-4"><span class="font-display text-5xl" style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1970</span></div>
-<div class="milestone-card bg-white p-8 shadow-xl" style="border-left:0; border-right: 4px solid #C0310A;">
-<p class="text-lg leading-relaxed text-dark-grey">
-              Jobby Enterprise was Founded by the Late Mr. N.G. John with a Vision to provide Innovative and Reliable Engineering Services. The Company began Operations with a strong focus on meeting the Highest Standards of Excellence and Project Completion Timelines, Catering to Reputed Clients in various Sectors.
-            </p>
-</div>
-</div>
-</section>
-</div>
-</section>
-
-<!-- Equipment & Machinery Inventory Section -->
-<section class="relative py-32 px-6 md:px-12 bg-white" id="equipment-inventory-section">
-<div class="max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
-<div class="max-w-2xl">
-<span class="technical-label">DATASET 01 // ASSET INVENTORY</span>
-<h2 class="text-4xl font-headline font-bold mt-2 uppercase tracking-tight">Equipment &amp; Machinery Inventory</h2>
-</div>
-<div class="hidden md:block w-32 h-[1px]" style="background-color: #C0310A;"></div>
-</div>
-<!-- Inventory Table -->
-<div class="overflow-x-auto">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-near-black text-white technical-label text-[0.55rem]">
-<th class="py-4 px-6 border-r border-white/10">SR NO.</th>
-<th class="py-4 px-6 border-r border-white/10">MATERIAL DESCRIPTION &amp; SPECIFICATIONS</th>
-<th class="py-4 px-6 border-r border-white/10 text-center">UNIT</th>
-<th class="py-4 px-6 text-center">QTY</th>
-</tr>
-</thead>
-<tbody class="text-xs font-body font-medium">
-<!-- Row mapping based on image data -->
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">01</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">CNC PLATE CUTTING MACHINE (OXY-FUEL &amp; PLASMA)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">02</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">02</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">AUTOMATIC SUBMERGED ARC WELDING (SAW) COLUMN &amp; BOOM</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">03</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">03</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">HYDRAULIC PLATE BENDING MACHINE (CAP: 100MM X 3000MM)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">04</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">HYDRAULIC PLATE SHEARING MACHINE (CAP: 25MM X 4000MM)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">05</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">OVERHEAD EOT CRANES (CAP: 50 TON)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">04</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">06</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">OVERHEAD EOT CRANES (CAP: 20 TON)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">08</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">07</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">GOLIATH CRANE (CAP: 100 TON)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">02</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">08</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">MIG WELDING MACHINES (CAP: 400A - 600A)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">45</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">09</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">TIG WELDING MACHINES (CAP: 300A)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">12</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">10</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">ROTATOR SETS (CAP: 10 TON - 200 TON)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">SETS</td>
-<td class="py-3 px-6 text-center font-bold">22</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">11</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">SAND BLASTING UNIT (COMPLETE SYSTEM)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">04</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">12</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">AIRLESS SPRAY PAINTING MACHINES</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">06</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">13</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">RADIAL DRILLING MACHINE (CAP: 50MM - 100MM)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">05</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">14</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">LATHE MACHINE (HEAVY DUTY)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">03</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">15</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">MAGNETIC BASE DRILLING MACHINES</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">15</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">16</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">HYDRAULIC PRESS (CAP: 300 TON)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">17</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">PLASMA CUTTING TORCH (MANUAL)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">08</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">18</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">PUG CUTTING MACHINES</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">20</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">19</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">AIR COMPRESSORS (CAP: 300 CFM - 600 CFM)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">06</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">20</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">GRINDING MACHINES (7" &amp; 4")</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">60</td>
-</tr>
-<!-- Row compression for display efficiency while maintaining 43-row integrity -->
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">21</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">WELDING ELECTRODE OVENS (MOTHER &amp; PORTABLE)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">40</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">22</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">DIESEL GENERATOR SETS (CAP: 125 KVA - 500 KVA)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">04</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">23</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">ULTRASONIC TESTING (UT) EQUIPMENT</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">02</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">24</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">MAGNETIC PARTICLE INSPECTION (MPI) KITS</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">SETS</td>
-<td class="py-3 px-6 text-center font-bold">05</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">25</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">HARDNESS TESTER (PORTABLE)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">26</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">COATING THICKNESS GAUGES (ELCOMETER)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">04</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">27</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">FORKLIFT (CAP: 5 TON)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">02</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">28</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">MOBILE CRANE (CAP: 40 TON)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">29</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">TRAILER FOR HEAVY TRANSPORT (CAP: 100 TON)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">02</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">30</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">HYDRO-TEST PUMPS (CAP: 1000 BAR)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">03</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">31</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">WELDING CONSUMABLE STORAGE (CLIMATE CONTROLLED)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">UNIT</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">32</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">MEASURING INSTRUMENTS (VERNIERS, MICROMETERS, CALIBRATED)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">SETS</td>
-<td class="py-3 px-6 text-center font-bold">10</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">33</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">HEAVY DUTY V-BLOCKS &amp; ANGLE PLATES</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">SETS</td>
-<td class="py-3 px-6 text-center font-bold">12</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">34</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">PIPE BENDING MACHINE (HYDRAULIC)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">35</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">GAS MANIFOLD SYSTEM</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">02</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">36</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">THREADING MACHINES</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">04</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">37</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">PNEUMATIC GRINDERS &amp; CHIPPERS</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">25</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">38</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">HEAT TREATMENT FURNACE (CAP: 100 TON)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">39</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">AUTOMATIC BEAM WELDING LINE</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">40</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">SHOT BLASTING CHAMBER (LARGE CAPACITY)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">41</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">PAINT BOOTH (CONTROLLED ENVIRONMENT)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">42</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">WELDING SIMULATORS FOR TRAINING</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
-<td class="py-3 px-6 text-center font-bold">02</td>
-</tr>
-<tr class="table-hairline hover:bg-black/5 transition-colors group">
-<td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">43</td>
-<td class="py-3 px-6 border-r border-black/10 uppercase">TOTAL ASSET MANAGEMENT SOFTWARE (ERP)</td>
-<td class="py-3 px-6 border-r border-black/10 text-center">UNIT</td>
-<td class="py-3 px-6 text-center font-bold">01</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-
-
-
-</main>
-<footer class="bg-near-black text-white pt-24 pb-12">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid md:grid-cols-3 gap-16 mb-24">
-<div>
-<div class="mb-8">
-          <div class="flex items-center mb-2">
-            <img src="assets/doma fabricator logo.png" alt="D" class="h-12 w-auto object-contain brightness-0 invert"/>
-            <span class="text-2xl font-display text-white tracking-wide">oma Fabricators</span>
-          </div>
+                <!-- Phone -->
+                <div class="flex items-center space-x-2">
+                    <svg class="h-4 w-4 sm:h-5 sm:w-5 icon-industrial-red fill-current flex-shrink-0"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.509-8.958 0 0 1.926-1.012 1.932-1.017l-3.535-6.862-.013.006c-4.114 2.012-6.297 10.373-1.05 18.423 5.344 8.196 11.455 10.158 14.542 10.158 1.156 0 2.222-.269 3.218-.967l.012-.01z">
+                        </path>
+                    </svg>
+                    <a class="hover:text-gray-300 transition-colors duration-200 font-semibold whitespace-nowrap text-sm sm:text-base md:text-[0.95rem]"
+                        href="tel:+919826051620">
+                        +91 9826051620
+                    </a>
+                </div>
+            </div>
         </div>
-<p class="text-mid-grey font-light leading-relaxed">
-                        Redefining industrial standards through precision, safety, and 14 years of engineering dedication. Design & Engineering | Equipment's Supply | Project Works.
+    </header>
+    <!-- 1. Navbar -->
+    <nav
+        class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-near-black/10 dark:border-white/10 px-6 lg:px-12 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center cursor-pointer">
+            <img src="assets/doma fabricator logo.png" alt="D" class="brand-logo-nav" />
+            <span class="text-xl font-display text-on-surface tracking-wide hidden sm:inline cus-font">oma
+                Fabricators</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-6 ml-auto lg:mr-8 xl:mr-[18rem] 2xl:mr-[28rem]">
+            <a class="nav-item hover-trigger" href="index.html">Home</a>
+            <a class="nav-item hover-trigger" href="about.html">About Us</a>
+            <a class="nav-item hover-trigger" href="service.html">Services</a>
+            <a class="nav-item hover-trigger" href="industries.html">Industries</a>
+            <a class="nav-item hover-trigger" href="project.html">Projects</a>
+            <!-- <a class="nav-item hover-trigger" href="#resources">Resources</a> -->
+            <a class="nav-item hover-trigger" href="#catalogue">E-Catalogue</a>
+            <a class="nav-item hover-trigger" href="index.html#contact">Contact Us</a>
+        </div>
+        <button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
+            <span class="material-symbols-outlined transition-all duration-300" id="hamburger-icon">menu</span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 bg-[#1A1815]/95 z-[60] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden overflow-y-auto"
+        id="mobile-menu">
+        <div class="flex flex-col min-h-full px-6 py-6">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <div class="flex items-center">
+                        <img src="assets/doma fabricator logo.png" alt="D"
+                            class="brand-logo-mobile brightness-0 invert" />
+                        <span class="text-xl font-display text-white tracking-wide">oma Fabricators</span>
+                    </div>
+                </div>
+                <button class="hover-trigger" id="close-menu-btn" aria-label="Close menu">
+                    <span class="material-symbols-outlined text-white text-2xl">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-2 flex-1">
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="index.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Home</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="about.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">About Us</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="service.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Services</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="industries.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Industries</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="project.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Projects</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="#resources">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Resources</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="#catalogue">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="index.html#contact">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Contact Us</span>
+                </a>
+            </nav>
+            <div class="mt-auto pt-6 border-t border-white/10">
+                <p class="text-white/50 text-xs font-light leading-relaxed">Precision Engineering & Industrial
+                    Fabrication</p>
+                <div class="flex gap-3 mt-3">
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-white text-sm">share</span>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-white text-sm">mail</span>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-white text-sm">call</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center overflow-hidden bg-white">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110"
+                    data-alt="dramatic wide angle shot of a massive industrial steel fabrication workshop" id="hero-bg"
+                    src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg" />
+                <div class="absolute inset-0 heat-haze"></div>
+            </div>
+            <div class="container mx-auto px-8 relative z-10">
+                <div class="max-w-6xl">
+                    <p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8"
+                        id="hero-sub">Est. 2010 — 14 Years of Excellence</p>
+                    <h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-near-black"
+                        id="hero-title">
+                        <div class="reveal-text">OUR <span class="text-primary">LEGACY</span></div>
+                    </h1>
+                    <div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
+                        <div class="draw-line w-24 h-[1px] bg-near-black mt-4 hidden md:block origin-left scale-x-0">
+                        </div>
+                        <p class="max-w-xl text-lg md:text-xl font-light text-dark-grey leading-relaxed opacity-0 translate-y-8"
+                            id="hero-desc">
+                            Doma Fabricators is a professionally managed industrial fabrication company with over 25
+                            years of proven experience. We specialize in piping works, heavy structural fabrication,
+                            equipment erection, industrial maintenance, shed works, and roofing work, delivering
+                            high-quality solutions to meet the diverse needs of industries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Side Metadata Overlay -->
+            <div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-dark-grey/40"
+                id="side-meta">
+                <div class="flex items-center gap-4 reveal-meta">
+                    <span>COORD: 22.6133° N, 75.6823° E</span>
+                    <div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+                </div>
+                <div class="flex items-center gap-4 reveal-meta">
+                    <span>REF_SYS: DOMA_ABOUT_v2.0</span>
+                    <div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+                </div>
+                <div class="flex items-center gap-4 reveal-meta">
+                    <span>TIMESTAMP: 2024.11.04</span>
+                    <div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Competency Section -->
+        <section class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-near-black">
+            <!-- Background Image with Parallax -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style="background-image: url('assets/7-Essential-Safety-Tips-for-Steel-Erection-Projects-2.jpg.jpeg'); background-attachment: fixed;">
+            </div>
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-near-black/80"></div>
+            <!-- Content Container -->
+            <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 w-full">
+                <!-- Header Group -->
+                <div class="mb-16 md:mb-24 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+                    <div class="max-w-2xl">
+                        <div class="flex items-center gap-4 mb-2">
+                            <div class="w-1.5 h-16 bg-primary"></div>
+                            <h1 class="text-7xl md:text-9xl font-industrial leading-none tracking-tight text-white">
+                                OUR COMPETENCY
+                            </h1>
+                        </div>
+                        <p
+                            class="font-technical text-sm md:text-base text-white/60 tracking-[0.2em] uppercase leading-relaxed max-w-xl">
+                            LEVERAGING 14+ YEARS OF INDUSTRIAL EXPERTISE THROUGH RIGOROUS ENGINEERING STANDARDS AND
+                            ADVANCED FABRICATION SOLUTIONS.
+                        </p>
+                    </div>
+                    <!-- Secondary technical detail -->
+                    <div class="hidden md:block text-right">
+                        <span
+                            class="block font-technical text-xs text-white/30 tracking-widest uppercase mb-1">Structural
+                            Framework</span>
+                        <span
+                            class="block font-headline font-bold text-primary text-xl tracking-tighter">DOMA_COMP_v1.0</span>
+                    </div>
+                </div>
+                <!-- Competency Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/10">
+                    <!-- Card 1: Engineering -->
+                    <div
+                        class="group bg-white p-8 min-h-[400px] flex flex-col justify-between border-r border-b border-near-black/10 hover:bg-near-black hover:shadow-2xl transition-all duration-500 ease-in-out">
+                        <div>
+                            <div class="flex justify-between items-start mb-12">
+                                <span class="material-symbols-outlined text-primary text-5xl"
+                                    data-icon="architecture">architecture</span>
+                                <span
+                                    class="font-technical text-[10px] text-near-black/40 group-hover:text-white/60 tracking-widest uppercase border border-near-black/10 group-hover:border-white/20 px-2 py-1 transition-colors duration-500">CODE:
+                                    ENG-01</span>
+                            </div>
+                            <h3
+                                class="font-industrial text-3xl text-near-black group-hover:text-white mb-4 tracking-wide transition-colors duration-500">
+                                ENGINEERING</h3>
+                            <p
+                                class="font-body text-sm text-dark-grey group-hover:text-white/80 leading-relaxed transition-colors duration-500">
+                                Advanced structural analysis and CAD optimization. We utilize parametric modeling to
+                                ensure integrity across large-scale industrial frameworks.
+                            </p>
+                        </div>
+                        <div class="flex justify-end pt-8">
+                            <span
+                                class="material-symbols-outlined text-near-black/20 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </div>
+                    </div>
+                    <!-- Card 2: Construction -->
+                    <div
+                        class="group bg-white p-8 min-h-[400px] flex flex-col justify-between border-r border-b border-near-black/10 hover:bg-near-black hover:shadow-2xl transition-all duration-500 ease-in-out">
+                        <div>
+                            <div class="flex justify-between items-start mb-12">
+                                <span class="material-symbols-outlined text-primary text-5xl"
+                                    data-icon="construction">construction</span>
+                                <span
+                                    class="font-technical text-[10px] text-near-black/40 group-hover:text-white/60 tracking-widest uppercase border border-near-black/10 group-hover:border-white/20 px-2 py-1 transition-colors duration-500">CODE:
+                                    CST-02</span>
+                            </div>
+                            <h3
+                                class="font-industrial text-3xl text-near-black group-hover:text-white mb-4 tracking-wide transition-colors duration-500">
+                                CONSTRUCTION</h3>
+                            <p
+                                class="font-body text-sm text-dark-grey group-hover:text-white/80 leading-relaxed transition-colors duration-500">
+                                On-site implementation and heavy-duty fabrication. Precision lifting operations and
+                                modular assembly for rapid deployment in complex environments.
+                            </p>
+                        </div>
+                        <div class="flex justify-end pt-8">
+                            <span
+                                class="material-symbols-outlined text-near-black/20 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </div>
+                    </div>
+                    <!-- Card 3: Management -->
+                    <div
+                        class="group bg-white p-8 min-h-[400px] flex flex-col justify-between border-r border-b border-near-black/10 hover:bg-near-black hover:shadow-2xl transition-all duration-500 ease-in-out">
+                        <div>
+                            <div class="flex justify-between items-start mb-12">
+                                <span class="material-symbols-outlined text-primary text-5xl"
+                                    data-icon="settings_suggest">settings_suggest</span>
+                                <span
+                                    class="font-technical text-[10px] text-near-black/40 group-hover:text-white/60 tracking-widest uppercase border border-near-black/10 group-hover:border-white/20 px-2 py-1 transition-colors duration-500">CODE:
+                                    MGM-03</span>
+                            </div>
+                            <h3
+                                class="font-industrial text-3xl text-near-black group-hover:text-white mb-4 tracking-wide transition-colors duration-500">
+                                MANAGEMENT</h3>
+                            <p
+                                class="font-body text-sm text-dark-grey group-hover:text-white/80 leading-relaxed transition-colors duration-500">
+                                Full lifecycle oversight utilizing Lean Six Sigma methodologies. Streamlining supply
+                                chains and maintaining stringent project timelines.
+                            </p>
+                        </div>
+                        <div class="flex justify-end pt-8">
+                            <span
+                                class="material-symbols-outlined text-near-black/20 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </div>
+                    </div>
+                    <!-- Card 4: HSE Protocol -->
+                    <div
+                        class="group bg-white p-8 min-h-[400px] flex flex-col justify-between border-b border-near-black/10 hover:bg-near-black hover:shadow-2xl transition-all duration-500 ease-in-out">
+                        <div>
+                            <div class="flex justify-between items-start mb-12">
+                                <span class="material-symbols-outlined text-primary text-5xl"
+                                    data-icon="health_and_safety">health_and_safety</span>
+                                <span
+                                    class="font-technical text-[10px] text-near-black/40 group-hover:text-white/60 tracking-widest uppercase border border-near-black/10 group-hover:border-white/20 px-2 py-1 transition-colors duration-500">CODE:
+                                    HSE-04</span>
+                            </div>
+                            <h3
+                                class="font-industrial text-3xl text-near-black group-hover:text-white mb-4 tracking-wide transition-colors duration-500">
+                                HSE PROTOCOL</h3>
+                            <p
+                                class="font-body text-sm text-dark-grey group-hover:text-white/80 leading-relaxed transition-colors duration-500">
+                                Zero-incident culture adhering to ISO 45001. Rigorous safety auditing and environmental
+                                mitigation strategies for sustainable operations.
+                            </p>
+                        </div>
+                        <div class="flex justify-end pt-8">
+                            <span
+                                class="material-symbols-outlined text-near-black/20 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom decorative line and branding -->
+                <div class="mt-16 flex items-center justify-between">
+                    <div class="flex gap-2">
+                        <div class="w-8 h-[1px] bg-white/20"></div>
+                        <div class="w-2 h-[1px] bg-primary"></div>
+                    </div>
+                    <div class="font-technical text-[10px] text-white/20 tracking-[0.5em] uppercase">
+                        Doma Fabricators © MMXXIV
+                    </div>
+                </div>
+            </div>
+            <!-- Large watermark back -->
+            <div
+                class="absolute bottom-0 right-0 transform translate-x-1/4 translate-y-1/4 opacity-[0.02] pointer-events-none">
+                <span class="font-industrial text-[40rem] leading-none text-white select-none">DOMA</span>
+            </div>
+        </section>
+        <!-- Leadership Section -->
+        <section class="py-32 px-6 md:px-12 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-display text-6xl md:text-8xl text-near-black uppercase mb-16">Leadership</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div>
+                        <h3 class="font-industrial text-4xl text-near-black mb-6">Mr. Varghese K. A.</h3>
+                        <p class="text-primary font-technical font-bold uppercase tracking-widest text-sm mb-8">
+                            Proprietor & Visionary Leader</p>
+                        <p class="text-lg text-dark-grey leading-relaxed">
+                            With 14+ years of experience in the mechanical engineering and fabrication industry, he has
+                            been instrumental in shaping the company's legacy and steering its steady growth. Known for
+                            his deep expertise in mechanical fabrication, precision engineering, and an unwavering
+                            commitment to quality, Varghese K. A. has built strong, lasting client relationships and
+                            driven Doma Fabricators to excel.
+                        </p>
+                    </div>
+                    <div class="space-y-6 text-dark-grey/80">
+                        <p class="leading-relaxed">
+                            Under his leadership, the company has successfully delivered complex projects, merging
+                            traditional values with innovative practices to meet the evolving demands of the industry.
+                        </p>
+                        <p class="leading-relaxed">
+                            His hands-on approach, mentorship of the team, and relentless focus on process improvement
+                            and adoption of new technologies are central to Doma Fabricators' reputation for
+                            reliability, technical excellence, and client satisfaction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Mission & Vision Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center py-32 px-6 lg:px-12 bg-white"
+            id="mission-vision-section">
+            <div class="max-w-7xl mx-auto w-full">
+                <!-- Section Header -->
+                <div class="w-full mb-16 text-center lg:text-left overflow-hidden">
+                    <h1 class="font-display text-6xl md:text-8xl lg:text-9xl text-near-black uppercase tracking-tighter"
+                        id="main-heading">
+                        Our Mission & Vision
+                    </h1>
+                </div>
+                <!-- Cards Container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+                    <!-- Card 1: Mission -->
+                    <article
+                        class="mission-card bg-white border-l-4 border-primary rounded-lg shadow-lg p-8 flex flex-col h-full stagger-reveal"
+                        data-purpose="mission-card">
+                        <div class="mb-6">
+                            <h2 class="text-2xl font-bold text-near-black uppercase mb-4 leading-tight">Our Commitment
+                                to Excellence</h2>
+                            <p class="text-dark-grey leading-relaxed text-sm lg:text-base">
+                                To Deliver High-Quality Engineering Solutions with Innovation, Reliability, and Safety,
+                                Exceeding Client Expectations across Diverse Industries.
+                            </p>
+                        </div>
+                        <div class="rounded-lg flex-grow mb-8 aspect-video overflow-hidden relative">
+                            <img alt="Industrial fabrication processes" class="w-full h-full object-cover"
+                                src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none">
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-near-black/10">
+                            <a class="inline-flex items-center text-primary font-bold hover:gap-2 transition-all duration-300"
+                                href="service.html">
+                                EXPLORE CAPABILITIES <span class="ml-2">→</span>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Card 2: Vision -->
+                    <article
+                        class="mission-card bg-white border border-near-black/10 rounded-lg shadow-lg p-8 flex flex-col h-full stagger-reveal"
+                        data-purpose="vision-card">
+                        <div class="mb-6">
+                            <h2 class="text-2xl font-bold text-near-black uppercase mb-4 leading-tight">Shaping the
+                                Future of Engineering</h2>
+                            <p class="text-dark-grey leading-relaxed text-sm lg:text-base">
+                                To be a Global Leader in Engineering Services, Driving Progress and Excellence through
+                                Sustainable Practices and Cutting-Edge Technologies.
+                            </p>
+                        </div>
+                        <div class="rounded-lg flex-grow mb-8 aspect-video overflow-hidden relative">
+                            <img alt="Steel fabrication and erection" class="w-full h-full object-cover"
+                                src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none">
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-near-black/10">
+                            <a class="inline-flex items-center text-primary font-bold hover:gap-2 transition-all duration-300"
+                                href="project.html">
+                                VIEW FUTURE ROADMAP <span class="ml-2">→</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- History Timeline Section -->
+        <section class="relative min-h-screen py-32 px-4 md:px-0 bg-light-grey" id="history-timeline-section">
+            <!-- Central Progress Line -->
+            <div class="timeline-path-container" id="timeline-path-container">
+                <div class="timeline-progress-line" id="timeline-progress-line"></div>
+            </div>
+            <div class="max-w-6xl mx-auto relative">
+                <!-- 2025 Milestone -->
+                <section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-2025">
+                    <div class="hidden md:block w-1/2 text-right pr-16">
+                        <span class="font-display text-7xl text-domaRed leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2025</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2025</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                A new Workshop Facility for Pressure Vessel Fabrication was set up, Enabling the Company
+                                to further strengthen its Expertise in Manufacturing and Delivering High-Quality
+                                Pressure Vessels for Critical Applications.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 2024 Milestone -->
+                <section class="flex flex-col md:flex-row-reverse items-center mb-48 relative"
+                    data-purpose="milestone-2024">
+                    <div class="hidden md:block w-1/2 text-left pl-16">
+                        <span class="font-display text-7xl leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2024</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2024</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl"
+                            style="border-left:0; border-right: 4px solid #C0310A;">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                To meet Growing Demand and Support continued Expansion, Jobby Engineers expanded its
+                                Fabrication Workshop in Dahej, Increasing Production Capabilities for Large-Scale
+                                Projects.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 2020 Milestone -->
+                <section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-2020">
+                    <div class="hidden md:block w-1/2 text-right pr-16">
+                        <span class="font-display text-7xl leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2020</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2020</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                Jobby Engineers launched the Tankages & Pressure Vessel Division, Specializing in the
+                                Design, Fabrication, and Installation of Pressure Vessels and Tankage Systems for
+                                various Industries.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 2017 Milestone -->
+                <section class="flex flex-col md:flex-row-reverse items-center mb-48 relative"
+                    data-purpose="milestone-2017">
+                    <div class="hidden md:block w-1/2 text-left pl-16">
+                        <span class="font-display text-7xl leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2017</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2017</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl"
+                            style="border-left:0; border-right: 4px solid #C0310A;">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                The Company opened its second Fabrication Unit in Dahej, Gujarat, Further Enhancing its
+                                Production Capacity to cater to its Expanding Client Base and Larger Projects.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 2013 Milestone -->
+                <section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-2013">
+                    <div class="hidden md:block w-1/2 text-right pr-16">
+                        <span class="font-display text-7xl leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2013</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2013</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                Jobby Engineers established its First Fabrication Unit in Ankleshwar, Gujarat, to meet
+                                the Growing demand for Fabricated Components and Services. This Facility helped
+                                Strengthen their Manufacturing Capabilities.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 2006 Milestone -->
+                <section class="flex flex-col md:flex-row-reverse items-center mb-48 relative"
+                    data-purpose="milestone-2006">
+                    <div class="hidden md:block w-1/2 text-left pl-16">
+                        <span class="font-display text-7xl leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2006</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2006</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl"
+                            style="border-left:0; border-right: 4px solid #C0310A;">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                The Company Expanded into the Refinery Sector, Focusing on Mechanical Works. This Step
+                                Broadened its Expertise in Handling Large-Scale, High-Quality Industrial Projects within
+                                the Energy Sector.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 2004 Milestone -->
+                <section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-2004">
+                    <div class="hidden md:block w-1/2 text-right pr-16">
+                        <span class="font-display text-7xl leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2004</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">2004</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                Jobby Engineers entered the Nuclear Piping and Mechanical Works Sector, Marking a
+                                Significant Milestone in its Diversification and Capability to handle Complex and
+                                Specialized Projects.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 1997 Milestone -->
+                <section class="flex flex-col md:flex-row-reverse items-center mb-48 relative"
+                    data-purpose="milestone-1997">
+                    <div class="hidden md:block w-1/2 text-left pl-16">
+                        <span class="font-display text-7xl leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1997</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1997</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl"
+                            style="border-left:0; border-right: 4px solid #C0310A;">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                Jobby Enterprise was renamed to Jobby Engineers Pvt. Ltd., Reflecting its Growth and
+                                Expansion into a more Diversified Range of Engineering Services.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 1987 Milestone -->
+                <section class="flex flex-col md:flex-row items-center mb-48 relative" data-purpose="milestone-1987">
+                    <div class="hidden md:block w-1/2 text-right pr-16">
+                        <span class="font-display text-7xl leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1987</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pl-0 md:pl-16 mt-8 md:mt-0">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1987</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                The Company was taken over by Mr. Benny John Nangani and Mr. Benno John Nangani, the
+                                Sons of the Late Founder, Who Continued to Expand and Evolve the Company's Presence in
+                                the Industry.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 1970 Milestone -->
+                <section class="flex flex-col md:flex-row-reverse items-center mb-12 relative"
+                    data-purpose="milestone-1970">
+                    <div class="hidden md:block w-1/2 text-left pl-16">
+                        <span class="font-display text-7xl leading-none milestone-year"
+                            style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1970</span>
+                    </div>
+                    <div class="timeline-node" style="top: 50%;">
+                        <div class="node-pulse"></div>
+                        <svg class="w-6 h-6" style="color: #C0310A;" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div class="w-full md:w-1/2 pr-0 md:pr-16 mt-8 md:mt-0 text-right">
+                        <div class="md:hidden mb-4"><span class="font-display text-5xl"
+                                style="font-family: 'Bebas Neue', cursive; color: #C0310A;">1970</span></div>
+                        <div class="milestone-card bg-white p-8 shadow-xl"
+                            style="border-left:0; border-right: 4px solid #C0310A;">
+                            <p class="text-lg leading-relaxed text-dark-grey">
+                                Jobby Enterprise was Founded by the Late Mr. N.G. John with a Vision to provide
+                                Innovative and Reliable Engineering Services. The Company began Operations with a strong
+                                focus on meeting the Highest Standards of Excellence and Project Completion Timelines,
+                                Catering to Reputed Clients in various Sectors.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Equipment & Machinery Inventory Section -->
+        <section class="relative py-32 px-6 md:px-12 bg-white" id="equipment-inventory-section">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
+                    <div class="max-w-2xl">
+                        <span class="technical-label">DATASET 01 // ASSET INVENTORY</span>
+                        <h2 class="text-4xl font-headline font-bold mt-2 uppercase tracking-tight">Equipment &amp;
+                            Machinery Inventory</h2>
+                    </div>
+                    <div class="hidden md:block w-32 h-[1px]" style="background-color: #C0310A;"></div>
+                </div>
+                <!-- Inventory Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-near-black text-white technical-label text-[0.55rem]">
+                                <th class="py-4 px-6 border-r border-white/10">SR NO.</th>
+                                <th class="py-4 px-6 border-r border-white/10">MATERIAL DESCRIPTION &amp; SPECIFICATIONS
+                                </th>
+                                <th class="py-4 px-6 border-r border-white/10 text-center">UNIT</th>
+                                <th class="py-4 px-6 text-center">QTY</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs font-body font-medium">
+                            <!-- Row mapping based on image data -->
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">01</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">CNC PLATE CUTTING MACHINE
+                                    (OXY-FUEL &amp; PLASMA)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">02</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">02</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">AUTOMATIC SUBMERGED ARC WELDING
+                                    (SAW) COLUMN &amp; BOOM</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">03</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">03</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">HYDRAULIC PLATE BENDING MACHINE
+                                    (CAP: 100MM X 3000MM)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">04</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">HYDRAULIC PLATE SHEARING
+                                    MACHINE (CAP: 25MM X 4000MM)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">05</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">OVERHEAD EOT CRANES (CAP: 50
+                                    TON)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">04</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">06</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">OVERHEAD EOT CRANES (CAP: 20
+                                    TON)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">08</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">07</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">GOLIATH CRANE (CAP: 100 TON)
+                                </td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">02</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">08</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">MIG WELDING MACHINES (CAP: 400A
+                                    - 600A)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">45</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">09</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">TIG WELDING MACHINES (CAP:
+                                    300A)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">12</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">10</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">ROTATOR SETS (CAP: 10 TON - 200
+                                    TON)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">SETS</td>
+                                <td class="py-3 px-6 text-center font-bold">22</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">11</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">SAND BLASTING UNIT (COMPLETE
+                                    SYSTEM)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">04</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">12</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">AIRLESS SPRAY PAINTING MACHINES
+                                </td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">06</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">13</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">RADIAL DRILLING MACHINE (CAP:
+                                    50MM - 100MM)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">05</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">14</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">LATHE MACHINE (HEAVY DUTY)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">03</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">15</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">MAGNETIC BASE DRILLING MACHINES
+                                </td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">15</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">16</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">HYDRAULIC PRESS (CAP: 300 TON)
+                                </td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">17</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">PLASMA CUTTING TORCH (MANUAL)
+                                </td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">08</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">18</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">PUG CUTTING MACHINES</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">20</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">19</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">AIR COMPRESSORS (CAP: 300 CFM -
+                                    600 CFM)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">06</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">20</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">GRINDING MACHINES (7" &amp; 4")
+                                </td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">60</td>
+                            </tr>
+                            <!-- Row compression for display efficiency while maintaining 43-row integrity -->
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">21</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">WELDING ELECTRODE OVENS (MOTHER
+                                    &amp; PORTABLE)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">40</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">22</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">DIESEL GENERATOR SETS (CAP: 125
+                                    KVA - 500 KVA)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">04</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">23</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">ULTRASONIC TESTING (UT)
+                                    EQUIPMENT</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">02</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">24</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">MAGNETIC PARTICLE INSPECTION
+                                    (MPI) KITS</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">SETS</td>
+                                <td class="py-3 px-6 text-center font-bold">05</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">25</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">HARDNESS TESTER (PORTABLE)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">26</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">COATING THICKNESS GAUGES
+                                    (ELCOMETER)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">04</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">27</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">FORKLIFT (CAP: 5 TON)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">02</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">28</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">MOBILE CRANE (CAP: 40 TON)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">29</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">TRAILER FOR HEAVY TRANSPORT
+                                    (CAP: 100 TON)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">02</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">30</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">HYDRO-TEST PUMPS (CAP: 1000
+                                    BAR)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">03</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">31</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">WELDING CONSUMABLE STORAGE
+                                    (CLIMATE CONTROLLED)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">UNIT</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">32</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">MEASURING INSTRUMENTS
+                                    (VERNIERS, MICROMETERS, CALIBRATED)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">SETS</td>
+                                <td class="py-3 px-6 text-center font-bold">10</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">33</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">HEAVY DUTY V-BLOCKS &amp; ANGLE
+                                    PLATES</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">SETS</td>
+                                <td class="py-3 px-6 text-center font-bold">12</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">34</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">PIPE BENDING MACHINE
+                                    (HYDRAULIC)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">35</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">GAS MANIFOLD SYSTEM</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">02</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">36</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">THREADING MACHINES</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">04</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">37</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">PNEUMATIC GRINDERS &amp;
+                                    CHIPPERS</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">25</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">38</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">HEAT TREATMENT FURNACE (CAP:
+                                    100 TON)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">39</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">AUTOMATIC BEAM WELDING LINE
+                                </td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">40</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">SHOT BLASTING CHAMBER (LARGE
+                                    CAPACITY)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">41</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">PAINT BOOTH (CONTROLLED
+                                    ENVIRONMENT)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">42</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">WELDING SIMULATORS FOR TRAINING
+                                </td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">NOS</td>
+                                <td class="py-3 px-6 text-center font-bold">02</td>
+                            </tr>
+                            <tr class="table-hairline hover:bg-black/5 transition-colors group">
+                                <td class="py-3 px-6 border-r border-black/10" style="color: #C0310A;">43</td>
+                                <td class="py-3 px-6 border-r border-black/10 uppercase">TOTAL ASSET MANAGEMENT SOFTWARE
+                                    (ERP)</td>
+                                <td class="py-3 px-6 border-r border-black/10 text-center">UNIT</td>
+                                <td class="py-3 px-6 text-center font-bold">01</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+    <footer class="bg-near-black text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-16 mb-24">
+                <div>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-2">
+                            <img src="assets/doma fabricator logo.png" alt="D"
+                                class="brand-logo-footer brightness-0 invert" />
+                            <span class="text-2xl font-display text-white tracking-wide">oma Fabricators</span>
+                        </div>
+                    </div>
+                    <p class="text-mid-grey font-light leading-relaxed">
+                        Redefining industrial standards through precision, safety, and 14 years of engineering
+                        dedication. Design & Engineering | Equipment's Supply | Project Works.
                     </p>
-</div>
-<div>
-<h5 class="text-tiny-caps font-bold mb-8 text-primary">Quick Navigation</h5>
-<ul class="space-y-4 text-mid-grey font-light">
-<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#services">Our Services</a></li>
-<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#safety">Safety Standards</a></li>
-<li><a class="hover:text-white transition-colors hover-trigger" href="project.html">Projects</a></li>
-<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#contact">Contact Us</a></li>
-</ul>
-</div>
-<div>
-<h5 class="text-tiny-caps font-bold mb-8 text-primary">Contact Information</h5>
-<ul class="space-y-4 text-mid-grey font-light">
-<li>Plot No. 1J, Kheda, Sagorekutti</li>
-<li>Pithampur, Dhar (M.P) 454 775</li>
-<li>+91 9826051620</li>
-<li>+91 9098324240</li>
-<li>+91 9111887856</li>
-<li>domafabricators@gmail.com</li>
-</ul>
-</div>
-</div>
-<div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-dark-grey">
-<p>© 2024 Doma Fabricators. All Rights Reserved.</p>
-<p>Designed by Pixora</p>
-</div>
-</div>
-</footer>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-        // Hamburger Menu Functionality
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        let isMenuOpen = false;
+                </div>
+                <div>
+                    <h5 class="text-tiny-caps font-bold mb-8 text-primary">Quick Navigation</h5>
+                    <ul class="space-y-4 text-mid-grey font-light">
+                        <li><a class="hover:text-white transition-colors hover-trigger" href="index.html#services">Our
+                                Services</a></li>
+                        <li><a class="hover:text-white transition-colors hover-trigger" href="index.html#safety">Safety
+                                Standards</a></li>
+                        <li><a class="hover:text-white transition-colors hover-trigger" href="project.html">Projects</a>
+                        </li>
+                        <li><a class="hover:text-white transition-colors hover-trigger"
+                                href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-tiny-caps font-bold mb-8 text-primary">Contact Information</h5>
+                    <ul class="space-y-4 text-mid-grey font-light">
+                        <li>Plot No. 1J, Kheda, Sagorekutti</li>
+                        <li>Pithampur, Dhar (M.P) 454 775</li>
+                        <li>+91 9826051620</li>
+                        <li>+91 9098324240</li>
+                        <li>+91 9111887856</li>
+                        <li>domafabricators@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-dark-grey">
+                <p>© 2024 Doma Fabricators. All Rights Reserved.</p>
+                <p>Designed by Pixora</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Hamburger Menu Functionality
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            let isMenuOpen = false;
 
-        if (hamburgerBtn) {
-            hamburgerBtn.addEventListener('click', () => {
-                if (isMenuOpen) {
-                    closeMenu();
-                } else {
-                    isMenuOpen = true;
-                    mobileMenu.classList.remove('translate-x-full');
-                    hamburgerIcon.textContent = 'close';
-                    document.body.style.overflow = 'hidden';
-                    
-                    mobileLinks.forEach((link, index) => {
-                        setTimeout(() => {
-                            link.style.opacity = '1';
-                            link.querySelector('span').style.transform = 'translateX(0)';
-                        }, 100 + (index * 50));
+            if (hamburgerBtn) {
+                hamburgerBtn.addEventListener('click', () => {
+                    if (isMenuOpen) {
+                        closeMenu();
+                    } else {
+                        isMenuOpen = true;
+                        mobileMenu.classList.remove('translate-x-full');
+                        hamburgerIcon.textContent = 'close';
+                        document.body.style.overflow = 'hidden';
+
+                        mobileLinks.forEach((link, index) => {
+                            setTimeout(() => {
+                                link.style.opacity = '1';
+                                link.querySelector('span').style.transform = 'translateX(0)';
+                            }, 100 + (index * 50));
+                        });
+                    }
+                });
+
+                const closeMenu = () => {
+                    isMenuOpen = false;
+                    mobileMenu.classList.add('translate-x-full');
+                    hamburgerIcon.textContent = 'menu';
+                    document.body.style.overflow = '';
+                    mobileLinks.forEach(link => {
+                        link.style.opacity = '0';
+                        link.querySelector('span').style.transform = 'translateX(-20px)';
                     });
-                }
-            });
+                };
 
-            const closeMenu = () => {
-                isMenuOpen = false;
-                mobileMenu.classList.add('translate-x-full');
-                hamburgerIcon.textContent = 'menu';
-                document.body.style.overflow = '';
+                closeMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeMenu();
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+
+                mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === mobileMenu) closeMenu();
+                });
+
                 mobileLinks.forEach(link => {
                     link.style.opacity = '0';
                     link.querySelector('span').style.transform = 'translateX(-20px)';
+                    link.querySelector('span').style.transition = 'transform 0.3s ease-out';
                 });
-            };
-
-            closeMenuBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                closeMenu();
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', closeMenu);
-            });
-
-            mobileMenu.addEventListener('click', (e) => {
-                if (e.target === mobileMenu) closeMenu();
-            });
-
-            mobileLinks.forEach(link => {
-                link.style.opacity = '0';
-                link.querySelector('span').style.transform = 'translateX(-20px)';
-                link.querySelector('span').style.transition = 'transform 0.3s ease-out';
-            });
-        }
-});
-</script>
-<script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Split Text for Hero
-    document.querySelectorAll('.reveal-text').forEach(text => {
-        const content = text.innerHTML;
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = content;
-        const plainText = tempDiv.textContent;
-        text.innerHTML = '';
-        [...plainText].forEach(char => {
-            const span = document.createElement('span');
-            span.textContent = char === ' ' ? '\u00A0' : char;
-            span.className = 'char opacity-0 translate-y-full';
-            if (content.includes('text-primary-container') && char !== ' ') {
-                span.classList.add('text-primary-container');
             }
-            text.appendChild(span);
         });
-    });
+    </script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
 
-    // Hero Reveal Animation
-    const heroTl = gsap.timeline();
-    if (document.getElementById('hero-bg')) {
-        heroTl.to('#hero-bg', { scale: 1, opacity: 0.3, duration: 2, ease: "power2.out" });
-    }
-    heroTl.to('#hero-sub', { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=1.5")
-          .to('.reveal-text .char', { 
-              opacity: 1, 
-              y: 0, 
-              duration: 0.8, 
-              stagger: 0.02, 
-              ease: "back.out(1.7)" 
-          }, "-=0.8")
-          .to('#hero-desc', { opacity: 1, y: 0, duration: 1 }, "-=0.5")
-          .to('.draw-line', { scaleX: 1, duration: 1.5, stagger: 0.2, ease: "expo.inOut" }, "-=1");
-
-    // Side Metadata Reveal
-    gsap.utils.toArray('.reveal-meta').forEach((meta, i) => {
-        gsap.to(meta, {
-            opacity: 1,
-            duration: 0.8,
-            delay: 2 + (i * 0.15),
-            ease: "power2.out"
-        });
-    });
-
-    // 1. 3D Tilt Interaction - Disabled on mobile for performance
-    const isMobileDevice = window.innerWidth <= 768;
-    
-    if (!isMobileDevice) {
-        document.querySelectorAll('.tilt-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                gsap.to(card, {
-                    rotateX: rotateX,
-                    rotateY: rotateY,
-                    scale: 1.05,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            });
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, {
-                    rotateX: 0,
-                    rotateY: 0,
-                    scale: 1,
-                    duration: 0.5,
-                    ease: 'elastic.out(1, 0.3)'
-                });
-            });
-        });
-    }
-
-    // 2. Kinetic Path-Drawing Timeline
-    gsap.to('#timeline-path', {
-        strokeDashoffset: 0,
-        scrollTrigger: {
-            trigger: '.timeline-item',
-            start: 'top center',
-            endTrigger: '.timeline-item:last-child',
-            end: 'bottom center',
-            scrub: 1
-        }
-    });
-
-    // Timeline Glitch into view
-    document.querySelectorAll('.timeline-item').forEach(item => {
-        gsap.from(item.querySelector('.glitch-target'), {
-            opacity: 0,
-            x: -20,
-            duration: 0.5,
-            scrollTrigger: {
-                trigger: item,
-                start: 'top 80%',
-                onEnter: () => {
-                    item.querySelector('.glitch-target').classList.add('glitch-text');
-                    setTimeout(() => item.querySelector('.glitch-target').classList.remove('glitch-text'), 1000);
+        // Split Text for Hero
+        document.querySelectorAll('.reveal-text').forEach(text => {
+            const content = text.innerHTML;
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = content;
+            const plainText = tempDiv.textContent;
+            text.innerHTML = '';
+            [...plainText].forEach(char => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char;
+                span.className = 'char opacity-0 translate-y-full';
+                if (content.includes('text-primary-container') && char !== ' ') {
+                    span.classList.add('text-primary-container');
                 }
-            }
+                text.appendChild(span);
+            });
         });
-        gsap.from(item.querySelector('.timeline-year'), {
-            opacity: 0,
-            scale: 0.8,
-            duration: 1,
+
+        // Hero Reveal Animation
+        const heroTl = gsap.timeline();
+        if (document.getElementById('hero-bg')) {
+            heroTl.to('#hero-bg', { scale: 1, opacity: 0.3, duration: 2, ease: "power2.out" });
+        }
+        heroTl.to('#hero-sub', { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=1.5")
+            .to('.reveal-text .char', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.02,
+                ease: "back.out(1.7)"
+            }, "-=0.8")
+            .to('#hero-desc', { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+            .to('.draw-line', { scaleX: 1, duration: 1.5, stagger: 0.2, ease: "expo.inOut" }, "-=1");
+
+        // Side Metadata Reveal
+        gsap.utils.toArray('.reveal-meta').forEach((meta, i) => {
+            gsap.to(meta, {
+                opacity: 1,
+                duration: 0.8,
+                delay: 2 + (i * 0.15),
+                ease: "power2.out"
+            });
+        });
+
+        // 1. 3D Tilt Interaction - Disabled on mobile for performance
+        const isMobileDevice = window.innerWidth <= 768;
+
+        if (!isMobileDevice) {
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    gsap.to(card, {
+                        rotateX: rotateX,
+                        rotateY: rotateY,
+                        scale: 1.05,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        rotateX: 0,
+                        rotateY: 0,
+                        scale: 1,
+                        duration: 0.5,
+                        ease: 'elastic.out(1, 0.3)'
+                    });
+                });
+            });
+        }
+
+        // 2. Kinetic Path-Drawing Timeline
+        gsap.to('#timeline-path', {
+            strokeDashoffset: 0,
             scrollTrigger: {
-                trigger: item,
-                start: 'top 80%'
+                trigger: '.timeline-item',
+                start: 'top center',
+                endTrigger: '.timeline-item:last-child',
+                end: 'bottom center',
+                scrub: 1
             }
         });
-    });
 
-    // 3. Deep-Map Parallax Workshop
-    gsap.to('#parallax-bg', {
-        yPercent: -20,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '#pithampur-core',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-        }
-    });
-
-    gsap.to('#parallax-title', {
-        y: 100,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '#pithampur-core',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-        }
-    });
-
-    // 7. History Timeline Animations
-    // 7a. Timeline Path Drawing Effect
-    gsap.to('#timeline-progress-line', {
-        height: '100%',
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '#history-timeline-section',
-            start: 'top center',
-            end: 'bottom center',
-            scrub: true
-        }
-    });
-
-    // 7b. Milestone Card Reveal
-    const milestoneCards = document.querySelectorAll('.milestone-card');
-    milestoneCards.forEach((card) => {
-        ScrollTrigger.create({
-            trigger: card,
-            start: 'top 85%',
-            onEnter: () => card.classList.add('revealed'),
-            once: true
+        // Timeline Glitch into view
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            gsap.from(item.querySelector('.glitch-target'), {
+                opacity: 0,
+                x: -20,
+                duration: 0.5,
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 80%',
+                    onEnter: () => {
+                        item.querySelector('.glitch-target').classList.add('glitch-text');
+                        setTimeout(() => item.querySelector('.glitch-target').classList.remove('glitch-text'), 1000);
+                    }
+                }
+            });
+            gsap.from(item.querySelector('.timeline-year'), {
+                opacity: 0,
+                scale: 0.8,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 80%'
+                }
+            });
         });
-    });
 
-    // 7c. Year Text Parallax/Reveal
-    const milestoneYears = document.querySelectorAll('.milestone-year');
-    milestoneYears.forEach((year) => {
-        gsap.from(year, {
+        // 3. Deep-Map Parallax Workshop
+        gsap.to('#parallax-bg', {
+            yPercent: -20,
+            ease: 'none',
             scrollTrigger: {
-                trigger: year,
-                start: 'top 90%',
-                toggleActions: 'play none none reverse'
-            },
-            opacity: 0,
-            x: year.parentElement.classList.contains('text-right') ? -30 : 30,
-            duration: 1,
-            ease: 'power3.out'
-        });
-    });
-
-    // 7d. Node Activation (Color change as line passes)
-    const timelineNodes = document.querySelectorAll('.timeline-node');
-    timelineNodes.forEach((node) => {
-        ScrollTrigger.create({
-            trigger: node,
-            start: 'top center',
-            onEnter: () => {
-                gsap.to(node, { backgroundColor: '#C0310A', duration: 0.3 });
-                gsap.to(node.querySelector('svg'), { color: '#F7F5F2', duration: 0.3 });
-            },
-            onLeaveBack: () => {
-                gsap.to(node, { backgroundColor: '#F7F5F2', duration: 0.3 });
-                gsap.to(node.querySelector('svg'), { color: '#C0310A', duration: 0.3 });
+                trigger: '#pithampur-core',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
             }
         });
-    });
+
+        gsap.to('#parallax-title', {
+            y: 100,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#pithampur-core',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        // 7. History Timeline Animations
+        // 7a. Timeline Path Drawing Effect
+        gsap.to('#timeline-progress-line', {
+            height: '100%',
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#history-timeline-section',
+                start: 'top center',
+                end: 'bottom center',
+                scrub: true
+            }
+        });
+
+        // 7b. Milestone Card Reveal
+        const milestoneCards = document.querySelectorAll('.milestone-card');
+        milestoneCards.forEach((card) => {
+            ScrollTrigger.create({
+                trigger: card,
+                start: 'top 85%',
+                onEnter: () => card.classList.add('revealed'),
+                once: true
+            });
+        });
+
+        // 7c. Year Text Parallax/Reveal
+        const milestoneYears = document.querySelectorAll('.milestone-year');
+        milestoneYears.forEach((year) => {
+            gsap.from(year, {
+                scrollTrigger: {
+                    trigger: year,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                x: year.parentElement.classList.contains('text-right') ? -30 : 30,
+                duration: 1,
+                ease: 'power3.out'
+            });
+        });
+
+        // 7d. Node Activation (Color change as line passes)
+        const timelineNodes = document.querySelectorAll('.timeline-node');
+        timelineNodes.forEach((node) => {
+            ScrollTrigger.create({
+                trigger: node,
+                start: 'top center',
+                onEnter: () => {
+                    gsap.to(node, { backgroundColor: '#C0310A', duration: 0.3 });
+                    gsap.to(node.querySelector('svg'), { color: '#F7F5F2', duration: 0.3 });
+                },
+                onLeaveBack: () => {
+                    gsap.to(node, { backgroundColor: '#F7F5F2', duration: 0.3 });
+                    gsap.to(node.querySelector('svg'), { color: '#C0310A', duration: 0.3 });
+                }
+            });
+        });
 
 
-</script>
+    </script>
 
-<!-- Smooth Scroll Performance (Browser Native + Minimal Enhancements) -->
-<!-- Handled via scroll-smooth class on html -->
-<script src="pages/js/about.js"></script>
-</body></html>
+    <!-- Smooth Scroll Performance (Browser Native + Minimal Enhancements) -->
+    <!-- Handled via scroll-smooth class on html -->
+    <script src="pages/js/about.js"></script>
+    <script src="pages/js/navbar.js" defer></script>
+</body>
+
+</html>

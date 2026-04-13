@@ -1,160 +1,181 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=IBM+Plex+Sans:wght@300;400;600;700&amp;family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-<link rel="stylesheet" href="pages/css/index.css"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=IBM+Plex+Sans:wght@300;400;600;700&amp;family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <link rel="stylesheet" href="pages/css/index.css" />
+    <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              colors: {
-                "tertiary-fixed": "#ffddb2",
-                "secondary-fixed": "#cfe5ff",
-                "surface-container-highest": "#e8e1dc",
-                "primary-container": "#c0310a",
-                "on-error": "#ffffff",
-                "tertiary": "#6c4700",
-                "surface": "#fff8f3",
-                "on-error-container": "#93000a",
-                "surface-variant": "#e8e1dc",
-                "surface-container": "#f3ede7",
-                "secondary-fixed-dim": "#9bcbfc",
-                "primary-fixed": "#ffdad2",
-                "on-secondary-fixed-variant": "#0f4a74",
-                "secondary-container": "#9eceff",
-                "surface-container-lowest": "#ffffff",
-                "secondary": "#2f628d",
-                "inverse-primary": "#ffb4a2",
-                "outline-variant": "#e3beb6",
-                "on-tertiary-fixed": "#291800",
-                "primary-fixed-dim": "#ffb4a2",
-                "on-primary-fixed-variant": "#8a1c00",
-                "tertiary-fixed-dim": "#ffb94c",
-                "surface-container-low": "#f9f2ed",
-                "outline": "#8f7069",
-                "on-tertiary": "#ffffff",
-                "primary": "#982000",
-                "background": "#fff8f3",
-                "tertiary-container": "#8c5d00",
-                "on-secondary-fixed": "#001d33",
-                "on-secondary-container": "#235882",
-                "inverse-on-surface": "#f6f0ea",
-                "on-surface": "#1d1b18",
-                "error-container": "#ffdad6",
-                "surface-container-high": "#ede7e2",
-                "on-primary-container": "#ffdfd7",
-                "surface-dim": "#dfd9d4",
-                "on-surface-variant": "#5a413a",
-                "error": "#ba1a1a",
-                "inverse-surface": "#33302d",
-                "surface-tint": "#b42801",
-                "on-tertiary-container": "#ffe1bb",
-                "on-primary": "#ffffff",
-                "on-background": "#1d1b18",
-                "on-primary-fixed": "#3c0700",
-                "surface-bright": "#fff8f3",
-                "on-tertiary-fixed-variant": "#624000",
-                "on-secondary": "#ffffff"
-              },
-              fontFamily: {
-                "headline": ["Bebas Neue", "sans-serif"],
-                "body": ["IBM Plex Sans", "sans-serif"],
-                "label": ["IBM Plex Sans", "sans-serif"],
-                "display": ["Bebas Neue", "sans-serif"],
-                "serif-italic": ["Cormorant Garamond", "serif"],
-                "mono": ["IBM Plex Mono", "monospace"]
-              },
-              borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#ffddb2",
+                        "secondary-fixed": "#cfe5ff",
+                        "surface-container-highest": "#e8e1dc",
+                        "primary-container": "#c0310a",
+                        "on-error": "#ffffff",
+                        "tertiary": "#6c4700",
+                        "surface": "#fff8f3",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e8e1dc",
+                        "surface-container": "#f3ede7",
+                        "secondary-fixed-dim": "#9bcbfc",
+                        "primary-fixed": "#ffdad2",
+                        "on-secondary-fixed-variant": "#0f4a74",
+                        "secondary-container": "#9eceff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#2f628d",
+                        "inverse-primary": "#ffb4a2",
+                        "outline-variant": "#e3beb6",
+                        "on-tertiary-fixed": "#291800",
+                        "primary-fixed-dim": "#ffb4a2",
+                        "on-primary-fixed-variant": "#8a1c00",
+                        "tertiary-fixed-dim": "#ffb94c",
+                        "surface-container-low": "#f9f2ed",
+                        "outline": "#8f7069",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#982000",
+                        "background": "#fff8f3",
+                        "tertiary-container": "#8c5d00",
+                        "on-secondary-fixed": "#001d33",
+                        "on-secondary-container": "#235882",
+                        "inverse-on-surface": "#f6f0ea",
+                        "on-surface": "#1d1b18",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ede7e2",
+                        "on-primary-container": "#ffdfd7",
+                        "surface-dim": "#dfd9d4",
+                        "on-surface-variant": "#5a413a",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#33302d",
+                        "surface-tint": "#b42801",
+                        "on-tertiary-container": "#ffe1bb",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1d1b18",
+                        "on-primary-fixed": "#3c0700",
+                        "surface-bright": "#fff8f3",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "on-secondary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Bebas Neue", "sans-serif"],
+                        "body": ["IBM Plex Sans", "sans-serif"],
+                        "label": ["IBM Plex Sans", "sans-serif"],
+                        "display": ["Bebas Neue", "sans-serif"],
+                        "serif-italic": ["Cormorant Garamond", "serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
             },
-          },
         }
     </script>
-<style>
+    <style>
         /* Fluid Typography for Large Screens */
         :root {
             --hero-heading-size: clamp(2.5rem, 5vw + 1rem, 6rem);
             --section-heading-size: clamp(2rem, 4vw + 0.5rem, 4.5rem);
         }
-        
+
         .hero-heading {
             font-size: var(--hero-heading-size);
             line-height: 1.1;
             letter-spacing: -0.02em;
         }
-        
+
         /* Large Desktop Optimizations */
         @media (min-width: 1280px) {
+
             .container,
             .max-w-7xl {
                 max-width: 1400px !important;
             }
-            
+
             .px-8 {
                 padding-left: 4rem !important;
                 padding-right: 4rem !important;
             }
         }
-        
+
         @media (min-width: 1536px) {
             body {
                 font-size: 18px;
             }
-            
+
             .container {
                 max-width: 1600px !important;
             }
-            
+
             #hero-title {
                 font-size: clamp(6rem, 10vw, 10rem) !important;
             }
-            
+
             section {
                 padding-top: clamp(4rem, 8vw, 8rem) !important;
                 padding-bottom: clamp(4rem, 8vw, 8rem) !important;
             }
         }
-        
+
         /* 4K Responsiveness */
         @media (min-width: 2560px) {
             .max-w-7xl {
                 max-width: 2400px !important;
             }
-            
+
             .archive-row h3.font-display {
                 font-size: clamp(4rem, 6vw, 7rem) !important;
             }
-            
+
             .archive-row p.text-on-surface-variant {
                 font-size: clamp(1.25rem, 1.5vw, 1.75rem) !important;
             }
-            
+
             section {
                 padding-top: clamp(6rem, 12vw, 14rem) !important;
                 padding-bottom: clamp(6rem, 12vw, 14rem) !important;
             }
         }
-        
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .heat-haze {
             background: linear-gradient(45deg, rgba(192, 49, 10, 0.08), transparent);
             backdrop-filter: contrast(1.1) brightness(1.1) saturate(1.2);
             animation: haze-flow 8s ease-in-out infinite alternate;
         }
+
         @keyframes haze-flow {
-            0% { filter: blur(0px) brightness(1); transform: scale(1); }
-            50% { filter: blur(1.5px) brightness(1.1); transform: scale(1.05); }
-            100% { filter: blur(0px) brightness(1); transform: scale(1); }
+            0% {
+                filter: blur(0px) brightness(1);
+                transform: scale(1);
+            }
+
+            50% {
+                filter: blur(1.5px) brightness(1.1);
+                transform: scale(1.05);
+            }
+
+            100% {
+                filter: blur(0px) brightness(1);
+                transform: scale(1);
+            }
         }
+
         .technical-grid-line {
             background-color: rgba(29, 27, 24, 0.1);
             width: 1px;
@@ -162,42 +183,57 @@
             transform-origin: top;
             transform: scaleY(0);
         }
+
         .text-vertical {
             writing-mode: vertical-rl;
             text-orientation: mixed;
         }
-        .char { display: inline-block; }
+
+        .char {
+            display: inline-block;
+        }
+
         .breathing {
             animation: breathe 4s ease-in-out infinite;
         }
+
         @keyframes breathe {
-            0%, 100% { letter-spacing: -0.05em; opacity: 1; }
-            50% { letter-spacing: -0.02em; opacity: 0.85; }
+
+            0%,
+            100% {
+                letter-spacing: -0.05em;
+                opacity: 1;
+            }
+
+            50% {
+                letter-spacing: -0.02em;
+                opacity: 0.85;
+            }
         }
-        
+
         /* Mobile Hero Responsiveness */
         @media (max-width: 768px) {
             #hero-title {
                 font-size: 18vw !important;
                 line-height: 0.9 !important;
             }
-            
+
             #hero-sub {
                 font-size: 1.2rem !important;
                 padding: 0 1rem;
             }
-            
+
             #hero-desc {
                 font-size: 1rem !important;
                 padding: 0 1rem;
                 max-width: 100% !important;
             }
-            
+
             /* Hide side metadata on mobile */
             #side-meta {
                 display: none !important;
             }
-            
+
             .container.mx-auto.px-8 {
                 padding-left: 1.5rem !important;
                 padding-right: 1.5rem !important;
@@ -209,19 +245,21 @@
                 font-size: 20vw !important;
                 line-height: 0.95 !important;
             }
-            
+
             #hero-sub {
                 font-size: 1rem !important;
             }
-            
+
             #hero-desc {
                 font-size: 0.9rem !important;
                 line-height: 1.5 !important;
             }
         }
+
         .project-card-mask {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
+
         .archive-row-line {
             position: absolute;
             left: 0;
@@ -231,9 +269,11 @@
             background-color: #ba1a1a;
             transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         }
+
         .archive-row:hover .archive-row-line {
             width: 100%;
         }
+
         .floating-meta {
             position: fixed;
             pointer-events: none;
@@ -241,847 +281,996 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .tilt-container {
             transform-style: preserve-3d;
             perspective: 1000px;
         }
+
         .tilt-inner {
             transform: translateZ(20px);
         }
-        .lenis.lenis-smooth { height: auto; }
-        .lenis.lenis-scrolling iframe { pointer-events: none; }
+
+        .lenis.lenis-smooth {
+            height: auto;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
     </style>
 </head>
-<body class="bg-surface font-body text-on-surface selection:bg-primary selection:text-white overflow-x-hidden">
-<div class="floating-meta font-mono text-[10px] uppercase tracking-widest bg-white/90 backdrop-blur-md p-3 border border-primary/20 shadow-xl">
-<div id="meta-content"></div>
-</div>
-<!-- TopNavBar -->
-<style>
-.text-tiny-caps { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
-</style>
-<!-- Top Contact Bar -->
-<header class="w-full" id="top-info-bar">
-  <div class="info-bar-container flex items-center justify-end px-4 sm:px-8 md:px-12 sm:py-0 py-1">
-    <div class="flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 sm:space-x-6 md:space-x-8 text-white info-bar-text">
-      <!-- Email -->
-      <div class="flex items-center space-x-2">
-        <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path>
-        </svg>
-        <a class="hover:text-gray-300 transition-colors duration-200" href="mailto:domafabricators@gmail.com">
-          domafabricators@gmail.com
-        </a>
-      </div>
-      <!-- Phone -->
-      <div class="flex items-center space-x-2">
-        <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.509-8.958 0 0 1.926-1.012 1.932-1.017l-3.535-6.862-.013.006c-4.114 2.012-6.297 10.373-1.05 18.423 5.344 8.196 11.455 10.158 14.542 10.158 1.156 0 2.222-.269 3.218-.967l.012-.01z"></path>
-        </svg>
-        <a class="hover:text-gray-300 transition-colors duration-200 font-semibold whitespace-nowrap" href="tel:+919826051620">
-          +91 9826051620
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
-<!-- 1. Navbar -->
-<nav class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-[#1A1815]/10 dark:border-white/10 px-6 lg:px-12 py-4 flex items-center justify-between">
-<a href="index.html" class="flex items-center cursor-pointer">
-<img src="assets/doma fabricator logo.png" alt="D" class="h-10 w-auto object-contain"/>
-<span class="text-xl font-display text-on-surface tracking-wide hidden sm:inline">oma Fabricators</span>
-</a>
-<div class="hidden lg:flex items-center gap-6">
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="index.html">Home</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="about.html">About Us</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="service.html">Services</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="industries.html">Industries</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="project.html">Projects</a>
-<!-- <a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#resources">Resources</a> -->
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="#catalogue">E-Catalogue</a>
-<a class="text-tiny-caps hover:text-primary transition-colors hover-trigger" href="index.html#contact">Contact Us</a>
-</div>
-<button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
-  <span class="material-symbols-outlined transition-all duration-300 text-[#1A1815] dark:text-white" id="hamburger-icon">menu</span>
-</button>
-</nav>
 
-<!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 bg-[#1A1815]/95 z-[60] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden overflow-y-auto" id="mobile-menu">
-  <div class="flex flex-col min-h-full px-6 py-6">
-    <div class="flex items-center justify-between mb-8">
-      <div>
-        <div class="flex items-center">
-          <img src="assets/doma fabricator logo.png" alt="D" class="h-10 w-auto object-contain brightness-0 invert"/>
-          <span class="text-xl font-display text-white tracking-wide">oma Fabricators</span>
+<body class="bg-surface font-body text-on-surface selection:bg-primary selection:text-white overflow-x-hidden">
+    <div
+        class="floating-meta font-mono text-[10px] uppercase tracking-widest bg-white/90 backdrop-blur-md p-3 border border-primary/20 shadow-xl">
+        <div id="meta-content"></div>
+    </div>
+    <!-- TopNavBar -->
+    <style>
+        .text-tiny-caps {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+
+        .info-bar-container {
+            min-height: 62px !important;
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+            padding-left: 8rem !important;
+        }
+    </style>
+    <!-- Top Contact Bar -->
+    <header class="w-full" id="top-info-bar">
+        <div
+            class="info-bar-container flex items-center justify-end px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 sm:py-0 py-1">
+            <div
+                class="flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 sm:space-x-6 md:space-x-8 text-white info-bar-text">
+                <!-- Email -->
+                <div class="flex items-center space-x-2">
+                    <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 icon-industrial-red fill-current flex-shrink-0"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z">
+                        </path>
+                    </svg>
+                    <a class="hover:text-gray-300 transition-colors duration-200 text-sm sm:text-base md:text-[0.95rem]"
+                        href="mailto:domafabricators@gmail.com">
+                        domafabricators@gmail.com
+                    </a>
+                </div>
+                <!-- Phone -->
+                <div class="flex items-center space-x-2">
+                    <svg class="h-4 w-4 sm:h-5 sm:w-5 icon-industrial-red fill-current flex-shrink-0"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.509-8.958 0 0 1.926-1.012 1.932-1.017l-3.535-6.862-.013.006c-4.114 2.012-6.297 10.373-1.05 18.423 5.344 8.196 11.455 10.158 14.542 10.158 1.156 0 2.222-.269 3.218-.967l.012-.01z">
+                        </path>
+                    </svg>
+                    <a class="hover:text-gray-300 transition-colors duration-200 font-semibold whitespace-nowrap text-sm sm:text-base md:text-[0.95rem]"
+                        href="tel:+919826051620">
+                        +91 9826051620
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-      <button class="hover-trigger" id="close-menu-btn" aria-label="Close menu">
-        <span class="material-symbols-outlined text-white text-2xl">close</span>
-      </button>
-    </div>
-    <nav class="flex flex-col gap-2 flex-1">
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="index.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Home</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="about.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">About Us</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="service.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Services</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="industries.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Industries</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="project.html">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Projects</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="#resources">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Resources</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="#catalogue">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
-      </a>
-      <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger" href="index.html#contact">
-        <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Contact Us</span>
-      </a>
+    </header>
+    <!-- 1. Navbar -->
+    <nav
+        class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-near-black/10 dark:border-white/10 px-6 lg:px-12 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center cursor-pointer">
+            <img src="assets/doma fabricator logo.png" alt="D" class="brand-logo-nav" />
+            <span class="text-xl font-display text-on-surface tracking-wide hidden sm:inline cus-font">oma
+                Fabricators</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-6 ml-auto lg:mr-8 xl:mr-[18rem] 2xl:mr-[28rem]">
+            <a class="nav-item hover-trigger" href="index.html">Home</a>
+            <a class="nav-item hover-trigger" href="about.html">About Us</a>
+            <a class="nav-item hover-trigger" href="service.html">Services</a>
+            <a class="nav-item hover-trigger" href="industries.html">Industries</a>
+            <a class="nav-item hover-trigger" href="project.html">Projects</a>
+            <!-- <a class="nav-item hover-trigger" href="#resources">Resources</a> -->
+            <a class="nav-item hover-trigger" href="#catalogue">E-Catalogue</a>
+            <a class="nav-item hover-trigger" href="index.html#contact">Contact Us</a>
+        </div>
+        <button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
+            <span class="material-symbols-outlined transition-all duration-300" id="hamburger-icon">menu</span>
+        </button>
     </nav>
-    <div class="mt-auto pt-6 border-t border-white/10">
-      <p class="text-white/50 text-xs font-light leading-relaxed">Precision Engineering & Industrial Fabrication</p>
-      <div class="flex gap-3 mt-3">
-        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
-          <span class="material-symbols-outlined text-white text-sm">share</span>
-        </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
-          <span class="material-symbols-outlined text-white text-sm">mail</span>
-        </a>
-        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
-          <span class="material-symbols-outlined text-white text-sm">call</span>
-        </a>
-      </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 bg-[#1A1815]/95 z-[60] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden overflow-y-auto"
+        id="mobile-menu">
+        <div class="flex flex-col min-h-full px-6 py-6">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <div class="flex items-center">
+                        <img src="assets/doma fabricator logo.png" alt="D"
+                            class="brand-logo-mobile brightness-0 invert" />
+                        <span class="text-xl font-display text-white tracking-wide">oma Fabricators</span>
+                    </div>
+                </div>
+                <button class="hover-trigger" id="close-menu-btn" aria-label="Close menu">
+                    <span class="material-symbols-outlined text-white text-2xl">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-2 flex-1">
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="index.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Home</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="about.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">About Us</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="service.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Services</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="industries.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Industries</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="project.html">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Projects</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="#resources">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Resources</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="#catalogue">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
+                </a>
+                <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
+                    href="index.html#contact">
+                    <span class="inline-block transform transition-transform"
+                        style="font-family: 'Bebas Neue', cursive;">Contact Us</span>
+                </a>
+            </nav>
+            <div class="mt-auto pt-6 border-t border-white/10">
+                <p class="text-white/50 text-xs font-light leading-relaxed">Precision Engineering & Industrial
+                    Fabrication</p>
+                <div class="flex gap-3 mt-3">
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-white text-sm">share</span>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-white text-sm">mail</span>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-white text-sm">call</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<main id="main-content">
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center overflow-hidden bg-surface-container-lowest">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110" data-alt="dramatic wide shot of a massive steel fabrication workshop" id="hero-bg" src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg"/>
-<div class="absolute inset-0 heat-haze"></div>
-</div>
-<div class="container mx-auto px-8 relative z-10">
-<div class="max-w-6xl">
-<p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8" id="hero-sub">14 Years of Engineering Excellence</p>
-<h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-on-surface" id="hero-title">
-<div class="reveal-text">OUR MAJOR</div>
-<div class="reveal-text text-primary-container">PROJECTS</div>
-</h1>
-<div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
-<div class="draw-line w-24 h-[1px] bg-on-surface mt-4 hidden md:block origin-left scale-x-0"></div>
-<p class="max-w-xl text-lg md:text-xl font-light text-on-surface-variant leading-relaxed opacity-0 translate-y-8" id="hero-desc">
-                            Since 2010, Doma Fabricators has successfully delivered complex projects across Pharma, Chemical, Petroleum Refinery, and Painting industries. Our projects are a testament to precision engineering and on-time delivery.
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center overflow-hidden bg-surface-container-lowest">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110"
+                    data-alt="dramatic wide shot of a massive steel fabrication workshop" id="hero-bg"
+                    src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg" />
+                <div class="absolute inset-0 heat-haze"></div>
+            </div>
+            <div class="container mx-auto px-8 relative z-10">
+                <div class="max-w-6xl">
+                    <p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8"
+                        id="hero-sub">14 Years of Engineering Excellence</p>
+                    <h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-on-surface"
+                        id="hero-title">
+                        <div class="reveal-text">OUR MAJOR</div>
+                        <div class="reveal-text text-primary-container">PROJECTS</div>
+                    </h1>
+                    <div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
+                        <div class="draw-line w-24 h-[1px] bg-on-surface mt-4 hidden md:block origin-left scale-x-0">
+                        </div>
+                        <p class="max-w-xl text-lg md:text-xl font-light text-on-surface-variant leading-relaxed opacity-0 translate-y-8"
+                            id="hero-desc">
+                            Since 2010, Doma Fabricators has successfully delivered complex projects across Pharma,
+                            Chemical, Petroleum Refinery, and Painting industries. Our projects are a testament to
+                            precision engineering and on-time delivery.
                         </p>
-</div>
-</div>
-</div>
-<!-- Side Metadata Overlay -->
-<div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-on-surface-variant/40" id="side-meta">
-<div class="flex items-center gap-4 reveal-meta">
-<span>COORD: 40.7128° N, 74.0060° W</span>
-<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
-</div>
-<div class="flex items-center gap-4 reveal-meta">
-<span>REF_SYS: DOMA_INT_v4.2</span>
-<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
-</div>
-<div class="flex items-center gap-4 reveal-meta">
-<span>TIMESTAMP: 2024.11.04</span>
-<div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
-</div>
-</div>
-</section>
-<!-- On-Going Projects Section -->
-<section class="py-32 bg-surface">
-<div class="container mx-auto px-8">
-<div class="flex justify-between items-end mb-24">
-<div>
-<span class="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Current Operations</span>
-<h2 class="font-display text-7xl uppercase">On-Going Projects</h2>
-</div>
-<div class="text-right hidden md:block">
-<p class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Active Projects: 8+</p>
-<p class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Location: Pithampur, M.P</p>
-</div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
-<!-- Project Card 1 -->
-<div class="project-card group relative bg-surface-container-low transition-all duration-700 hover:bg-surface-container-high overflow-hidden tilt-container" data-meta="Material: SS-316L&lt;br&gt;Tolerance: ±0.1mm&lt;br&gt;Location: Dusseldorf">
-<div class="project-card-mask aspect-[4/5] overflow-hidden translate-y-full opacity-0">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" data-alt="massive cylindrical steel chemical storage tank" src="assets/istockphoto-470309496-612x612.jpg.jpeg"/>
-</div>
-<div class="p-10 relative tilt-inner">
-<div class="flex justify-between items-start mb-8">
-<h3 class="font-display text-4xl uppercase leading-none">ACG-Associated Capsule <br/>Pvt. Ltd</h3>
-<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform" data-icon="arrow_outward">arrow_outward</span>
-</div>
-<div class="grid grid-cols-3 border-t border-on-surface/10 pt-8 gap-4 opacity-60 group-hover:opacity-100 transition-opacity">
-<div class="relative px-2">
-<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Type</span>
-<span class="font-bold text-lg">MAINT. & PROJECT</span>
-<div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
-</div>
-<div class="relative px-2">
-<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Location</span>
-<span class="font-bold text-lg">PITHAMPUR</span>
-<div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
-</div>
-<div class="px-2">
-<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Duration</span>
-<span class="font-bold text-lg">2024–TILL</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Project Card 2 -->
-<div class="project-card group relative bg-surface-container-low transition-all duration-700 hover:bg-surface-container-high overflow-hidden lg:mt-32 tilt-container" data-meta="Material: Grade 5 Ti&lt;br&gt;Precision: ±0.05mm&lt;br&gt;Phase: Final Testing">
-<div class="project-card-mask aspect-[4/5] overflow-hidden translate-y-full opacity-0">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" data-alt="industrial robot arm welding complex steel component" src="assets/arc-welding-of-a-steel-in-construction-site-photo.jpeg"/>
-</div>
-<div class="p-10 relative tilt-inner">
-<div class="flex justify-between items-start mb-8">
-<h3 class="font-display text-4xl uppercase leading-none">Unichem Laboratories <br/>Limited</h3>
-<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform" data-icon="arrow_outward">arrow_outward</span>
-</div>
-<div class="grid grid-cols-3 border-t border-on-surface/10 pt-8 gap-4 opacity-60 group-hover:opacity-100 transition-opacity">
-<div class="relative px-2">
-<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Type</span>
-<span class="font-bold text-lg">PROJECT</span>
-<div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
-</div>
-<div class="relative px-2">
-<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Location</span>
-<span class="font-bold text-lg">PITHAMPUR</span>
-<div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
-</div>
-<div class="px-2">
-<span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Duration</span>
-<span class="font-bold text-lg">2024–TILL</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Completed Projects Archive -->
-<section class="py-32 bg-surface-container-low">
-<div class="container mx-auto px-8">
-<div class="max-w-4xl mb-32">
-<h2 class="font-display text-9xl uppercase leading-[0.8] mb-8 overflow-hidden"><span class="reveal-up inline-block">THE ARCHIVE</span></h2>
-<p class="font-serif-italic text-2xl text-on-surface-variant max-w-xl opacity-0 translate-y-8 reveal-scroll">A testament to structural integrity and architectural vision spanning four decades.</p>
-</div>
-<!-- Archive Item 1 -->
-<div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                    </div>
+                </div>
+            </div>
+            <!-- Side Metadata Overlay -->
+            <div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-on-surface-variant/40"
+                id="side-meta">
+                <div class="flex items-center gap-4 reveal-meta">
+                    <span>COORD: 40.7128° N, 74.0060° W</span>
+                    <div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+                </div>
+                <div class="flex items-center gap-4 reveal-meta">
+                    <span>REF_SYS: DOMA_INT_v4.2</span>
+                    <div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+                </div>
+                <div class="flex items-center gap-4 reveal-meta">
+                    <span>TIMESTAMP: 2024.11.04</span>
+                    <div class="draw-line w-12 h-[1px] bg-current origin-right scale-x-0"></div>
+                </div>
+            </div>
+        </section>
+        <!-- On-Going Projects Section -->
+        <section class="py-32 bg-surface">
+            <div class="container mx-auto px-8">
+                <div class="flex justify-between items-end mb-24">
+                    <div>
+                        <span class="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Current
+                            Operations</span>
+                        <h2 class="font-display text-7xl uppercase">On-Going Projects</h2>
+                    </div>
+                    <div class="text-right hidden md:block">
+                        <p class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Active
+                            Projects: 8+</p>
+                        <p class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Location:
+                            Pithampur, M.P</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                    <!-- Project Card 1 -->
+                    <div class="project-card group relative bg-surface-container-low transition-all duration-700 hover:bg-surface-container-high overflow-hidden tilt-container"
+                        data-meta="Material: SS-316L&lt;br&gt;Tolerance: ±0.1mm&lt;br&gt;Location: Dusseldorf">
+                        <div class="project-card-mask aspect-[4/5] overflow-hidden translate-y-full opacity-0">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                                data-alt="massive cylindrical steel chemical storage tank"
+                                src="assets/istockphoto-470309496-612x612.jpg.jpeg" />
+                        </div>
+                        <div class="p-10 relative tilt-inner">
+                            <div class="flex justify-between items-start mb-8">
+                                <h3 class="font-display text-4xl uppercase leading-none">ACG-Associated Capsule
+                                    <br />Pvt. Ltd
+                                </h3>
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform"
+                                    data-icon="arrow_outward">arrow_outward</span>
+                            </div>
+                            <div
+                                class="grid grid-cols-3 border-t border-on-surface/10 pt-8 gap-4 opacity-60 group-hover:opacity-100 transition-opacity">
+                                <div class="relative px-2">
+                                    <span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Type</span>
+                                    <span class="font-bold text-lg">MAINT. & PROJECT</span>
+                                    <div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
+                                </div>
+                                <div class="relative px-2">
+                                    <span
+                                        class="block text-[10px] uppercase font-mono tracking-widest mb-2">Location</span>
+                                    <span class="font-bold text-lg">PITHAMPUR</span>
+                                    <div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
+                                </div>
+                                <div class="px-2">
+                                    <span
+                                        class="block text-[10px] uppercase font-mono tracking-widest mb-2">Duration</span>
+                                    <span class="font-bold text-lg">2024–TILL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="project-card group relative bg-surface-container-low transition-all duration-700 hover:bg-surface-container-high overflow-hidden lg:mt-32 tilt-container"
+                        data-meta="Material: Grade 5 Ti&lt;br&gt;Precision: ±0.05mm&lt;br&gt;Phase: Final Testing">
+                        <div class="project-card-mask aspect-[4/5] overflow-hidden translate-y-full opacity-0">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                                data-alt="industrial robot arm welding complex steel component"
+                                src="assets/arc-welding-of-a-steel-in-construction-site-photo.jpeg" />
+                        </div>
+                        <div class="p-10 relative tilt-inner">
+                            <div class="flex justify-between items-start mb-8">
+                                <h3 class="font-display text-4xl uppercase leading-none">Unichem Laboratories
+                                    <br />Limited
+                                </h3>
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform"
+                                    data-icon="arrow_outward">arrow_outward</span>
+                            </div>
+                            <div
+                                class="grid grid-cols-3 border-t border-on-surface/10 pt-8 gap-4 opacity-60 group-hover:opacity-100 transition-opacity">
+                                <div class="relative px-2">
+                                    <span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Type</span>
+                                    <span class="font-bold text-lg">PROJECT</span>
+                                    <div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
+                                </div>
+                                <div class="relative px-2">
+                                    <span
+                                        class="block text-[10px] uppercase font-mono tracking-widest mb-2">Location</span>
+                                    <span class="font-bold text-lg">PITHAMPUR</span>
+                                    <div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
+                                </div>
+                                <div class="px-2">
+                                    <span
+                                        class="block text-[10px] uppercase font-mono tracking-widest mb-2">Duration</span>
+                                    <span class="font-bold text-lg">2024–TILL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Completed Projects Archive -->
+        <section class="py-32 bg-surface-container-low">
+            <div class="container mx-auto px-8">
+                <div class="max-w-4xl mb-32">
+                    <h2 class="font-display text-9xl uppercase leading-[0.8] mb-8 overflow-hidden"><span
+                            class="reveal-up inline-block">THE ARCHIVE</span></h2>
+                    <p
+                        class="font-serif-italic text-2xl text-on-surface-variant max-w-xl opacity-0 translate-y-8 reveal-scroll">
+                        A testament to structural integrity and architectural vision spanning four decades.</p>
+                </div>
+                <!-- Archive Item 1 -->
+                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
                             PROJECT_ID: AR-0931
                         </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" data-alt="modern steel skyscraper facade" src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2024">ONGOING SINCE 2010</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Aarti Surfactant <br/>Pvt. Ltd</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                            Long-standing partnership providing comprehensive project and maintenance services at Sector-03, Pithampur. Continuous support since 2010 across fabrication, piping, and industrial maintenance.
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                data-alt="modern steel skyscraper facade"
+                                src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2024">ONGOING SINCE 2010</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Aarti Surfactant <br />Pvt. Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Long-standing partnership providing comprehensive project and maintenance services at
+                            Sector-03, Pithampur. Continuous support since 2010 across fabrication, piping, and
+                            industrial maintenance.
                         </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT & MAINTENANCE</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2010–TILL</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Archive Item 2 -->
-<div class="archive-row group flex flex-col md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -right-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT & MAINTENANCE</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2010–TILL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Archive Item 2 -->
+                <div
+                    class="archive-row group flex flex-col md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -right-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
                             PROJECT_ID: MAR-442
                         </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" data-alt="night shot of a massive offshore oil rig" src="assets/night-lights-plant-industry-wallpaper-thumb.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pr-20 md:text-right flex flex-col md:items-end">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2024">COMPLETED 2024</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Ralson Tyres <br/>Limited</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                            Major fabrication and erection project at Smart Industrial Park, Pithampur. Comprehensive structural steel and piping work delivered on schedule.
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                data-alt="night shot of a massive offshore oil rig"
+                                src="assets/night-lights-plant-industry-wallpaper-thumb.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pr-20 md:text-right flex flex-col md:items-end">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2024">COMPLETED 2024</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Ralson Tyres <br />Limited</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Major fabrication and erection project at Smart Industrial Park, Pithampur. Comprehensive
+                            structural steel and piping work delivered on schedule.
                         </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2021–2024</p>
-</div>
-</div>
-</div>
-</div>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2021–2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 3 -->
-<div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 003
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2024">ACTIVE</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Pensol Lubricants Limited</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Fabrication, erection, and installation of heavy structural components for industrial facility expansion.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2021-TILL</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 3 -->
+                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 003
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2024">ACTIVE</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Pensol Lubricants Limited</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Fabrication, erection, and installation of heavy structural components for industrial
+                            facility expansion.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2021-TILL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 4 -->
-<div class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 004
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/night-lights-plant-industry-wallpaper-thumb.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2024">COMPLETED</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">SRF Limited</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Piping and equipment installation for chemical manufacturing unit with precision engineering.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2024</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 4 -->
+                <div
+                    class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 004
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/night-lights-plant-industry-wallpaper-thumb.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2024">COMPLETED</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">SRF Limited</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Piping and equipment installation for chemical manufacturing unit with precision
+                            engineering.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 5 -->
-<div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 005
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/istockphoto-1482979397-612x612.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2024">ACTIVE</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Aperam Alloys India Pvt. Ltd</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Heavy structural fabrication and equipment erection for specialty steel manufacturing facility.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2024-TILL</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 5 -->
+                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 005
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/istockphoto-1482979397-612x612.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2024">ACTIVE</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Aperam Alloys India Pvt. Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Heavy structural fabrication and equipment erection for specialty steel manufacturing
+                            facility.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2024-TILL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 6 -->
-<div class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 006
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/istockphoto-1486082802-612x612.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2025">ACTIVE</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Bio Innovation Clad Solution Pvt. Ltd</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Installation and commissioning of advanced cladding equipment for biotechnology applications.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2025-TILL</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 6 -->
+                <div
+                    class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 006
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/istockphoto-1486082802-612x612.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2025">ACTIVE</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Bio Innovation Clad Solution Pvt. Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Installation and commissioning of advanced cladding equipment for biotechnology
+                            applications.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2025-TILL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 7 -->
-<div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 007
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2024">ACTIVE</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Okay Firm Precision Casting Pvt. Ltd</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Precision casting equipment installation and structural modifications for manufacturing expansion.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2024-TILL</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 7 -->
+                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 007
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2024">ACTIVE</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Okay Firm Precision Casting Pvt. Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Precision casting equipment installation and structural modifications for manufacturing
+                            expansion.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2024-TILL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 8 -->
-<div class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 008
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/environmental-pollution-factory-exterior-night_23-2149057728.avif"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2023">ACTIVE</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">SPM Auto comp System</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Industrial piping and equipment installation for automotive component manufacturing facility.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2023-TILL</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 8 -->
+                <div
+                    class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 008
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/environmental-pollution-factory-exterior-night_23-2149057728.avif" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2023">ACTIVE</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">SPM Auto comp System</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Industrial piping and equipment installation for automotive component manufacturing
+                            facility.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2023-TILL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 9 -->
-<div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 009
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2024">COMPLETED</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Kesar Alloys & Metals Pvt. Ltd</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Heavy structural fabrication and plant maintenance for alloy manufacturing operations.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">MAINTENANCE</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2022-2024</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 9 -->
+                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 009
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2024">COMPLETED</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Kesar Alloys & Metals Pvt. Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Heavy structural fabrication and plant maintenance for alloy manufacturing operations.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">MAINTENANCE</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2022-2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 10 -->
-<div class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 010
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/night-lights-plant-industry-wallpaper-thumb.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2017">COMPLETED</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Dhar Automotives</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Plant setup and equipment installation for automotive parts manufacturing facility.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2014-2017</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 10 -->
+                <div
+                    class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 010
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/night-lights-plant-industry-wallpaper-thumb.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2017">COMPLETED</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Dhar Automotives</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Plant setup and equipment installation for automotive parts manufacturing facility.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2014-2017</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 11 -->
-<div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 011
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/istockphoto-1482979397-612x612.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2025">COMPLETED</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Advance Enzymi Tech. Ltd</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Equipment erection and piping works for enzyme technology manufacturing plant.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2022-2025</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 11 -->
+                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 011
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/istockphoto-1482979397-612x612.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2025">COMPLETED</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Advance Enzymi Tech. Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Equipment erection and piping works for enzyme technology manufacturing plant.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2022-2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 12 -->
-<div class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 012
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/istockphoto-1486082802-612x612.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2020">COMPLETED</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Madhur India Exports</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Structural fabrication and plant maintenance for industrial export facility.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">MAINTENANCE</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2017-2020</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 12 -->
+                <div
+                    class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 012
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/istockphoto-1486082802-612x612.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2020">COMPLETED</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Madhur India Exports</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Structural fabrication and plant maintenance for industrial export facility.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">MAINTENANCE</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2017-2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 13 -->
-<div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 013
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2010">COMPLETED</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Priyanshu Chemical Pvt. Ltd</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Complete plant setup including piping, equipment installation, and structural works.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2010</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 13 -->
+                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 013
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2010">COMPLETED</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Priyanshu Chemical Pvt. Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Complete plant setup including piping, equipment installation, and structural works.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2010</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 14 -->
-<div class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 014
-            </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/environmental-pollution-factory-exterior-night_23-2149057728.avif"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2024">COMPLETED</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Panasonic Energy India Ltd</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Equipment installation and piping works for battery manufacturing facility.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2024</p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Archive Item 14 -->
+                <div
+                    class="archive-row group flex flex-col md:flex-row md:flex-row-reverse items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 014
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/environmental-pollution-factory-exterior-night_23-2149057728.avif" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2024">COMPLETED</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Panasonic Energy India Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Equipment installation and piping works for battery manufacturing facility.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Archive Item 15 -->
-<div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
-<div class="archive-row-line"></div>
-<div class="w-full md:w-1/2 relative">
-<div class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
-                PROJECT_ID: 015
+                <!-- Archive Item 15 -->
+                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+                    <div class="archive-row-line"></div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="absolute -left-4 top-0 text-vertical text-[10px] font-mono tracking-[0.5em] text-on-surface-variant/30 uppercase">
+                            PROJECT_ID: 015
+                        </div>
+                        <div class="overflow-hidden">
+                            <img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+                                src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:pl-20">
+                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                            <span class="glitch-num inline-block" data-value="2024">COMPLETED</span>
+                        </span>
+                        <h3 class="font-display text-6xl uppercase mb-6">Shri Insulation India Pvt. Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            Industrial insulation works and equipment installation for manufacturing plant.
+                        </p>
+                        <div class="flex gap-12">
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold">PROJECT</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold">2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-<div class="overflow-hidden">
-<img class="w-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.jpeg"/>
-</div>
-</div>
-<div class="w-full md:w-1/2 lg:pl-20">
-<span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
-<span class="glitch-num inline-block" data-value="2024">COMPLETED</span>
-</span>
-<h3 class="font-display text-6xl uppercase mb-6">Shri Insulation India Pvt. Ltd</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Industrial insulation works and equipment installation for manufacturing plant.
-            </p>
-<div class="flex gap-12">
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-<p class="font-bold">PROJECT</p>
-</div>
-<div>
-<p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-<p class="font-bold">2024</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-40 bg-on-surface text-surface overflow-hidden relative">
-<div class="absolute right-0 top-0 opacity-10 font-display text-[25vw] leading-none select-none -translate-y-1/4 translate-x-1/4" id="cta-bg-text">
+        </section>
+        <!-- CTA Section -->
+        <section class="py-40 bg-on-surface text-surface overflow-hidden relative">
+            <div class="absolute right-0 top-0 opacity-10 font-display text-[25vw] leading-none select-none -translate-y-1/4 translate-x-1/4"
+                id="cta-bg-text">
                 DOMA
             </div>
-<div class="container mx-auto px-8 relative z-10 text-center">
-<h2 class="font-display text-8xl md:text-9xl uppercase tracking-tighter mb-12">Get In Touch</h2>
-<div class="flex flex-col md:flex-row justify-center gap-8">
-<a href="mailto:domafabricators@gmail.com" class="nav-btn bg-primary text-white font-display text-2xl px-12 py-6 hover:bg-primary-container transition-colors">
+            <div class="container mx-auto px-8 relative z-10 text-center">
+                <h2 class="font-display text-8xl md:text-9xl uppercase tracking-tighter mb-12">Get In Touch</h2>
+                <div class="flex flex-col md:flex-row justify-center gap-8">
+                    <a href="mailto:domafabricators@gmail.com"
+                        class="nav-btn bg-primary text-white font-display text-2xl px-12 py-6 hover:bg-primary-container transition-colors">
                         CONTACT US
                     </a>
-<a href="tel:+919826051620" class="nav-btn border border-surface/20 text-surface font-display text-2xl px-12 py-6 hover:bg-surface/5 transition-colors">
+                    <a href="tel:+919826051620"
+                        class="nav-btn border border-surface/20 text-surface font-display text-2xl px-12 py-6 hover:bg-surface/5 transition-colors">
                         CALL NOW
                     </a>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-near-black text-white pt-24 pb-12">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid md:grid-cols-3 gap-16 mb-24">
-<div>
-<div class="mb-8">
-          <div class="flex items-center mb-2">
-            <img src="assets/doma fabricator logo.png" alt="D" class="h-12 w-auto object-contain brightness-0 invert"/>
-            <span class="text-2xl font-display text-white tracking-wide">oma Fabricators</span>
-          </div>
-        </div>
-<p class="text-mid-grey font-light leading-relaxed">
-                        Redefining industrial standards through precision, safety, and 25+ years of engineering dedication. Design & Engineering | Equipment's Supply | Project Works.
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-near-black text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-16 mb-24">
+                <div>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-2">
+                            <img src="assets/doma fabricator logo.png" alt="D"
+                                class="brand-logo-footer brightness-0 invert" />
+                            <span class="text-2xl font-display text-white tracking-wide">oma Fabricators</span>
+                        </div>
+                    </div>
+                    <p class="text-mid-grey font-light leading-relaxed">
+                        Redefining industrial standards through precision, safety, and 25+ years of engineering
+                        dedication. Design & Engineering | Equipment's Supply | Project Works.
                     </p>
-</div>
-<div>
-<h5 class="text-tiny-caps font-bold mb-8 text-primary">Quick Navigation</h5>
-<ul class="space-y-4 text-mid-grey font-light">
-<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#services">Our Services</a></li>
-<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#safety">Safety Standards</a></li>
-<li><a class="hover:text-white transition-colors hover-trigger" href="project.html">Projects</a></li>
-<li><a class="hover:text-white transition-colors hover-trigger" href="index.html#contact">Contact Us</a></li>
-</ul>
-</div>
-<div>
-<h5 class="text-tiny-caps font-bold mb-8 text-primary">Contact Information</h5>
-<ul class="space-y-4 text-mid-grey font-light">
-<li>Plot No. 1J, Kheda, Sagorekutti</li>
-<li>Pithampur, Dhar (M.P) 454 775</li>
-<li>+91 9826051620</li>
-<li>+91 9098324240</li>
-<li>+91 9111887856</li>
-<li>domafabricators@gmail.com</li>
-</ul>
-</div>
-</div>
-<div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-dark-grey">
-<p>© 2024 Doma Fabricators. All Rights Reserved.</p>
-<p>Designed by Pixora</p>
-</div>
-</div>
-</footer>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-        // Hamburger Menu Functionality
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        let isMenuOpen = false;
+                </div>
+                <div>
+                    <h5 class="text-tiny-caps font-bold mb-8 text-primary">Quick Navigation</h5>
+                    <ul class="space-y-4 text-mid-grey font-light">
+                        <li><a class="hover:text-white transition-colors hover-trigger" href="index.html#services">Our
+                                Services</a></li>
+                        <li><a class="hover:text-white transition-colors hover-trigger" href="index.html#safety">Safety
+                                Standards</a></li>
+                        <li><a class="hover:text-white transition-colors hover-trigger" href="project.html">Projects</a>
+                        </li>
+                        <li><a class="hover:text-white transition-colors hover-trigger"
+                                href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-tiny-caps font-bold mb-8 text-primary">Contact Information</h5>
+                    <ul class="space-y-4 text-mid-grey font-light">
+                        <li>Plot No. 1J, Kheda, Sagorekutti</li>
+                        <li>Pithampur, Dhar (M.P) 454 775</li>
+                        <li>+91 9826051620</li>
+                        <li>+91 9098324240</li>
+                        <li>+91 9111887856</li>
+                        <li>domafabricators@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-tiny-caps text-dark-grey">
+                <p>© 2024 Doma Fabricators. All Rights Reserved.</p>
+                <p>Designed by Pixora</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Hamburger Menu Functionality
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            let isMenuOpen = false;
 
-        if (hamburgerBtn) {
-            hamburgerBtn.addEventListener('click', () => {
-                if (isMenuOpen) {
-                    closeMenu();
-                } else {
-                    isMenuOpen = true;
-                    mobileMenu.classList.remove('translate-x-full');
-                    hamburgerIcon.textContent = 'close';
-                    document.body.style.overflow = 'hidden';
-                    
-                    mobileLinks.forEach((link, index) => {
-                        setTimeout(() => {
-                            link.style.opacity = '1';
-                            link.querySelector('span').style.transform = 'translateX(0)';
-                        }, 100 + (index * 50));
+            if (hamburgerBtn) {
+                hamburgerBtn.addEventListener('click', () => {
+                    if (isMenuOpen) {
+                        closeMenu();
+                    } else {
+                        isMenuOpen = true;
+                        mobileMenu.classList.remove('translate-x-full');
+                        hamburgerIcon.textContent = 'close';
+                        document.body.style.overflow = 'hidden';
+
+                        mobileLinks.forEach((link, index) => {
+                            setTimeout(() => {
+                                link.style.opacity = '1';
+                                link.querySelector('span').style.transform = 'translateX(0)';
+                            }, 100 + (index * 50));
+                        });
+                    }
+                });
+
+                const closeMenu = () => {
+                    isMenuOpen = false;
+                    mobileMenu.classList.add('translate-x-full');
+                    hamburgerIcon.textContent = 'menu';
+                    document.body.style.overflow = '';
+                    mobileLinks.forEach(link => {
+                        link.style.opacity = '0';
+                        link.querySelector('span').style.transform = 'translateX(-20px)';
                     });
-                }
-            });
+                };
 
-            const closeMenu = () => {
-                isMenuOpen = false;
-                mobileMenu.classList.add('translate-x-full');
-                hamburgerIcon.textContent = 'menu';
-                document.body.style.overflow = '';
+                closeMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeMenu();
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+
+                mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === mobileMenu) closeMenu();
+                });
+
                 mobileLinks.forEach(link => {
                     link.style.opacity = '0';
                     link.querySelector('span').style.transform = 'translateX(-20px)';
+                    link.querySelector('span').style.transition = 'transform 0.3s ease-out';
                 });
-            };
-
-            closeMenuBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                closeMenu();
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', closeMenu);
-            });
-
-            mobileMenu.addEventListener('click', (e) => {
-                if (e.target === mobileMenu) closeMenu();
-            });
-
-            mobileLinks.forEach(link => {
-                link.style.opacity = '0';
-                link.querySelector('span').style.transform = 'translateX(-20px)';
-                link.querySelector('span').style.transition = 'transform 0.3s ease-out';
-            });
-        }
-});
-</script>
-<script>
+            }
+        });
+    </script>
+    <script>
         // Init Lenis Smooth Scroll
         const lenis = new Lenis({
             duration: 1.2,
@@ -1113,16 +1302,16 @@ document.addEventListener("DOMContentLoaded", () => {
         // Hero Reveal
         const heroTl = gsap.timeline();
         heroTl.to('#hero-bg', { scale: 1, opacity: 0.3, duration: 2, ease: "power2.out" })
-              .to('#hero-sub', { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=1.5")
-              .to('.reveal-text .char', { 
-                  opacity: 1, 
-                  y: 0, 
-                  duration: 0.8, 
-                  stagger: 0.02, 
-                  ease: "back.out(1.7)" 
-              }, "-=0.8")
-              .to('#hero-desc', { opacity: 1, y: 0, duration: 1 }, "-=0.5")
-              .to('.draw-line', { scaleX: 1, duration: 1.5, stagger: 0.2, ease: "expo.inOut" }, "-=1");
+            .to('#hero-sub', { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=1.5")
+            .to('.reveal-text .char', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.02,
+                ease: "back.out(1.7)"
+            }, "-=0.8")
+            .to('#hero-desc', { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+            .to('.draw-line', { scaleX: 1, duration: 1.5, stagger: 0.2, ease: "expo.inOut" }, "-=1");
 
         // Scroll Draws (Lines)
         document.querySelectorAll('.draw-line').forEach(line => {
@@ -1168,7 +1357,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const yc = rect.height / 2;
                 const dx = x - xc;
                 const dy = y - yc;
-                
+
                 gsap.to(card, {
                     rotationY: dx / 20,
                     rotationX: -dy / 20,
@@ -1209,7 +1398,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const finalVal = el.dataset.value;
             const textParts = el.innerText.split(' ');
             const yearStr = textParts[textParts.length - 1];
-            
+
             ScrollTrigger.create({
                 trigger: el,
                 start: "top 90%",
@@ -1222,7 +1411,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         onUpdate: () => {
                             // Technical glitch feel: occasional random characters
                             if (Math.random() > 0.9) {
-                                el.innerText = `COMPLETED X${Math.floor(Math.random()*9)}X${Math.floor(Math.random()*9)}`;
+                                el.innerText = `COMPLETED X${Math.floor(Math.random() * 9)}X${Math.floor(Math.random() * 9)}`;
                             } else {
                                 el.innerText = `COMPLETED ${Math.floor(obj.val)}`;
                             }
@@ -1245,4 +1434,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     </script>
-</body></html>
+    <script src="pages/js/navbar.js" defer></script>
+</body>
+
+</html>
