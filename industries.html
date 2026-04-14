@@ -231,25 +231,26 @@
     </div>
   </header>
   <!-- 1. Navbar -->
-  <nav
-    class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-near-black/10 dark:border-white/10 px-6 lg:px-12 py-4 flex items-center justify-between">
-    <a href="index.html" class="flex items-center cursor-pointer">
-      <img src="assets/doma fabricator logo.png" alt="D" class="brand-logo-nav" />
-      <span class="text-xl font-display text-on-surface tracking-wide hidden sm:inline cus-font">oma Fabricators</span>
-    </a>
-    <div class="hidden lg:flex items-center gap-6 ml-auto lg:mr-8 xl:mr-[18rem] 2xl:mr-[28rem]">
-      <a class="nav-item hover-trigger" href="index.html">Home</a>
-      <a class="nav-item hover-trigger" href="about.html">About Us</a>
-      <a class="nav-item hover-trigger" href="service.html">Services</a>
-      <a class="nav-item hover-trigger" href="industries.html">Industries</a>
-      <a class="nav-item hover-trigger" href="project.html">Projects</a>
-      <!-- <a class="nav-item hover-trigger" href="#resources">Resources</a> -->
-      <a class="nav-item hover-trigger" href="#catalogue">E-Catalogue</a>
-      <a class="nav-item hover-trigger" href="index.html#contact">Contact Us</a>
+  <nav class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-near-black/10 dark:border-white/10 py-4">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <a href="index.html" class="flex items-center cursor-pointer">
+        <img src="assets/doma fabricator logo.png" alt="D" class="brand-logo-nav" />
+        <span class="text-xl font-display text-on-surface tracking-wide hidden sm:inline cus-font">oma Fabricators</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-6">
+        <a class="nav-item hover-trigger" href="index.html">Home</a>
+        <a class="nav-item hover-trigger" href="about.html">About Us</a>
+        <a class="nav-item hover-trigger" href="service.html">Services</a>
+        <a class="nav-item hover-trigger" href="industries.html">Industries</a>
+        <a class="nav-item hover-trigger" href="project.html">Projects</a>
+        <!-- <a class="nav-item hover-trigger" href="#resources">Resources</a> -->
+        <a class="nav-item hover-trigger" href="#catalogue">E-Catalogue</a>
+        <a class="nav-item hover-trigger" href="index.html#contact">Contact Us</a>
+      </div>
+      <button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
+        <span class="material-symbols-outlined transition-all duration-300" id="hamburger-icon">menu</span>
+      </button>
     </div>
-    <button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
-      <span class="material-symbols-outlined transition-all duration-300" id="hamburger-icon">menu</span>
-    </button>
   </nav>
 
   <!-- Mobile Menu Overlay -->
