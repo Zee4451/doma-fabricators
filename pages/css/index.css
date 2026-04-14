@@ -88,6 +88,17 @@
         padding-left: 4rem !important;
         padding-right: 4rem !important;
     }
+
+    /* Navigation Margin Override - Apply at 1400px instead of 1280px */
+    .xl\:mr-\[18rem\] {
+        margin-right: 2rem !important; /* Reset to lg:mr-8 for 1280px-1399px */
+    }
+}
+
+@media (min-width: 1400px) {
+    .xl\:mr-\[18rem\] {
+        margin-right: 18rem !important; /* Apply 18rem margin at 1400px+ */
+    }
 }
 
 @media (min-width: 1536px) {

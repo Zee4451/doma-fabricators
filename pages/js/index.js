@@ -956,7 +956,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const animation = gsap.to(track, {
             x: -loopWidth,
-            duration: 30, // Adjust for speed
+            duration: 30, // Original speed
             ease: "none",
             repeat: -1,
             onReverseComplete: () => {
