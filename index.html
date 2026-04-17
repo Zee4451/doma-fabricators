@@ -162,12 +162,13 @@
   </header>
   <!-- 1. Navbar -->
   <nav class="sticky top-0 z-50 bg-white dark:bg-near-black border-b border-near-black/10 dark:border-white/10 py-4">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-      <a href="index.html" class="flex items-center cursor-pointer">
+    <div class="max-w-12xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <a href="index.html" class="flex items-center cursor-pointer gap-1">
         <img src="assets/doma fabricator logo.png" alt="D" class="brand-logo-nav" />
-        <span class="text-xl font-display text-on-surface tracking-wide hidden sm:inline cus-font">oma Fabricators</span>
+        <span class="text-2xl lg:text-3xl font-display text-on-surface tracking-wide hidden sm:inline cus-font mt-1">OMA
+          FABRICATORS</span>
       </a>
-      <div class="hidden lg:flex items-center gap-6">
+      <div class="hidden lg:flex items-center lg:gap-6 xl:gap-10">
         <a class="nav-item hover-trigger" href="index.html">Home</a>
         <a class="nav-item hover-trigger" href="about.html">About Us</a>
         <a class="nav-item hover-trigger" href="service.html">Services</a>
@@ -265,1017 +266,1103 @@
   </div>
   <!-- Main Content -->
   <main id="main-content">
-  <!-- 2. Hero Slider -->
-  <section class="relative w-full h-screen overflow-hidden" id="home">
-    <!-- Slide 1 -->
-    <div class="slide absolute inset-0 w-full h-full" data-index="0">
-      <img alt="Industrial fabrication site" class="w-full h-full object-cover scale-[1.15]"
-        src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg" />
-      <div class="absolute inset-0 bg-black/50"></div>
-    </div>
+    <!-- 2. Hero Slider -->
+    <section class="relative w-full h-screen overflow-hidden" id="home">
+      <!-- Slide 1 -->
+      <div class="slide absolute inset-0 w-full h-full" data-index="0">
+        <img alt="Industrial fabrication site" class="w-full h-full object-cover scale-[1.15]"
+          src="assets/istockphoto-1314259386-612x612.jpg" />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
 
-    <!-- Slide 2 -->
-    <div class="slide absolute inset-0 w-full h-full" data-index="1">
-      <img alt="Manufacturing facility" class="w-full h-full object-cover scale-[1.15]"
-        src="assets/istockphoto-1482979397-612x612.jpg.jpeg" />
-      <div class="absolute inset-0 bg-black/50"></div>
-    </div>
+      <!-- Slide 2 -->
+      <div class="slide absolute inset-0 w-full h-full" data-index="1">
+        <img alt="Manufacturing facility" class="w-full h-full object-cover scale-[1.15]" src="assets/st4.png" />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
 
-    <!-- Slide 3 -->
-    <div class="slide absolute inset-0 w-full h-full" data-index="2">
-      <img alt="Construction site" class="w-full h-full object-cover scale-[1.15]"
-        src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg" />
-      <div class="absolute inset-0 bg-black/50"></div>
-    </div>
+      <!-- Slide 3 -->
+      <div class="slide absolute inset-0 w-full h-full" data-index="2">
+        <img alt="Construction site" class="w-full h-full object-cover scale-[1.15]"
+          src="assets/Chemical-Processing.jpg" />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
 
-    <!-- Text content containers - one per slide -->
-    <div
-      class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-100"
-      data-slide="0">
-      <h1 class="hero-heading mb-4 sm:mb-6 font-bebas uppercase text-white">
-        ENGINEERING PAR<br class="hidden sm:block">
-        EXCELLENCE — DESIGN,<br class="hidden sm:block">
-        FABRICATION & ERECTION
-      </h1>
-      <p
-        class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed body-text">
-        Specializing in piping works, heavy structural fabrication, equipment erection, industrial maintenance, shed
-        works, and roofing — delivering high-quality solutions for diverse industries.
-      </p>
-    </div>
-
-    <div
-      class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-0"
-      data-slide="1">
-      <h1 class="hero-heading mb-4 sm:mb-6 font-bebas uppercase text-white">
-        DESIGN & ENGINEERING<br class="hidden sm:block">
-        EQUIPMENT SUPPLY<br class="hidden sm:block">
-        PROJECT WORKS
-      </h1>
-      <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed">
-        End-to-end support for new projects and plant expansions — heavy structure fabrication, precision piping,
-        equipment erection, and roofing & shed construction.
-      </p>
-    </div>
-
-    <div
-      class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-0"
-      data-slide="2">
-      <h1 class="hero-heading mb-4 sm:mb-6 font-bebas uppercase text-white">
-        25+ YEARS OF EXCELLENCE<br class="hidden sm:block">
-        QUALITY & SAFETY<br class="hidden sm:block">
-        AT EVERY STEP
-      </h1>
-      <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed">
-        With 25+ years of expertise, our commitment to safety, quality, and client satisfaction has established us as a
-        dependable partner for leading companies.
-      </p>
-    </div>
-
-    <!-- Scroll indicator (bottom-center) -->
-    <div class="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 sm:gap-2">
-      <span class="text-white text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
+      <!-- Text content containers - one per slide -->
       <div
-        class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-dashed border-white/60 flex items-center justify-center animate-bounce">
-        <svg width="16" height="16" class="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 16L6 10H18L12 16Z" fill="white" />
-        </svg>
+        class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-100"
+        data-slide="0">
+        <h1 class="hero-heading mb-4 sm:mb-6 font-bebas uppercase text-white">
+          ENGINEERING PAR<br class="hidden sm:block">
+          EXCELLENCE — DESIGN,<br class="hidden sm:block">
+          FABRICATION & ERECTION
+        </h1>
+        <p
+          class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed body-text">
+          Specializing in piping works, heavy structural fabrication, equipment erection, industrial maintenance, shed
+          works, and roofing — delivering high-quality solutions for diverse industries.
+        </p>
+      </div>
+
+      <div
+        class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-0"
+        data-slide="1">
+        <h1 class="hero-heading mb-4 sm:mb-6 font-bebas uppercase text-white">
+          DESIGN & ENGINEERING<br class="hidden sm:block">
+          EQUIPMENT SUPPLY<br class="hidden sm:block">
+          PROJECT WORKS
+        </h1>
+        <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed">
+          End-to-end support for new projects and plant expansions — heavy structure fabrication, precision piping,
+          equipment erection, and roofing & shed construction.
+        </p>
+      </div>
+
+      <div
+        class="slide-text absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 opacity-0"
+        data-slide="2">
+        <h1 class="hero-heading mb-4 sm:mb-6 font-bebas uppercase text-white">
+          25+ YEARS OF EXCELLENCE<br class="hidden sm:block">
+          QUALITY & SAFETY<br class="hidden sm:block">
+          AT EVERY STEP
+        </h1>
+        <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl font-medium leading-relaxed">
+          With 25+ years of expertise, our commitment to safety, quality, and client satisfaction has established us as
+          a
+          dependable partner for leading companies.
+        </p>
+      </div>
+
+      <!-- Scroll indicator (bottom-center) -->
+      <div
+        class="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 sm:gap-2">
+        <span class="text-white text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
+        <div
+          class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-dashed border-white/60 flex items-center justify-center animate-bounce">
+          <svg width="16" height="16" class="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16L6 10H18L12 16Z" fill="white" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seamless Looping Image Divider -->
+    <!-- Made responsive with Tailwind height classes, decreased base height, and added extra images for 4K display compatibility -->
+    <div class="relative w-full overflow-hidden h-[18px] sm:h-[22px] md:h-[26px] lg:h-[30px]">
+      <div class="absolute inset-0 flex items-center divider-track w-max" id="divider-track">
+        <!-- Images duplicated sufficiently to seamlessly span ultra-wide 4K+ displays -->
+        <!-- Group 1 -->
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <!-- Group 2 (Duplicate for seamless loop) -->
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
+        <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
       </div>
     </div>
-  </section>
 
-  <!-- Seamless Looping Image Divider -->
-  <!-- Made responsive with Tailwind height classes, decreased base height, and added extra images for 4K display compatibility -->
-  <div class="relative w-full overflow-hidden h-[18px] sm:h-[22px] md:h-[26px] lg:h-[30px]">
-    <div class="absolute inset-0 flex items-center divider-track w-max" id="divider-track">
-      <!-- Images duplicated sufficiently to seamlessly span ultra-wide 4K+ displays -->
-      <!-- Group 1 -->
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <!-- Group 2 (Duplicate for seamless loop) -->
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-      <img src="assets/divider.jpg" alt="pattern" class="h-full w-auto max-w-none object-cover flex-shrink-0" />
-    </div>
-  </div>
-
-  <style>
-    /* Continuous looping animation for divider */
-    .divider-track {
-      display: flex;
-      animation: scroll-divider 150s linear infinite;
-      will-change: transform;
-    }
-
-    @keyframes scroll-divider {
-      0% {
-        transform: translateX(0);
+    <style>
+      /* Continuous looping animation for divider */
+      .divider-track {
+        display: flex;
+        animation: scroll-divider 150s linear infinite;
+        will-change: transform;
       }
 
-      100% {
-        transform: translateX(-50%);
-      }
-    }
+      @keyframes scroll-divider {
+        0% {
+          transform: translateX(0);
+        }
 
-    /* Client Logo Marquee Styles */
-    .marquee-item {
-      border: 1px solid #7e7a7a79;
-      min-width: 400px;
-      height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 3rem;
-      margin-right: 16px;
-    }
-
-    .marquee-container {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      border-left: 1px solid rgba(255, 255, 255, 0.1);
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-      mask-image: none !important;
-      -webkit-mask-image: none !important;
-    }
-
-    .client-logo {
-      filter: none !important;
-      -webkit-filter: none !important;
-      transition: none !important;
-    }
-
-    /* Responsive adjustments for clients section */
-    @media (max-width: 768px) {
-
-      /* Section padding */
-      #clients-section {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        100% {
+          transform: translateX(-50%);
+        }
       }
 
-      /* Section header adjustments */
-      #clients-section .text-center {
-        margin-bottom: 2.5rem;
-      }
-
-      #clients-section p.font-bebas {
-        font-size: 4rem !important;
-        line-height: 1;
-      }
-
-      #clients-section h2.font-bebas {
-        font-size: 1.75rem !important;
-        margin-top: -2rem !important;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-
-      /* Accent rule */
-      #clients-section .w-24 {
-        width: 4rem;
-        margin-top: 1rem;
-      }
-
-      /* Marquee container */
-      .marquee-container {
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        border-left: 1px solid rgba(0, 0, 0, 0.1);
-        border-right: 1px solid rgba(0, 0, 0, 0.1);
-      }
-
-      /* Marquee items */
+      /* Client Logo Marquee Styles */
       .marquee-item {
-        min-width: 240px;
-        height: 160px;
-        padding: 1.25rem 1.5rem;
-        margin-right: 12px;
-        border: 1px solid #000000;
-      }
-
-      /* Client logos */
-      .client-logo {
-        max-height: 4rem !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      /* Extra small screens */
-      #clients-section {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
-      }
-
-      #clients-section .text-center {
-        margin-bottom: 2rem;
-      }
-
-      #clients-section p.font-bebas {
-        font-size: 3rem !important;
-      }
-
-      #clients-section h2.font-bebas {
-        font-size: 1.5rem !important;
-        margin-top: -1.5rem !important;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        letter-spacing: 0.05em;
-      }
-
-      #clients-section .w-24 {
-        width: 3rem;
-        height: 0.15rem;
-        margin-top: 0.75rem;
-      }
-
-      .marquee-item {
-        min-width: 200px;
+        border: 1px solid #7e7a7a79;
+        min-width: 250px;
         height: 140px;
-        padding: 1rem 1.25rem;
-        margin-right: 10px;
-        border: 1px solid #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 2rem;
+        margin-right: 16px;
+        border-radius: 10px;
+      }
+
+      .marquee-container {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
       }
 
       .client-logo {
-        max-height: 3.5rem !important;
+        filter: none !important;
+        -webkit-filter: none !important;
+        transition: none !important;
       }
-    }
 
-    /* Laptop screens - thinner divider */
-    @media (min-width: 1024px) and (max-width: 1535px) {
-      [style*="height: 35px"] {
-        height: 25px !important;
+      /* Responsive adjustments for clients section */
+      @media (max-width: 768px) {
+
+        /* Section padding */
+        #clients-section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        /* Section header adjustments */
+        #clients-section .text-center {
+          margin-bottom: 2.5rem;
+        }
+
+        #clients-section p.font-bebas {
+          font-size: 4rem !important;
+          line-height: 1;
+        }
+
+        #clients-section h2.font-bebas {
+          font-size: 1.75rem !important;
+          margin-top: -2rem !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        /* Accent rule */
+        #clients-section .w-24 {
+          width: 4rem;
+          margin-top: 1rem;
+        }
+
+        /* Marquee container */
+        .marquee-container {
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          border-left: 1px solid rgba(0, 0, 0, 0.1);
+          border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Marquee items */
+        .marquee-item {
+          min-width: 240px;
+          height: 160px;
+          padding: 1.25rem 1.5rem;
+          margin-right: 12px;
+          border: 1px solid #000000;
+        }
+
+        /* Client logos */
+        .client-logo {
+          max-height: 4rem !important;
+        }
       }
-    }
 
-    /* Ultra-wide screens - larger divider */
-    @media (min-width: 1536px) {
-      [style*="height: 35px"] {
-        height: 100px !important;
+      @media (max-width: 480px) {
+
+        /* Extra small screens */
+        #clients-section {
+          padding-top: 2.5rem;
+          padding-bottom: 2.5rem;
+        }
+
+        #clients-section .text-center {
+          margin-bottom: 2rem;
+        }
+
+        #clients-section p.font-bebas {
+          font-size: 3rem !important;
+        }
+
+        #clients-section h2.font-bebas {
+          font-size: 1.5rem !important;
+          margin-top: -1.5rem !important;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          letter-spacing: 0.05em;
+        }
+
+        #clients-section .w-24 {
+          width: 3rem;
+          height: 0.15rem;
+          margin-top: 0.75rem;
+        }
+
+        .marquee-item {
+          min-width: 200px;
+          height: 140px;
+          padding: 1rem 1.25rem;
+          margin-right: 10px;
+          border: 1px solid #000000;
+        }
+
+        .client-logo {
+          max-height: 3.5rem !important;
+        }
       }
-    }
-  </style>
 
-  <!-- 4. About -->
-  <section class="min-h-screen flex items-center px-6 md:px-20 py-24 relative overflow-hidden" id="about"
-    style="background-color: #131518;">
-    <!-- Structural Grid -->
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-      <!-- Left Column: Layered Image Composition -->
-      <div class="lg:col-span-6 relative flex justify-center items-center h-[600px]">
-        <!-- Secondary Image 1: Bottom Right Offset -->
-        <div class="absolute bottom-10 right-0 w-72 h-72 z-10 grayscale brightness-50 heat-haze mask-reveal-wrapper">
-          <img alt="Industrial heavy machinery close-up" class="w-full h-full object-cover parallax-img"
-            src="assets/istockphoto-470309496-612x612.jpg.jpeg" />
-        </div>
-        <!-- Secondary Image 2: Top Left Offset -->
-        <div class="absolute top-10 left-0 w-64 h-80 z-10 grayscale brightness-75 heat-haze mask-reveal-wrapper">
-          <img alt="Steel structural framework" class="w-full h-full object-cover parallax-img"
-            src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg" />
-        </div>
-        <!-- Primary Central Arch (Tombstone) Image -->
-        <div
-          class="relative z-20 w-[380px] h-[520px] arch-frame shadow-2xl border-4 border-[#131518] heat-haze mask-reveal-wrapper">
-          <img alt="High-res industrial construction site with cranes"
-            class="w-full h-full object-cover scale-110 parallax-img"
-            src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg" />
-        </div>
+      /* Laptop screens - thinner divider */
+      @media (min-width: 1024px) and (max-width: 1535px) {
+        [style*="height: 35px"] {
+          height: 25px !important;
+        }
+      }
+
+      /* Ultra-wide screens - larger divider */
+      @media (min-width: 1536px) {
+        [style*="height: 35px"] {
+          height: 100px !important;
+        }
+      }
+    </style>
+
+    <!-- 4. Services - New Parallax Showcase -->
+    <section class="relative overflow-hidden py-24 pb-36 lg:pb-52 xl:pb-60 bg-white" id="services">
+
+      <!-- LEFT background parallax image -->
+      <div id="parallax-left" class="absolute left-0 top-0 w-[400px] h-full pointer-events-none z-0"
+        style="transform: translateX(-65%)">
+        <img src="assets/crane1.png" class="w-full h-full object-cover opacity-18" />
       </div>
-      <!-- Right Column: Content Section -->
-      <div class="lg:col-span-6 space-y-8">
-        <!-- Badge -->
-        <div class="inline-flex items-center space-x-3 bg-white/5 px-4 py-2 border-l-2 border-primary">
-          <span class="material-symbols-outlined text-primary">factory</span>
-          <span class="font-bebas font-bold text-xs tracking-widest text-white/70 uppercase">About Us</span>
-        </div>
-        <!-- Massive Heading -->
-        <h2 class="font-bebas text-5xl md:text-7xl leading-[0.9] text-white tracking-tighter reveal-mask">
-          <span>DELIVERING EXCELLENCE IN <span style="color: #FF1901;">FABRICATION</span> FOR OVER 25 YEARS</span>
-        </h2>
-        <!-- Body Paragraph -->
-        <div class="space-y-4">
-          <p class="font-plex text-white/60 text-lg leading-relaxed max-w-xl">
-            Doma Fabricators is a professionally managed industrial fabrication company with over 25 years of proven
-            experience. We specialize in piping works, heavy structural fabrication, equipment erection, industrial
-            maintenance, shed works, and roofing work.
+
+      <!-- RIGHT background parallax image -->
+      <div id="parallax-right" class="absolute right-0 top-0 w-[500px] h-full pointer-events-none z-0"
+        style="transform: translateX(65%)">
+        <img src="assets/crane2.png" class="w-full h-full object-cover opacity-18" />
+      </div>
+
+      <!-- Main content -->
+      <div class="relative z-10 w-full mx-auto px-6 xl:px-12" style="max-width: 1850px !important;">
+        <!-- Centered header with icon -->
+        <div class="text-center mb-16">
+          <div class="flex items-center justify-center gap-4 mb-4">
+            <span class="material-symbols-outlined text-primary text-3xl">engineering</span>
+            <span class="text-primary text-tiny-caps font-bold tracking-widest">— CORE CAPABILITIES —</span>
+          </div>
+          <h2 class="font-bebas text-6xl mt-4 reveal-mask">
+            <span>SPECIALIZED SERVICES</span>
+          </h2>
+          <p class="text-dark-grey text-lg leading-relaxed mt-6 max-w-3xl mx-auto font-light">
+            We provide high-quality mechanical solutions, from design to installation and
+            maintenance, ensuring efficiency and reliability for your industrial operations.
           </p>
-          <p class="font-cormorant italic text-white/50 text-xl">
-            Precision is not a standard; it is our heritage.
-          </p>
         </div>
-        <!-- Dotted Divider -->
-        <div class="w-full h-px dotted-line opacity-30"></div>
-        <!-- Stats Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4">
-          <div class="border-r border-white/10">
-            <p class="font-bebas text-5xl mb-2" style="color: #FF1901;">25+</p>
-            <p class="text-tiny-caps text-white/50">Years Expertise</p>
-          </div>
-          <div class="border-r border-white/10">
-            <p class="font-bebas text-5xl mb-2" style="color: #FF1901;">500+</p>
-            <p class="text-tiny-caps text-white/50">Projects Done</p>
-          </div>
-          <div class="border-r border-white/10">
-            <p class="font-bebas text-5xl mb-2" style="color: #FF1901;">120</p>
-            <p class="text-tiny-caps text-white/50">Engineers</p>
-          </div>
-          <div>
-            <p class="font-bebas text-5xl mb-2" style="color: #FF1901;">0</p>
-            <p class="text-tiny-caps text-white/50">Safety Incidents</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Background Aesthetic Overlays -->
-    <div class="absolute bottom-0 right-0 p-10 opacity-5 pointer-events-none">
-      <span class="font-bebas text-[20vw] leading-none select-none text-white">DOMA</span>
-    </div>
-  </section>
 
+        <!-- 4 Cards with number badges -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
 
-  <!-- 5. Services - New Parallax Showcase -->
-  <section class="relative overflow-hidden py-24 pb-36 lg:pb-52 xl:pb-60 bg-white" id="services">
-
-    <!-- LEFT background parallax image -->
-    <div id="parallax-left" class="absolute left-0 top-0 w-[400px] h-full pointer-events-none z-0"
-      style="transform: translateX(-65%)">
-      <img src="assets/crane1.png" class="w-full h-full object-cover opacity-18" />
-    </div>
-
-    <!-- RIGHT background parallax image -->
-    <div id="parallax-right" class="absolute right-0 top-0 w-[500px] h-full pointer-events-none z-0"
-      style="transform: translateX(65%)">
-      <img src="assets/crane2.png" class="w-full h-full object-cover opacity-18" />
-    </div>
-
-    <!-- Main content -->
-    <div class="relative z-10 max-w-[1600px] w-full mx-auto px-6 xl:px-12">
-      <!-- Centered header with icon -->
-      <div class="text-center mb-16">
-        <div class="flex items-center justify-center gap-4 mb-4">
-          <span class="material-symbols-outlined text-primary text-3xl">engineering</span>
-          <span class="text-primary text-tiny-caps font-bold tracking-widest">— CORE CAPABILITIES —</span>
-        </div>
-        <h2 class="font-bebas text-6xl mt-4 reveal-mask">
-          <span>SPECIALIZED SERVICES</span>
-        </h2>
-        <p class="text-dark-grey text-lg leading-relaxed mt-6 max-w-3xl mx-auto font-light">
-          We provide high-quality mechanical solutions, from design to installation and
-          maintenance, ensuring efficiency and reliability for your industrial operations.
-        </p>
-      </div>
-
-      <!-- 3 Cards with number badges -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Card 1 -->
-        <div
-          class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
-          <!-- Number badge -->
-          <div class="absolute top-6 right-6 z-20">
-            <span class="font-bebas text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">01</span>
-          </div>
-
-          <!-- Image container with overlay -->
-          <div class="relative h-56 md:h-[270px] lg:h-[300px] xl:h-[380px] overflow-hidden">
-            <img src="assets/fabrication-and-erection-of-steel-structures.jpg.jpeg"
-              class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
-
-            <!-- Icon overlay -->
-            <div class="absolute bottom-6 left-6 z-10">
-              <span class="material-symbols-outlined text-white text-4xl">factory</span>
-            </div>
-          </div>
-
-          <!-- Content area -->
-          <div class="py-5 px-4 md:py-6 md:px-5 lg:py-8 lg:px-6">
-            <div class="flex items-center gap-3 mb-3 lg:mb-5">
-              <div class="w-8 h-[2px] bg-primary"></div>
-              <h3
-                class="font-bebas text-2xl md:text-3xl lg:text-4xl text-near-black group-hover:text-primary transition-colors">
-                PIPING WORKS
-              </h3>
-            </div>
-            <p class="text-dark-grey font-light text-sm md:text-base lg:text-lg leading-relaxed mb-6 lg:mb-8">
-              Plant piping services manufactured from high-quality materials, highly suitable for diverse industrial
-              applications.
-            </p>
-
-            <!-- Animated arrow link -->
-            <div class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
-              <span>LEARN MORE</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="square" />
-              </svg>
-            </div>
-          </div>
-
-          <!-- Bottom accent line -->
+          <!-- Card 1 -->
           <div
-            class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div
-          class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
-          <!-- Number badge -->
-          <div class="absolute top-6 right-6 z-20">
-            <span class="font-bebas text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">02</span>
-          </div>
-
-          <!-- Image container with overlay -->
-          <div class="relative h-56 md:h-[270px] lg:h-[300px] xl:h-[380px] overflow-hidden">
-            <img src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg"
-              class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
-
-            <!-- Icon overlay -->
-            <div class="absolute bottom-6 left-6 z-10">
-              <span class="material-symbols-outlined text-white text-4xl">storage</span>
+            class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
+            <!-- Number badge -->
+            <div class="absolute top-6 right-6 z-20">
+              <span
+                class="font-bebas text-5xl md:text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">01</span>
             </div>
-          </div>
 
-          <!-- Content area -->
-          <div class="py-5 px-4 md:py-6 md:px-5 lg:py-8 lg:px-6">
-            <div class="flex items-center gap-3 mb-3 lg:mb-5">
-              <div class="w-8 h-[2px] bg-primary"></div>
-              <h3
-                class="font-bebas text-2xl md:text-3xl lg:text-4xl text-near-black group-hover:text-primary transition-colors">
-                SITE-TANK
-                FABRICATION</h3>
-            </div>
-            <p class="text-dark-grey font-light text-sm md:text-base lg:text-lg leading-relaxed mb-6 lg:mb-8">
-              We have mastered the art of tank fabrication for a wide variety of industries — Tank Farms, SS/MS Tanks,
-              FRP Lining and more.
-            </p>
+            <!-- Image container with overlay -->
+            <div class="relative h-56 md:h-[270px] lg:h-[300px] xl:h-[380px] overflow-hidden">
+              <img src="assets/pipe-system.jpg"
+                class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
 
-            <!-- Animated arrow link -->
-            <div class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
-              <span>LEARN MORE</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="square" />
-              </svg>
-            </div>
-          </div>
-
-          <!-- Bottom accent line -->
-          <div
-            class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div
-          class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
-          <!-- Number badge -->
-          <div class="absolute top-6 right-6 z-20">
-            <span class="font-bebas text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">03</span>
-          </div>
-
-          <!-- Image container with overlay -->
-          <div class="relative h-56 md:h-[270px] lg:h-[300px] xl:h-[380px] overflow-hidden">
-            <img src="assets/arc-welding-of-a-steel-in-construction-site-photo.jpeg"
-              class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
-
-            <!-- Icon overlay -->
-            <div class="absolute bottom-6 left-6 z-10">
-              <span class="material-symbols-outlined text-white text-4xl">manufacturing</span>
-            </div>
-          </div>
-
-          <!-- Content area -->
-          <div class="py-5 px-4 md:py-6 md:px-5 lg:py-8 lg:px-6">
-            <div class="flex items-center gap-3 mb-3 lg:mb-5">
-              <div class="w-8 h-[2px] bg-primary"></div>
-              <h3
-                class="font-bebas text-2xl md:text-3xl lg:text-4xl text-near-black group-hover:text-primary transition-colors">
-                EQUIPMENT
-                ERECTION</h3>
-            </div>
-            <p class="text-dark-grey font-light text-sm md:text-base lg:text-lg leading-relaxed mb-6 lg:mb-8">
-              Precision placement and erection services customized to your requirements, delivered by skilled,
-              experienced engineers at industry-leading prices.
-            </p>
-
-            <!-- Animated arrow link -->
-            <div class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
-              <span>LEARN MORE</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="square" />
-              </svg>
-            </div>
-          </div>
-
-          <!-- Bottom accent line -->
-          <div
-            class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- 6. Industries -->
-  <section
-    class="relative h-auto min-h-[85vh] flex flex-col justify-center overflow-hidden py-12 md:py-16 bg-near-black"
-    id="industries">
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-      <img alt="Industrial Background" class="w-full h-full object-cover opacity-20"
-        src="assets/csm_OilGas_Onshore_4d347230d6.webp" />
-      <div class="absolute inset-0 bg-gradient-to-b from-near-black/90 via-near-black/70 to-near-black/90"></div>
-    </div>
-
-    <!-- Header Content -->
-    <header class="relative z-10 text-center mb-8 md:mb-10 px-4">
-      <div
-        class="inline-flex items-center gap-3 px-5 py-2 border border-primary/30 rounded-lg mb-6 bg-primary/5 backdrop-blur-md">
-        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-        <span class="text-[11px] uppercase tracking-[0.25em] font-semibold text-primary">Our Industries</span>
-      </div>
-      <h2 class="font-bebas text-4xl md:text-5xl lg:text-6xl leading-none max-w-5xl mx-auto uppercase reveal-mask">
-        <span class="block text-white/95 tracking-wide">Engineering Solutions</span>
-        <span class="block mt-2 relative">
-          <span class="text-primary drop-shadow-[0_0_15px_rgba(192,49,10,0.5)]">That Power Your Industry</span>
-          <span class="absolute -inset-x-4 -inset-y-2 bg-primary/5 blur-2xl rounded-full -z-10"></span>
-        </span>
-      </h2>
-      <div class="mt-6 flex justify-center items-center gap-4">
-        <div class="h-px w-16 bg-gradient-to-r from-transparent to-white/30"></div>
-        <span class="text-[9px] uppercase tracking-[0.3em] text-white/40 font-mono">Precision • Safety •
-          Excellence</span>
-        <div class="h-px w-16 bg-gradient-to-l from-transparent to-white/30"></div>
-      </div>
-    </header>
-
-    <!-- Industry Carousel -->
-    <main class="relative z-10 w-full overflow-hidden" data-purpose="horizontal-carousel">
-      <div class="carousel-wrapper" id="carousel-track">
-        <!-- Slide 1: Oil & Gas -->
-        <article
-          class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3"
-          data-index="0">
-          <img alt="Oil and Gas Facility"
-            class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0"
-            src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp" />
-          <div class="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent"></div>
-          <div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
-            <h3 class="font-bebas text-3xl uppercase text-white">Oil &amp; Gas</h3>
-          </div>
-          <div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
-            <div class="absolute top-8 right-8 opacity-20 technical-svg">
-              <svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
-                <circle cx="50" cy="50" r="40"></circle>
-                <path d="M50 10 L50 90 M10 50 L90 50"></path>
-                <rect height="40" width="40" x="30" y="30"></rect>
-              </svg>
-            </div>
-            <h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Oil &amp; Gas</h3>
-            <div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
-                <span class="text-sm font-bold val-cap text-white">Piping Works</span>
-              </div>
-              <div class="hairline"></div>
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
-                <span class="text-sm font-bold val-cert text-white">ISO 45001</span>
-              </div>
-              <div class="hairline"></div>
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Experience</span>
-                <span class="text-sm font-bold val-tol text-white">25+ Years</span>
+              <!-- Icon overlay -->
+              <div class="absolute bottom-6 left-6 z-10">
+                <span class="material-symbols-outlined text-white text-4xl">factory</span>
               </div>
             </div>
-          </div>
-        </article>
 
-        <!-- Slide 2: Chemical Industry (Active by default) -->
-        <article
-          class="industrial-card active relative flex-shrink-0 w-80 md:w-[450px] h-[550px] overflow-hidden shadow-2xl transition-all duration-700 mx-3"
-          data-index="1">
-          <img alt="Chemical Industry" class="absolute inset-0 w-full h-full object-cover"
-            src="assets/environmental-pollution-factory-exterior-night_23-2149057728.avif" />
-          <div class="absolute bottom-6 left-6 transition-opacity duration-500 opacity-0 card-title">
-            <h3 class="font-bebas text-3xl uppercase text-white">Chemical</h3>
-          </div>
-          <div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
-            <div class="absolute top-8 right-8 opacity-20 technical-svg">
-              <svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
-                <circle cx="50" cy="50" r="40"></circle>
-                <path d="M50 10 L50 90 M10 50 L90 50"></path>
-                <rect height="40" width="40" x="30" y="30"></rect>
-              </svg>
-            </div>
-            <h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Chemical<br />Industry
-            </h3>
-            <div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
-                <span class="text-sm font-bold val-cap text-white">Tank Fabrication</span>
+            <!-- Content area -->
+            <div class="py-5 px-4 md:py-6 md:px-5 lg:py-8 lg:px-6">
+              <div class="flex items-center gap-3 mb-3 lg:mb-5">
+                <div class="w-8 h-[2px] bg-primary"></div>
+                <h3
+                  class="font-bebas text-2xl lg:text-3xl xl:text-4xl text-near-black group-hover:text-primary transition-colors">
+                  PIPING WORKS
+                </h3>
               </div>
-              <div class="hairline"></div>
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
-                <span class="text-sm font-bold val-cert text-white">ASME Standards</span>
-              </div>
-              <div class="hairline"></div>
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Projects</span>
-                <span class="text-sm font-bold val-tol text-white">500+ Done</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Slide 3: Petroleum Refinery -->
-        <article
-          class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3"
-          data-index="2">
-          <img alt="Petroleum Refinery"
-            class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0"
-            src="assets/industrial-night-lights-stockcake.webp" />
-          <div class="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent"></div>
-          <div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
-            <h3 class="font-bebas text-3xl uppercase text-white">Petroleum</h3>
-          </div>
-          <div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
-            <div class="absolute top-8 right-8 opacity-20 technical-svg">
-              <svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
-                <circle cx="50" cy="50" r="40"></circle>
-                <path d="M50 10 L50 90 M10 50 L90 50"></path>
-                <rect height="40" width="40" x="30" y="30"></rect>
-              </svg>
-            </div>
-            <h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Petroleum<br />Refinery
-            </h3>
-            <div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
-                <span class="text-sm font-bold val-cap text-white">Equipment Erection</span>
-              </div>
-              <div class="hairline"></div>
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
-                <span class="text-sm font-bold val-cert text-white">Safety First</span>
-              </div>
-              <div class="hairline"></div>
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Engineers</span>
-                <span class="text-sm font-bold val-tol text-white">120+ Team</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Slide 4: Paint Industry -->
-        <article
-          class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3"
-          data-index="3">
-          <img alt="Paint Industry"
-            class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0"
-            src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg" />
-          <div class="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent"></div>
-          <div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
-            <h3 class="font-bebas text-3xl uppercase text-white">Paint Industry</h3>
-          </div>
-          <div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
-            <div class="absolute top-8 right-8 opacity-20 technical-svg">
-              <svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
-                <circle cx="50" cy="50" r="40"></circle>
-                <path d="M50 10 L50 90 M10 50 L90 50"></path>
-                <rect height="40" width="40" x="30" y="30"></rect>
-              </svg>
-            </div>
-            <h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Paint<br />Industry
-            </h3>
-            <div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
-                <span class="text-sm font-bold val-cap text-white">Shed & Roofing</span>
-              </div>
-              <div class="hairline"></div>
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
-                <span class="text-sm font-bold val-cert text-white">Quality Assured</span>
-              </div>
-              <div class="hairline"></div>
-              <div class="flex justify-between items-center">
-                <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Safety</span>
-                <span class="text-sm font-bold val-tol text-white">0 Incidents</span>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </main>
-
-    <!-- UI Controls -->
-    <footer class="relative z-10 w-full max-w-7xl mx-auto px-8 mt-12 flex items-center justify-between"
-      data-purpose="carousel-controls">
-      <!-- Slide Counter and Progress -->
-      <div class="flex items-center gap-8">
-        <div class="digital-counter font-bold text-xl text-white">
-          <span class="text-primary" id="current-slide">2</span> <span class="text-white/40 text-sm">/ <span
-              id="total-slides">4</span></span>
-        </div>
-        <div class="relative w-48 md:w-96 h-[2px] bg-white/10 overflow-hidden">
-          <div class="absolute top-0 left-0 h-full bg-primary transition-all duration-700" id="progress-bar"
-            style="width: 50%;"></div>
-        </div>
-      </div>
-      <!-- Navigation Arrows -->
-      <div class="flex gap-4">
-        <button aria-label="Previous Slide"
-          class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-near-black transition-colors duration-300 text-white"
-          id="prev-btn">
-          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-            <path d="m15 18-6-6 6-6"></path>
-          </svg>
-        </button>
-        <button aria-label="Next Slide"
-          class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-near-black transition-colors duration-300 text-white"
-          id="next-btn">
-          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-        </button>
-      </div>
-    </footer>
-  </section>
-  <!-- 7. Clients -->
-  <section class="py-24 bg-white" data-purpose="clients-section" id="clients-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="text-center mb-16" data-purpose="section-header">
-        <p class="font-bebas text-[8rem] md:text-[10rem] leading-none text-primary opacity-60 select-none"
-          aria-hidden="true">25+ YEARS</p>
-        <h2
-          class="font-bebas text-3xl sm:text-4xl md:text-5xl tracking-wider text-near-black -mt-8 md:-mt-12 relative z-10 px-4">
-          TRUSTED BY OUR CLIENTS
-        </h2>
-        <!-- Thin red accent rule -->
-        <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
-      </div>
-
-      <!-- Marquee Wrapper -->
-      <div class="relative overflow-hidden marquee-container">
-        <div class="flex whitespace-nowrap" id="marquee-track">
-          <!-- Set 1 of logos -->
-          <div class="marquee-item"><img alt="Aarti Surfactants" class="client-logo max-h-36 object-contain"
-              src="assets/Aarti surfactants logo.png" /></div>
-          <div class="marquee-item"><img alt="Advance Enzyme" class="client-logo max-h-36 object-contain"
-              src="assets/Advance enzyme-logo.png" /></div>
-          <div class="marquee-item"><img alt="Piyanshu Chemicals" class="client-logo max-h-36 object-contain"
-              src="assets/Piyanshu chemicals logo.png" /></div>
-          <div class="marquee-item"><img alt="Relson" class="client-logo max-h-36 object-contain"
-              src="assets/Relson logo.png" /></div>
-          <div class="marquee-item"><img alt="BioInnovation India" class="client-logo max-h-36 object-contain"
-              src="assets/bioinnovation-india-logo.png" /></div>
-          <div class="marquee-item"><img alt="Unichem" class="client-logo max-h-36 object-contain"
-              src="assets/unichem-logo (1).png" /></div>
-          <div class="marquee-item"><img alt="Pensol" class="client-logo max-h-36 object-contain"
-              src="assets/pensol_logo.png" /></div>
-          <div class="marquee-item"><img alt="SRF" class="client-logo max-h-36 object-contain"
-              src="assets/SRF-logo.png" /></div>
-
-          <!-- Duplicate set for infinite loop -->
-          <div class="marquee-item"><img alt="Aarti Surfactants" class="client-logo max-h-36 object-contain"
-              src="assets/Aarti surfactants logo.png" /></div>
-          <div class="marquee-item"><img alt="Advance Enzyme" class="client-logo max-h-36 object-contain"
-              src="assets/Advance enzyme-logo.png" /></div>
-          <div class="marquee-item"><img alt="Piyanshu Chemicals" class="client-logo max-h-36 object-contain"
-              src="assets/Piyanshu chemicals logo.png" /></div>
-          <div class="marquee-item"><img alt="Relson" class="client-logo max-h-36 object-contain"
-              src="assets/Relson logo.png" /></div>
-          <div class="marquee-item"><img alt="BioInnovation India" class="client-logo max-h-36 object-contain"
-              src="assets/bioinnovation-india-logo.png" /></div>
-          <div class="marquee-item"><img alt="Unichem" class="client-logo max-h-36 object-contain"
-              src="assets/unichem-logo (1).png" /></div>
-          <div class="marquee-item"><img alt="Pensol" class="client-logo max-h-36 object-contain"
-              src="assets/pensol_logo.png" /></div>
-          <div class="marquee-item"><img alt="SRF" class="client-logo max-h-36 object-contain"
-              src="assets/SRF-logo.png" /></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- 8. Projects -->
-  <section class="bg-off-white py-32 relative hud-trigger" id="projects">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="flex items-center gap-4 mb-20">
-        <h2 class="font-bebas text-6xl reveal-mask"><span>FEATURED PROJECTS</span></h2>
-        <div class="flex-1 h-[1px] bg-near-black/10 divider-draw"></div>
-      </div>
-      <div class="space-y-0 project-list">
-        <div
-          class="group border-b border-near-black/10 py-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white transition-colors px-4 hover-trigger project-row"
-          data-bg="assets/dscf0853.jpg.jpeg">
-          <span class="font-bebas text-8xl text-near-black/10 group-hover:text-primary transition-colors">01</span>
-          <div class="flex-1">
-            <h3 class="font-bebas text-4xl mb-2">Aarti Surfactant Pvt. Ltd</h3>
-            <p class="text-tiny-caps text-primary font-bold">Project &amp; Maintenance • 2010–Till</p>
-            <p class="text-dark-grey text-sm mt-2">Sector-03, Pithampur (DHAR)</p>
-          </div>
-          <div class="w-full md:w-64 h-40 overflow-hidden">
-            <img alt="Aarti Surfactant Project"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 parallax-img"
-              src="assets/dscf0853.jpg.jpeg" />
-          </div>
-        </div>
-        <div
-          class="group border-b border-near-black/10 py-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white transition-colors px-4 hover-trigger project-row"
-          data-bg="assets/istockphoto-1482979397-612x612.jpg.jpeg">
-          <span class="font-bebas text-8xl text-near-black/10 group-hover:text-primary transition-colors">02</span>
-          <div class="flex-1">
-            <h3 class="font-bebas text-4xl mb-2">Ralson Tyres Limited</h3>
-            <p class="text-tiny-caps text-primary font-bold">Project • 2021–2024</p>
-            <p class="text-dark-grey text-sm mt-2">Smart Industrial Park, Pithampur</p>
-          </div>
-          <div class="w-full md:w-64 h-40 overflow-hidden">
-            <img alt="Ralson Tyres Project"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 parallax-img"
-              src="assets/istockphoto-1482979397-612x612.jpg.jpeg" />
-          </div>
-        </div>
-        <div
-          class="group border-b border-near-black/10 py-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white transition-colors px-4 hover-trigger project-row"
-          data-bg="assets/istockphoto-1486082802-612x612.jpg.jpeg">
-          <span class="font-bebas text-8xl text-near-black/10 group-hover:text-primary transition-colors">03</span>
-          <div class="flex-1">
-            <h3 class="font-bebas text-4xl mb-2">Pensol Lubricants Limited</h3>
-            <p class="text-tiny-caps text-primary font-bold">Project • 2021–Till</p>
-            <p class="text-dark-grey text-sm mt-2">Sector-03, Pithampur (DHAR)</p>
-          </div>
-          <div class="w-full md:w-64 h-40 overflow-hidden">
-            <img alt="Pensol Lubricants Project"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 parallax-img"
-              src="assets/istockphoto-1486082802-612x612.jpg.jpeg" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- 9. Safety -->
-  <section class="bg-white py-12 overflow-hidden" id="safety">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20">
-      <div class="w-full lg:w-1/2 relative">
-        <div class="h-[500px] md:h-[600px] overflow-hidden mask-reveal-wrapper group relative">
-          <img alt="Safety First"
-            class="w-full h-full object-contain parallax-img liquid-target transition-transform duration-700 group-hover:scale-105"
-            src="assets/safety-first-sign-illustration-free-vector.jpg.jpeg" />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-near-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          </div>
-        </div>
-        <div
-          class="relative -mt-12 ml-auto w-fit bg-primary p-8 md:p-12 text-white shadow-2xl group-hover:shadow-primary/50 transition-shadow duration-500">
-          <h4 class="font-bebas text-2xl md:text-3xl">ISO 45001 CERTIFIED</h4>
-        </div>
-      </div>
-      <div class="w-full lg:w-1/2 flex flex-col justify-center">
-        <h2 class="font-bebas text-5xl md:text-6xl mb-6 md:mb-8 reveal-mask"><span>SAFETY WITHOUT COMPROMISE</span></h2>
-        <p class="text-dark-grey text-base md:text-lg mb-8 md:mb-12 font-light leading-relaxed">
-          At Doma Fabricators, safety is our top priority. We maintain comprehensive safety management systems designed
-          to prevent accidents, protect the environment, and ensure compliance with all relevant safety regulations.
-        </p>
-        <div class="space-y-6 md:space-y-8">
-          <div class="flex items-start gap-4 md:gap-6 group">
-            <span class="font-bebas text-2xl md:text-3xl text-primary">01</span>
-            <div>
-              <h4 class="font-bold text-tiny-caps mb-2 text-sm md:text-base">— Risk Assessment & PPE Compliance</h4>
-              <p class="text-mid-grey text-sm md:text-base leading-relaxed">Identifying and controlling hazards before
-                work begins. Providing and enforcing the use of personal protective equipment at all times.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4 md:gap-6 group">
-            <span class="font-bebas text-2xl md:text-3xl text-primary">02</span>
-            <div>
-              <h4 class="font-bold text-tiny-caps mb-2 text-sm md:text-base">— Training, Audits & Inspections</h4>
-              <p class="text-mid-grey text-sm md:text-base leading-relaxed">Regular safety training, drills, and
-                workshops for all employees. Routine checks to maintain strict safety standards across all operations.
+              <p class="text-dark-grey font-light text-sm lg:text-base xl:text-lg leading-relaxed mb-6 lg:mb-8">
+                Plant piping services manufactured from high-quality materials, highly suitable for diverse industrial
+                applications.
               </p>
+
+              <!-- Animated arrow link -->
+              <div
+                class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
+                <span>LEARN MORE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="square" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bottom accent line -->
+            <div
+              class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
             </div>
           </div>
-          <div class="flex items-start gap-4 md:gap-6 group">
-            <span class="font-bebas text-2xl md:text-3xl text-primary">03</span>
+
+          <!-- Card 2 -->
+          <div
+            class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
+            <!-- Number badge -->
+            <div class="absolute top-6 right-6 z-20">
+              <span
+                class="font-bebas text-5xl md:text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">02</span>
+            </div>
+
+            <!-- Image container with overlay -->
+            <div class="relative h-56 md:h-[270px] lg:h-[300px] xl:h-[380px] overflow-hidden">
+              <img src="assets/st4.png"
+                class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
+
+              <!-- Icon overlay -->
+              <div class="absolute bottom-6 left-6 z-10">
+                <span class="material-symbols-outlined text-white text-4xl">storage</span>
+              </div>
+            </div>
+
+            <!-- Content area -->
+            <div class="py-5 px-4 md:py-6 md:px-5 lg:py-8 lg:px-6">
+              <div class="flex items-center gap-3 mb-3 lg:mb-5">
+                <div class="w-8 h-[2px] bg-primary"></div>
+                <h3
+                  class="font-bebas text-2xl lg:text-3xl xl:text-4xl text-near-black group-hover:text-primary transition-colors">
+                  SITE-TANK
+                  FABRICATION</h3>
+              </div>
+              <p class="text-dark-grey font-light text-sm lg:text-base xl:text-lg leading-relaxed mb-6 lg:mb-8">
+                We have mastered the art of tank fabrication for a wide variety of industries — Tank Farms, SS/MS Tanks,
+                FRP Lining and more.
+              </p>
+
+              <!-- Animated arrow link -->
+              <div
+                class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
+                <span>LEARN MORE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="square" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bottom accent line -->
+            <div
+              class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
+            <!-- Number badge -->
+            <div class="absolute top-6 right-6 z-20">
+              <span
+                class="font-bebas text-5xl md:text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">03</span>
+            </div>
+
+            <!-- Image container with overlay -->
+            <div class="relative h-56 md:h-[270px] lg:h-[300px] xl:h-[380px] overflow-hidden">
+              <img src="assets/Erection-ST-01.jpg"
+                class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
+
+              <!-- Icon overlay -->
+              <div class="absolute bottom-6 left-6 z-10">
+                <span class="material-symbols-outlined text-white text-4xl">manufacturing</span>
+              </div>
+            </div>
+
+            <!-- Content area -->
+            <div class="py-5 px-4 md:py-6 md:px-5 lg:py-8 lg:px-6">
+              <div class="flex items-center gap-3 mb-3 lg:mb-5">
+                <div class="w-8 h-[2px] bg-primary"></div>
+                <h3
+                  class="font-bebas text-2xl lg:text-3xl xl:text-4xl text-near-black group-hover:text-primary transition-colors">
+                  EQUIPMENT
+                  ERECTION</h3>
+              </div>
+              <p class="text-dark-grey font-light text-sm lg:text-base xl:text-lg leading-relaxed mb-6 lg:mb-8">
+                Precision placement and erection services customized to your requirements, delivered by skilled,
+                experienced engineers at industry-leading prices.
+              </p>
+
+              <!-- Animated arrow link -->
+              <div
+                class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
+                <span>LEARN MORE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="square" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bottom accent line -->
+            <div
+              class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="service-card group bg-white relative overflow-hidden sharp-card hover-trigger tilt-card shadow-lg border border-near-black/5">
+            <!-- Number badge -->
+            <div class="absolute top-6 right-6 z-20">
+              <span
+                class="font-bebas text-5xl md:text-6xl text-near-black/10 group-hover:text-primary/20 transition-colors">04</span>
+            </div>
+
+            <!-- Image container with overlay -->
+            <div class="relative h-56 md:h-[270px] lg:h-[300px] xl:h-[380px] overflow-hidden">
+              <img src="assets/oil-refinery.jpg"
+                class="w-full h-full object-cover scale-105 parallax-img liquid-target transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-near-black/60"></div>
+
+              <!-- Icon overlay -->
+              <div class="absolute bottom-6 left-6 z-10">
+                <span class="material-symbols-outlined text-white text-4xl">settings</span>
+              </div>
+            </div>
+
+            <!-- Content area -->
+            <div class="py-5 px-4 md:py-6 md:px-5 lg:py-8 lg:px-6">
+              <div class="flex items-center gap-3 mb-3 lg:mb-5">
+                <div class="w-8 h-[2px] bg-primary"></div>
+                <h3
+                  class="font-bebas text-2xl lg:text-3xl xl:text-4xl text-near-black group-hover:text-primary transition-colors">
+                  INDUSTRIAL
+                  MAINTENANCE</h3>
+              </div>
+              <p class="text-dark-grey font-light text-sm lg:text-base xl:text-lg leading-relaxed mb-6 lg:mb-8">
+                Comprehensive industrial maintenance services to ensure your facilities operate at peak efficiency with
+                minimal downtime.
+              </p>
+
+              <!-- Animated arrow link -->
+              <div
+                class="flex items-center gap-2 text-primary text-tiny-caps font-bold group-hover:gap-4 transition-all">
+                <span>LEARN MORE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="square" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bottom accent line -->
+            <div
+              class="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. About -->
+    <section class="min-h-screen flex items-center px-6 md:px-20 py-24 relative overflow-hidden" id="about"
+      style="background-color: #131518;">
+      <!-- Structural Grid -->
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <!-- Left Column: Layered Image Composition -->
+        <div class="lg:col-span-6 relative flex justify-center items-center h-[600px]">
+          <!-- Secondary Image 1: Bottom Right Offset -->
+          <div class="absolute bottom-10 right-0 w-72 h-72 z-10 grayscale brightness-50 heat-haze mask-reveal-wrapper">
+            <img alt="Industrial heavy machinery close-up" class="w-full h-full object-cover parallax-img"
+              src="assets/istockphoto-470309496-612x612.jpg.jpeg" />
+          </div>
+          <!-- Secondary Image 2: Top Left Offset -->
+          <div class="absolute top-10 left-0 w-64 h-80 z-10 grayscale brightness-75 heat-haze mask-reveal-wrapper">
+            <img alt="Steel structural framework" class="w-full h-full object-cover parallax-img"
+              src="assets/construction-workers-on-a-metal-truss-roof-photo.jpeg" />
+          </div>
+          <!-- Primary Central Arch (Tombstone) Image -->
+          <div
+            class="relative z-20 w-[380px] h-[520px] arch-frame shadow-2xl border-4 border-[#131518] heat-haze mask-reveal-wrapper">
+            <img alt="High-res industrial construction site with cranes"
+              class="w-full h-full object-cover scale-110 parallax-img" src="assets/about.jpg" />
+          </div>
+        </div>
+        <!-- Right Column: Content Section -->
+        <div class="lg:col-span-6 space-y-8">
+          <!-- Badge -->
+          <div class="inline-flex items-center space-x-3 bg-white/5 px-4 py-2 border-l-2 border-primary">
+            <span class="material-symbols-outlined text-primary">factory</span>
+            <span class="font-bebas font-bold text-xs tracking-widest text-white/70 uppercase">About Us</span>
+          </div>
+          <!-- Massive Heading -->
+          <h2 class="font-bebas text-5xl md:text-7xl leading-[0.9] text-white tracking-tighter reveal-mask">
+            <span>DELIVERING EXCELLENCE IN <span style="color: #FF1901;">FABRICATION</span> FOR OVER 25 YEARS</span>
+          </h2>
+          <!-- Body Paragraph -->
+          <div class="space-y-4">
+            <p class="font-plex text-white/60 text-lg leading-relaxed max-w-xl">
+              Doma Fabricators is a professionally managed industrial fabrication company with over 25 years of proven
+              experience. We specialize in piping works, heavy structural fabrication, equipment erection, industrial
+              maintenance, shed works, and roofing work.
+            </p>
+            <p class="font-cormorant italic text-white/50 text-xl">
+              Precision is not a standard; it is our heritage.
+            </p>
+          </div>
+          <!-- Dotted Divider -->
+          <div class="w-full h-px dotted-line opacity-30"></div>
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4">
+            <div class="border-r border-white/10">
+              <p class="font-bebas text-5xl mb-2" style="color: #FF1901;">25+</p>
+              <p class="text-tiny-caps text-white/50">Years Expertise</p>
+            </div>
+            <div class="border-r border-white/10">
+              <p class="font-bebas text-5xl mb-2" style="color: #FF1901;">500+</p>
+              <p class="text-tiny-caps text-white/50">Projects Done</p>
+            </div>
+            <div class="border-r border-white/10">
+              <p class="font-bebas text-5xl mb-2" style="color: #FF1901;">120</p>
+              <p class="text-tiny-caps text-white/50">Engineers</p>
+            </div>
             <div>
-              <h4 class="font-bold text-tiny-caps mb-2 text-sm md:text-base">— Emergency Preparedness & Compliance</h4>
-              <p class="text-mid-grey text-sm md:text-base leading-relaxed">Well-defined response plans, regular mock
-                drills, full adherence to all safety laws, and continuous improvement aligned with best practices.</p>
+              <p class="font-bebas text-5xl mb-2" style="color: #FF1901;">0</p>
+              <p class="text-tiny-caps text-white/50">Safety Incidents</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- 10. Contact -->
-  <section class="bg-light-grey py-48 clip-diagonal-reverse parallax-section relative" id="contact"
-    style="z-index: 10;">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20 relative" style="z-index: 2;">
-      <div class="w-full lg:w-1/2">
-        <h2 class="font-bebas text-6xl mb-12 reveal-mask"><span>REACH OUT</span></h2>
-        <form id="contact-form" class="space-y-12" novalidate>
-          <!-- Honeypot field (hidden from users, catches bots) -->
-          <div style="position: absolute; left: -9999px;" aria-hidden="true">
-            <input type="text" name="website_url" tabindex="-1" autocomplete="off" />
-          </div>
+      <!-- Background Aesthetic Overlays -->
+      <div class="absolute bottom-0 right-0 p-10 opacity-5 pointer-events-none">
+        <span class="font-bebas text-[20vw] leading-none select-none text-white">DOMA</span>
+      </div>
+    </section>
 
-          <!-- CSRF Token (generated dynamically) -->
-          <input type="hidden" id="csrf-token" name="csrf_token" />
 
-          <!-- Timestamp for rate limiting -->
-          <input type="hidden" id="form-timestamp" name="timestamp" />
 
-          <div class="relative group">
-            <label class="text-tiny-caps text-primary font-bold block mb-2" for="user-name">Your Name</label>
-            <input id="user-name" name="from_name"
-              class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger"
-              placeholder="John Doe" type="text" required minlength="2" maxlength="100" pattern="^[a-zA-Z\s\-\'\.]+$"
-              autocomplete="name" />
-            <div class="error-message text-red-500 text-xs mt-1 hidden" id="name-error"></div>
+    <!-- 6. Industries -->
+    <section
+      class="relative h-auto min-h-[85vh] flex flex-col justify-center overflow-hidden py-12 md:py-16 bg-near-black"
+      id="industries">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img alt="Industrial Background" class="w-full h-full object-cover opacity-20"
+          src="assets/csm_OilGas_Onshore_4d347230d6.webp" />
+        <div class="absolute inset-0 bg-gradient-to-b from-near-black/90 via-near-black/70 to-near-black/90"></div>
+      </div>
+
+      <!-- 7. Projects -->
+      <section class="bg-off-white py-32 relative hud-trigger" id="projects">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="flex items-center gap-4 mb-20">
+            <h2 class="font-bebas text-6xl reveal-mask"><span>MAJOR MAINTENANCE WORKS</span></h2>
+            <div class="flex-1 h-[1px] bg-near-black/10 divider-draw"></div>
           </div>
-          <div class="relative group">
-            <label class="text-tiny-caps text-primary font-bold block mb-2" for="user-email">Email Address</label>
-            <input id="user-email" name="reply_to"
-              class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger"
-              placeholder="j.doe@company.com" type="email" required maxlength="254" autocomplete="email" />
-            <div class="error-message text-red-500 text-xs mt-1 hidden" id="email-error"></div>
+          <div class="space-y-0 project-list">
+            <div
+              class="group border-b border-near-black/10 py-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white transition-colors px-4 hover-trigger project-row"
+              data-bg="assets/dscf0853.jpg.jpeg">
+              <span class="font-bebas text-8xl text-near-black/10 group-hover:text-primary transition-colors">01</span>
+              <div class="flex-1">
+                <h3 class="font-bebas text-4xl mb-2">Aarti Surfactant Pvt. Ltd</h3>
+                <p class="text-tiny-caps text-primary font-bold">Project &amp; Maintenance • 2010–Till</p>
+                <p class="text-dark-grey text-sm mt-2">Sector-03, Pithampur (DHAR)</p>
+              </div>
+              <div class="w-full md:w-64 h-40 overflow-hidden">
+                <img alt="Aarti Surfactant Project"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 parallax-img"
+                  src="assets/dscf0853.jpg.jpeg" />
+              </div>
+            </div>
+            <div
+              class="group border-b border-near-black/10 py-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white transition-colors px-4 hover-trigger project-row"
+              data-bg="assets/istockphoto-1482979397-612x612.jpg.jpeg">
+              <span class="font-bebas text-8xl text-near-black/10 group-hover:text-primary transition-colors">02</span>
+              <div class="flex-1">
+                <h3 class="font-bebas text-4xl mb-2">Ralson Tyres Limited</h3>
+                <p class="text-tiny-caps text-primary font-bold">Project • 2021–2024</p>
+                <p class="text-dark-grey text-sm mt-2">Smart Industrial Park, Pithampur</p>
+              </div>
+              <div class="w-full md:w-64 h-40 overflow-hidden">
+                <img alt="Ralson Tyres Project"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 parallax-img"
+                  src="assets/istockphoto-1482979397-612x612.jpg.jpeg" />
+              </div>
+            </div>
+            <div
+              class="group border-b border-near-black/10 py-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white transition-colors px-4 hover-trigger project-row"
+              data-bg="assets/istockphoto-1486082802-612x612.jpg.jpeg">
+              <span class="font-bebas text-8xl text-near-black/10 group-hover:text-primary transition-colors">03</span>
+              <div class="flex-1">
+                <h3 class="font-bebas text-4xl mb-2">Pensol Lubricants Limited</h3>
+                <p class="text-tiny-caps text-primary font-bold">Project • 2021–Till</p>
+                <p class="text-dark-grey text-sm mt-2">Sector-03, Pithampur (DHAR)</p>
+              </div>
+              <div class="w-full md:w-64 h-40 overflow-hidden">
+                <img alt="Pensol Lubricants Project"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 parallax-img"
+                  src="assets/istockphoto-1486082802-612x612.jpg.jpeg" />
+              </div>
+            </div>
           </div>
-          <div class="relative group">
-            <label class="text-tiny-caps text-primary font-bold block mb-2" for="user-message">Project Details</label>
-            <textarea id="user-message" name="message"
-              class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger"
-              placeholder="Describe your fabrication requirements..." rows="4" required minlength="10"
-              maxlength="2000"></textarea>
-            <div class="error-message text-red-500 text-xs mt-1 hidden" id="message-error"></div>
-            <div class="char-counter text-xs text-mid-grey mt-1" id="char-counter">0 / 2000</div>
+        </div>
+      </section>
+
+      <!-- Header Content -->
+      <header class="relative z-10 text-center mb-8 md:mb-10 px-4">
+        <div
+          class="inline-flex items-center gap-3 px-5 py-2 border border-primary/30 rounded-lg mb-6 bg-primary/5 backdrop-blur-md">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-[11px] uppercase tracking-[0.25em] font-semibold text-primary">Our Industries</span>
+        </div>
+        <h2 class="font-bebas text-4xl md:text-5xl lg:text-6xl leading-none max-w-5xl mx-auto uppercase reveal-mask">
+          <span class="block text-white/95 tracking-wide">Engineering Solutions</span>
+          <span class="block mt-2 relative">
+            <span class="text-primary drop-shadow-[0_0_15px_rgba(192,49,10,0.5)]">That Power Your Industry</span>
+            <span class="absolute -inset-x-4 -inset-y-2 bg-primary/5 blur-2xl rounded-full -z-10"></span>
+          </span>
+        </h2>
+        <div class="mt-6 flex justify-center items-center gap-4">
+          <div class="h-px w-16 bg-gradient-to-r from-transparent to-white/30"></div>
+          <span class="text-[9px] uppercase tracking-[0.3em] text-white/40 font-mono">Precision • Safety •
+            Excellence</span>
+          <div class="h-px w-16 bg-gradient-to-l from-transparent to-white/30"></div>
+        </div>
+      </header>
+
+      <!-- Industry Carousel -->
+      <main class="relative z-10 w-full overflow-hidden" data-purpose="horizontal-carousel">
+        <div class="carousel-wrapper" id="carousel-track">
+          <!-- Slide 1: Oil & Gas -->
+          <article
+            class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3"
+            data-index="0">
+            <img alt="Oil and Gas Facility"
+              class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0"
+              src="assets/oil-refinery.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
+              <h3 class="font-bebas text-3xl uppercase text-white">Oil &amp; Gas</h3>
+            </div>
+            <div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="absolute top-8 right-8 opacity-20 technical-svg">
+                <svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+                  <circle cx="50" cy="50" r="40"></circle>
+                  <path d="M50 10 L50 90 M10 50 L90 50"></path>
+                  <rect height="40" width="40" x="30" y="30"></rect>
+                </svg>
+              </div>
+              <h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Oil &amp; Gas</h3>
+              <div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
+                  <span class="text-sm font-bold val-cap text-white">Piping Works</span>
+                </div>
+                <div class="hairline"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
+                  <span class="text-sm font-bold val-cert text-white">ISO 45001</span>
+                </div>
+                <div class="hairline"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Experience</span>
+                  <span class="text-sm font-bold val-tol text-white">25+ Years</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 2: Chemical Industry (Active by default) -->
+          <article
+            class="industrial-card active relative flex-shrink-0 w-80 md:w-[450px] h-[550px] overflow-hidden shadow-2xl transition-all duration-700 mx-3"
+            data-index="1">
+            <img alt="Chemical Industry" class="absolute inset-0 w-full h-full object-cover"
+              src="assets/Chemical-Processing.jpg" />
+            <div class="absolute bottom-6 left-6 transition-opacity duration-500 opacity-0 card-title">
+              <h3 class="font-bebas text-3xl uppercase text-white">Chemical</h3>
+            </div>
+            <div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="absolute top-8 right-8 opacity-20 technical-svg">
+                <svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+                  <circle cx="50" cy="50" r="40"></circle>
+                  <path d="M50 10 L50 90 M10 50 L90 50"></path>
+                  <rect height="40" width="40" x="30" y="30"></rect>
+                </svg>
+              </div>
+              <h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">
+                Chemical<br />Industry
+              </h3>
+              <div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
+                  <span class="text-sm font-bold val-cap text-white">Tank Fabrication</span>
+                </div>
+                <div class="hairline"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
+                  <span class="text-sm font-bold val-cert text-white">ASME Standards</span>
+                </div>
+                <div class="hairline"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Projects</span>
+                  <span class="text-sm font-bold val-tol text-white">500+ Done</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 3: Petroleum Refinery -->
+          <article
+            class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3"
+            data-index="2">
+            <img alt="Petroleum Refinery"
+              class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0"
+              src="assets/petrolium.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
+              <h3 class="font-bebas text-3xl uppercase text-white">Petroleum</h3>
+            </div>
+            <div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="absolute top-8 right-8 opacity-20 technical-svg">
+                <svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+                  <circle cx="50" cy="50" r="40"></circle>
+                  <path d="M50 10 L50 90 M10 50 L90 50"></path>
+                  <rect height="40" width="40" x="30" y="30"></rect>
+                </svg>
+              </div>
+              <h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">
+                Petroleum<br />Refinery
+              </h3>
+              <div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
+                  <span class="text-sm font-bold val-cap text-white">Equipment Erection</span>
+                </div>
+                <div class="hairline"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
+                  <span class="text-sm font-bold val-cert text-white">Safety First</span>
+                </div>
+                <div class="hairline"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Engineers</span>
+                  <span class="text-sm font-bold val-tol text-white">120+ Team</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 4: Paint Industry -->
+          <article
+            class="industrial-card relative flex-shrink-0 w-64 md:w-80 h-[450px] overflow-hidden group cursor-pointer transition-all duration-700 mx-3"
+            data-index="3">
+            <img alt="Paint Industry"
+              class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0"
+              src="assets/paints.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-near-black/80 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 transition-opacity duration-500 card-title">
+              <h3 class="font-bebas text-3xl uppercase text-white">Paint Industry</h3>
+            </div>
+            <div class="active-card-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="absolute top-8 right-8 opacity-20 technical-svg">
+                <svg class="stroke-white fill-none stroke-1" height="120" viewbox="0 0 100 100" width="120">
+                  <circle cx="50" cy="50" r="40"></circle>
+                  <path d="M50 10 L50 90 M10 50 L90 50"></path>
+                  <rect height="40" width="40" x="30" y="30"></rect>
+                </svg>
+              </div>
+              <h3 class="font-bebas text-5xl uppercase mb-6 leading-none overlay-title text-white">Paint<br />Industry
+              </h3>
+              <div class="space-y-4 border-t border-white/30 pt-6 overlay-details">
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Capability</span>
+                  <span class="text-sm font-bold val-cap text-white">Shed & Roofing</span>
+                </div>
+                <div class="hairline"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Certification</span>
+                  <span class="text-sm font-bold val-cert text-white">Quality Assured</span>
+                </div>
+                <div class="hairline"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[10px] uppercase tracking-tighter opacity-70 text-white">Safety</span>
+                  <span class="text-sm font-bold val-tol text-white">0 Incidents</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <!-- UI Controls -->
+      <footer class="relative z-10 w-full max-w-7xl mx-auto px-8 mt-12 flex items-center justify-between"
+        data-purpose="carousel-controls">
+        <!-- Slide Counter and Progress -->
+        <div class="flex items-center gap-8">
+          <div class="digital-counter font-bold text-xl text-white">
+            <span class="text-primary" id="current-slide">2</span> <span class="text-white/40 text-sm">/ <span
+                id="total-slides">4</span></span>
           </div>
-          <button type="submit" id="submit-btn"
-            class="bg-near-black text-white px-12 py-5 text-tiny-caps hover:bg-primary transition-all hover-trigger magnetic-btn"
-            disabled>
-            <span id="btn-text">Submit Request</span>
-            <span class="loading-spinner hidden" id="btn-spinner"></span>
+          <div class="relative w-48 md:w-96 h-[2px] bg-white/10 overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-primary transition-all duration-700" id="progress-bar"
+              style="width: 50%;"></div>
+          </div>
+        </div>
+        <!-- Navigation Arrows -->
+        <div class="flex gap-4">
+          <button aria-label="Previous Slide"
+            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-near-black transition-colors duration-300 text-white"
+            id="prev-btn">
+            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
           </button>
-          <div class="form-status hidden" id="form-status"></div>
-        </form>
-      </div>
-      <div class="w-full lg:w-1/2 flex flex-col justify-end space-y-12">
-        <div class="border-l-2 border-primary pl-8 divider-draw">
-          <h4 class="text-tiny-caps font-bold text-near-black mb-6">Office Address</h4>
-          <div class="contact-info-block">
-            <p class="text-2xl font-bebas tracking-wider leading-relaxed">Plot No. 1J, Kheda, Sagorekutti</p>
-            <p class="text-2xl font-bebas tracking-wider leading-relaxed">Pithampur Industrial Area, Sector-3</p>
-            <p class="text-2xl font-bebas tracking-wider leading-relaxed">Pithampur, Dhar (M.P) 454 775</p>
+          <button aria-label="Next Slide"
+            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-near-black transition-colors duration-300 text-white"
+            id="next-btn">
+            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </footer>
+    </section>
+
+
+    <!-- 8. Safety -->
+    <section class="bg-white py-12 overflow-hidden" id="safety">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20">
+        <div class="w-full lg:w-1/2 relative">
+          <div class="h-[500px] md:h-[600px] overflow-hidden mask-reveal-wrapper group relative">
+            <img alt="Safety First"
+              class="w-full h-full object-cover parallax-img liquid-target transition-transform duration-700 group-hover:scale-105"
+              src="assets/safety.jpg" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-near-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+          </div>
+          <div
+            class="relative -mt-20 ml-auto mr-4 md:mr-8 w-fit bg-[#1a1c23]/80 backdrop-blur-md p-4 md:p-6 text-white shadow-2xl shadow-black/20 rounded-2xl border border-white/10 group-hover:border-primary/50 transition-all duration-500 flex items-center gap-4 z-20 hover:-translate-y-1">
+            <div
+              class="hidden sm:flex w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/20 items-center justify-center border border-primary/30 group-hover:bg-primary transition-colors duration-500">
+              <span
+                class="material-symbols-outlined text-primary group-hover:text-white transition-colors duration-500 text-2xl md:text-3xl">verified_user</span>
+            </div>
+            <div>
+              <p class="text-[10px] md:text-xs text-white/50 font-bold tracking-[0.2em] uppercase mb-1">Global Standard
+              </p>
+              <h4 class="font-bebas text-2xl md:text-4xl tracking-wide leading-none text-white">ISO 45001 CERTIFIED</h4>
+            </div>
           </div>
         </div>
-        <div class="border-l-2 border-primary pl-8 divider-draw">
-          <h4 class="text-tiny-caps font-bold text-near-black mb-6">Direct Contact</h4>
-          <div class="contact-info-block">
-            <p class="text-2xl font-bebas tracking-wider leading-relaxed">+91 90987 89399</p>
-            <p class="text-2xl font-bebas tracking-wider leading-relaxed">+91 9098324240</p>
-            <p class="text-2xl font-bebas tracking-wider leading-relaxed">+91 9111887856</p>
-            <p class="text-2xl font-bebas tracking-wider leading-relaxed">domafabricators@gmail.com</p>
+        <div class="w-full lg:w-1/2 flex flex-col justify-center">
+          <h2 class="font-bebas text-5xl md:text-6xl mb-6 md:mb-8 reveal-mask"><span>SAFETY WITHOUT
+              COMPROMISE</span>
+          </h2>
+          <p class="text-dark-grey text-base md:text-lg mb-8 md:mb-12 font-light leading-relaxed">
+            At Doma Fabricators, safety is our top priority. We maintain comprehensive safety management systems
+            designed
+            to prevent accidents, protect the environment, and ensure compliance with all relevant safety regulations.
+          </p>
+          <div class="space-y-6 md:space-y-8">
+            <div class="flex items-start gap-4 md:gap-6 group">
+              <span class="font-bebas text-2xl md:text-3xl text-primary">01</span>
+              <div>
+                <h4
+                  class="font-bold text-tiny-caps mb-2 text-sm md:text-base text-near-black group-hover:text-primary transition-colors">
+                  — Risk Assessment & PPE Compliance</h4>
+                <p class="text-mid-grey text-sm md:text-base leading-relaxed">Identifying and controlling hazards before
+                  work begins. Providing and enforcing the use of personal protective equipment at all times.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 md:gap-6 group">
+              <span class="font-bebas text-2xl md:text-3xl text-primary">02</span>
+              <div>
+                <h4
+                  class="font-bold text-tiny-caps mb-2 text-sm md:text-base text-near-black group-hover:text-primary transition-colors">
+                  — Training, Audits & Inspections</h4>
+                <p class="text-mid-grey text-sm md:text-base leading-relaxed">Regular safety training, drills, and
+                  workshops for all employees. Routine checks to maintain strict safety standards across all operations.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 md:gap-6 group">
+              <span class="font-bebas text-2xl md:text-3xl text-primary">03</span>
+              <div>
+                <h4
+                  class="font-bold text-tiny-caps mb-2 text-sm md:text-base text-near-black group-hover:text-primary transition-colors">
+                  — Emergency Preparedness & Compliance
+                </h4>
+                <p class="text-mid-grey text-sm md:text-base leading-relaxed">Well-defined response plans, regular mock
+                  drills, full adherence to all safety laws, and continuous improvement aligned with best practices.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="h-64 w-full overflow-hidden mask-reveal-wrapper">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235699.1122697094!2d75.32329559326172!3d22.623993706284182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396251dfa8796f15%3A0x56998ae6bb558f08!2sDoma%20Fabricators!5e0!3m2!1sen!2sin!4v1775214647669!5m2!1sen!2sin"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="DOMA Fabricators Location"></iframe>
+      </div>
+    </section>
+    <!-- 9. Contact -->
+    <section class="bg-light py-48 clip-diagonal-reverse parallax-section relative" id="contact" style="z-index: 10;">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20 relative" style="z-index: 2;">
+        <div class="w-full lg:w-1/2">
+          <h2 class="font-bebas text-6xl mb-12 reveal-mask"><span>REACH OUT</span></h2>
+          <form id="contact-form" class="space-y-12" novalidate>
+            <!-- Honeypot field (hidden from users, catches bots) -->
+            <div style="position: absolute; left: -9999px;" aria-hidden="true">
+              <input type="text" name="website_url" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <!-- CSRF Token (generated dynamically) -->
+            <input type="hidden" id="csrf-token" name="csrf_token" />
+
+            <!-- Timestamp for rate limiting -->
+            <input type="hidden" id="form-timestamp" name="timestamp" />
+
+            <div class="relative group">
+              <label class="text-tiny-caps text-primary font-bold block mb-2" for="user-name">Your Name</label>
+              <input id="user-name" name="from_name"
+                class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger"
+                placeholder="John Doe" type="text" required minlength="2" maxlength="100" pattern="^[a-zA-Z\s\-\'\.]+$"
+                autocomplete="name" />
+              <div class="error-message text-red-500 text-xs mt-1 hidden" id="name-error"></div>
+            </div>
+            <div class="relative group">
+              <label class="text-tiny-caps text-primary font-bold block mb-2" for="user-email">Email Address</label>
+              <input id="user-email" name="reply_to"
+                class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger"
+                placeholder="j.doe@company.com" type="email" required maxlength="254" autocomplete="email" />
+              <div class="error-message text-red-500 text-xs mt-1 hidden" id="email-error"></div>
+            </div>
+            <div class="relative group">
+              <label class="text-tiny-caps text-primary font-bold block mb-2" for="user-message">Project Details</label>
+              <textarea id="user-message" name="message"
+                class="w-full bg-transparent border-t-0 border-x-0 border-b border-near-black/20 focus:border-primary focus:ring-0 px-0 py-4 transition-all hover-trigger"
+                placeholder="Describe your fabrication requirements..." rows="4" required minlength="10"
+                maxlength="2000"></textarea>
+              <div class="error-message text-red-500 text-xs mt-1 hidden" id="message-error"></div>
+              <div class="char-counter text-xs text-mid-grey mt-1" id="char-counter">0 / 2000</div>
+            </div>
+            <button type="submit" id="submit-btn"
+              class="bg-near-black text-white px-12 py-5 text-tiny-caps hover:bg-primary transition-all hover-trigger magnetic-btn"
+              disabled>
+              <span id="btn-text">Submit Request</span>
+              <span class="loading-spinner hidden" id="btn-spinner"></span>
+            </button>
+            <div class="form-status hidden" id="form-status"></div>
+          </form>
+        </div>
+        <div class="w-full lg:w-1/2 flex flex-col justify-end space-y-12">
+          <div class="border-l-2 border-primary pl-8 divider-draw">
+            <h4 class="text-tiny-caps font-bold text-near-black mb-6">Office Address</h4>
+            <div class="contact-info-block">
+              <p class="text-2xl font-bebas tracking-wider leading-relaxed">Plot No. 1J, Kheda, Sagorekutti</p>
+              <p class="text-2xl font-bebas tracking-wider leading-relaxed">Pithampur Industrial Area, Sector-3</p>
+              <p class="text-2xl font-bebas tracking-wider leading-relaxed">Pithampur, Dhar (M.P) 454 775</p>
+            </div>
+          </div>
+          <div class="border-l-2 border-primary pl-8 divider-draw">
+            <h4 class="text-tiny-caps font-bold text-near-black mb-6">Direct Contact</h4>
+            <div class="contact-info-block">
+              <p class="text-2xl font-bebas tracking-wider leading-relaxed">+91 90987 89399</p>
+              <p class="text-2xl font-bebas tracking-wider leading-relaxed">+91 9098324240</p>
+              <p class="text-2xl font-bebas tracking-wider leading-relaxed">+91 9111887856</p>
+              <p class="text-2xl font-bebas tracking-wider leading-relaxed">domafabricators@gmail.com</p>
+            </div>
+          </div>
+          <div class="h-64 w-full overflow-hidden mask-reveal-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235699.1122697094!2d75.32329559326172!3d22.623993706284182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396251dfa8796f15%3A0x56998ae6bb558f08!2sDoma%20Fabricators!5e0!3m2!1sen!2sin!4v1775214647669!5m2!1sen!2sin"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="DOMA Fabricators Location"></iframe>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- 10. Clients -->
+    <section class="py-24 bg-white" data-purpose="clients-section" id="clients-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16" data-purpose="section-header">
+          <p class="font-bebas text-[8rem] md:text-[10rem] leading-none text-primary opacity-60 select-none"
+            aria-hidden="true">25+ YEARS</p>
+          <h2
+            class="font-bebas text-3xl sm:text-4xl md:text-5xl tracking-wider text-near-black -mt-8 md:-mt-12 relative z-10 px-4">
+            TRUSTED BY OUR CLIENTS
+          </h2>
+          <!-- Thin red accent rule -->
+          <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        <!-- Marquee Wrapper -->
+        <div class="relative overflow-hidden marquee-container">
+          <div class="flex whitespace-nowrap" id="marquee-track">
+            <!-- Set 1 of logos -->
+            <div class="marquee-item"><img alt="Aarti Surfactants" class="client-logo max-h-20 object-contain"
+                src="assets/Aarti surfactants logo.png" /></div>
+            <div class="marquee-item"><img alt="Advance Enzyme" class="client-logo max-h-20 object-contain"
+                src="assets/Advance enzyme-logo.png" /></div>
+            <div class="marquee-item"><img alt="Piyanshu Chemicals" class="client-logo max-h-20 object-contain"
+                src="assets/Piyanshu chemicals logo.png" /></div>
+            <div class="marquee-item"><img alt="Relson" class="client-logo max-h-20 object-contain"
+                src="assets/Relson logo.png" /></div>
+            <div class="marquee-item"><img alt="BioInnovation India" class="client-logo max-h-20 object-contain"
+                src="assets/bioinnovation-india-logo.png" /></div>
+            <div class="marquee-item"><img alt="Unichem" class="client-logo max-h-20 object-contain"
+                src="assets/unichem-logo (1).png" /></div>
+            <div class="marquee-item"><img alt="Pensol" class="client-logo max-h-20 object-contain"
+                src="assets/pensol_logo.png" /></div>
+            <div class="marquee-item"><img alt="SRF" class="client-logo max-h-20 object-contain"
+                src="assets/SRF-logo.png" /></div>
+
+            <!-- Duplicate set for infinite loop -->
+            <div class="marquee-item"><img alt="Aarti Surfactants" class="client-logo max-h-20 object-contain"
+                src="assets/Aarti surfactants logo.png" /></div>
+            <div class="marquee-item"><img alt="Advance Enzyme" class="client-logo max-h-20 object-contain"
+                src="assets/Advance enzyme-logo.png" /></div>
+            <div class="marquee-item"><img alt="Piyanshu Chemicals" class="client-logo max-h-20 object-contain"
+                src="assets/Piyanshu chemicals logo.png" /></div>
+            <div class="marquee-item"><img alt="Relson" class="client-logo max-h-20 object-contain"
+                src="assets/Relson logo.png" /></div>
+            <div class="marquee-item"><img alt="BioInnovation India" class="client-logo max-h-20 object-contain"
+                src="assets/bioinnovation-india-logo.png" /></div>
+            <div class="marquee-item"><img alt="Unichem" class="client-logo max-h-20 object-contain"
+                src="assets/unichem-logo (1).png" /></div>
+            <div class="marquee-item"><img alt="Pensol" class="client-logo max-h-20 object-contain"
+                src="assets/pensol_logo.png" /></div>
+            <div class="marquee-item"><img alt="SRF" class="client-logo max-h-20 object-contain"
+                src="assets/SRF-logo.png" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
   <!-- 11. Footer -->
   <footer class="bg-near-black text-white pt-24 pb-12">

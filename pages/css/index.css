@@ -91,13 +91,15 @@
 
     /* Navigation Margin Override - Apply at 1400px instead of 1280px */
     .xl\:mr-\[18rem\] {
-        margin-right: 2rem !important; /* Reset to lg:mr-8 for 1280px-1399px */
+        margin-right: 2rem !important;
+        /* Reset to lg:mr-8 for 1280px-1399px */
     }
 }
 
 @media (min-width: 1400px) {
     .xl\:mr-\[18rem\] {
-        margin-right: 18rem !important; /* Apply 18rem margin at 1400px+ */
+        margin-right: 18rem !important;
+        /* Apply 18rem margin at 1400px+ */
     }
 }
 
@@ -657,7 +659,7 @@ html.lenis body {
    GLOBAL LOGO AND NAVIGATION STYLES
    ============================================ */
 .brand-logo-nav {
-    height: 48px;
+    height: 56px;
     width: auto;
     object-fit: contain;
     transition: all 0.3s ease;
@@ -665,7 +667,7 @@ html.lenis body {
 
 @media (min-width: 1024px) {
     .brand-logo-nav {
-        height: 60px;
+        height: 72px;
     }
 }
 
@@ -1024,7 +1026,7 @@ svg.filter-defs {
 }
 
 .active-card-overlay {
-    background: linear-gradient(0deg, rgba(255, 25, 1, 0.95) 0%, rgba(255, 25, 1, 0.6) 100%);
+    background: linear-gradient(0deg, rgba(255, 25, 1, 0.05) 0%, rgba(255, 25, 1, 0.23) 100%);
     opacity: 0;
     pointer-events: none;
 }
