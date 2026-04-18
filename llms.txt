@@ -1,0 +1,62 @@
+# DOMA Fabricators
+> DOMA Fabricators is a professionally managed industrial fabrication company located in Pithampur, Madhya Pradesh, India. Founded over 25 years ago, it specializes in piping works, heavy structural fabrication, equipment erection, industrial maintenance, tank fabrication, shed works, and roofing. The company serves Oil & Gas, Chemical, Petroleum Refinery, and Paint industries with 500+ completed projects, 120+ engineers, and ISO 45001 certification. Contact: +91 90987 89399 | domafabricators@gmail.com | WhatsApp: +91 90987 89399
+
+## Business Information
+- **Company Name:** DOMA Fabricators
+- **Founded:** 1999 (25+ years experience)
+- **Location:** Plot No. 1J, Kheda, Sagorekutti, Pithampur Industrial Area, Sector-3, Pithampur, Dhar (M.P) 454 775, India
+- **Service Area:** Pithampur, Indore, Madhya Pradesh (200km radius)
+- **Phone:** +91 90987 89399, +91 9098324240, +91 9111887856
+- **Email:** domafabricators@gmail.com
+- **Team:** 120+ engineers
+- **Projects Completed:** 500+
+- **Safety Record:** 0 incidents
+- **Certification:** ISO 45001
+
+## Core Services
+- **Piping Works:** Plant piping services for industrial applications
+- **Site-Tank Fabrication:** Tank Farms, SS/MS Tanks, FRP Lining
+- **Equipment Erection:** Precision placement and installation
+- **Industrial Maintenance:** Comprehensive facility maintenance
+- **Shed Works & Roofing:** Industrial construction services
+- **Design & Engineering:** End-to-end project support
+
+## Industries Served
+- Oil & Gas
+- Chemical Industry
+- Petroleum Refinery
+- Paint Industry
+
+## Key Clients
+- Aarti Surfactant Pvt. Ltd (2010-Present)
+- Ralson Tyres Limited (2021-2024)
+- Pensol Lubricants Limited (2021-Present)
+- Advance Enzyme, BioInnovation India, Unichem, SRF, Relson
+
+## Key Pages
+- [Home](/): Main landing page with services overview, industries, projects showcase, and contact form
+- [About](/about.html): Company history, expertise, safety commitment, and team information
+- [Services](/service.html): Detailed service offerings - piping works, tank fabrication, equipment erection, industrial maintenance
+- [Projects](/project.html): Portfolio of 500+ industrial fabrication projects with client testimonials
+- [Industries](/industries.html): Industries served - Oil & Gas, Chemical, Petroleum, Paint sectors
+
+## Structured Data
+- LocalBusiness schema on homepage
+- Service schema on services page
+- FAQ schema on homepage
+- BreadcrumbList schema on all pages
+
+## Geographic Focus
+- Primary: Pithampur Industrial Area, Dhar District, Madhya Pradesh
+- Secondary: Indore, Ujjain, Dewas, entire Malwa region
+- Service radius: 200km from Pithampur
+
+## Competitive Advantages
+- 25+ years of proven experience
+- ISO 45001 certified for safety
+- 500+ successfully completed projects
+- 120+ skilled engineers
+- Zero safety incidents record
+- Trusted by leading industrial companies
+- Comprehensive service portfolio
+- Competitive pricing with quality assurance

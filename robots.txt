@@ -1,0 +1,18 @@
+# DOMA Fabricators - Robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Allow: /assets/*.webp
+Allow: /pages/css/*.css
+Allow: /pages/js/*.js
+
+# Sitemap location
+Sitemap: https://domafabricators.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block access to sensitive directories (if any added later)
+# Disallow: /admin/
+# Disallow: /private/
