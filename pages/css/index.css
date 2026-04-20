@@ -32,7 +32,18 @@
 }
 
 .cus-font {
-    font-family: 'Bebas Neue' !important;
+    font-family: 'Bebas Neue', sans-serif !important;
+}
+
+/* Global font override - Bebas Neue for headings */
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-bebas,
+.font-display {
+    font-family: 'Bebas Neue', sans-serif !important;
 }
 
 .hero-heading {
@@ -966,7 +977,7 @@ svg.filter-defs {
 
 /* Hero Heading - Outlined Text Effect */
 .hero-heading {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     color: #ffffff;
     text-shadow:
         0 0 1px #FF1901,
@@ -977,7 +988,7 @@ svg.filter-defs {
     -webkit-text-stroke: 1.5px #FF1901;
     paint-order: stroke fill;
     font-size: clamp(2rem, 8vw, 5.5rem);
-    font-weight: 900;
+    font-weight: 400;
     line-height: 1.1;
     text-transform: uppercase;
     text-align: center;

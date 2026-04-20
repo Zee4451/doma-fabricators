@@ -5,34 +5,49 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    
+
     <!-- Primary Meta Tags -->
     <title>Projects | Industrial Fabrication Portfolio - DOMA Fabricators Pithampur</title>
-    <meta name="description" content="Explore DOMA Fabricators' project portfolio: 500+ industrial fabrication projects for Aarti Surfactant, Ralson Tyres, Pensol Lubricants in Pithampur Industrial Area." />
-    <meta name="keywords" content="fabrication projects Pithampur, industrial maintenance projects, piping works portfolio, steel erection projects Indore" />
+    <meta name="description"
+        content="Explore DOMA Fabricators' project portfolio: 500+ industrial fabrication projects for Aarti Surfactant, Ralson Tyres, Pensol Lubricants in Pithampur Industrial Area." />
+    <meta name="keywords"
+        content="fabrication projects Pithampur, industrial maintenance projects, piping works portfolio, steel erection projects Indore" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#FF1901" />
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://domafabricators.com/project.html" />
-    
+
     <!-- Open Graph Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://domafabricators.com/project.html" />
     <meta property="og:title" content="Our Projects | 500+ Industrial Fabrication Works - DOMA Fabricators" />
-    <meta property="og:description" content="View our portfolio of 500+ successful industrial projects across Oil & Gas, Chemical & Paint industries in Pithampur." />
-    <meta property="og:image" content="https://domafabricators.com/assets/fabrication-and-erection-of-steel-structures.jpg.webp" />
+    <meta property="og:description"
+        content="View our portfolio of 500+ successful industrial projects across Oil & Gas, Chemical & Paint industries in Pithampur." />
+    <meta property="og:image"
+        content="https://domafabricators.com/assets/fabrication-and-erection-of-steel-structures.jpg.webp" />
     <meta property="og:locale" content="en_IN" />
+
+    <!-- Font Preloading (Prevents FOUC - Flash of Unstyled Content) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;700;900&family=IBM+Plex+Sans:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+
+    <!-- Load Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=IBM+Plex+Sans:wght@300;400;600;700&amp;family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;700;900&family=IBM+Plex+Sans:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+
+    <!-- Load Other Resources -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <link rel="stylesheet" href="pages/css/about.css" />
     <link rel="stylesheet" href="pages/css/index.css" />
     <script id="tailwind-config">
         tailwind.config = {
@@ -40,6 +55,13 @@
             theme: {
                 extend: {
                     colors: {
+                        // Dark theme colors (needed for hero section)
+                        "near-black": "#131518",
+                        "dark-1": "#2A2C38",
+                        "dark-2": "#1A1E23",
+                        "dark-grey": "#656565",
+                        "mid-grey": "#C5C5C5",
+                        "off-white": "#FFFAFA",
                         "tertiary-fixed": "#ffddb2",
                         "secondary-fixed": "#cfe5ff",
                         "surface-container-highest": "#e8e1dc",
@@ -153,6 +175,7 @@
                 max-width: 2400px !important;
             }
 
+            /* Archive Section Typography */
             .archive-row h3.font-display {
                 font-size: clamp(4rem, 6vw, 7rem) !important;
             }
@@ -161,6 +184,41 @@
                 font-size: clamp(1.25rem, 1.5vw, 1.75rem) !important;
             }
 
+            /* Archive Section Spacing */
+            .archive-row {
+                margin-bottom: 6rem !important;
+                gap: 6rem !important;
+            }
+
+            .archive-row .mb-8 {
+                margin-bottom: 2rem !important;
+            }
+
+            .archive-row .mb-12 {
+                margin-bottom: 3rem !important;
+            }
+
+            /* Archive Title Enhancement */
+            section.bg-surface-container-low h2.font-display {
+                font-size: clamp(8rem, 12vw, 14rem) !important;
+                margin-bottom: 3rem !important;
+            }
+
+            section.bg-surface-container-low .font-serif-italic {
+                font-size: clamp(2rem, 2.5vw, 3rem) !important;
+                max-width: 64rem !important;
+            }
+
+            /* Meta Labels */
+            .archive-row .text-\[10px\] {
+                font-size: 0.85rem !important;
+            }
+
+            .archive-row .font-bold {
+                font-size: 1.25rem !important;
+            }
+
+            /* Padding adjustments */
             section {
                 padding-top: clamp(6rem, 12vw, 14rem) !important;
                 padding-bottom: clamp(6rem, 12vw, 14rem) !important;
@@ -392,7 +450,7 @@
                 <a class="nav-item hover-trigger" href="project.html">Projects</a>
                 <!-- <a class="nav-item hover-trigger" href="#resources">Resources</a> -->
                 <a class="nav-item hover-trigger" href="#catalogue">E-Catalogue</a>
-                <a class="nav-item hover-trigger" href="index.html#contact">Contact Us</a>
+                <a class="nav-item hover-trigger" href="contactus.html">Contact Us</a>
             </div>
             <button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn"
                 aria-label="Toggle menu">
@@ -422,42 +480,42 @@
                 <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
                     href="index.html">
                     <span class="inline-block transform transition-transform"
-                        style="font-family: 'Bebas Neue', cursive;">Home</span>
+                       >Home</span>
                 </a>
                 <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
                     href="about.html">
                     <span class="inline-block transform transition-transform"
-                        style="font-family: 'Bebas Neue', cursive;">About Us</span>
+                       >About Us</span>
                 </a>
                 <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
                     href="service.html">
                     <span class="inline-block transform transition-transform"
-                        style="font-family: 'Bebas Neue', cursive;">Services</span>
+                       >Services</span>
                 </a>
                 <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
                     href="industries.html">
                     <span class="inline-block transform transition-transform"
-                        style="font-family: 'Bebas Neue', cursive;">Industries</span>
+                       >Industries</span>
                 </a>
                 <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
                     href="project.html">
                     <span class="inline-block transform transition-transform"
-                        style="font-family: 'Bebas Neue', cursive;">Projects</span>
+                       >Projects</span>
                 </a>
                 <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
                     href="#resources">
                     <span class="inline-block transform transition-transform"
-                        style="font-family: 'Bebas Neue', cursive;">Resources</span>
+                       >Resources</span>
                 </a>
                 <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
                     href="#catalogue">
                     <span class="inline-block transform transition-transform"
-                        style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
+                       >E-Catalogue</span>
                 </a>
                 <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
-                    href="index.html#contact">
+                    href="contactus.html">
                     <span class="inline-block transform transition-transform"
-                        style="font-family: 'Bebas Neue', cursive;">Contact Us</span>
+                       >Contact Us</span>
                 </a>
             </nav>
             <div class="mt-auto pt-6 border-t border-white/10">
@@ -481,27 +539,40 @@
         </div>
     </div>
     <main id="main-content">
+        <!-- SVG Filter for Heat Haze -->
+        <svg style="position: absolute; width: 0; height: 0;">
+            <filter id="hazeFilter">
+                <feturbulence basefrequency="0.01 0.03" numoctaves="2" result="turbulence">
+                    <animate attributename="baseFrequency" dur="10s" repeatcount="indefinite"
+                        values="0.01 0.03;0.02 0.05;0.01 0.03"></animate>
+                </feturbulence>
+                <fedisplacementmap in="SourceGraphic" in2="turbulence" scale="5"></fedisplacementmap>
+            </filter>
+        </svg>
         <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center overflow-hidden bg-surface-container-lowest">
+        <section class="relative min-h-screen flex items-center overflow-hidden bg-near-black">
             <div class="absolute inset-0 z-0">
-                <img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110"
-                    data-alt="dramatic wide shot of a massive steel fabrication workshop" id="hero-bg"
-                    src="assets/fabrication-and-erection-of-steel-structures.jpg.webp" />
+                <img class="w-full h-full object-cover opacity-25 grayscale brightness-40 scale-110"
+                    data-alt="dramatic wide shot of construction workers on steel structure project site" id="hero-bg"
+                    src="assets/construction-workers-on-a-metal-truss-roof-photo.webp" />
                 <div class="absolute inset-0 heat-haze"></div>
+                <!-- Dark overlay for text readability -->
+                <div class="absolute inset-0 bg-gradient-to-r from-near-black/90 via-near-black/60 to-near-black/30 2xl:from-near-black/95 2xl:via-near-black/70 2xl:to-near-black/40">
+                </div>
             </div>
             <div class="container mx-auto px-8 relative z-10">
-                <div class="max-w-6xl">
-                    <p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8"
+                <div class="max-w-6xl 2xl:max-w-7xl">
+                    <p class="font-serif-italic text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-primary mb-6 opacity-0 translate-y-8"
                         id="hero-sub">14 Years of Engineering Excellence</p>
-                    <h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-on-surface"
-                        id="hero-title">
+                    <h1 class="font-display text-[12vw] lg:text-[10vw] 2xl:text-[9vw] leading-[0.85] uppercase tracking-tighter text-white"
+                        id="hero-title" style="max-width: 1800px;">
                         <div class="reveal-text">OUR MAJOR</div>
-                        <div class="reveal-text text-primary-container">PROJECTS</div>
+                        <div class="reveal-text text-primary">PROJECTS</div>
                     </h1>
-                    <div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
-                        <div class="draw-line w-24 h-[1px] bg-on-surface mt-4 hidden md:block origin-left scale-x-0">
+                    <div class="flex flex-col md:flex-row gap-12 2xl:gap-16 mt-16 2xl:mt-20 items-start">
+                        <div class="draw-line w-24 2xl:w-32 h-[1px] bg-primary mt-4 hidden md:block origin-left scale-x-0">
                         </div>
-                        <p class="max-w-xl text-lg md:text-xl font-light text-on-surface-variant leading-relaxed opacity-0 translate-y-8"
+                        <p class="max-w-xl 2xl:max-w-2xl text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-light text-white/80 leading-relaxed opacity-0 translate-y-8"
                             id="hero-desc">
                             Since 2010, Doma Fabricators has successfully delivered complex projects across Pharma,
                             Chemical, Petroleum Refinery, and Painting industries. Our projects are a testament to
@@ -528,22 +599,22 @@
             </div>
         </section>
         <!-- On-Going Projects Section -->
-        <section class="py-32 bg-surface">
+        <section class="py-32 2xl:py-40 bg-surface">
             <div class="container mx-auto px-8">
-                <div class="flex justify-between items-end mb-24">
+                <div class="flex justify-between items-end mb-24 2xl:mb-32">
                     <div>
-                        <span class="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Current
+                        <span class="text-primary font-bold tracking-widest uppercase text-xs 2xl:text-sm mb-4 2xl:mb-6 block">Current
                             Operations</span>
-                        <h2 class="font-display text-7xl uppercase">On-Going Projects</h2>
+                        <h2 class="font-display text-7xl 2xl:text-9xl uppercase">On-Going Projects</h2>
                     </div>
                     <div class="text-right hidden md:block">
-                        <p class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Active
+                        <p class="font-mono text-[10px] 2xl:text-xs text-on-surface-variant uppercase tracking-widest">Active
                             Projects: 8+</p>
-                        <p class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Location:
+                        <p class="font-mono text-[10px] 2xl:text-xs text-on-surface-variant uppercase tracking-widest mt-2 2xl:mt-3">Location:
                             Pithampur, M.P</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 2xl:gap-32">
                     <!-- Project Card 1 -->
                     <div class="project-card group relative bg-surface-container-low transition-all duration-700 hover:bg-surface-container-high overflow-hidden tilt-container"
                         data-meta="Material: SS-316L&lt;br&gt;Tolerance: ±0.1mm&lt;br&gt;Location: Dusseldorf">
@@ -552,70 +623,70 @@
                                 data-alt="massive cylindrical steel chemical storage tank"
                                 src="assets/istockphoto-470309496-612x612.jpg.webp" />
                         </div>
-                        <div class="p-10 relative tilt-inner">
-                            <div class="flex justify-between items-start mb-8">
-                                <h3 class="font-display text-4xl uppercase leading-none">ACG-Associated Capsule
+                        <div class="p-10 2xl:p-16 relative tilt-inner">
+                            <div class="flex justify-between items-start mb-8 2xl:mb-12">
+                                <h3 class="font-display text-4xl 2xl:text-6xl uppercase leading-none">ACG-Associated Capsule
                                     <br />Pvt. Ltd
                                 </h3>
                                 <span
-                                    class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform"
+                                    class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform text-3xl 2xl:text-5xl"
                                     data-icon="arrow_outward">arrow_outward</span>
                             </div>
                             <div
-                                class="grid grid-cols-3 border-t border-on-surface/10 pt-8 gap-4 opacity-60 group-hover:opacity-100 transition-opacity">
+                                class="grid grid-cols-3 border-t border-on-surface/10 pt-8 2xl:pt-12 gap-4 2xl:gap-8 opacity-60 group-hover:opacity-100 transition-opacity">
                                 <div class="relative px-2">
-                                    <span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Type</span>
-                                    <span class="font-bold text-lg">MAINT. & PROJECT</span>
+                                    <span class="block text-[10px] 2xl:text-xs uppercase font-mono tracking-widest mb-2 2xl:mb-3">Type</span>
+                                    <span class="font-bold text-lg 2xl:text-2xl">MAINT. & PROJECT</span>
                                     <div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
                                 </div>
                                 <div class="relative px-2">
                                     <span
-                                        class="block text-[10px] uppercase font-mono tracking-widest mb-2">Location</span>
-                                    <span class="font-bold text-lg">PITHAMPUR</span>
+                                        class="block text-[10px] 2xl:text-xs uppercase font-mono tracking-widest mb-2 2xl:mb-3">Location</span>
+                                    <span class="font-bold text-lg 2xl:text-2xl">PITHAMPUR</span>
                                     <div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
                                 </div>
                                 <div class="px-2">
                                     <span
-                                        class="block text-[10px] uppercase font-mono tracking-widest mb-2">Duration</span>
-                                    <span class="font-bold text-lg">2024–TILL</span>
+                                        class="block text-[10px] 2xl:text-xs uppercase font-mono tracking-widest mb-2 2xl:mb-3">Duration</span>
+                                    <span class="font-bold text-lg 2xl:text-2xl">2024–TILL</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Project Card 2 -->
-                    <div class="project-card group relative bg-surface-container-low transition-all duration-700 hover:bg-surface-container-high overflow-hidden lg:mt-32 tilt-container"
+                    <div class="project-card group relative bg-surface-container-low transition-all duration-700 hover:bg-surface-container-high overflow-hidden lg:mt-32 2xl:mt-48 tilt-container"
                         data-meta="Material: Grade 5 Ti&lt;br&gt;Precision: ±0.05mm&lt;br&gt;Phase: Final Testing">
                         <div class="project-card-mask aspect-[4/5] overflow-hidden translate-y-full opacity-0">
                             <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                                 data-alt="industrial robot arm welding complex steel component"
                                 src="assets/arc-welding-of-a-steel-in-construction-site-photo.webp" />
                         </div>
-                        <div class="p-10 relative tilt-inner">
-                            <div class="flex justify-between items-start mb-8">
-                                <h3 class="font-display text-4xl uppercase leading-none">Unichem Laboratories
+                        <div class="p-10 2xl:p-16 relative tilt-inner">
+                            <div class="flex justify-between items-start mb-8 2xl:mb-12">
+                                <h3 class="font-display text-4xl 2xl:text-6xl uppercase leading-none">Unichem Laboratories
                                     <br />Limited
                                 </h3>
                                 <span
-                                    class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform"
+                                    class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform text-3xl 2xl:text-5xl"
                                     data-icon="arrow_outward">arrow_outward</span>
                             </div>
                             <div
-                                class="grid grid-cols-3 border-t border-on-surface/10 pt-8 gap-4 opacity-60 group-hover:opacity-100 transition-opacity">
+                                class="grid grid-cols-3 border-t border-on-surface/10 pt-8 2xl:pt-12 gap-4 2xl:gap-8 opacity-60 group-hover:opacity-100 transition-opacity">
                                 <div class="relative px-2">
-                                    <span class="block text-[10px] uppercase font-mono tracking-widest mb-2">Type</span>
-                                    <span class="font-bold text-lg">PROJECT</span>
+                                    <span class="block text-[10px] 2xl:text-xs uppercase font-mono tracking-widest mb-2 2xl:mb-3">Type</span>
+                                    <span class="font-bold text-lg 2xl:text-2xl">PROJECT</span>
                                     <div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
                                 </div>
                                 <div class="relative px-2">
                                     <span
-                                        class="block text-[10px] uppercase font-mono tracking-widest mb-2">Location</span>
-                                    <span class="font-bold text-lg">PITHAMPUR</span>
+                                        class="block text-[10px] 2xl:text-xs uppercase font-mono tracking-widest mb-2 2xl:mb-3">Location</span>
+                                    <span class="font-bold text-lg 2xl:text-2xl">PITHAMPUR</span>
                                     <div class="draw-line-y absolute right-0 top-0 technical-grid-line"></div>
                                 </div>
                                 <div class="px-2">
                                     <span
-                                        class="block text-[10px] uppercase font-mono tracking-widest mb-2">Duration</span>
-                                    <span class="font-bold text-lg">2024–TILL</span>
+                                        class="block text-[10px] 2xl:text-xs uppercase font-mono tracking-widest mb-2 2xl:mb-3">Duration</span>
+                                    <span class="font-bold text-lg 2xl:text-2xl">2024–TILL</span>
                                 </div>
                             </div>
                         </div>
@@ -624,17 +695,17 @@
             </div>
         </section>
         <!-- Completed Projects Archive -->
-        <section class="py-32 bg-surface-container-low">
+        <section class="py-32 2xl:py-40 bg-surface-container-low">
             <div class="container mx-auto px-8">
-                <div class="max-w-4xl mb-32">
-                    <h2 class="font-display text-9xl uppercase leading-[0.8] mb-8 overflow-hidden"><span
+                <div class="max-w-4xl 2xl:max-w-5xl mb-32 2xl:mb-40">
+                    <h2 class="font-display text-9xl 2xl:text-[12rem] uppercase leading-[0.8] mb-8 2xl:mb-12 overflow-hidden"><span
                             class="reveal-up inline-block">THE ARCHIVE</span></h2>
                     <p
-                        class="font-serif-italic text-2xl text-on-surface-variant max-w-xl opacity-0 translate-y-8 reveal-scroll">
+                        class="font-serif-italic text-2xl 2xl:text-4xl text-on-surface-variant max-w-xl 2xl:max-w-2xl opacity-0 translate-y-8 reveal-scroll">
                         A testament to structural integrity and architectural vision spanning four decades.</p>
                 </div>
                 <!-- Archive Item 1 -->
-                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 mb-48 relative pb-12">
+                <div class="archive-row group flex flex-col md:flex-row items-center gap-16 2xl:gap-24 mb-48 2xl:mb-64 relative pb-12 2xl:pb-16">
                     <div class="archive-row-line"></div>
                     <div class="w-full md:w-1/2 relative">
                         <div
@@ -648,23 +719,23 @@
                         </div>
                     </div>
                     <div class="w-full md:w-1/2 lg:pl-20">
-                        <span class="font-mono text-xs text-primary mb-4 block overflow-hidden">
+                        <span class="font-mono text-xs 2xl:text-sm text-primary mb-4 2xl:mb-6 block overflow-hidden">
                             <span class="glitch-num inline-block" data-value="2024">ONGOING SINCE 2010</span>
                         </span>
-                        <h3 class="font-display text-6xl uppercase mb-6">Aarti Surfactant <br />Pvt. Ltd</h3>
-                        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                        <h3 class="font-display text-6xl 2xl:text-8xl uppercase mb-6 2xl:mb-8">Aarti Surfactant <br />Pvt. Ltd</h3>
+                        <p class="text-on-surface-variant leading-relaxed 2xl:leading-[1.8] mb-8 2xl:mb-12 max-w-md 2xl:max-w-xl">
                             Long-standing partnership providing comprehensive project and maintenance services at
                             Sector-03, Pithampur. Continuous support since 2010 across fabrication, piping, and
                             industrial maintenance.
                         </p>
-                        <div class="flex gap-12">
+                        <div class="flex gap-12 2xl:gap-16">
                             <div>
-                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Type</p>
-                                <p class="font-bold">PROJECT & MAINTENANCE</p>
+                                <p class="text-[10px] 2xl:text-xs font-mono uppercase text-on-surface-variant/50">Type</p>
+                                <p class="font-bold text-base 2xl:text-lg">PROJECT & MAINTENANCE</p>
                             </div>
                             <div>
-                                <p class="text-[10px] font-mono uppercase text-on-surface-variant/50">Duration</p>
-                                <p class="font-bold">2010–TILL</p>
+                                <p class="text-[10px] 2xl:text-xs font-mono uppercase text-on-surface-variant/50">Duration</p>
+                                <p class="font-bold text-base 2xl:text-lg">2010–TILL</p>
                             </div>
                         </div>
                     </div>
@@ -1166,9 +1237,11 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
                     <div class="max-w-2xl">
-                        <span class="font-mono text-xs text-primary mb-2 block uppercase tracking-widest">DATASET 02 // CLIENT PORTFOLIO</span>
+                        <span class="font-mono text-xs text-primary mb-2 block uppercase tracking-widest">DATASET 02 //
+                            CLIENT PORTFOLIO</span>
                         <h2 class="font-display text-5xl md:text-6xl uppercase tracking-tighter">Our Valued Clients
-                            <br />& Project History</h2>
+                            <br />& Project History
+                        </h2>
                     </div>
                     <div class="hidden md:block w-32 h-[1px] bg-primary"></div>
                 </div>
@@ -1186,61 +1259,71 @@
                         <tbody class="text-xs font-body">
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">01</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Aarti Surfactant Pvt. Ltd, Sector-03, Pithampur (DHAR)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Aarti Surfactant Pvt. Ltd,
+                                    Sector-03, Pithampur (DHAR)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2010 - Till</td>
                                 <td class="py-3 px-6 text-center">Project & Maintenance</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">02</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Priyanshu Chemical Pvt. Ltd, Sector-03, Pithampur (DHAR)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Priyanshu Chemical Pvt. Ltd,
+                                    Sector-03, Pithampur (DHAR)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2000 - Till</td>
                                 <td class="py-3 px-6 text-center">P & M</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">03</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Panasonic Energy India Ltd, Sector-03, Pithampur (DHAR)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Panasonic Energy India Ltd,
+                                    Sector-03, Pithampur (DHAR)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2024</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">04</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Shri Instulation India Pvt. Ltd. (MP)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Shri Instulation India Pvt.
+                                    Ltd. (MP)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2024</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">05</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Ralson Tyres Limited, Smart Industrial Park, Pithampur</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Ralson Tyres Limited, Smart
+                                    Industrial Park, Pithampur</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2021-2024</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">06</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Pensol Lubricants Limited, Sector-03, Pithampur (DHAR)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Pensol Lubricants Limited,
+                                    Sector-03, Pithampur (DHAR)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2001 - Till</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">07</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">SRF Limited, Sector-03, Pithampur (DHAR)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">SRF Limited, Sector-03,
+                                    Pithampur (DHAR)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2024</td>
                                 <td class="py-3 px-6 text-center">Maintenance</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">08</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">ACG-Associated Capsule Pvt. Ltd, Sector-03, Pithampur (DHAR)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">ACG-Associated Capsule Pvt.
+                                    Ltd, Sector-03, Pithampur (DHAR)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2024 - Till</td>
                                 <td class="py-3 px-6 text-center">Maintenance & Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">09</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Unichem Laboratories Limited, Sector-03, Pithampur (DHAR)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Unichem Laboratories Limited,
+                                    Sector-03, Pithampur (DHAR)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2024 - Till</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">10</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Apream Alloys India Pvt. Ltd, Sector-03, Pithampur Industrial Area (M.P)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Apream Alloys India Pvt. Ltd,
+                                    Sector-03, Pithampur Industrial Area (M.P)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2024 - Till</td>
                                 <td class="py-3 px-6 text-center">Maintenance & Project</td>
                             </tr>
@@ -1252,43 +1335,50 @@
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">12</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Bio Innovation Clad Solution Pvt. Ltd, Sector-03, Pithampur Industrial Area (M.P)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Bio Innovation Clad Solution
+                                    Pvt. Ltd, Sector-03, Pithampur Industrial Area (M.P)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2025 - Till</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">13</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Okay Firm Precision Casting Pvt. Ltd, Sector-03, Pithampur Industrial Area DHAR (M.P)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Okay Firm Precision Casting
+                                    Pvt. Ltd, Sector-03, Pithampur Industrial Area DHAR (M.P)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2024 - Till</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">14</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">SPM Auto Comp System, Sector-02, DHAR (M.P)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">SPM Auto Comp System,
+                                    Sector-02, DHAR (M.P)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2023 - Till</td>
                                 <td class="py-3 px-6 text-center">Maintenance</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">15</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Kesar Alloys & Metals Pvt. Ltd, Pithampur DHAR (M.P)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Kesar Alloys & Metals Pvt.
+                                    Ltd, Pithampur DHAR (M.P)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2022-2024</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">16</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Dhar Automotives, Sector-01, Pithampur DHAR (M.P)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Dhar Automotives, Sector-01,
+                                    Pithampur DHAR (M.P)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2014-2017</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">17</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Advance Enzymi Tech. Ltd, Sector-03, Pithampur Industrial Area (M.P)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Advance Enzymi Tech. Ltd,
+                                    Sector-03, Pithampur Industrial Area (M.P)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2022-2025</td>
                                 <td class="py-3 px-6 text-center">Maintenance</td>
                             </tr>
                             <tr class="border-b border-black/10 hover:bg-black/5 transition-colors">
                                 <td class="py-3 px-6 border-r border-black/10 text-primary font-mono">18</td>
-                                <td class="py-3 px-6 border-r border-black/10 font-medium">Madhur-India Exports, Special Economic Zone 1, Indore-Dhar (M.P)</td>
+                                <td class="py-3 px-6 border-r border-black/10 font-medium">Madhur-India Exports, Special
+                                    Economic Zone 1, Indore-Dhar (M.P)</td>
                                 <td class="py-3 px-6 border-r border-black/10 font-mono">2017-2020</td>
                                 <td class="py-3 px-6 text-center">Project</td>
                             </tr>
@@ -1593,7 +1683,7 @@
 
     </script>
     <script src="pages/js/navbar.js" defer></script>
-    
+
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
     {
@@ -1615,26 +1705,34 @@
       ]
     }
     </script>
-    
+
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919098789399?text=Hi%2C%20I%27m%20interested%20in%20your%20industrial%20fabrication%20services." 
-       target="_blank" 
-       rel="noopener noreferrer"
-       class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
-       aria-label="Contact us on WhatsApp">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
+    <a href="https://wa.me/919098789399?text=Hi%2C%20I%27m%20interested%20in%20your%20industrial%20fabrication%20services."
+        target="_blank" rel="noopener noreferrer"
+        class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
+        aria-label="Contact us on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
     </a>
-    
+
     <style>
-      .whatsapp-float {
-        animation: pulse-whatsapp 2s infinite;
-      }
-      @keyframes pulse-whatsapp {
-        0%, 100% { box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); }
-        50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.7); }
-      }
+        .whatsapp-float {
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        @keyframes pulse-whatsapp {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 4px 24px rgba(37, 211, 102, 0.7);
+            }
+        }
     </style>
 </body>
 

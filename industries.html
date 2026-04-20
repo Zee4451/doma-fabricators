@@ -5,30 +5,43 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  
+
   <!-- Primary Meta Tags -->
   <title>Industries We Serve | Oil & Gas, Chemical, Petroleum - DOMA Fabricators</title>
-  <meta name="description" content="DOMA Fabricators serves Oil & Gas, Chemical, Petroleum Refinery & Paint industries with expert fabrication, piping works & equipment erection in Pithampur, Indore." />
-  <meta name="keywords" content="oil gas fabrication, chemical industry fabrication, petroleum refinery services, paint industry fabrication, industrial sectors Pithampur" />
+  <meta name="description"
+    content="DOMA Fabricators serves Oil & Gas, Chemical, Petroleum Refinery & Paint industries with expert fabrication, piping works & equipment erection in Pithampur, Indore." />
+  <meta name="keywords"
+    content="oil gas fabrication, chemical industry fabrication, petroleum refinery services, paint industry fabrication, industrial sectors Pithampur" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#FF1901" />
-  
+
   <!-- Canonical URL -->
   <link rel="canonical" href="https://domafabricators.com/industries.html" />
-  
+
   <!-- Open Graph Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://domafabricators.com/industries.html" />
   <meta property="og:title" content="Industries We Serve | DOMA Fabricators Pithampur" />
-  <meta property="og:description" content="Specialized fabrication solutions for Oil & Gas, Chemical, Petroleum & Paint industries. 25+ years of expertise." />
+  <meta property="og:description"
+    content="Specialized fabrication solutions for Oil & Gas, Chemical, Petroleum & Paint industries. 25+ years of expertise." />
   <meta property="og:image" content="https://domafabricators.com/assets/oil-refinery.webp" />
   <meta property="og:locale" content="en_IN" />
+
+  <!-- Font Preloading (Prevents FOUC - Flash of Unstyled Content) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+
+  <!-- Load Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Load Other Resources -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=IBM+Plex+Sans:wght@300;400;600;700&amp;family=Space+Grotesk:wght@300;500;700&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
+  <link rel="stylesheet" href="pages/css/about.css" />
   <link rel="stylesheet" href="pages/css/industries.css" />
   <link rel="stylesheet" href="pages/css/index.css" />
   <script id="tailwind-config">
@@ -37,6 +50,13 @@
       theme: {
         extend: {
           colors: {
+            // Dark theme colors (needed for hero section)
+            "near-black": "#131518",
+            "dark-1": "#2A2C38",
+            "dark-2": "#1A1E23",
+            "dark-grey": "#656565",
+            "mid-grey": "#C5C5C5",
+            "off-white": "#FFFAFA",
             "outline": "#8f7069",
             "on-primary-container": "#ffdfd7",
             "surface-container-highest": "#e8e1dc",
@@ -129,6 +149,59 @@
       section {
         padding-top: clamp(6rem, 12vw, 14rem) !important;
         padding-bottom: clamp(6rem, 12vw, 14rem) !important;
+      }
+
+      /* Parallax Section Optimization for 2560×1440 */
+      section.h-\[150vh\].bg-surface-container {
+        height: 180vh !important;
+        padding-top: clamp(8rem, 15vw, 16rem) !important;
+        padding-bottom: clamp(8rem, 15vw, 16rem) !important;
+      }
+
+      /* Sticky Content Container */
+      section.h-\[150vh\].bg-surface-container .max-w-4xl {
+        max-width: 72rem !important;
+      }
+
+      /* Subtitle Enhancement */
+      section.h-\[150vh\].bg-surface-container .font-serif-italic {
+        font-size: clamp(2rem, 2.5vw, 3rem) !important;
+        margin-bottom: 2rem !important;
+        max-width: 56rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* Main Title Enhancement */
+      section.h-\[150vh\].bg-surface-container .font-display.text-8xl {
+        font-size: clamp(10rem, 15vw, 16rem) !important;
+        line-height: 0.85 !important;
+      }
+
+      /* Parallax Image Containers */
+      section.h-\[150vh\].bg-surface-container .parallax-layer {
+        width: 35% !important;
+      }
+
+      section.h-\[150vh\].bg-surface-container .parallax-layer:first-of-type {
+        left: -5% !important;
+        height: 85% !important;
+      }
+
+      section.h-\[150vh\].bg-surface-container .parallax-layer:last-of-type {
+        width: 45% !important;
+        right: 0% !important;
+        height: 75% !important;
+      }
+
+      /* Image Quality Enhancement */
+      section.h-\[150vh\].bg-surface-container .parallax-layer img {
+        object-fit: cover !important;
+        filter: brightness(0.8) contrast(1.3) grayscale(1) !important;
+      }
+
+      section.h-\[150vh\].bg-surface-container .parallax-layer img:hover {
+        filter: brightness(1) contrast(1.1) grayscale(0) !important;
       }
     }
 
@@ -263,7 +336,7 @@
         <a class="nav-item hover-trigger" href="project.html">Projects</a>
         <!-- <a class="nav-item hover-trigger" href="#resources">Resources</a> -->
         <a class="nav-item hover-trigger" href="#catalogue">E-Catalogue</a>
-        <a class="nav-item hover-trigger" href="index.html#contact">Contact Us</a>
+        <a class="nav-item hover-trigger" href="contactus.html">Contact Us</a>
       </div>
       <button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
         <span class="material-symbols-outlined transition-all duration-300" id="hamburger-icon">menu</span>
@@ -291,41 +364,41 @@
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="index.html">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Home</span>
+           >Home</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="about.html">
-          <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">About
+          <span class="inline-block transform transition-transform">About
             Us</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="service.html">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Services</span>
+           >Services</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="industries.html">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Industries</span>
+           >Industries</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="project.html">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Projects</span>
+           >Projects</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="#resources">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Resources</span>
+           >Resources</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="#catalogue">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
+           >E-Catalogue</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
-          href="index.html#contact">
-          <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Contact
+          href="contactus.html">
+          <span class="inline-block transform transition-transform">Contact
             Us</span>
         </a>
       </nav>
@@ -349,26 +422,37 @@
     </div>
   </div>
   <main id="main-content" class="relative z-10">
+    <!-- SVG Filter for Heat Haze -->
+    <svg style="position: absolute; width: 0; height: 0;">
+      <filter id="hazeFilter">
+        <feturbulence basefrequency="0.01 0.03" numoctaves="2" result="turbulence">
+          <animate attributename="baseFrequency" dur="10s" repeatcount="indefinite"
+            values="0.01 0.03;0.02 0.05;0.01 0.03"></animate>
+        </feturbulence>
+        <fedisplacementmap in="SourceGraphic" in2="turbulence" scale="5"></fedisplacementmap>
+      </filter>
+    </svg>
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center overflow-hidden bg-surface-container-lowest">
+    <section class="relative min-h-screen flex items-center overflow-hidden bg-near-black">
       <div class="absolute inset-0 z-0">
-        <img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110"
-          data-alt="dramatic wide shot of a massive steel fabrication workshop" id="hero-bg"
-          src="assets/fabrication-and-erection-of-steel-structures.jpg.webp" />
+        <img class="w-full h-full object-cover opacity-25 grayscale brightness-40 scale-110"
+          data-alt="dramatic wide shot of industrial oil and gas facility showing heavy industry infrastructure" id="hero-bg"
+          src="assets/oil-gas-industry-powerful-hdr-600w-224936086.webp" />
         <div class="absolute inset-0 heat-haze"></div>
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-near-black/90 via-near-black/60 to-near-black/30 2xl:from-near-black/95 2xl:via-near-black/70 2xl:to-near-black/40"></div>
       </div>
       <div class="container mx-auto px-8 relative z-10">
-        <div class="max-w-6xl">
-          <p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8" id="hero-sub">
+        <div class="max-w-6xl 2xl:max-w-7xl mx-auto">
+          <p class="font-serif-italic text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-primary mb-6 opacity-0 translate-y-8" id="hero-sub">
             Engineering Par Excellence</p>
-          <h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-on-surface"
-            id="hero-title">
+          <h1 class="font-display text-[12vw] lg:text-[10vw] 2xl:text-[9vw] leading-[0.85] uppercase tracking-tighter text-white" id="hero-title" style="max-width: 1800px;">
             <div class="reveal-text">OUR MAJOR</div>
-            <div class="reveal-text text-primary-container">INDUSTRIES</div>
+            <div class="reveal-text text-primary">INDUSTRIES</div>
           </h1>
-          <div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
-            <div class="draw-line w-24 h-[1px] bg-on-surface mt-4 hidden md:block origin-left scale-x-0"></div>
-            <p class="max-w-xl text-lg md:text-xl font-light text-on-surface-variant leading-relaxed opacity-0 translate-y-8"
+          <div class="flex flex-col md:flex-row gap-12 2xl:gap-16 mt-16 2xl:mt-20 items-start">
+            <div class="draw-line w-24 2xl:w-32 h-[1px] bg-primary mt-4 hidden md:block origin-left scale-x-0"></div>
+            <p class="max-w-xl 2xl:max-w-2xl text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-light text-white/80 leading-relaxed opacity-0 translate-y-8"
               id="hero-desc">
               We specialize in 4 core sectors, delivering highly engineered solutions to industry leaders across the
               nation with 14+ years of dedicated expertise.
@@ -392,105 +476,118 @@
 </div>
 </div> -->
     </section>
-    <!-- Section 2: Sector Grid (The Seven Industries) -->
-    <section class="py-32 bg-surface-bright px-8">
-      <div class="max-w-7xl mx-auto mb-20 relative">
-        <h2 class="font-display text-6xl text-stone-900 tracking-tight uppercase breathing liquid-text">Specialized
+    <!-- Section 2: Sector Grid (Horizontal Compact Cards) -->
+    <section class="py-24 bg-surface-bright px-8">
+      <div class="max-w-7xl mx-auto mb-16 relative">
+        <h2 class="font-display text-5xl md:text-6xl text-stone-900 tracking-tight uppercase breathing liquid-text">Specialized
           Sectors</h2>
         <div class="h-1 w-24 bg-primary mt-4 draw-line"></div>
       </div>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1 bg-stone-200 max-w-7xl mx-auto border border-stone-200">
+      
+      <div class="max-w-7xl mx-auto space-y-6">
         <!-- 1. Pharma Industries -->
-        <div class="sector-card scan-container relative aspect-[4/5] bg-stone-900 overflow-hidden group amber-tint"
+        <div class="sector-card scan-container relative bg-stone-900 overflow-hidden group amber-tint rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 mx-auto w-full"
+          style="max-width: 1600px;"
           data-meta="SPEC: PHARMA_GMP_COMPLIANCE">
           <div class="laser-line"></div>
-          <img
-            class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60 group-hover:opacity-100 heat-haze"
-            src="assets/industrial-night-lights-stockcake.webp" />
-          <div class="absolute inset-0 p-10 flex flex-col justify-between z-10">
-            <span class="font-technical text-primary font-bold text-xs tracking-widest uppercase">01 / PHARMA
-              INDUSTRIES</span>
-            <div>
-              <h3 class="font-display text-4xl text-white mb-4 uppercase liquid-text-white">Pharmaceutical Works</h3>
+          <div class="flex flex-col lg:flex-row">
+            <!-- Image Section -->
+            <div class="lg:w-2/5 relative overflow-hidden">
+              <img
+                class="w-full h-80 lg:h-[480px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-70 group-hover:opacity-100 heat-haze"
+                src="assets/industrial-night-lights-stockcake.webp" />
+            </div>
+            <!-- Content Section -->
+            <div class="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-center">
+              <span class="font-technical text-primary font-bold text-xs tracking-widest uppercase mb-4 block">01 / PHARMA
+                INDUSTRIES</span>
+              <h3 class="font-display text-3xl lg:text-4xl text-white mb-4 uppercase liquid-text-white">Pharmaceutical Works</h3>
               <div class="border-t border-white/20 pt-4">
-                <p class="text-xs text-white/70 font-technical leading-relaxed">Our team is highly skilled and possesses
+                <p class="text-sm text-white/70 font-technical leading-relaxed">Our team is highly skilled and possesses
                   extensive experience in mechanical works specific to the pharmaceutical industry. We understand the
                   unique requirements and standards of this sector, ensuring that every project we undertake meets the
-                  stringent quality and safety standards necessary for pharmaceutical production. Our expertise in
-                  handling precision equipment and maintaining cleanroom environments makes us a trusted partner in the
-                  pharma industry.</p>
+                  stringent quality and safety standards necessary for pharmaceutical production.</p>
               </div>
             </div>
           </div>
         </div>
+
         <!-- 2. Chemical Industries -->
-        <div class="sector-card scan-container relative aspect-[4/5] bg-stone-800 overflow-hidden group amber-tint"
+        <div class="sector-card scan-container relative bg-stone-800 overflow-hidden group amber-tint rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 mx-auto w-full"
+          style="max-width: 1600px;"
           data-meta="SPEC: CHEMICAL_PROCESS_SAFETY">
           <div class="laser-line"></div>
-          <img
-            class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60 group-hover:opacity-100 heat-haze"
-            src="assets/csm_OilGas_Onshore_4d347230d6.webp" />
-          <div class="absolute inset-0 p-10 flex flex-col justify-between z-10">
-            <span class="font-technical text-primary font-bold text-xs tracking-widest uppercase">02 / CHEMICAL
-              INDUSTRIES</span>
-            <div>
-              <h3 class="font-display text-4xl text-white mb-4 uppercase liquid-text-white">Chemical Solutions</h3>
+          <div class="flex flex-col lg:flex-row-reverse">
+            <!-- Image Section -->
+            <div class="lg:w-2/5 relative overflow-hidden">
+              <img
+                class="w-full h-80 lg:h-[480px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-70 group-hover:opacity-100 heat-haze"
+                src="assets/csm_OilGas_Onshore_4d347230d6.webp" />
+            </div>
+            <!-- Content Section -->
+            <div class="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-center">
+              <span class="font-technical text-primary font-bold text-xs tracking-widest uppercase mb-4 block">02 / CHEMICAL
+                INDUSTRIES</span>
+              <h3 class="font-display text-3xl lg:text-4xl text-white mb-4 uppercase liquid-text-white">Chemical Solutions</h3>
               <div class="border-t border-white/20 pt-4">
-                <p class="text-xs text-white/70 font-technical leading-relaxed">We specialize in providing top-notch
+                <p class="text-sm text-white/70 font-technical leading-relaxed">We specialize in providing top-notch
                   mechanical solutions for the chemical industry. Our team is well-versed in the complexities of
                   chemical processes and the equipment used to manage them. With a strong focus on safety and
-                  efficiency, we ensure that our services meet the rigorous demands of chemical manufacturing. From
-                  installation to maintenance, we are committed to supporting your operations with reliable and
-                  effective solutions.</p>
+                  efficiency, we ensure that our services meet the rigorous demands of chemical manufacturing.</p>
               </div>
             </div>
           </div>
         </div>
+
         <!-- 3. Petroleum Refinery Industries -->
-        <div
-          class="sector-card scan-container relative aspect-[4/5] bg-stone-950 overflow-hidden group col-span-1 md:col-span-2 lg:col-span-1 amber-tint"
+        <div class="sector-card scan-container relative bg-stone-950 overflow-hidden group amber-tint rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 mx-auto w-full"
+          style="max-width: 1600px;"
           data-meta="SPEC: REFINERY_HIGH_TEMP_SYSTEMS">
           <div class="laser-line"></div>
-          <img
-            class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-40 group-hover:opacity-80 heat-haze"
-            src="assets/Page-Onshore-Oil-Gas-1566-x-880.jpg.webp" />
-          <div class="absolute inset-0 p-10 flex flex-col justify-between z-10">
-            <span class="font-technical text-primary font-bold text-xs tracking-widest uppercase">03 / PETROLEUM
-              REFINERY</span>
-            <div>
-              <h3 class="font-display text-4xl text-white mb-4 uppercase liquid-text-white">Refinery Operations</h3>
+          <div class="flex flex-col lg:flex-row">
+            <!-- Image Section -->
+            <div class="lg:w-2/5 relative overflow-hidden">
+              <img
+                class="w-full h-80 lg:h-[480px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60 group-hover:opacity-100 heat-haze"
+                src="assets/Page-Onshore-Oil-Gas-1566-x-880.jpg.webp" />
+            </div>
+            <!-- Content Section -->
+            <div class="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-center">
+              <span class="font-technical text-primary font-bold text-xs tracking-widest uppercase mb-4 block">03 / PETROLEUM
+                REFINERY</span>
+              <h3 class="font-display text-3xl lg:text-4xl text-white mb-4 uppercase liquid-text-white">Refinery Operations</h3>
               <div class="border-t border-white/20 pt-4">
-                <p class="text-xs text-white/70 font-technical leading-relaxed">With years of experience in the
+                <p class="text-sm text-white/70 font-technical leading-relaxed">With years of experience in the
                   petroleum refinery industry, our team is equipped to handle the most challenging mechanical tasks. We
                   understand the critical nature of refinery operations and the importance of minimizing downtime. Our
-                  expertise in working with refinery equipment ensures that we deliver high-quality services that
-                  enhance operational efficiency and safety. We are dedicated to supporting the refining process with
-                  precision and care.</p>
+                  expertise ensures high-quality services that enhance operational efficiency and safety.</p>
               </div>
             </div>
           </div>
         </div>
+
         <!-- 4. Painting Industries -->
-        <div class="sector-card scan-container relative aspect-[4/5] bg-stone-100 overflow-hidden group"
+        <div class="sector-card scan-container relative bg-stone-100 overflow-hidden group rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 mx-auto w-full"
+          style="max-width: 1600px;"
           data-meta="SPEC: PAINTING_BOOTH_SYSTEMS">
           <div class="laser-line"></div>
-          <img
-            class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60 group-hover:opacity-100"
-            src="assets/construction-workers-on-a-metal-truss-roof-photo.webp" />
-          <div
-            class="absolute inset-0 p-10 flex flex-col justify-between bg-white/20 backdrop-blur-sm group-hover:backdrop-blur-none transition-all z-10">
-            <span class="font-technical text-primary font-bold text-xs tracking-widest uppercase">04 / PAINTING
-              INDUSTRIES</span>
-            <div>
-              <h3 class="font-display text-4xl text-stone-900 mb-4 uppercase liquid-text">Painting Services</h3>
+          <div class="flex flex-col lg:flex-row-reverse">
+            <!-- Image Section -->
+            <div class="lg:w-2/5 relative overflow-hidden">
+              <img
+                class="w-full h-80 lg:h-[480px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-70 group-hover:opacity-100"
+                src="assets/construction-workers-on-a-metal-truss-roof-photo.webp" />
+            </div>
+            <!-- Content Section -->
+            <div class="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-center bg-white/40 backdrop-blur-sm group-hover:backdrop-blur-none transition-all">
+              <span class="font-technical text-primary font-bold text-xs tracking-widest uppercase mb-4 block">04 / PAINTING
+                INDUSTRIES</span>
+              <h3 class="font-display text-3xl lg:text-4xl text-stone-900 mb-4 uppercase liquid-text">Painting Services</h3>
               <div class="border-t border-stone-900/20 pt-4">
-                <p class="text-xs text-stone-600 font-technical leading-relaxed">Our team excels in providing
+                <p class="text-sm text-stone-600 font-technical leading-relaxed">Our team excels in providing
                   specialized mechanical services to the painting industry. We are experienced in managing the unique
                   challenges associated with large-scale painting operations, including the maintenance and setup of
-                  painting booths and equipment. Our focus is on ensuring that your painting processes run smoothly and
-                  efficiently, with minimal disruptions. We are committed to delivering services that meet the highest
-                  standards of quality and safety.</p>
+                  painting booths and equipment.</p>
               </div>
             </div>
           </div>
@@ -498,21 +595,21 @@
       </div>
     </section>
     <!-- Section 3: Parallax Intersection -->
-    <section class="relative h-[150vh] bg-surface-container overflow-hidden py-40">
-      <div class="max-w-4xl mx-auto text-center sticky top-1/2 -translate-y-1/2 z-20">
-        <p class="font-serif-italic text-3xl text-stone-600 mb-8 breathing italic">Engineering the invisible
+    <section class="relative h-[150vh] 2xl:h-[180vh] bg-surface-container overflow-hidden py-40 2xl:py-56">
+      <div class="max-w-4xl 2xl:max-w-6xl mx-auto text-center sticky top-1/2 -translate-y-1/2 z-20">
+        <p class="font-serif-italic text-3xl 2xl:text-5xl text-stone-600 mb-8 2xl:mb-10 breathing italic max-w-3xl 2xl:max-w-5xl mx-auto">Engineering the invisible
           infrastructure that fuels modern life.</p>
         <h2
-          class="font-display text-8xl md:text-[12rem] text-stone-900 leading-none uppercase mix-blend-difference liquid-text">
+          class="font-display text-8xl md:text-[12rem] 2xl:text-[14rem] text-stone-900 leading-none 2xl:leading-[0.85] uppercase mix-blend-difference liquid-text">
           STRUCTURAL<br />INTEGRITY</h2>
       </div>
-      <div class="absolute top-0 left-[-10%] w-1/3 h-[80%] z-10 transform translate-y-20 parallax-layer"
+      <div class="absolute top-0 left-[-10%] 2xl:left-[-5%] w-1/3 2xl:w-[35%] h-[80%] 2xl:h-[85%] z-10 transform translate-y-20 parallax-layer"
         data-speed="0.2">
         <img
           class="w-full h-full object-cover filter brightness-75 contrast-125 grayscale hover:grayscale-0 transition-all duration-700 heat-haze"
-          src="assets/csm_OilGas_Onshore_4d347230d6.webp" />
+          src="assets/fabrication-and-erection-of-steel-structures.jpg.webp" />
       </div>
-      <div class="absolute bottom-0 right-[-5%] w-1/2 h-[70%] z-10 transform -translate-y-40 parallax-layer"
+      <div class="absolute bottom-0 right-[-5%] 2xl:right-0 w-1/2 2xl:w-[45%] h-[70%] 2xl:h-[75%] z-10 transform -translate-y-40 parallax-layer"
         data-speed="-0.1">
         <img
           class="w-full h-full object-cover filter brightness-50 grayscale hover:grayscale-0 transition-all duration-700 heat-haze"
@@ -542,26 +639,6 @@
             <span
               class="material-symbols-outlined text-2xl group-hover:translate-x-4 transition-transform">arrow_right_alt</span>
           </button>
-        </div>
-      </div>
-      <div class="max-w-7xl mx-auto mt-40 grid grid-cols-2 md:grid-cols-4 relative">
-        <div class="absolute top-0 left-0 w-full h-[1px] bg-stone-300 draw-line"></div>
-        <div class="p-8 border-r border-stone-300 relative group overflow-hidden">
-          <div class="absolute left-0 top-0 h-full w-[1px] bg-stone-300 draw-line-v"></div>
-          <span class="block text-[0.6rem] text-stone-400 uppercase tracking-widest mb-4">Clients Served</span>
-          <span class="font-display text-3xl text-stone-900">17+ COMPANIES</span>
-        </div>
-        <div class="p-8 border-r border-stone-300 relative">
-          <span class="block text-[0.6rem] text-stone-400 uppercase tracking-widest mb-4">Experience</span>
-          <span class="font-display text-3xl text-stone-900">14+ YEARS</span>
-        </div>
-        <div class="p-8 border-r border-stone-300 relative">
-          <span class="block text-[0.6rem] text-stone-400 uppercase tracking-widest mb-4">Industries</span>
-          <span class="font-display text-3xl text-stone-900">4 SECTORS</span>
-        </div>
-        <div class="p-8 relative">
-          <span class="block text-[0.6rem] text-stone-400 uppercase tracking-widest mb-4">Delivery</span>
-          <span class="font-display text-3xl text-stone-900">ON-TIME</span>
         </div>
       </div>
     </section>
@@ -719,104 +796,12 @@
         ease: "power2.out"
       });
     });
-
-    // 1. Interactive Technical Grid Shift
-    const grid = document.getElementById('interactive-grid');
-    window.addEventListener('mousemove', (e) => {
-      const xPos = (e.clientX / window.innerWidth - 0.5) * 20;
-      const yPos = (e.clientY / window.innerHeight - 0.5) * 20;
-      gsap.to(grid, {
-        rotationY: xPos,
-        rotationX: -yPos,
-        duration: 1.5,
-        ease: "power2.out"
-      });
-    });
-
-    // 2. Cursor Tracked Metadata
-    const cursorMeta = document.getElementById('cursor-meta');
-    const sectorCards = document.querySelectorAll('.sector-card');
-
-    window.addEventListener('mousemove', (e) => {
-      gsap.to(cursorMeta, {
-        left: e.clientX,
-        top: e.clientY,
-        duration: 0.1
-      });
-    });
-
-    sectorCards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        const meta = card.getAttribute('data-meta') || 'TECHNICAL_SPECS: VERIFIED';
-        cursorMeta.innerText = meta;
-        gsap.to(cursorMeta, { opacity: 1, duration: 0.3 });
-      });
-      card.addEventListener('mouseleave', () => {
-        gsap.to(cursorMeta, { opacity: 0, duration: 0.3 });
-      });
-    });
-
-    // 3. Self-Drawing Blueprints
-    gsap.utils.toArray('.draw-line').forEach(line => {
-      gsap.to(line, {
-        scaleX: 1,
-        duration: 1.5,
-        ease: "expo.inOut",
-        scrollTrigger: {
-          trigger: line,
-          start: "top 90%",
-        }
-      });
-    });
-
-    gsap.utils.toArray('.draw-line-v').forEach(line => {
-      gsap.to(line, {
-        scaleY: 1,
-        duration: 1.5,
-        ease: "expo.inOut",
-        scrollTrigger: {
-          trigger: line,
-          start: "top 90%",
-        }
-      });
-    });
-
-    // 4. Liquid-Metal Scroll Sync
-    gsap.utils.toArray('.liquid-text, .liquid-text-white').forEach(text => {
-      gsap.to(text, {
-        backgroundPosition: "200% center",
-        ease: "none",
-        scrollTrigger: {
-          trigger: text,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1
-        }
-      });
-    });
-
-    // 5. Parallax Layers
-    gsap.utils.toArray('.parallax-layer').forEach(layer => {
-      const speed = layer.getAttribute('data-speed');
-      gsap.to(layer, {
-        y: (i, target) => -ScrollTrigger.maxScroll(window) * speed,
-        ease: "none",
-        scrollTrigger: {
-          trigger: layer,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-    });
-
-    ScrollTrigger.config({ limitCallbacks: true });
   </script>
 
   <!-- Smooth Scroll Optimization -->
   <script src="pages/js/industries.js"></script>
   <script src="pages/js/navbar.js" defer></script>
-  
+
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
   {
@@ -838,25 +823,33 @@
     ]
   }
   </script>
-  
+
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919098789399?text=Hi%2C%20I%27m%20interested%20in%20your%20industrial%20fabrication%20services." 
-     target="_blank" 
-     rel="noopener noreferrer"
-     class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
-     aria-label="Contact us on WhatsApp">
+  <a href="https://wa.me/919098789399?text=Hi%2C%20I%27m%20interested%20in%20your%20industrial%20fabrication%20services."
+    target="_blank" rel="noopener noreferrer"
+    class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
+    aria-label="Contact us on WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   </a>
-  
+
   <style>
     .whatsapp-float {
       animation: pulse-whatsapp 2s infinite;
     }
+
     @keyframes pulse-whatsapp {
-      0%, 100% { box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); }
-      50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.7); }
+
+      0%,
+      100% {
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 4px 24px rgba(37, 211, 102, 0.7);
+      }
     }
   </style>
 </body>

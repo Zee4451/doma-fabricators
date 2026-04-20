@@ -70,7 +70,69 @@
 
     setMobileActive(currentFile);
 
-    // ---- Scroll-spy for index.html sections ----
+    // ============================================
+    // HAMBURGER MENU TOGGLE
+    // ============================================
+    
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const mobileMenuLinks = document.querySelectorAll('#mobile-menu .mobile-link');
+
+    // Open mobile menu
+    function openMobileMenu() {
+        if (mobileMenu) {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    }
+
+    // Close mobile menu
+    function closeMobileMenu() {
+        if (mobileMenu) {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    }
+
+    // Event listeners for hamburger and close buttons
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', openMobileMenu);
+    }
+
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close menu when clicking a mobile link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
+    // Close menu when pressing Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu when clicking outside (on the overlay background)
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+    }
+
+    // ============================================
+    // SCROLL-SPY FOR INDEX.HTML SECTIONS
+    // ============================================
     // Only run on index.html where links point to #sections
     if (currentFile === 'index.html') {
         // Map of section id → nav href

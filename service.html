@@ -5,35 +5,46 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  
+
   <!-- Primary Meta Tags -->
   <title>Our Services | Industrial Fabrication, Piping Works & Tank Fabrication - DOMA Fabricators</title>
-  <meta name="description" content="Expert industrial services: piping works, site-tank fabrication, equipment erection & industrial maintenance. Serving Oil & Gas, Chemical & Petroleum industries in Pithampur, Indore." />
-  <meta name="keywords" content="piping works Pithampur, tank fabrication services, equipment erection, industrial maintenance, steel structure fabrication, FRP lining" />
+  <meta name="description"
+    content="Expert industrial services: piping works, site-tank fabrication, equipment erection & industrial maintenance. Serving Oil & Gas, Chemical & Petroleum industries in Pithampur, Indore." />
+  <meta name="keywords"
+    content="piping works Pithampur, tank fabrication services, equipment erection, industrial maintenance, steel structure fabrication, FRP lining" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#FF1901" />
-  
+
   <!-- Canonical URL -->
   <link rel="canonical" href="https://domafabricators.com/service.html" />
-  
+
   <!-- Open Graph Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://domafabricators.com/service.html" />
   <meta property="og:title" content="Industrial Fabrication Services | DOMA Fabricators Pithampur" />
-  <meta property="og:description" content="Comprehensive industrial fabrication services: piping, tank fabrication, equipment erection & maintenance. 25+ years expertise." />
+  <meta property="og:description"
+    content="Comprehensive industrial fabrication services: piping, tank fabrication, equipment erection & maintenance. 25+ years expertise." />
   <meta property="og:image" content="https://domafabricators.com/assets/pipe-system.webp" />
   <meta property="og:locale" content="en_IN" />
+
+  <!-- Font Preloading (Prevents FOUC - Flash of Unstyled Content) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,400;1,600&family=IBM+Plex+Sans:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+
+  <!-- Load Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=IBM+Plex+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@700&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,400;1,600&family=IBM+Plex+Sans:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap"
     rel="stylesheet" />
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
+
+  <!-- Load Other Resources -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
+  <link rel="stylesheet" href="pages/css/about.css" />
   <link rel="stylesheet" href="pages/css/index.css" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
@@ -42,6 +53,13 @@
       theme: {
         extend: {
           colors: {
+            // Dark theme colors (needed for hero section)
+            "near-black": "#131518",
+            "dark-1": "#2A2C38",
+            "dark-2": "#1A1E23",
+            "dark-grey": "#656565",
+            "mid-grey": "#C5C5C5",
+            "off-white": "#FFFAFA",
             "on-secondary-fixed": "#001d33",
             "on-error": "#ffffff",
             "tertiary-container": "#8c5d00",
@@ -261,7 +279,7 @@
       padding-left: 8rem !important;
     }
   </style>
-  
+
   <!-- Service Schema Markup -->
   <script type="application/ld+json">
   {
@@ -359,7 +377,8 @@
     <div class="max-w-12xl mx-auto px-6 lg:px-12 flex items-center justify-between">
       <a href="index.html" class="flex items-center cursor-pointer gap-1">
         <img src="assets/doma fabricator logo.webp" alt="D" class="brand-logo-nav" />
-        <span class="text-2xl lg:text-3xl font-display text-on-surface tracking-wide hidden sm:inline cus-font mt-1">DOMA
+        <span
+          class="text-2xl lg:text-3xl font-display text-on-surface tracking-wide hidden sm:inline cus-font mt-1">DOMA
           FABRICATORS</span>
       </a>
       <div class="hidden lg:flex items-center lg:gap-6 xl:gap-10">
@@ -370,7 +389,7 @@
         <a class="nav-item hover-trigger" href="project.html">Projects</a>
         <!-- <a class="nav-item hover-trigger" href="#resources">Resources</a> -->
         <a class="nav-item hover-trigger" href="#catalogue">E-Catalogue</a>
-        <a class="nav-item hover-trigger" href="index.html#contact">Contact Us</a>
+        <a class="nav-item hover-trigger" href="contactus.html">Contact Us</a>
       </div>
       <button class="lg:hidden hover-trigger hamburger-btn relative z-50" id="hamburger-btn" aria-label="Toggle menu">
         <span class="material-symbols-outlined transition-all duration-300" id="hamburger-icon">menu</span>
@@ -398,41 +417,41 @@
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="index.html">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Home</span>
+           >Home</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="about.html">
-          <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">About
+          <span class="inline-block transform transition-transform">About
             Us</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="service.html">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Services</span>
+           >Services</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="industries.html">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Industries</span>
+           >Industries</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="project.html">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Projects</span>
+           >Projects</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="#resources">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">Resources</span>
+           >Resources</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
           href="#catalogue">
           <span class="inline-block transform transition-transform"
-            style="font-family: 'Bebas Neue', cursive;">E-Catalogue</span>
+           >E-Catalogue</span>
         </a>
         <a class="mobile-link text-xl font-bebas text-white/70 hover:text-primary transition-colors py-3 border-b border-white/10 hover-trigger"
-          href="index.html#contact">
-          <span class="inline-block transform transition-transform" style="font-family: 'Bebas Neue', cursive;">Contact
+          href="contactus.html">
+          <span class="inline-block transform transition-transform">Contact
             Us</span>
         </a>
       </nav>
@@ -457,30 +476,35 @@
   </div>
   <!-- SVG Filter for Heat Haze -->
   <svg style="position: absolute; width: 0; height: 0;">
-    <filter id="wavy">
-      <feturbulence basefrequency="0.01" numoctaves="3" result="noise" type="fractalNoise"></feturbulence>
-      <fedisplacementmap in="SourceGraphic" in2="noise" scale="5"></fedisplacementmap>
+    <filter id="hazeFilter">
+      <feturbulence basefrequency="0.01 0.03" numoctaves="2" result="turbulence">
+        <animate attributename="baseFrequency" dur="10s" repeatcount="indefinite"
+          values="0.01 0.03;0.02 0.05;0.01 0.03"></animate>
+      </feturbulence>
+      <fedisplacementmap in="SourceGraphic" in2="turbulence" scale="5"></fedisplacementmap>
     </filter>
   </svg>
   <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center overflow-hidden bg-surface-container-lowest">
+  <section class="relative min-h-screen flex items-center overflow-hidden bg-near-black">
     <div class="absolute inset-0 z-0">
-      <img class="w-full h-full object-cover opacity-20 grayscale brightness-50 scale-110"
-        data-alt="dramatic wide shot of a massive steel fabrication workshop with advanced equipment and precision tools"
-        id="hero-bg" src="assets/fabrication-and-erection-of-steel-structures.jpg.webp" />
+      <img class="w-full h-full object-cover opacity-25 grayscale brightness-40 scale-110"
+        data-alt="dramatic wide shot of steel fabrication processes with welding sparks and precision manufacturing"
+        id="hero-bg" src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.webp" />
       <div class="absolute inset-0 heat-haze"></div>
+      <!-- Dark overlay for text readability -->
+      <div class="absolute inset-0 bg-gradient-to-r from-near-black/80 via-near-black/50 to-transparent"></div>
     </div>
     <div class="container mx-auto px-8 relative z-10">
       <div class="max-w-6xl">
         <p class="font-serif-italic text-3xl md:text-4xl text-primary mb-6 opacity-0 translate-y-8" id="hero-sub">
           Precision Engineering & Industrial Excellence</p>
-        <h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-on-surface" id="hero-title">
+        <h1 class="font-display text-[12vw] leading-[0.85] uppercase tracking-tighter text-white" id="hero-title">
           <div class="reveal-text">OUR</div>
-          <div class="reveal-text text-primary-container">SERVICES</div>
+          <div class="reveal-text text-primary">SERVICES</div>
         </h1>
         <div class="flex flex-col md:flex-row gap-12 mt-16 items-start">
-          <div class="draw-line w-24 h-[1px] bg-on-surface mt-4 hidden md:block origin-left scale-x-0"></div>
-          <p class="max-w-xl text-lg md:text-xl font-light text-on-surface-variant leading-relaxed opacity-0 translate-y-8"
+          <div class="draw-line w-24 h-[1px] bg-primary mt-4 hidden md:block origin-left scale-x-0"></div>
+          <p class="max-w-xl text-lg md:text-xl font-light text-white/80 leading-relaxed opacity-0 translate-y-8"
             id="hero-desc">
             We deliver comprehensive industrial solutions from mechanical fabrication to heavy structural engineering.
             Each service is executed with surgical precision, adhering to ASME and ASTM standards for optimal
@@ -778,25 +802,102 @@
     </div>
   </main>
   <!-- Project Inquiry Sticky Strip -->
-  <section class="bg-primary py-20 overflow-hidden relative">
-    <div class="absolute inset-0 opacity-10 pointer-events-none">
-      <h2 class="text-white font-display text-[25vw] leading-none whitespace-nowrap -translate-x-1/4 select-none">
-        PRECISION ENGINEERED</h2>
-    </div>
-    <div class="relative z-10 px-8 flex flex-col md:flex-row items-center justify-between max-w-screen-2xl mx-auto">
-      <div>
-        <span class="text-on-primary font-body text-xs font-bold tracking-[0.4em] uppercase mb-4 block">SPEC_ID:
-          CTA_REQ_99</span>
-        <h2 class="font-display text-6xl text-white uppercase">Initiate_Fabrication_Protocol</h2>
+  <!-- CTA Section - Modern Glassmorphism Design -->
+  <section class="relative py-24 overflow-hidden" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a0a05 50%, #2d0f08 100%);">
+    <!-- Animated Background Orbs -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute w-[600px] h-[600px] rounded-full opacity-30" 
+           style="background: radial-gradient(circle, #FF1901 0%, transparent 70%); filter: blur(120px); top: -200px; left: -100px; animation: orbFloat1 15s ease-in-out infinite;">
       </div>
-      <div class="mt-12 md:mt-0">
-        <button
-          class="bg-white text-primary px-12 py-6 font-display text-2xl tracking-widest hover:bg-surface-container-highest transition-all transform hover:-translate-y-1 active:scale-95 group">
-          GET QUOTE <span
-            class="material-symbols-outlined align-middle ml-2 group-hover:translate-x-2 transition-transform">arrow_forward</span>
-        </button>
+      <div class="absolute w-[500px] h-[500px] rounded-full opacity-25" 
+           style="background: radial-gradient(circle, #ff6b35 0%, transparent 70%); filter: blur(100px); bottom: -150px; right: -50px; animation: orbFloat2 18s ease-in-out infinite;">
+      </div>
+      <div class="absolute w-[400px] h-[400px] rounded-full opacity-20" 
+           style="background: radial-gradient(circle, #ff8c42 0%, transparent 70%); filter: blur(90px); top: 50%; left: 50%; transform: translate(-50%, -50%); animation: orbFloat3 12s ease-in-out infinite;">
       </div>
     </div>
+
+    <!-- Subtle Grid Pattern Overlay -->
+    <div class="absolute inset-0 opacity-5" 
+         style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;">
+    </div>
+
+    <!-- Main Content with Glass Effect -->
+    <div class="relative z-10 px-8 max-w-7xl mx-auto">
+      <div class="backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/10 shadow-2xl" 
+           style="background: rgba(255, 255, 255, 0.03); -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);">
+        
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+          <!-- Left Content -->
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full border border-orange-500/30" 
+                 style="background: rgba(255, 25, 1, 0.1);">
+              <div class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></div>
+              <span class="text-orange-400 font-mono text-xs font-bold tracking-[0.3em] uppercase">Ready to Build</span>
+            </div>
+            
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight" 
+                style="font-family: 'IBM Plex Sans', sans-serif; background: linear-gradient(135deg, #ffffff 0%, #ff8c42 50%, #FF1901 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+              Let's Engineer Your Vision
+            </h2>
+            
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
+              From concept to completion — precision steel fabrication that stands the test of time. Get your custom quote today.
+            </p>
+          </div>
+
+          <!-- Right CTA Button -->
+          <div class="flex-shrink-0">
+            <button class="group relative px-10 py-6 rounded-2xl font-bold text-lg tracking-wider uppercase transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 active:scale-95 overflow-hidden"
+                    style="background: linear-gradient(135deg, #FF1901 0%, #ff6b35 100%); color: white; box-shadow: 0 10px 40px rgba(255, 25, 1, 0.4);">
+              <!-- Button Glow Effect -->
+              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                   style="background: linear-gradient(135deg, #ff6b35 0%, #FF1901 100%);"></div>
+              
+              <!-- Shimmer Effect -->
+              <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" 
+                   style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);"></div>
+              
+              <span class="relative z-10 flex items-center gap-3">
+                Get Free Quote
+                <svg class="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </span>
+            </button>
+            
+            <!-- Trust Badge -->
+            <div class="mt-6 text-center">
+              <p class="text-gray-400 text-sm flex items-center justify-center gap-2">
+                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                Response within 24 hours
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CSS Animations -->
+    <style>
+      @keyframes orbFloat1 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(50px, -50px) scale(1.1); }
+        66% { transform: translate(-30px, 30px) scale(0.9); }
+      }
+      @keyframes orbFloat2 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(-40px, 40px) scale(1.15); }
+        66% { transform: translate(60px, -20px) scale(0.85); }
+      }
+      @keyframes orbFloat3 {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); }
+        33% { transform: translate(-50%, -50%) scale(1.2); }
+        66% { transform: translate(-50%, -50%) scale(0.8); }
+      }
+    </style>
   </section>
   <!-- Footer -->
   <footer class="bg-near-black text-white pt-24 pb-12 relative z-20">
@@ -954,7 +1055,7 @@
     });
   </script>
   <script src="pages/js/navbar.js" defer></script>
-  
+
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
   {
@@ -976,25 +1077,33 @@
     ]
   }
   </script>
-  
+
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919098789399?text=Hi%2C%20I%27m%20interested%20in%20your%20industrial%20fabrication%20services." 
-     target="_blank" 
-     rel="noopener noreferrer"
-     class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
-     aria-label="Contact us on WhatsApp">
+  <a href="https://wa.me/919098789399?text=Hi%2C%20I%27m%20interested%20in%20your%20industrial%20fabrication%20services."
+    target="_blank" rel="noopener noreferrer"
+    class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
+    aria-label="Contact us on WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   </a>
-  
+
   <style>
     .whatsapp-float {
       animation: pulse-whatsapp 2s infinite;
     }
+
     @keyframes pulse-whatsapp {
-      0%, 100% { box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); }
-      50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.7); }
+
+      0%,
+      100% {
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 4px 24px rgba(37, 211, 102, 0.7);
+      }
     }
   </style>
 </body>

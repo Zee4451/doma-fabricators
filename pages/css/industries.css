@@ -11,15 +11,30 @@ body {
     overflow-x: hidden;
 }
 
-.font-display { font-family: 'Bebas Neue', cursive; }
-.font-technical { font-family: 'IBM Plex Sans', sans-serif; }
-.font-serif-italic { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+.font-display {
+    font-family: 'Bebas Neue', cursive;
+}
+
+/* Use Bebas Neue for all headings */
+h1, h2, h3, h4, h5, h6,
+.font-bebas {
+    font-family: 'Bebas Neue', sans-serif !important;
+}
+
+.font-technical {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.font-serif-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
 
 /* Interactive Technical Grid */
 #interactive-grid {
     position: fixed;
     inset: 0;
-    background-image: 
+    background-image:
         linear-gradient(to right, rgba(227, 190, 182, 0.15) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(227, 190, 182, 0.15) 1px, transparent 1px);
     background-size: 60px 60px;
@@ -35,6 +50,7 @@ body {
     -webkit-text-fill-color: transparent;
     animation: shine 8s linear infinite;
 }
+
 .liquid-text-white {
     background: linear-gradient(90deg, #ffffff 0%, #ffdfd7 50%, #ffffff 100%);
     background-size: 200% auto;
@@ -42,8 +58,11 @@ body {
     -webkit-text-fill-color: transparent;
     animation: shine 8s linear infinite;
 }
+
 @keyframes shine {
-    to { background-position: 200% center; }
+    to {
+        background-position: 200% center;
+    }
 }
 
 /* Diagnostic Laser Scan */
@@ -51,6 +70,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .laser-line {
     position: absolute;
     top: 0;
@@ -63,25 +83,40 @@ body {
     pointer-events: none;
     opacity: 0;
 }
+
 .sector-card:hover .laser-line {
     animation: scan 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     opacity: 1;
 }
+
 @keyframes scan {
-    0% { left: -5%; }
-    100% { left: 105%; }
+    0% {
+        left: -5%;
+    }
+
+    100% {
+        left: 105%;
+    }
 }
 
 .breathing {
     animation: breath 4s ease-in-out infinite;
 }
+
 @keyframes breath {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
 }
 
 .text-outline-white {
-    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
     color: transparent;
 }
 
@@ -89,6 +124,7 @@ body {
     transform-origin: left;
     transform: scaleX(0);
 }
+
 .draw-line-v {
     transform-origin: top;
     transform: scaleY(0);
