@@ -506,9 +506,7 @@
           <div class="draw-line w-24 h-[1px] bg-primary mt-4 hidden md:block origin-left scale-x-0"></div>
           <p class="max-w-xl text-lg md:text-xl font-light text-white/80 leading-relaxed opacity-0 translate-y-8"
             id="hero-desc">
-            We deliver comprehensive industrial solutions from mechanical fabrication to heavy structural engineering.
-            Each service is executed with surgical precision, adhering to ASME and ASTM standards for optimal
-            performance and safety.
+            Comprehensive industrial solutions: Piping, Tank Fabrication, Equipment Erection, Man Power Supply, Heavy Structurals, Insulation & Sand Blasting. Executed with precision and industry-leading expertise.
           </p>
         </div>
       </div>
@@ -518,287 +516,221 @@
   <!-- Main Service Grid -->
   <main class="py-32 px-8 bg-surface">
     <div class="max-w-screen-2xl mx-auto">
-      <div class="flex justify-between items-end mb-24 border-b border-outline-variant/20 pb-12">
+
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-0 mb-16 md:mb-24 border-b border-outline-variant/20 pb-8 md:pb-12">
         <div>
-          <h2 class="font-display text-7xl uppercase text-on-surface">Capabilities Catalog</h2>
+          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase text-on-surface">Detailed Services</h2>
         </div>
-        <div class="max-w-md">
-          <p class="font-body text-sm text-on-surface-variant leading-loose">
-            Our integrated approach combines heavy structural engineering with surgical precision. Each service is
-            executed according to ASME and ASTM standards.
+        <div class="max-w-md w-full">
+          <p class="font-body text-sm md:text-base text-on-surface-variant leading-loose">
+            Our integrated approach combines heavy structural engineering with surgical precision. Each service is delivered with years of industry expertise and commitment to quality.
           </p>
         </div>
       </div>
-      <!-- 3 Column Editorial Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-y-24 gap-x-12">
-        <!-- Service 01: Mechanical Fabrication -->
-        <div class="service-card group cursor-pointer relative">
-          <div class="mb-6 flex justify-between items-center overflow-hidden">
-            <div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
-          </div>
-          <div class="relative h-[500px] overflow-hidden mb-8">
-            <img alt="close-up of industrial gears and precision mechanical parts with sparks in a dark factory"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              data-alt="Close-up detailed view of heavy industrial mechanical fabrication with metallic reflections and intense backlighting"
-              src="assets/arc-welding-of-a-steel-in-construction-site-photo.webp" />
-            <!-- Blueprint Overlay SVG -->
-            <div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
-              <svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none"
-                viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path class="blueprint-line" d="M10,50 L90,50 M50,10 L50,90 M30,30 L70,70 M70,30 L30,70"
-                  stroke="#C0310A" stroke-width="0.5"></path>
-                <circle class="blueprint-line" cx="50" cy="50" r="40" stroke="#C0310A" stroke-width="0.5"></circle>
-                <circle class="blueprint-line" cx="50" cy="50" r="20" stroke="#C0310A" stroke-width="0.5"></circle>
+      
+      <!-- Clean Minimal Service Cards -->
+      <div class="mobile-scroll-snap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 01: Piping -->
+        <div class="service-card snap-center group cursor-pointer bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl">
+          <!-- Image Container with Parallax -->
+          <div class="relative overflow-hidden h-56 parallax-image-container" data-parallax-speed="0.3">
+            <img src="assets/pipe-system.webp" alt="Piping Projects" class="parallax-image w-full h-[150%] object-cover -mt-[25%] transition-transform duration-500 group-hover:scale-110">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <!-- Number Badge -->
+            <span class="absolute bottom-4 left-4 font-display text-6xl font-bold text-white/90">01</span>
+            <!-- Icon Badge -->
+            <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-primary/80 transition-colors duration-300">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
-            <!-- Technical Specification Overlay -->
-            <div
-              class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
-              <div class="space-y-4">
-                <h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
-                <div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Tolerance</p>
-                    <p class="text-white font-technical text-xs">+/- 0.005mm</p>
-                  </div>
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Material</p>
-                    <p class="text-white font-technical text-xs">High-Carbon Steel</p>
-                  </div>
-                </div>
-                <button
-                  class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View
-                  Specs</button>
-              </div>
-            </div>
           </div>
-          <h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Mechanical
-            Fabrication</h3>
-          <p class="font-accent italic text-xl text-on-surface-variant">Bespoke component engineering for high-torque
-            systems.</p>
+          <!-- Content -->
+          <div class="p-8">
+            <h3 class="font-display text-3xl uppercase mb-4 text-on-surface group-hover:text-primary transition-colors duration-300">Piping</h3>
+            <p class="font-body text-base text-on-surface-variant leading-relaxed mb-6">
+              With years of industry experience, we offer Piping Projects manufactured from high quality materials. Our Plant Piping Services is highly suitable for diverse industrial applications.
+            </p>
+            <div class="w-full h-px bg-outline-variant/20 group-hover:bg-primary/40 transition-colors duration-300"></div>
+          </div>
         </div>
-        <!-- Service 02: Heavy Structures -->
-        <div class="service-card group cursor-pointer relative">
-          <div class="mb-6 flex justify-between items-center overflow-hidden">
-            <div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
-          </div>
-          <div class="relative h-[500px] overflow-hidden mb-8">
-            <img alt="massive structural steel framework against a dramatic sunset sky"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              data-alt="Massive skeletal steel structure under construction with orange sunset light piercing through the grid"
-              src="assets/fabrication-and-erection-of-steel-structures.jpg.webp" />
-            <!-- Blueprint Overlay SVG -->
-            <div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
-              <svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none"
-                viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <rect class="blueprint-line" height="80" stroke="#C0310A" stroke-width="0.5" width="80" x="10" y="10">
-                </rect>
-                <path class="blueprint-line" d="M10,10 L90,90 M90,10 L10,90" stroke="#C0310A" stroke-width="0.5"></path>
+        
+        <!-- Service 02: Site-Tank Fabrication -->
+        <div class="service-card snap-center group cursor-pointer bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl">
+          <!-- Image Container with Parallax -->
+          <div class="relative overflow-hidden h-56 parallax-image-container" data-parallax-speed="0.5">
+            <img src="assets/fabrication-and-erection-of-steel-structures.jpg.webp" alt="Site-Tank Fabrication" class="parallax-image w-full h-[150%] object-cover -mt-[25%] transition-transform duration-500 group-hover:scale-110">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <!-- Number Badge -->
+            <span class="absolute bottom-4 left-4 font-display text-6xl font-bold text-white/90">02</span>
+            <!-- Icon Badge -->
+            <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-primary/80 transition-colors duration-300">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3z"></path>
               </svg>
             </div>
-            <!-- Technical Specification Overlay -->
-            <div
-              class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
-              <div class="space-y-4">
-                <h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
-                <div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Load Cap</p>
-                    <p class="text-white font-technical text-xs">5000+ Tons</p>
-                  </div>
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Standard</p>
-                    <p class="text-white font-technical text-xs">AISC 360-16</p>
-                  </div>
-                </div>
-                <button
-                  class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View
-                  Specs</button>
-              </div>
-            </div>
           </div>
-          <h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Heavy Structures
-          </h3>
-          <p class="font-accent italic text-xl text-on-surface-variant">The skeletal architecture of the modern
-            industrial world.</p>
+          <!-- Content -->
+          <div class="p-8">
+            <h3 class="font-display text-3xl uppercase mb-4 text-on-surface group-hover:text-primary transition-colors duration-300">Site-Tank Fabrication</h3>
+            <p class="font-body text-base text-on-surface-variant leading-relaxed mb-6">
+              We have mastered the art of Tank fabrication and continue to grow and evolve to meet the demands of a wide variety of industries and applications.
+            </p>
+            <div class="w-full h-px bg-outline-variant/20 group-hover:bg-primary/40 transition-colors duration-300"></div>
+          </div>
         </div>
+        
         <!-- Service 03: Equipment Erection -->
-        <div class="service-card group cursor-pointer relative">
-          <div class="mb-6 flex justify-between items-center overflow-hidden">
-            <div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
-          </div>
-          <div class="relative h-[500px] overflow-hidden mb-8">
-            <img alt="heavy duty yellow crane lifting a large industrial component"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              data-alt="Heavy lifting operations at a maritime shipyard with specialized rigging and crane equipment in focus"
-              src="assets/crane1.webp" />
-            <!-- Blueprint Overlay SVG -->
-            <div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
-              <svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none"
-                viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path class="blueprint-line" d="M20,90 L50,10 L80,90 Z" stroke="#C0310A" stroke-width="0.5"></path>
-                <circle class="blueprint-line" cx="50" cy="10" r="5" stroke="#C0310A" stroke-width="0.5"></circle>
+        <div class="service-card snap-center group cursor-pointer bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl">
+          <!-- Image Container with Parallax -->
+          <div class="relative overflow-hidden h-56 parallax-image-container" data-parallax-speed="0.4">
+            <img src="assets/Erection-ST-01.webp" alt="Equipment Erection" class="parallax-image w-full h-[150%] object-cover -mt-[25%] transition-transform duration-500 group-hover:scale-110">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <!-- Number Badge -->
+            <span class="absolute bottom-4 left-4 font-display text-6xl font-bold text-white/90">03</span>
+            <!-- Icon Badge -->
+            <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-primary/80 transition-colors duration-300">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
               </svg>
             </div>
-            <!-- Technical Specification Overlay -->
-            <div
-              class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
-              <div class="space-y-4">
-                <h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
-                <div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Deployment</p>
-                    <p class="text-white font-technical text-xs">Hybrid On-Site</p>
-                  </div>
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Safety</p>
-                    <p class="text-white font-technical text-xs">Zero-Incident</p>
-                  </div>
-                </div>
-                <button
-                  class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View
-                  Specs</button>
-              </div>
-            </div>
           </div>
-          <h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Equipment Erection
-          </h3>
-          <p class="font-accent italic text-xl text-on-surface-variant">Precision positioning and critical system
-            initialization.</p>
+          <!-- Content -->
+          <div class="p-8">
+            <h3 class="font-display text-3xl uppercase mb-4 text-on-surface group-hover:text-primary transition-colors duration-300">Equipment Erection</h3>
+            <p class="font-body text-base text-on-surface-variant leading-relaxed mb-6">
+              These services can be availed from us at industry leading prices and can be customized according to customer requirements. We serve customers with skilled, experienced engineers.
+            </p>
+            <div class="w-full h-px bg-outline-variant/20 group-hover:bg-primary/40 transition-colors duration-300"></div>
+          </div>
         </div>
-        <!-- Service 04: Large Scale Piping -->
-        <div class="service-card group cursor-pointer relative">
-          <div class="mb-6 flex justify-between items-center overflow-hidden">
-            <div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
-          </div>
-          <div class="relative h-[500px] overflow-hidden mb-8">
-            <img alt="complex network of stainless steel pipes in a refinery"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              data-alt="Complex industrial piping architecture with chrome reflections and high-pressure valves in a dense formation"
-              src="assets/industrial-night-lights-stockcake.webp" />
-            <!-- Blueprint Overlay SVG -->
-            <div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
-              <svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none"
-                viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path class="blueprint-line" d="M10,20 Q50,20 50,50 T90,80" stroke="#C0310A" stroke-width="0.8"></path>
-                <path class="blueprint-line" d="M10,30 Q50,30 50,60 T90,90" stroke="#C0310A" stroke-width="0.8"></path>
+        
+        <!-- Service 04: Man Power Supply -->
+        <div class="service-card snap-center group cursor-pointer bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl">
+          <!-- Image Container with Parallax -->
+          <div class="relative overflow-hidden h-56 parallax-image-container" data-parallax-speed="0.6">
+            <img src="assets/asian-construction-workers-wearing-safety-260nw-2186375179.webp" alt="Man Power Supply" class="parallax-image w-full h-[150%] object-cover -mt-[25%] transition-transform duration-500 group-hover:scale-110">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <!-- Number Badge -->
+            <span class="absolute bottom-4 left-4 font-display text-6xl font-bold text-white/90">04</span>
+            <!-- Icon Badge -->
+            <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-primary/80 transition-colors duration-300">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
               </svg>
             </div>
-            <!-- Technical Specification Overlay -->
-            <div
-              class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
-              <div class="space-y-4">
-                <h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
-                <div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Pressure</p>
-                    <p class="text-white font-technical text-xs">5000 PSI Rating</p>
-                  </div>
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Code</p>
-                    <p class="text-white font-technical text-xs">ASME B31.3</p>
-                  </div>
-                </div>
-                <button
-                  class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View
-                  Specs</button>
-              </div>
-            </div>
           </div>
-          <h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Large Scale Piping
-          </h3>
-          <p class="font-accent italic text-xl text-on-surface-variant">Vascular systems for fluid and vapor
-            transmission.</p>
+          <!-- Content -->
+          <div class="p-8">
+            <h3 class="font-display text-3xl uppercase mb-4 text-on-surface group-hover:text-primary transition-colors duration-300">Man Power Supply</h3>
+            <p class="font-body text-base text-on-surface-variant leading-relaxed mb-6">
+              Our organization is instrumental in providing the best Man Power Supply to our esteemed clients. We provide manpower for various industries in compliance with specific requirements.
+            </p>
+            <div class="w-full h-px bg-outline-variant/20 group-hover:bg-primary/40 transition-colors duration-300"></div>
+          </div>
         </div>
-        <!-- Service 05: Storage Tanks -->
-        <div class="service-card group cursor-pointer relative">
-          <div class="mb-6 flex justify-between items-center overflow-hidden">
-            <div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
-          </div>
-          <div class="relative h-[500px] overflow-hidden mb-8">
-            <img alt="giant spherical white storage tanks in an industrial park"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              data-alt="Massive white industrial storage tanks with geometric shadow patterns and high technical contrast"
-              src="assets/istockphoto-470309496-612x612.jpg.webp" />
-            <!-- Blueprint Overlay SVG -->
-            <div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
-              <svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none"
-                viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle class="blueprint-line" cx="50" cy="50" r="45" stroke="#C0310A" stroke-width="0.5"></circle>
-                <rect class="blueprint-line" height="90" stroke="#C0310A" stroke-width="0.5" width="4" x="48" y="5">
-                </rect>
+        
+        <!-- Service 05: Heavy Structurals -->
+        <div class="service-card snap-center group cursor-pointer bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl">
+          <!-- Image Container with Parallax -->
+          <div class="relative overflow-hidden h-56 parallax-image-container" data-parallax-speed="0.35">
+            <img src="assets/construction-workers-on-a-metal-truss-roof-photo.webp" alt="Heavy Structurals" class="parallax-image w-full h-[150%] object-cover -mt-[25%] transition-transform duration-500 group-hover:scale-110">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <!-- Number Badge -->
+            <span class="absolute bottom-4 left-4 font-display text-6xl font-bold text-white/90">05</span>
+            <!-- Icon Badge -->
+            <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-primary/80 transition-colors duration-300">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
               </svg>
             </div>
-            <!-- Technical Specification Overlay -->
-            <div
-              class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
-              <div class="space-y-4">
-                <h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
-                <div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Capacity</p>
-                    <p class="text-white font-technical text-xs">1M Gallon+ Units</p>
-                  </div>
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Compliance</p>
-                    <p class="text-white font-technical text-xs">API 650 Standards</p>
-                  </div>
-                </div>
-                <button
-                  class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View
-                  Specs</button>
-              </div>
-            </div>
           </div>
-          <h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Storage Tanks</h3>
-          <p class="font-accent italic text-xl text-on-surface-variant">Engineered containment for high-value strategic
-            reserves.</p>
+          <!-- Content -->
+          <div class="p-8">
+            <h3 class="font-display text-3xl uppercase mb-4 text-on-surface group-hover:text-primary transition-colors duration-300">Heavy Structurals</h3>
+            <p class="font-body text-base text-on-surface-variant leading-relaxed mb-6">
+              We have the uniqueness of expanding our work beyond steel buildings and undertaking fabrication work for various structural steel projects.
+            </p>
+            <div class="w-full h-px bg-outline-variant/20 group-hover:bg-primary/40 transition-colors duration-300"></div>
+          </div>
         </div>
-        <!-- Service 06: Pressure Vessels -->
-        <div class="service-card group cursor-pointer relative">
-          <div class="mb-6 flex justify-between items-center overflow-hidden">
-            <div class="h-px w-24 bg-outline-variant/30 group-hover:w-full transition-all duration-700"></div>
-          </div>
-          <div class="relative h-[500px] overflow-hidden mb-8">
-            <img alt="cylindrical pressure vessel being welded with bright sparks"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              data-alt="Technical close-up of a pressure vessel dome with precise welding seams and metallic finish under surgical lights"
-              src="assets/dscf0853.jpg.webp" />
-            <!-- Blueprint Overlay SVG -->
-            <div class="absolute inset-0 pointer-events-none p-12 flex items-center justify-center">
-              <svg class="w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500" fill="none"
-                viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path class="blueprint-line" d="M10,30 A40,40 0 0,1 90,30 L90,70 A40,40 0 0,1 10,70 Z" stroke="#C0310A"
-                  stroke-width="0.5"></path>
+        
+        <!-- Service 06: Insulation -->
+        <div class="service-card snap-center group cursor-pointer bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl">
+          <!-- Image Container with Parallax -->
+          <div class="relative overflow-hidden h-56 parallax-image-container" data-parallax-speed="0.45">
+            <img src="assets/Top-5-Fabrication-Processes-Used-In-Manufacturing.jpg.webp" alt="Insulation" class="parallax-image w-full h-[150%] object-cover -mt-[25%] transition-transform duration-500 group-hover:scale-110">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <!-- Number Badge -->
+            <span class="absolute bottom-4 left-4 font-display text-6xl font-bold text-white/90">06</span>
+            <!-- Icon Badge -->
+            <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-primary/80 transition-colors duration-300">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
             </div>
-            <!-- Technical Specification Overlay -->
-            <div
-              class="absolute inset-0 bg-on-surface/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-8 flex flex-col justify-end">
-              <div class="space-y-4">
-                <h4 class="text-white font-display text-2xl uppercase tracking-widest">Technical Parameters</h4>
-                <div class="grid grid-cols-2 gap-4 border-t border-white/20 pt-4">
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Thermal</p>
-                    <p class="text-white font-technical text-xs">-40C to +400C</p>
-                  </div>
-                  <div>
-                    <p class="text-primary text-[8px] font-bold tracking-widest uppercase">Class</p>
-                    <p class="text-white font-technical text-xs">Section VIII Div 1</p>
-                  </div>
-                </div>
-                <button
-                  class="w-full bg-primary py-3 text-white font-body text-[10px] font-bold tracking-widest uppercase">View
-                  Specs</button>
-              </div>
+          </div>
+          <!-- Content -->
+          <div class="p-8">
+            <h3 class="font-display text-3xl uppercase mb-4 text-on-surface group-hover:text-primary transition-colors duration-300">Insulation</h3>
+            <p class="font-body text-base text-on-surface-variant leading-relaxed mb-6">
+              We provide bespoke solutions, offering clients looking for insulation services an end-to-end service to meet their thermal insulation requirements.
+            </p>
+            <div class="w-full h-px bg-outline-variant/20 group-hover:bg-primary/40 transition-colors duration-300"></div>
+          </div>
+        </div>
+        
+        <!-- Service 07: Sand Blasting - Centered in last row -->
+        <div class="service-card snap-center group cursor-pointer bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl md:col-span-2 lg:col-span-1">
+          <!-- Image Container with Parallax -->
+          <div class="relative overflow-hidden h-56 parallax-image-container" data-parallax-speed="0.55">
+            <img src="assets/7-Essential-Safety-Tips-for-Steel-Erection-Projects-2.jpg.webp" alt="Sand Blasting" class="parallax-image w-full h-[150%] object-cover -mt-[25%] transition-transform duration-500 group-hover:scale-110">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <!-- Number Badge -->
+            <span class="absolute bottom-4 left-4 font-display text-6xl font-bold text-white/90">07</span>
+            <!-- Icon Badge -->
+            <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-primary/80 transition-colors duration-300">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
             </div>
           </div>
-          <h3 class="font-display text-4xl uppercase mb-4 group-hover:text-primary transition-colors">Pressure Vessels
-          </h3>
-          <p class="font-accent italic text-xl text-on-surface-variant">High-tolerance vessels for volatile atmospheric
-            states.</p>
+          <!-- Content -->
+          <div class="p-8">
+            <h3 class="font-display text-3xl uppercase mb-4 text-on-surface group-hover:text-primary transition-colors duration-300">Sand Blasting</h3>
+            <p class="font-body text-base text-on-surface-variant leading-relaxed mb-6">
+              We offer a wide assortment of Sand Blasting services executed by expert professionals utilizing advanced resources and amenities.
+            </p>
+            <div class="w-full h-px bg-outline-variant/20 group-hover:bg-primary/40 transition-colors duration-300"></div>
+          </div>
         </div>
       </div>
+      
+      <!-- Mobile Scroll Indicators (Dots) -->
+      <div class="mobile-scroll-dots flex justify-center items-center gap-2 mt-8 md:hidden">
+        <div class="scroll-dot w-2 h-2 rounded-full bg-primary transition-all duration-300" data-index="0"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-outline-variant/40 transition-all duration-300" data-index="1"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-outline-variant/40 transition-all duration-300" data-index="2"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-outline-variant/40 transition-all duration-300" data-index="3"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-outline-variant/40 transition-all duration-300" data-index="4"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-outline-variant/40 transition-all duration-300" data-index="5"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-outline-variant/40 transition-all duration-300" data-index="6"></div>
+      </div>
+      
+      <!-- Swipe Hint Text (Mobile Only) -->
+      <p class="mobile-swipe-hint text-center text-sm text-on-surface-variant/60 mt-4 md:hidden">
+        <svg class="w-5 h-5 inline-block mr-1 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+        </svg>
+        Swipe to explore services
+      </p>
     </div>
   </main>
   <!-- Project Inquiry Sticky Strip -->
@@ -1105,7 +1037,196 @@
         box-shadow: 0 4px 24px rgba(37, 211, 102, 0.7);
       }
     }
+
+    /* Parallax Image Smooth Transition */
+    .parallax-image-container {
+      background-color: #000; /* Prevents grey gap - matches dark gradient overlay */
+    }
+
+    .parallax-image {
+      will-change: transform;
+      transition: transform 0.1s linear;
+      background-color: #000; /* Extra safety - fills any tiny gaps */
+    }
+
+    /* Mobile Scroll-Snap for Service Cards */
+    @media (max-width: 767px) {
+      .mobile-scroll-snap {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
+        gap: 1rem;
+        padding: 0 1rem 1rem 1rem;
+        margin: 0 -1rem; /* Full-width bleed */
+      }
+
+      .mobile-scroll-snap .service-card {
+        flex: 0 0 85vw; /* Each card takes 85% of viewport width */
+        scroll-snap-align: center;
+        scroll-snap-stop: always; /* Forces stop at each card */
+      }
+
+      /* Hide scrollbar for cleaner look */
+      .mobile-scroll-snap::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .mobile-scroll-snap {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    }
+
+    /* Scroll-Reveal Animation for Service Cards */
+    .service-card {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* On mobile with scroll-snap, disable initial hidden state */
+    @media (max-width: 767px) {
+      .service-card {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Disable parallax on mobile for better performance */
+    @media (max-width: 768px) {
+      .parallax-image {
+        transform: none !important;
+      }
+    }
   </style>
+
+  <!-- Parallax Scroll Effect for Service Cards -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const parallaxContainers = document.querySelectorAll('.parallax-image-container');
+      
+      // Only enable parallax on desktop (better mobile performance)
+      if (window.innerWidth > 768) {
+        function updateParallax() {
+          const scrollY = window.pageYOffset;
+          const windowHeight = window.innerHeight;
+          
+          parallaxContainers.forEach(container => {
+            const rect = container.getBoundingClientRect();
+            const speed = parseFloat(container.dataset.parallaxSpeed) || 0.5;
+            const image = container.querySelector('.parallax-image');
+            
+            // Check if container is in viewport
+            if (rect.top < windowHeight && rect.bottom > 0) {
+              // Calculate how far through the viewport the container is
+              const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+              
+              // Calculate parallax offset
+              // When progress = 0 (top of viewport), offset = negative
+              // When progress = 1 (bottom of viewport), offset = positive
+              const maxOffset = 40 * speed; // Max movement in pixels
+              const offset = (progress - 0.5) * maxOffset * 2;
+              
+              // Apply transform
+              image.style.transform = `translateY(${offset}px)`;
+            }
+          });
+          
+          requestAnimationFrame(updateParallax);
+        }
+        
+        // Start the parallax animation loop
+        updateParallax();
+      }
+      
+      // Mobile Scroll-Snap Dot Indicators
+      if (window.innerWidth <= 767) {
+        const scrollContainer = document.querySelector('.mobile-scroll-snap');
+        const dots = document.querySelectorAll('.scroll-dot');
+        const swipeHint = document.querySelector('.mobile-swipe-hint');
+        
+        if (scrollContainer && dots.length > 0) {
+          let hintTimeout;
+          
+          // Update dots on scroll
+          scrollContainer.addEventListener('scroll', function() {
+            const scrollLeft = scrollContainer.scrollLeft;
+            const cardWidth = scrollContainer.querySelector('.service-card').offsetWidth;
+            const gap = 16; // 1rem gap
+            const activeIndex = Math.round(scrollLeft / (cardWidth + gap));
+            
+            // Update active dot
+            dots.forEach((dot, index) => {
+              if (index === activeIndex) {
+                dot.classList.remove('bg-outline-variant/40');
+                dot.classList.add('bg-primary', 'w-6');
+              } else {
+                dot.classList.remove('bg-primary', 'w-6');
+                dot.classList.add('bg-outline-variant/40');
+              }
+            });
+            
+            // Hide swipe hint after first scroll
+            if (swipeHint && scrollLeft > 50) {
+              swipeHint.style.opacity = '0';
+              swipeHint.style.transition = 'opacity 0.3s ease';
+            }
+          });
+          
+          // Hide swipe hint after 5 seconds automatically
+          if (swipeHint) {
+            hintTimeout = setTimeout(() => {
+              swipeHint.style.opacity = '0';
+              swipeHint.style.transition = 'opacity 0.3s ease';
+            }, 5000);
+          }
+        }
+      }
+      
+      // Scroll-Reveal Animation for Service Cards (Desktop Only)
+      if (window.innerWidth > 767) {
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        // Intersection Observer for scroll-triggered animations
+        const observerOptions = {
+          root: null, // viewport
+          rootMargin: '0px 0px -100px 0px', // trigger when 100px into viewport
+          threshold: 0.1 // 10% visible
+        };
+        
+        const cardObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              // Add staggered delay based on card position
+              const card = entry.target;
+              const cardIndex = Array.from(serviceCards).indexOf(card);
+              const staggerDelay = (cardIndex % 3) * 0.15; // 0.15s stagger per column
+              
+              setTimeout(() => {
+                card.classList.add('revealed');
+              }, staggerDelay * 1000);
+              
+              // Stop observing once revealed (performance optimization)
+              cardObserver.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        
+        // Observe all service cards
+        serviceCards.forEach(card => {
+          cardObserver.observe(card);
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
