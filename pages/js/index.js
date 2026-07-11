@@ -17,7 +17,7 @@
 // Configuration object - Replace these values before deployment
 const EMAIL_CONFIG = {
     // Get your Public Key from: https://dashboard.emailjs.com/admin/account
-    publicKey: "YOUR_PUBLIC_KEY", // ← REPLACE THIS WITH YOUR ACTUAL KEY
+    publicKey: "RyiIBRw-4E9tjl25G", // EmailJS Public Key
     
     // Rate limiting configuration
     rateLimit: {
@@ -548,7 +548,7 @@ class SecureContactForm {
         // Security configuration
         this.config = {
             // Get these from EmailJS Dashboard
-            serviceId: 'YOUR_SERVICE_ID',    // ← REPLACE WITH YOUR SERVICE ID
+            serviceId: 'service_48BCRMF13gu-KM1Gukoy3',    // EmailJS Service ID
             templateId: 'YOUR_TEMPLATE_ID',  // ← REPLACE WITH YOUR TEMPLATE ID
             
             // Rate limiting & security
